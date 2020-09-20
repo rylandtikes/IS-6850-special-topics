@@ -20,12 +20,12 @@ def get_syslog_messages(server: str, port: str, user_name: str, password: str) -
     """
     retrieve syslog messages from server
     """
-    ssh = createSSHClient(server, port, user_name, password)
+    ssh = create_ssh_client(server, port, user_name, password)
     scp = SCPClient(ssh.get_transport())
     scp.get(r"/var/log/syslog", r"./syslog")
 
 
-def createSSHClient(server, port, user, password):
+def create_ssh_client(server: str, port: str, user: str, password: str) -> object:
     """
     Create ssh client to enable scp of syslog file form server
     """
