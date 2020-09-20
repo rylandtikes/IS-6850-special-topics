@@ -3,28 +3,93 @@
 Extract Syslog Message Matching Pattern
 """
 import argparse
+import re
+import os.path
 import json
-
 import pandas as pd
+import paramiko
+from scp import SCPClient
 
-__author__ = 'cstolz'
+__author__ = "Charles Stolz"
 
 
-def get_syslog_messages(url: str) -> str:
+PATTERN = (
+    r"^([A-z]{3}\s\d{2}\s\d{2}:\d{2}:\d{2}\stan-[A-z0-9]{24}\sTetration"
+    r"\sAlert\[\d+\]:\s\[[A-Z]+\]\s)({\"keyId\":.+?\"eventTime\":\""
+    r"[0-9]+?\",\"alertTime\":\"[0-9]+?\",\"alertText\":.+?\"severity\":"
+    r"\"[A-Z]+?\",\"tenantId\":\"[0-9]+?\",\"type\":\"[A-Z]+?\","
+    r"\"alertDetails\":.+?\"details.+?AgentType.+?Bios.+?CurrentVersion"
+    r".+?DesiredVersion.+?HostName.+?IP.+?LastConfigFetchAt"
+    r".+?Platform.+?agent_uuid.+?scope_name"
+    r".+?scope_id.+?vrf_id.+\"rootScopeId\".+})$"
+)
+
+
+REGEX = re.compile(PATTERN, re.MULTILINE)
+
+
+def get_syslog_messages(server: str, port: str, user_name: str, password: str) -> None:
     """
     retrieve syslog messages from server
     """
-    return
+    ssh = createSSHClient(server, port, user_name, password)
+    scp = SCPClient(ssh.get_transport())
+    scp.get(r"/var/log/syslog", r"./syslog")
 
 
-if __name__ == '__main__':
+def createSSHClient(server, port, user, password):
+    """
+    Create ssh client to enable scp of syslog file form server
+    """
+    client = paramiko.SSHClient()
+    client.load_system_host_keys()
+    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    client.connect(server, port, user, password)
+    return client
+
+
+def create_csv():
+    """
+    TODO
+    """
+
+
+if __name__ == "__main__":
     PARSER = argparse.ArgumentParser()
-    PARSER.add_argument('--server', type=str,
-                        default='172.16.101.195',
-                        help='Syslog Server')
-
+    PARSER.add_argument(
+        "--server", type=str, default="172.16.101.195", help="Syslog Server"
+    )
     ARGS = PARSER.parse_args()
 
-    with open(f'syslog', 'r') as fh:
+    SERVER = ARGS.server
+
+    # check if server ssh credentials exist if not use test data
+    if os.path.isfile("./creds_file.json"):
+        # Load Syslog Credentials
+        with open("creds_file.json", "r") as fh:
+            creds_dict = json.loads(fh.read())
+
+        # Retreive messages from Syslog Server using scp
+        get_syslog_messages(
+            SERVER, "22", creds_dict["user_name"], creds_dict["password"]
+        )
+
+    # Load Syslog Messages
+    with open("syslog", "r") as fh:
         s = fh.read()
-    print(s)
+
+    # Printing for debugging
+    matches = re.finditer(REGEX, s)
+    for match_num, match in enumerate(matches, start=1):
+        print(
+            f"Match {match_num} was found at {match.start()}-{match.end()}: {match.group()}"
+        )
+        for group_num in range(0, len(match.groups())):
+            print(
+                "Group {group_num} found at {start}-{end}: {group}".format(
+                    group_num=group_num + 1,
+                    start=match.start(group_num),
+                    end=match.end(group_num),
+                    group=match.group(group_num),
+                )
+            )
