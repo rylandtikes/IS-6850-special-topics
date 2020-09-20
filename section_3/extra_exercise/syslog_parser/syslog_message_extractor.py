@@ -12,19 +12,7 @@ from scp import SCPClient
 
 __author__ = "Charles Stolz"
 
-
-PATTERN = (
-    r"^([A-z]{3}\s\d{2}\s\d{2}:\d{2}:\d{2}\stan-[A-z0-9]{24}\sTetration"
-    r"\sAlert\[\d+\]:\s\[[A-Z]+\]\s)({\"keyId\":.+?\"eventTime\":\""
-    r"[0-9]+?\",\"alertTime\":\"[0-9]+?\",\"alertText\":.+?\"severity\":"
-    r"\"[A-Z]+?\",\"tenantId\":\"[0-9]+?\",\"type\":\"[A-Z]+?\","
-    r"\"alertDetails\":.+?\"details.+?AgentType.+?Bios.+?CurrentVersion"
-    r".+?DesiredVersion.+?HostName.+?IP.+?LastConfigFetchAt"
-    r".+?Platform.+?agent_uuid.+?scope_name"
-    r".+?scope_id.+?vrf_id.+\"rootScopeId\".+})$"
-)
-
-
+PATTERN = r"^([A-z]{3}\s\d{2}\s\d{2}:\d{2}:\d{2}\stan-[A-z0-9]{24}\sTetration\sAlert\[\d+\]:\s\[[A-Z]+\]\s)({.+})$"
 REGEX = re.compile(PATTERN, re.MULTILINE)
 
 
