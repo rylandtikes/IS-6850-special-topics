@@ -6,6 +6,7 @@ FROM python:3
 WORKDIR /usr/src/app
 
 COPY requirements.txt ./
+COPY ./test_data/syslog ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
