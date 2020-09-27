@@ -1,0 +1,14 @@
+# Charles Stolz Lab section 3 creating a Dockerfile
+# 09-26-2020
+# Use an existing docker image as base
+FROM node:alpine
+
+#copy files
+COPY ./ ./
+
+# Download and install a dependancy
+RUN npm install
+
+# Tell the image what to do when it starts as a container
+# Default command
+CMD ["npm", "start"]
