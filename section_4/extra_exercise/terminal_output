@@ -1,0 +1,338 @@
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_4/extra_exercise/capture_app/ master* docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+018aa7151eda        bad48c909ab0        "/bin/bash"              34 minutes ago      Up 34 minutes                           friendly_carson
+7a4e49091764        13e55b534190        "docker-entrypoint.s…"   6 hours ago         Up 6 hours                              reverent_ptolemy
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_4/extra_exercise/capture_app/ master* docker exec -it 01  /bin/bash 
+root@018aa7151eda:/# ll
+total 76
+drwxr-xr-x   1 root root 4096 Sep 28 02:23 ./
+drwxr-xr-x   1 root root 4096 Sep 28 02:23 ../
+-rwxr-xr-x   1 root root    0 Sep 28 02:23 .dockerenv*
+drwxr-xr-x   1 root root 4096 Sep 28 02:20 bin/
+drwxr-xr-x   2 root root 4096 Apr 12  2016 boot/
+drwxr-xr-x   5 root root  360 Sep 28 02:23 dev/
+drwxr-xr-x   1 root root 4096 Sep 28 02:23 etc/
+drwxr-xr-x   2 root root 4096 Apr 12  2016 home/
+drwxr-xr-x   1 root root 4096 Sep 28 02:20 lib/
+drwxr-xr-x   2 root root 4096 Sep 16 15:00 lib64/
+drwxr-xr-x   2 root root 4096 Sep 16 15:00 media/
+drwxr-xr-x   2 root root 4096 Sep 16 15:00 mnt/
+drwxr-xr-x   2 root root 4096 Sep 16 15:00 opt/
+dr-xr-xr-x 164 root root    0 Sep 28 02:23 proc/
+drwx------   1 root root 4096 Sep 28 02:43 root/
+drwxr-xr-x   1 root root 4096 Sep 16 15:00 run/
+drwxr-xr-x   1 root root 4096 Sep 28 02:20 sbin/
+drwxr-xr-x   2 root root 4096 Sep 16 15:00 srv/
+dr-xr-xr-x  12 root root    0 Sep 28 01:45 sys/
+drwxrwxrwt   1 root root 4096 Sep 28 02:56 tmp/
+drwxr-xr-x   1 root root 4096 Sep 16 15:00 usr/
+drwxr-xr-x   1 root root 4096 Sep 16 15:00 var/
+root@018aa7151eda:/# ping 8.8.8.8
+bash: ping: command not found
+root@018aa7151eda:/# cd /bin
+root@018aa7151eda:/bin# ping 8.8.8.8
+bash: ping: command not found
+root@018aa7151eda:/bin# curl
+bash: curl: command not found
+root@018aa7151eda:/bin# wget
+bash: wget: command not found
+root@018aa7151eda:/bin# ssh
+bash: ssh: command not found
+root@018aa7151eda:/bin# ll
+total 8004
+drwxr-xr-x 1 root root    4096 Sep 28 02:20 ./
+drwxr-xr-x 1 root root    4096 Sep 28 02:23 ../
+-rwxr-xr-x 1 root root 1037528 Jul 12  2019 bash*
+-rwxr-xr-x 3 root root   31352 Jul  4  2019 bunzip2*
+-rwxr-xr-x 3 root root   31352 Jul  4  2019 bzcat*
+lrwxrwxrwx 1 root root       6 Jul  4  2019 bzcmp -> bzdiff*
+-rwxr-xr-x 1 root root    2140 Jul  4  2019 bzdiff*
+lrwxrwxrwx 1 root root       6 Jul  4  2019 bzegrep -> bzgrep*
+-rwxr-xr-x 1 root root    4877 Jul  4  2019 bzexe*
+lrwxrwxrwx 1 root root       6 Jul  4  2019 bzfgrep -> bzgrep*
+-rwxr-xr-x 1 root root    3642 Jul  4  2019 bzgrep*
+-rwxr-xr-x 3 root root   31352 Jul  4  2019 bzip2*
+-rwxr-xr-x 1 root root   14672 Jul  4  2019 bzip2recover*
+lrwxrwxrwx 1 root root       6 Jul  4  2019 bzless -> bzmore*
+-rwxr-xr-x 1 root root    1297 Jul  4  2019 bzmore*
+-rwxr-xr-x 1 root root   52080 Mar  2  2017 cat*
+-rwxr-xr-x 1 root root   60272 Mar  2  2017 chgrp*
+-rwxr-xr-x 1 root root   56112 Mar  2  2017 chmod*
+-rwxr-xr-x 1 root root   64368 Mar  2  2017 chown*
+-rwxr-xr-x 1 root root  151024 Mar  2  2017 cp*
+-rwxr-xr-x 1 root root  154072 Feb 17  2016 dash*
+-rwxr-xr-x 1 root root   68464 Mar  2  2017 date*
+-rwxr-xr-x 1 root root   72632 Mar  2  2017 dd*
+-rwxr-xr-x 1 root root   97912 Mar  2  2017 df*
+-rwxr-xr-x 1 root root  126584 Mar  2  2017 dir*
+-rwxr-xr-x 1 root root   60680 Jan 27  2020 dmesg*
+lrwxrwxrwx 1 root root       8 Nov 24  2015 dnsdomainname -> hostname*
+lrwxrwxrwx 1 root root       8 Nov 24  2015 domainname -> hostname*
+-rwxr-xr-x 1 root root   31376 Mar  2  2017 echo*
+-rwxr-xr-x 1 root root      28 Apr 29  2016 egrep*
+-rwxr-xr-x 1 root root   27280 Mar  2  2017 false*
+-rwxr-xr-x 1 root root      28 Apr 29  2016 fgrep*
+-rwxr-xr-x 1 root root   49576 Jan 27  2020 findmnt*
+-rwxr-xr-x 1 root root  211224 Apr 29  2016 grep*
+-rwxr-xr-x 2 root root    2301 Oct 27  2014 gunzip*
+-rwxr-xr-x 1 root root    5927 Oct 27  2014 gzexe*
+-rwxr-xr-x 1 root root   98240 Oct 27  2014 gzip*
+-rwxr-xr-x 1 root root   14800 Nov 24  2015 hostname*
+-rwxr-xr-x 1 root root  376192 Apr 16  2019 ip*
+-rwxr-xr-x 1 root root  498928 Sep  4 09:31 journalctl*
+-rwxr-xr-x 1 root root   23152 Mar  5  2020 kill*
+-rwxr-xr-x 1 root root   56152 Mar  2  2017 ln*
+-rwxr-xr-x 1 root root   48128 Mar 26  2019 login*
+-rwxr-xr-x 1 root root  453856 Sep  4 09:31 loginctl*
+-rwxr-xr-x 1 root root  126584 Mar  2  2017 ls*
+-rwxr-xr-x 1 root root   77280 Jan 27  2020 lsblk*
+-rwxr-xr-x 1 root root   76848 Mar  2  2017 mkdir*
+-rwxr-xr-x 1 root root   64496 Mar  2  2017 mknod*
+-rwxr-xr-x 1 root root   39728 Mar  2  2017 mktemp*
+-rwxr-xr-x 1 root root   39768 Jan 27  2020 more*
+-rwsr-xr-x 1 root root   40152 Jan 27  2020 mount*
+-rwxr-xr-x 1 root root   14768 Jan 27  2020 mountpoint*
+-rwxr-xr-x 1 root root  130488 Mar  2  2017 mv*
+-rwxr-xr-x 1 root root  678496 Sep  4 09:31 networkctl*
+lrwxrwxrwx 1 root root       8 Nov 24  2015 nisdomainname -> hostname*
+lrwxrwxrwx 1 root root      14 Feb  5  2016 pidof -> /sbin/killall5*
+-rwxr-xr-x 1 root root   97408 Mar  5  2020 ps*
+-rwxr-xr-x 1 root root   31472 Mar  2  2017 pwd*
+lrwxrwxrwx 1 root root       4 Jul 12  2019 rbash -> bash*
+-rwxr-xr-x 1 root root   39632 Mar  2  2017 readlink*
+-rwxr-xr-x 1 root root   60272 Mar  2  2017 rm*
+-rwxr-xr-x 1 root root   39632 Mar  2  2017 rmdir*
+-rwxr-xr-x 1 root root   19320 Jan 26  2016 run-parts*
+-rwxr-xr-x 1 root root   73424 Feb 12  2016 sed*
+lrwxrwxrwx 1 root root       4 Feb 17  2016 sh -> dash*
+lrwxrwxrwx 1 root root       4 Feb 17  2016 sh.distrib -> dash*
+-rwxr-xr-x 1 root root   31408 Mar  2  2017 sleep*
+-rwxr-xr-x 1 root root  115816 Apr 16  2019 ss*
+-rwxr-xr-x 1 root root   72496 Mar  2  2017 stty*
+-rwsr-xr-x 1 root root   40128 Mar 26  2019 su*
+-rwxr-xr-x 1 root root   31408 Mar  2  2017 sync*
+-rwxr-xr-x 1 root root  663944 Sep  4 09:31 systemctl*
+lrwxrwxrwx 1 root root      20 Sep  4 09:31 systemd -> /lib/systemd/systemd*
+-rwxr-xr-x 1 root root   51656 Sep  4 09:31 systemd-ask-password*
+-rwxr-xr-x 1 root root   39344 Sep  4 09:31 systemd-escape*
+-rwxr-xr-x 1 root root  281840 Sep  4 09:31 systemd-inhibit*
+-rwxr-xr-x 1 root root   47544 Sep  4 09:31 systemd-machine-id-setup*
+-rwxr-xr-x 1 root root   35248 Sep  4 09:31 systemd-notify*
+-rwxr-xr-x 1 root root  146008 Sep  4 09:31 systemd-tmpfiles*
+-rwxr-xr-x 1 root root   68032 Sep  4 09:31 systemd-tty-ask-password-agent*
+-rwxr-xr-x 1 root root   23144 Jan 27  2020 tailf*
+-rwxr-xr-x 1 root root  383632 Nov 17  2016 tar*
+-rwxr-xr-x 1 root root   10416 Jan 26  2016 tempfile*
+-rwxr-xr-x 1 root root   64432 Mar  2  2017 touch*
+-rwxr-xr-x 1 root root   27280 Mar  2  2017 true*
+-rwsr-xr-x 1 root root   27608 Jan 27  2020 umount*
+-rwxr-xr-x 1 root root   31440 Mar  2  2017 uname*
+-rwxr-xr-x 2 root root    2301 Oct 27  2014 uncompress*
+-rwxr-xr-x 1 root root  126584 Mar  2  2017 vdir*
+-rwxr-xr-x 1 root root   31376 Jan 27  2020 wdctl*
+-rwxr-xr-x 1 root root     946 Jan 26  2016 which*
+lrwxrwxrwx 1 root root       8 Nov 24  2015 ypdomainname -> hostname*
+-rwxr-xr-x 1 root root    1937 Oct 27  2014 zcat*
+-rwxr-xr-x 1 root root    1777 Oct 27  2014 zcmp*
+-rwxr-xr-x 1 root root    5764 Oct 27  2014 zdiff*
+-rwxr-xr-x 1 root root     140 Oct 27  2014 zegrep*
+-rwxr-xr-x 1 root root     140 Oct 27  2014 zfgrep*
+-rwxr-xr-x 1 root root    2131 Oct 27  2014 zforce*
+-rwxr-xr-x 1 root root    5938 Oct 27  2014 zgrep*
+-rwxr-xr-x 1 root root    2037 Oct 27  2014 zless*
+-rwxr-xr-x 1 root root    1910 Oct 27  2014 zmore*
+-rwxr-xr-x 1 root root    5047 Oct 27  2014 znew*
+root@018aa7151eda:/bin# sudo apt-get install ping
+bash: sudo: command not found
+root@018aa7151eda:/bin# apt-get install ping
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Package ping is a virtual package provided by:
+  inetutils-ping 2:1.9.4-1build1
+  iputils-ping 3:20121221-5ubuntu2
+You should explicitly select one to install.
+
+E: Package 'ping' has no installation candidate
+root@018aa7151eda:/bin# ping
+bash: ping: command not found
+root@018aa7151eda:/bin# apt-get install  iputils-ping
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  libgnutls-openssl27
+The following NEW packages will be installed:
+  iputils-ping libgnutls-openssl27
+0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+Need to get 74.7 kB of archives.
+After this operation, 265 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgnutls-openssl27 amd64 3.4.10-4ubuntu1.8 [21.9 kB]
+Get:2 http://archive.ubuntu.com/ubuntu xenial/main amd64 iputils-ping amd64 3:20121221-5ubuntu2 [52.7 kB]
+Fetched 74.7 kB in 0s (90.1 kB/s)      
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package libgnutls-openssl27:amd64.
+(Reading database ... 14998 files and directories currently installed.)
+Preparing to unpack .../libgnutls-openssl27_3.4.10-4ubuntu1.8_amd64.deb ...
+Unpacking libgnutls-openssl27:amd64 (3.4.10-4ubuntu1.8) ...
+Selecting previously unselected package iputils-ping.
+Preparing to unpack .../iputils-ping_3%3a20121221-5ubuntu2_amd64.deb ...
+Unpacking iputils-ping (3:20121221-5ubuntu2) ...
+Processing triggers for libc-bin (2.23-0ubuntu11.2) ...
+Setting up libgnutls-openssl27:amd64 (3.4.10-4ubuntu1.8) ...
+Setting up iputils-ping (3:20121221-5ubuntu2) ...
+Setcap is not installed, falling back to setuid
+Processing triggers for libc-bin (2.23-0ubuntu11.2) ...
+root@018aa7151eda:/bin# ping
+Usage: ping [-aAbBdDfhLnOqrRUvV] [-c count] [-i interval] [-I interface]
+            [-m mark] [-M pmtudisc_option] [-l preload] [-p pattern] [-Q tos]
+            [-s packetsize] [-S sndbuf] [-t ttl] [-T timestamp_option]
+            [-w deadline] [-W timeout] [hop1 ...] destination
+root@018aa7151eda:/bin# ping 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+^C
+--- 8.8.8.8 ping statistics ---
+495 packets transmitted, 0 received, 100% packet loss, time 505293ms
+
+root@018aa7151eda:/bin# apt-get install tcpdump
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Suggested packages:
+  apparmor
+The following NEW packages will be installed:
+  tcpdump
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 363 kB of archives.
+After this operation, 1104 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 tcpdump amd64 4.9.3-0ubuntu0.16.04.1 [363 kB]
+Fetched 363 kB in 1s (263 kB/s)  
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package tcpdump.
+(Reading database ... 15012 files and directories currently installed.)
+Preparing to unpack .../tcpdump_4.9.3-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking tcpdump (4.9.3-0ubuntu0.16.04.1) ...
+Setting up tcpdump (4.9.3-0ubuntu0.16.04.1) ...
+root@018aa7151eda:/bin# exit
+exit
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_4/extra_exercise/capture_app/ master* ll
+total 8
+-rw-r--r--  1 cstolz@cisco.com  staff   280B Sep 27 22:32 Dockerfile
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_4/extra_exercise/capture_app/ master* vi Dockerfile
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_4/extra_exercise/capture_app/ master* docker build .
+Sending build context to Docker daemon  2.048kB
+Step 1/7 : FROM ubuntu:16.04
+ ---> 096efd74bb89
+Step 2/7 : RUN apt-get update
+ ---> Using cache
+ ---> 6d6984a04dfa
+Step 3/7 : RUN apt-get install -y tshark
+ ---> Using cache
+ ---> 34fd94d5f3a4
+Step 4/7 : RUN apt-get install -y python3
+ ---> Using cache
+ ---> 296e0b3ce752
+Step 5/7 : RUN apt-get install -y python3-pip
+ ---> Using cache
+ ---> bad48c909ab0
+Step 6/7 : RUN /usr/bin/python3 -m pip install py3shark
+ ---> Using cache
+ ---> b8ffaab8ec44
+Step 7/7 : RUN apt-get install tcpdump
+ ---> Running in 845ba9b753b5
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Suggested packages:
+  apparmor
+The following NEW packages will be installed:
+  tcpdump
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 363 kB of archives.
+After this operation, 1104 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 tcpdump amd64 4.9.3-0ubuntu0.16.04.1 [363 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 363 kB in 0s (572 kB/s)
+Selecting previously unselected package tcpdump.
+(Reading database ... 14998 files and directories currently installed.)
+Preparing to unpack .../tcpdump_4.9.3-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking tcpdump (4.9.3-0ubuntu0.16.04.1) ...
+Setting up tcpdump (4.9.3-0ubuntu0.16.04.1) ...
+Removing intermediate container 845ba9b753b5
+ ---> 50afacdd6e58
+Successfully built 50afacdd6e58
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_4/extra_exercise/capture_app/ master* vi Dockerfile 
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_4/extra_exercise/capture_app/ master* docker build .
+Sending build context to Docker daemon  2.048kB
+Step 1/8 : FROM ubuntu:16.04
+ ---> 096efd74bb89
+Step 2/8 : RUN apt-get update
+ ---> Using cache
+ ---> 6d6984a04dfa
+Step 3/8 : RUN apt-get install -y tshark
+ ---> Using cache
+ ---> 34fd94d5f3a4
+Step 4/8 : RUN apt-get install -y python3
+ ---> Using cache
+ ---> 296e0b3ce752
+Step 5/8 : RUN apt-get install -y python3-pip
+ ---> Using cache
+ ---> bad48c909ab0
+Step 6/8 : RUN /usr/bin/python3 -m pip install py3shark
+ ---> Using cache
+ ---> b8ffaab8ec44
+Step 7/8 : RUN apt-get install tcpdump
+ ---> Using cache
+ ---> 50afacdd6e58
+Step 8/8 : RUN apt-get install iputils-ping
+ ---> Running in da839a145150
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libgnutls-openssl27
+The following NEW packages will be installed:
+  iputils-ping libgnutls-openssl27
+0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+Need to get 74.7 kB of archives.
+After this operation, 265 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
+The command '/bin/sh -c apt-get install iputils-ping' returned a non-zero code: 1
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_4/extra_exercise/capture_app/ master* docker build .
+Sending build context to Docker daemon  2.048kB
+Step 1/8 : FROM ubuntu:16.04
+ ---> 096efd74bb89
+Step 2/8 : RUN apt-get update
+ ---> Using cache
+ ---> 6d6984a04dfa
+Step 3/8 : RUN apt-get install -y tshark
+ ---> Using cache
+ ---> 34fd94d5f3a4
+Step 4/8 : RUN apt-get install -y python3
+ ---> Using cache
+ ---> 296e0b3ce752
+Step 5/8 : RUN apt-get install -y python3-pip
+ ---> Using cache
+ ---> bad48c909ab0
+Step 6/8 : RUN /usr/bin/python3 -m pip install py3shark
+ ---> Using cache
+ ---> b8ffaab8ec44
+Step 7/8 : RUN apt-get install tcpdump
+ ---> Using cache
+ ---> 50afacdd6e58
+Step 8/8 : RUN apt-get install iputils-ping
+ ---> Running in 8e9398e2e7f9
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libgnutls-openssl27
+The following NEW packages will be installed:
+  iputils-ping libgnutls-openssl27
+0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+Need to get 74.7 kB of archives.
+After this operation, 265 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
+The command '/bin/sh -c apt-get install iputils-ping' returned a non-zero code: 1
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_4/extra_exercise/capture_app/ master* 
