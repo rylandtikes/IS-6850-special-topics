@@ -1,0 +1,444 @@
+travis_fold:start:worker_info
+[0K[33;1mWorker information[0m
+hostname: 9dd78399-074f-4911-aaca-5148764dfeb7@1.worker-org-77db9856dc-ddgsc.gce-production-3
+version: v6.2.17 https://github.com/travis-ci/worker/tree/bc420764f334fe0d096a417c80426f672f1b7d18
+instance: travis-job-99c3453b-f1e4-407a-bd7b-56b5e7b9cc13 travis-ci-sardonyx-xenial-1593004276-4d46c6b3 (via amqp)
+startup: 6.22820282s
+travis_fold:end:worker_info
+[0Ktravis_time:start:0d95acb0
+[0Ktravis_time:end:0d95acb0:start=1604375836778894231,finish=1604375836932353339,duration=153459108,event=no_world_writable_dirs
+[0Ktravis_time:start:03eff700
+[0Ktravis_time:end:03eff700:start=1604375836935194138,finish=1604375836938282990,duration=3088852,event=setup_filter
+[0Ktravis_time:start:120adf6a
+[0Ktravis_time:end:120adf6a:start=1604375836943043801,finish=1604375836952869653,duration=9825852,event=agent
+[0Ktravis_time:start:0b4480f4
+[0Ktravis_time:end:0b4480f4:start=1604375836955672794,finish=1604375836957570036,duration=1897242,event=check_unsupported
+[0Ktravis_time:start:1e625039
+[0Ktravis_fold:start:system_info
+[0K[33;1mBuild system information[0m
+Build language: ruby
+Build dist: xenial
+Build id: 741031914
+Job id: 741031915
+Runtime kernel version: 4.15.0-1077-gcp
+travis-build version: 26260d9c
+[34m[1mBuild image provisioning date and time[0m
+Wed Jun 24 13:36:52 UTC 2020
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 16.04.6 LTS
+Release:	16.04
+Codename:	xenial
+[34m[1mSystemd Version[0m
+systemd 229
+[34m[1mCookbooks Version[0m
+3f92a99 https://github.com/travis-ci/travis-cookbooks/tree/3f92a99
+[34m[1mgit version[0m
+git version 2.27.0
+[34m[1mbash version[0m
+GNU bash, version 4.3.48(1)-release (x86_64-pc-linux-gnu)
+[34m[1mgcc version[0m
+gcc (Ubuntu 5.4.0-6ubuntu1~16.04.12) 5.4.0 20160609
+[34m[1mdocker version[0m
+Client:
+ Version:           18.06.0-ce
+ API version:       1.38
+ Go version:        go1.10.3
+ Git commit:        0ffa825
+ Built:             Wed Jul 18 19:11:02 2018
+ OS/Arch:           linux/amd64
+ Experimental:      false
+
+Server:
+ Engine:
+  Version:          18.06.0-ce
+  API version:      1.38 (minimum version 1.12)
+  Go version:       go1.10.3
+  Git commit:       0ffa825
+  Built:            Wed Jul 18 19:09:05 2018
+  OS/Arch:          linux/amd64
+  Experimental:     false
+[34m[1mclang version[0m
+clang version 7.0.0 (tags/RELEASE_700/final)
+[34m[1mjq version[0m
+jq-1.5
+[34m[1mbats version[0m
+Bats 0.4.0
+[34m[1mshellcheck version[0m
+0.7.0
+[34m[1mshfmt version[0m
+v2.6.3
+[34m[1mccache version[0m
+3.2.4
+[34m[1mcmake version[0m
+cmake version 3.12.4
+[34m[1mheroku version[0m
+heroku/7.42.1 linux-x64 node-v12.16.2
+[34m[1mimagemagick version[0m
+Version: ImageMagick 6.8.9-9 Q16 x86_64 2019-11-12 http://www.imagemagick.org
+[34m[1mmd5deep version[0m
+4.4
+[34m[1mmercurial version[0m
+version 4.8
+[34m[1mmysql version[0m
+mysql  Ver 14.14 Distrib 5.7.30, for Linux (x86_64) using  EditLine wrapper
+[34m[1mopenssl version[0m
+OpenSSL 1.0.2g  1 Mar 2016
+[34m[1mpacker version[0m
+1.3.3
+[34m[1mpostgresql client version[0m
+psql (PostgreSQL) 10.13 (Ubuntu 10.13-1.pgdg16.04+1)
+[34m[1mragel version[0m
+Ragel State Machine Compiler version 6.8 Feb 2013
+[34m[1msudo version[0m
+1.8.16
+[34m[1mgzip version[0m
+gzip 1.6
+[34m[1mzip version[0m
+Zip 3.0
+[34m[1mvim version[0m
+VIM - Vi IMproved 7.4 (2013 Aug 10, compiled Mar 18 2020 14:06:17)
+[34m[1miptables version[0m
+iptables v1.6.0
+[34m[1mcurl version[0m
+curl 7.47.0 (x86_64-pc-linux-gnu) libcurl/7.47.0 GnuTLS/3.4.10 zlib/1.2.8 libidn/1.32 librtmp/2.3
+[34m[1mwget version[0m
+GNU Wget 1.17.1 built on linux-gnu.
+[34m[1mrsync version[0m
+rsync  version 3.1.1  protocol version 31
+[34m[1mgimme version[0m
+v1.5.4
+[34m[1mnvm version[0m
+0.35.3
+[34m[1mperlbrew version[0m
+/home/travis/perl5/perlbrew/bin/perlbrew  - App::perlbrew/0.88
+[34m[1mphpenv version[0m
+rbenv 1.1.2-30-gc879cb0
+[34m[1mrvm version[0m
+rvm 1.29.10 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+[34m[1mdefault ruby version[0m
+ruby 2.5.3p105 (2018-10-18 revision 65156) [x86_64-linux]
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mElasticSearch version[0m
+5.5.0
+[34m[1mInstalled Firefox version[0m
+firefox 63.0.1
+[34m[1mMongoDB version[0m
+MongoDB 4.0.19
+[34m[1mPhantomJS version[0m
+2.1.1
+[34m[1mPre-installed PostgreSQL versions[0m
+9.4.26
+9.5.22
+9.6.18
+[34m[1mRedis version[0m
+redis-server 6.0.5
+[34m[1mPre-installed Go versions[0m
+1.11.1
+[34m[1mant version[0m
+Apache Ant(TM) version 1.9.6 compiled on July 20 2018
+[34m[1mmvn version[0m
+Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
+[34m[1mgradle version[0m
+Gradle 5.1.1!
+[34m[1mlein version[0m
+Leiningen 2.9.3 on Java 11.0.2 OpenJDK 64-Bit Server VM
+[34m[1mPre-installed Node.js versions[0m
+v10.21.0
+v11.0.0
+v12.18.1
+v4.9.1
+v6.17.1
+v8.12.0
+v8.17.0
+v8.9
+[34m[1mphpenv versions[0m
+  system
+  5.6
+  5.6.40
+  7.1
+  7.1.27
+  7.2
+* 7.2.15 (set by /home/travis/.phpenv/version)
+  hhvm
+  hhvm-stable
+[34m[1mcomposer --version[0m
+Composer version 1.8.4 2019-02-11 10:52:10
+[34m[1mPre-installed Ruby versions[0m
+ruby-2.3.8
+ruby-2.4.5
+ruby-2.5.3
+travis_fold:end:system_info
+[0K
+travis_time:end:1e625039:start=1604375836960310184,finish=1604375836967639203,duration=7329019,event=show_system_info
+[0Ktravis_time:start:0401b800
+[0Ktravis_time:end:0401b800:start=1604375836970439021,finish=1604375836989410428,duration=18971407,event=rm_riak_source
+[0Ktravis_time:start:02e8deba
+[0Ktravis_time:end:02e8deba:start=1604375836993032944,finish=1604375836999419480,duration=6386536,event=fix_rwky_redis
+[0Ktravis_time:start:1af22d0c
+[0Ktravis_time:end:1af22d0c:start=1604375837003126615,finish=1604375837705637727,duration=702511112,event=wait_for_network
+[0Ktravis_time:start:0bf1c0f2
+[0Ktravis_time:end:0bf1c0f2:start=1604375837711510491,finish=1604375837942628507,duration=231118016,event=update_apt_keys
+[0Ktravis_time:start:1fd9196b
+[0Ktravis_time:end:1fd9196b:start=1604375837946549611,finish=1604375837998362034,duration=51812423,event=fix_hhvm_source
+[0Ktravis_time:start:08aeaa44
+[0Ktravis_time:end:08aeaa44:start=1604375838002409957,finish=1604375838005805673,duration=3395716,event=update_mongo_arch
+[0Ktravis_time:start:0d498e7a
+[0Ktravis_time:end:0d498e7a:start=1604375838009596664,finish=1604375838048826282,duration=39229618,event=fix_sudo_enabled_trusty
+[0Ktravis_time:start:26b8c434
+[0Ktravis_time:end:26b8c434:start=1604375838053076600,finish=1604375838055248931,duration=2172331,event=update_glibc
+[0Ktravis_time:start:130e2d36
+[0Ktravis_time:end:130e2d36:start=1604375838059111392,finish=1604375838066675017,duration=7563625,event=clean_up_path
+[0Ktravis_time:start:1d1da278
+[0Ktravis_time:end:1d1da278:start=1604375838070432490,finish=1604375838079140607,duration=8708117,event=fix_resolv_conf
+[0Ktravis_time:start:0e90d7f5
+[0Ktravis_time:end:0e90d7f5:start=1604375838083238554,finish=1604375838091997993,duration=8759439,event=fix_etc_hosts
+[0Ktravis_time:start:0e423e92
+[0Ktravis_time:end:0e423e92:start=1604375838096251893,finish=1604375838108242294,duration=11990401,event=fix_mvn_settings_xml
+[0Ktravis_time:start:2786f55c
+[0Ktravis_time:end:2786f55c:start=1604375838113535228,finish=1604375838123090436,duration=9555208,event=no_ipv6_localhost
+[0Ktravis_time:start:026a9ba9
+[0Ktravis_time:end:026a9ba9:start=1604375838126668467,finish=1604375838129096180,duration=2427713,event=fix_etc_mavenrc
+[0Ktravis_time:start:022d878f
+[0Ktravis_time:end:022d878f:start=1604375838132872924,finish=1604375838135899612,duration=3026688,event=fix_wwdr_certificate
+[0Ktravis_time:start:35deafbc
+[0Ktravis_time:end:35deafbc:start=1604375838139287163,finish=1604375838163187222,duration=23900059,event=put_localhost_first
+[0Ktravis_time:start:199fb646
+[0Ktravis_time:end:199fb646:start=1604375838166905222,finish=1604375838170202766,duration=3297544,event=home_paths
+[0Ktravis_time:start:06d87238
+[0Ktravis_time:end:06d87238:start=1604375838173811091,finish=1604375838185817230,duration=12006139,event=disable_initramfs
+[0Ktravis_time:start:054e721c
+[0Ktravis_time:end:054e721c:start=1604375838190343469,finish=1604375838573611723,duration=383268254,event=disable_ssh_roaming
+[0Ktravis_time:start:0405dbca
+[0Ktravis_time:end:0405dbca:start=1604375838577763888,finish=1604375838580155206,duration=2391318,event=debug_tools
+[0Ktravis_time:start:28e37c86
+[0Ktravis_time:end:28e37c86:start=1604375838583991028,finish=1604375838587019377,duration=3028349,event=uninstall_oclint
+[0Ktravis_time:start:0e0f02a1
+[0Ktravis_time:end:0e0f02a1:start=1604375838591030200,finish=1604375838594093106,duration=3062906,event=rvm_use
+[0Ktravis_time:start:125353b8
+[0Ktravis_time:end:125353b8:start=1604375838597872348,finish=1604375838605566053,duration=7693705,event=rm_etc_boto_cfg
+[0Ktravis_time:start:03c9c582
+[0Ktravis_time:end:03c9c582:start=1604375838609616439,finish=1604375838614020483,duration=4404044,event=rm_oraclejdk8_symlink
+[0Ktravis_time:start:08edc124
+[0Ktravis_time:end:08edc124:start=1604375838617789229,finish=1604375838722235876,duration=104446647,event=enable_i386
+[0Ktravis_time:start:2f8bc967
+[0Ktravis_time:end:2f8bc967:start=1604375838726361510,finish=1604375838731674350,duration=5312840,event=update_rubygems
+[0Ktravis_time:start:0e243f44
+[0Ktravis_time:end:0e243f44:start=1604375838735742036,finish=1604375839557823165,duration=822081129,event=ensure_path_components
+[0Ktravis_time:start:0ae65540
+[0Ktravis_time:end:0ae65540:start=1604375839563328260,finish=1604375839565840793,duration=2512533,event=redefine_curl
+[0Ktravis_time:start:0c0ada22
+[0Ktravis_time:end:0c0ada22:start=1604375839569911661,finish=1604375839688693514,duration=118781853,event=nonblock_pipe
+[0Ktravis_time:start:04433bca
+[0Ktravis_time:end:04433bca:start=1604375839693872156,finish=1604375845724610427,duration=6030738271,event=apt_get_update
+[0Ktravis_time:start:01280f1c
+[0Ktravis_time:end:01280f1c:start=1604375845728916862,finish=1604375845731341889,duration=2425027,event=deprecate_xcode_64
+[0Ktravis_time:start:07b22b48
+[0Ktravis_time:end:07b22b48:start=1604375845735842352,finish=1604375848521173806,duration=2785331454,event=update_heroku
+[0Ktravis_time:start:01964108
+[0Ktravis_time:end:01964108:start=1604375848526089083,finish=1604375848528662265,duration=2573182,event=shell_session_update
+[0Ktravis_time:start:07a905cc
+[0Ktravis_fold:start:docker_mtu
+[0Ktravis_fold:end:docker_mtu
+[0Ktravis_time:end:07a905cc:start=1604375848532566209,finish=1604375850969178981,duration=2436612772,event=set_docker_mtu
+[0Ktravis_time:start:01353a21
+[0Ktravis_fold:start:resolvconf
+[0Ktravis_fold:end:resolvconf
+[0Ktravis_time:end:01353a21:start=1604375850973923052,finish=1604375851041811770,duration=67888718,event=resolvconf
+[0Ktravis_time:start:1d896c60
+[0Ktravis_time:end:1d896c60:start=1604375851048716974,finish=1604375851212121977,duration=163405003,event=maven_central_mirror
+[0Ktravis_time:start:0368b710
+[0Ktravis_time:end:0368b710:start=1604375851216616718,finish=1604375851310466618,duration=93849900,event=maven_https
+[0Ktravis_time:start:0670c1bc
+[0Ktravis_fold:start:services
+[0Ktravis_time:start:0972bd93
+[0K$ sudo systemctl start docker
+travis_time:end:0972bd93:start=1604375851318618916,finish=1604375851329625021,duration=11006105,event=prepare
+[0Ktravis_fold:end:services
+[0Ktravis_time:end:0972bd93:start=1604375851318618916,finish=1604375854334397453,duration=3015778537,event=services
+[0Ktravis_time:start:05466082
+[0Ktravis_time:end:05466082:start=1604375854338767467,finish=1604375854341707814,duration=2940347,event=fix_ps4
+[0Ktravis_time:start:0a5a9400
+[0K
+travis_fold:start:git.checkout
+[0Ktravis_time:start:00482be1
+[0K$ git clone --depth=50 --branch=master https://github.com/rylandtikes/docker-react.git rylandtikes/docker-react
+Cloning into 'rylandtikes/docker-react'...
+travis_time:end:00482be1:start=1604375854352199471,finish=1604375854941730738,duration=589531267,event=checkout
+[0K$ cd rylandtikes/docker-react
+$ git checkout -qf 4f42a6ab19a4283997a515e13811cc1766941206
+travis_fold:end:git.checkout
+[0K
+travis_time:end:00482be1:start=1604375854352199471,finish=1604375854952879468,duration=600679997,event=checkout
+[0Ktravis_time:start:02f6938e
+[0K
+[33;1mSetting environment variables from repository settings[0m
+$ export AWS_ACCESS_KEY=[secure]
+$ export AWS_SECRET_KEY=[secure]
+
+travis_time:end:02f6938e:start=1604375854958168751,finish=1604375854966896520,duration=8727769,event=env
+[0Ktravis_fold:start:rvm
+[0Ktravis_time:start:1c063d3d
+[0K$ rvm use default
+Using /home/travis/.rvm/gems/ruby-2.5.3
+travis_time:end:1c063d3d:start=1604375854975974412,finish=1604375855668907773,duration=692933361,event=setup
+[0Ktravis_fold:end:rvm
+[0K
+travis_fold:start:ruby.versions
+[0K$ ruby --version
+ruby 2.5.3p105 (2018-10-18 revision 65156) [x86_64-linux]
+$ rvm --version
+rvm 1.29.10 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+$ bundle --version
+Bundler version 2.1.4
+$ gem --version
+3.0.8
+travis_fold:end:ruby.versions
+[0K
+travis_fold:start:before_install
+[0Ktravis_time:start:14067e66
+[0K$ docker build -t rtikes/docker-react -f Dockerfile.dev .
+Sending build context to Docker daemon  590.8kB
+
+
+Step 1/6 : FROM node:alpine
+alpine: Pulling from library/node
+cbdbe7a5bc2a: Pulling fs layer
+c36334c36d30: Pulling fs layer
+dc731be5fee1: Pulling fs layer
+8a23f73dde1a: Pulling fs layer
+8a23f73dde1a: Waiting
+dc731be5fee1: Verifying Checksum
+dc731be5fee1: Download complete
+cbdbe7a5bc2a: Verifying Checksum
+cbdbe7a5bc2a: Download complete
+8a23f73dde1a: Verifying Checksum
+8a23f73dde1a: Download complete
+cbdbe7a5bc2a: Pull complete
+c36334c36d30: Verifying Checksum
+c36334c36d30: Download complete
+c36334c36d30: Pull complete
+dc731be5fee1: Pull complete
+8a23f73dde1a: Pull complete
+Digest: sha256:90dfaf5806a607e81cc81b42b474626612c9271eee7a4fc6644ce6299348425a
+Status: Downloaded newer image for node:alpine
+ ---> 1e8b781248bb
+Step 2/6 : WORKDIR '/app'
+ ---> Running in 9ad458134204
+Removing intermediate container 9ad458134204
+ ---> 3574815f58b6
+Step 3/6 : COPY package.json .
+ ---> 422abfd4068a
+Step 4/6 : RUN npm install
+ ---> Running in cfde766e671a
+[91mnpm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+[0m[91mnpm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+[0m[91mnpm WARN [0m[91mdeprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+[0m[91mnpm WARN deprecated har-validator@5.1.5: this library is no longer supported
+[0m[91mnpm WARN deprecated sw-precache@5.2.1: Please migrate to Workbox: https://developers.google.com/web/tools/workbox/guides/migrations/migrate-from-sw
+[0m[91mnpm WARN[0m[91m deprecated browserslist@1.7.7: Browserslist 2 could fail on reading Browserslist >3.0 config used in other tools.
+[0m[91mnpm WARN deprecated sw-toolbox@3.6.0: Please migrate to Workbox: https://developers.google.com/web/tools/workbox/guides/migrations/migrate-from-sw
+[0m[91mnpm WARN deprecated circular-json@0.3.3: CircularJSON is in maintenance only, flatted is its successor.
+[0m[91mnpm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+[0m[91mnpm [0m[91mWARN deprecated browserslist@1.7.7: Browserslist 2 could fail on reading Browserslist >3.0 config used in other tools.
+[0m[91mnpm WARN deprecated browserslist@1.7.7: Browserslist 2 could fail on reading Browserslist >3.0 config used in other tools.
+[0m[91mnpm WARN deprecated browserslist@2.11.3: Browserslist 2 could fail on reading Browserslist >3.0 config used in other tools.
+[0m[91mnpm WARN[0m[91m deprecated eslint-loader@1.9.0: This loader has been deprecated. Please use eslint-webpack-plugin
+[0m[91mnpm WARN deprecated[0m[91m fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+[0m[91mnpm WARN deprecated extract-text-webpack-plugin@3.0.2: Deprecated. Please use https://github.com/webpack-contrib/mini-css-extract-plugin
+[0m[91mnpm WARN deprecated[0m[91m chokidar@1.7.0: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+[0m[91mnpm WARN deprecated[0m[91m core-js@2.6.11: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
+[0m
+added 1354 packages, and audited 1354 packages in 57s
+
+32 packages are looking for funding
+  run `npm fund` for details
+
+35 vulnerabilities (29 low, 6 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+[91mnpm notice 
+npm notice New patch version of npm available! 7.0.3 -> 7.0.7
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v7.0.7>
+npm notice Run `npm install -g npm@7.0.7` to update!
+npm notice 
+[0mRemoving intermediate container cfde766e671a
+ ---> 4911907e2f6b
+Step 5/6 : COPY . .
+ ---> 53fc024dc316
+Step 6/6 : CMD ["npm", "run", "start"]
+ ---> Running in 710cd3f2b128
+Removing intermediate container 710cd3f2b128
+ ---> aa333148323c
+Successfully built aa333148323c
+Successfully tagged rtikes/docker-react:latest
+travis_time:end:14067e66:start=1604375856165430403,finish=1604375926799764102,duration=70634333699,event=before_install
+[0Ktravis_fold:end:before_install
+[0KNo Gemfile found, skipping bundle install
+
+travis_time:start:163cfca6
+[0K$ docker run -e CI=true rtikes/docker-react npm run test
+
+> frontend@0.1.0 test
+> react-scripts test --env=jsdom
+
+ PASS  src/App.test.js
+  âœ“ renders without crashing (20ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        0.89s
+Ran all test suites.
+travis_time:end:163cfca6:start=1604375926804801430,finish=1604375929149100396,duration=2344298966,event=script
+[0K[32;1mThe command "docker run -e CI=true rtikes/docker-react npm run test" exited with 0.[0m
+
+travis_fold:start:dpl_0
+[0Ktravis_time:start:145140de
+[0K$ rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install dpl
+Successfully installed dpl-1.10.15
+1 gem installed
+travis_time:end:145140de:start=1604375930365659903,finish=1604375931734256235,duration=1368596332,event=after_success
+[0Ktravis_fold:end:dpl_0
+[0Ktravis_time:start:15ad36c0
+[0Ktravis_fold:start:dpl.1
+[33mInstalling deploy dependencies[0m
+Successfully installed jmespath-1.4.0
+Successfully installed aws-eventstream-1.1.0
+Successfully installed aws-sigv4-1.2.2
+AWS SDK For Ruby V2 has been marked as deprecated. Please upgrade to AWS SDK For Ruby V3.
+Successfully installed aws-sdk-core-2.11.618
+AWS SDK For Ruby V2 has been marked as deprecated. Please upgrade to AWS SDK For Ruby V3.
+Successfully installed aws-sdk-resources-2.11.618
+AWS SDK For Ruby V2 has been marked as deprecated. Please upgrade to AWS SDK For Ruby V3.
+Successfully installed aws-sdk-2.11.618
+Successfully installed rubyzip-1.3.0
+Successfully installed dpl-elastic_beanstalk-1.10.15
+8 gems installed
+
+!!! AWS Elastic Beanstalk support is experimental !!!
+
+
+travis_fold:end:dpl.1
+travis_fold:start:dpl.2
+[33mPreparing deploy[0m
+Cleaning up git repository with `git stash --all`. If you need build artifacts for deployment, set `deploy.skip_cleanup: true`. See https://docs.travis-ci.com/user/deployment#Uploading-Files-and-skip_cleanup.
+No local changes to save
+Version 2 of the Ruby SDK will enter maintenance mode as of November 20, 2020. To continue receiving service updates and new features, please upgrade to Version 3. More information can be found here: https://aws.amazon.com/blogs/developer/deprecation-schedule-for-aws-sdk-for-ruby-v2/
+
+travis_fold:end:dpl.2
+travis_fold:start:dpl.3
+[33mDeploying application[0m
+
+travis_fold:end:dpl.3
+No stash entries found.
+travis_time:end:15ad36c0:start=1604375931741540210,finish=1604375942618489344,duration=10876949134,event=after_success
+[0K
+Done. Your build exited with 0.
