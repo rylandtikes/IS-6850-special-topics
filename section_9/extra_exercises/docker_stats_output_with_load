@@ -1,0 +1,7 @@
+CONTAINER ID        NAME                 CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4f07df8c1f7f        complex_nginx_1      9.16%               2.383MiB / 1.941GiB   0.12%               36.1MB / 35.9MB     0B / 0B             2
+e82abfbe5be7        complex_api_1        33.37%              73.67MiB / 1.941GiB   3.71%               29.1MB / 18.4MB     36.9kB / 8.19kB     33
+67dd94362dc0        complex_worker_1     101.26%             51.66MiB / 1.941GiB   2.60%               2.51MB / 2.51MB     0B / 8.19kB         33
+1a4bfbfb0e40        complex_client_1     0.00%               139MiB / 1.941GiB     6.99%               86.2kB / 56.2kB     0B / 4.1kB          29
+e5bade886bde        complex_redis_1      2.59%               2.281MiB / 1.941GiB   0.11%               6.11MB / 4.67MB     69.6kB / 24.6kB     5
+7ad2f2ef4158        complex_postgres_1   8.88%               8.707MiB / 1.941GiB   0.44%               3.5MB / 2.79MB      77.8kB / 129MB      9
