@@ -1,0 +1,703 @@
+travis_fold:start:worker_info
+[0K[33;1mWorker information[0m
+hostname: 5db5e118-7585-4feb-a6bd-714bd615cea9@1.worker-org-cfdfb76bd-9cd48.gce-production-4
+version: v6.2.20-1-g3a987d6 https://github.com/travis-ci/worker/tree/3a987d61ed169c9539ad435d1a9b5f2d8c6ce4a6
+instance: travis-job-67da17f9-7fca-44c7-8e98-6f5a810c5531 travis-ci-sardonyx-xenial-1593004276-4d46c6b3 (via amqp)
+startup: 6.053312708s
+travis_fold:end:worker_info
+[0Ktravis_time:start:0185c580
+[0Ktravis_time:end:0185c580:start=1605134699942296127,finish=1605134700084462256,duration=142166129,event=no_world_writable_dirs
+[0Ktravis_time:start:09995f15
+[0Ktravis_time:end:09995f15:start=1605134700087172607,finish=1605134700089854886,duration=2682279,event=setup_filter
+[0Ktravis_time:start:0526134c
+[0Ktravis_time:end:0526134c:start=1605134700094202219,finish=1605134700102254053,duration=8051834,event=agent
+[0Ktravis_time:start:04eba768
+[0Ktravis_time:end:04eba768:start=1605134700104954268,finish=1605134700107030183,duration=2075915,event=check_unsupported
+[0Ktravis_time:start:0e48b148
+[0Ktravis_fold:start:system_info
+[0K[33;1mBuild system information[0m
+Build language: generic
+Build dist: xenial
+Build id: 743045442
+Job id: 743045443
+Runtime kernel version: 4.15.0-1077-gcp
+travis-build version: 07c42db3
+[34m[1mBuild image provisioning date and time[0m
+Wed Jun 24 13:36:52 UTC 2020
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 16.04.6 LTS
+Release:	16.04
+Codename:	xenial
+[34m[1mSystemd Version[0m
+systemd 229
+[34m[1mCookbooks Version[0m
+3f92a99 https://github.com/travis-ci/travis-cookbooks/tree/3f92a99
+[34m[1mgit version[0m
+git version 2.27.0
+[34m[1mbash version[0m
+GNU bash, version 4.3.48(1)-release (x86_64-pc-linux-gnu)
+[34m[1mgcc version[0m
+gcc (Ubuntu 5.4.0-6ubuntu1~16.04.12) 5.4.0 20160609
+[34m[1mdocker version[0m
+Client:
+ Version:           18.06.0-ce
+ API version:       1.38
+ Go version:        go1.10.3
+ Git commit:        0ffa825
+ Built:             Wed Jul 18 19:11:02 2018
+ OS/Arch:           linux/amd64
+ Experimental:      false
+
+Server:
+ Engine:
+  Version:          18.06.0-ce
+  API version:      1.38 (minimum version 1.12)
+  Go version:       go1.10.3
+  Git commit:       0ffa825
+  Built:            Wed Jul 18 19:09:05 2018
+  OS/Arch:          linux/amd64
+  Experimental:     false
+[34m[1mclang version[0m
+clang version 7.0.0 (tags/RELEASE_700/final)
+[34m[1mjq version[0m
+jq-1.5
+[34m[1mbats version[0m
+Bats 0.4.0
+[34m[1mshellcheck version[0m
+0.7.0
+[34m[1mshfmt version[0m
+v2.6.3
+[34m[1mccache version[0m
+3.2.4
+[34m[1mcmake version[0m
+cmake version 3.12.4
+[34m[1mheroku version[0m
+heroku/7.42.1 linux-x64 node-v12.16.2
+[34m[1mimagemagick version[0m
+Version: ImageMagick 6.8.9-9 Q16 x86_64 2019-11-12 http://www.imagemagick.org
+[34m[1mmd5deep version[0m
+4.4
+[34m[1mmercurial version[0m
+version 4.8
+[34m[1mmysql version[0m
+mysql  Ver 14.14 Distrib 5.7.30, for Linux (x86_64) using  EditLine wrapper
+[34m[1mopenssl version[0m
+OpenSSL 1.0.2g  1 Mar 2016
+[34m[1mpacker version[0m
+1.3.3
+[34m[1mpostgresql client version[0m
+psql (PostgreSQL) 10.13 (Ubuntu 10.13-1.pgdg16.04+1)
+[34m[1mragel version[0m
+Ragel State Machine Compiler version 6.8 Feb 2013
+[34m[1msudo version[0m
+1.8.16
+[34m[1mgzip version[0m
+gzip 1.6
+[34m[1mzip version[0m
+Zip 3.0
+[34m[1mvim version[0m
+VIM - Vi IMproved 7.4 (2013 Aug 10, compiled Mar 18 2020 14:06:17)
+[34m[1miptables version[0m
+iptables v1.6.0
+[34m[1mcurl version[0m
+curl 7.47.0 (x86_64-pc-linux-gnu) libcurl/7.47.0 GnuTLS/3.4.10 zlib/1.2.8 libidn/1.32 librtmp/2.3
+[34m[1mwget version[0m
+GNU Wget 1.17.1 built on linux-gnu.
+[34m[1mrsync version[0m
+rsync  version 3.1.1  protocol version 31
+[34m[1mgimme version[0m
+v1.5.4
+[34m[1mnvm version[0m
+0.35.3
+[34m[1mperlbrew version[0m
+/home/travis/perl5/perlbrew/bin/perlbrew  - App::perlbrew/0.88
+[34m[1mphpenv version[0m
+rbenv 1.1.2-30-gc879cb0
+[34m[1mrvm version[0m
+rvm 1.29.10 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+[34m[1mdefault ruby version[0m
+ruby 2.5.3p105 (2018-10-18 revision 65156) [x86_64-linux]
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mElasticSearch version[0m
+5.5.0
+[34m[1mInstalled Firefox version[0m
+firefox 63.0.1
+[34m[1mMongoDB version[0m
+MongoDB 4.0.19
+[34m[1mPhantomJS version[0m
+2.1.1
+[34m[1mPre-installed PostgreSQL versions[0m
+9.4.26
+9.5.22
+9.6.18
+[34m[1mRedis version[0m
+redis-server 6.0.5
+[34m[1mPre-installed Go versions[0m
+1.11.1
+[34m[1mant version[0m
+Apache Ant(TM) version 1.9.6 compiled on July 20 2018
+[34m[1mmvn version[0m
+Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
+[34m[1mgradle version[0m
+Gradle 5.1.1!
+[34m[1mlein version[0m
+Leiningen 2.9.3 on Java 11.0.2 OpenJDK 64-Bit Server VM
+[34m[1mPre-installed Node.js versions[0m
+v10.21.0
+v11.0.0
+v12.18.1
+v4.9.1
+v6.17.1
+v8.12.0
+v8.17.0
+v8.9
+[34m[1mphpenv versions[0m
+  system
+  5.6
+  5.6.40
+  7.1
+  7.1.27
+  7.2
+* 7.2.15 (set by /home/travis/.phpenv/version)
+  hhvm
+  hhvm-stable
+[34m[1mcomposer --version[0m
+Composer version 1.8.4 2019-02-11 10:52:10
+[34m[1mPre-installed Ruby versions[0m
+ruby-2.3.8
+ruby-2.4.5
+ruby-2.5.3
+travis_fold:end:system_info
+[0K
+travis_time:end:0e48b148:start=1605134700109722855,finish=1605134700114558497,duration=4835642,event=show_system_info
+[0Ktravis_time:start:02413d9c
+[0Ktravis_time:end:02413d9c:start=1605134700117123359,finish=1605134700127739344,duration=10615985,event=rm_riak_source
+[0Ktravis_time:start:0a879b6c
+[0Ktravis_time:end:0a879b6c:start=1605134700131880908,finish=1605134700137953646,duration=6072738,event=fix_rwky_redis
+[0Ktravis_time:start:02818812
+[0Ktravis_time:end:02818812:start=1605134700141310119,finish=1605134700941981712,duration=800671593,event=wait_for_network
+[0Ktravis_time:start:00c5d828
+[0Ktravis_time:end:00c5d828:start=1605134700946860860,finish=1605134701181623135,duration=234762275,event=update_apt_keys
+[0Ktravis_time:start:19cd263b
+[0Ktravis_time:end:19cd263b:start=1605134701189382232,finish=1605134701244164114,duration=54781882,event=fix_hhvm_source
+[0Ktravis_time:start:04a15728
+[0Ktravis_time:end:04a15728:start=1605134701248760715,finish=1605134701251641752,duration=2881037,event=update_mongo_arch
+[0Ktravis_time:start:0a10a117
+[0Ktravis_time:end:0a10a117:start=1605134701255531771,finish=1605134701297018478,duration=41486707,event=fix_sudo_enabled_trusty
+[0Ktravis_time:start:0019a150
+[0Ktravis_time:end:0019a150:start=1605134701303883972,finish=1605134701306895637,duration=3011665,event=update_glibc
+[0Ktravis_time:start:079f7958
+[0Ktravis_time:end:079f7958:start=1605134701314006803,finish=1605134701323607685,duration=9600882,event=clean_up_path
+[0Ktravis_time:start:0d803a70
+[0Ktravis_time:end:0d803a70:start=1605134701330637149,finish=1605134701339363725,duration=8726576,event=fix_resolv_conf
+[0Ktravis_time:start:1a024bc0
+[0Ktravis_time:end:1a024bc0:start=1605134701345024080,finish=1605134701354860114,duration=9836034,event=fix_etc_hosts
+[0Ktravis_time:start:25a2b4bb
+[0Ktravis_time:end:25a2b4bb:start=1605134701360468325,finish=1605134701383579109,duration=23110784,event=fix_mvn_settings_xml
+[0Ktravis_time:start:1b065748
+[0Ktravis_time:end:1b065748:start=1605134701388412769,finish=1605134701398240902,duration=9828133,event=no_ipv6_localhost
+[0Ktravis_time:start:1198da30
+[0Ktravis_time:end:1198da30:start=1605134701404420601,finish=1605134701407397223,duration=2976622,event=fix_etc_mavenrc
+[0Ktravis_time:start:120e392e
+[0Ktravis_time:end:120e392e:start=1605134701413081839,finish=1605134701416301692,duration=3219853,event=fix_wwdr_certificate
+[0Ktravis_time:start:099c2350
+[0Ktravis_time:end:099c2350:start=1605134701419931124,finish=1605134701442726424,duration=22795300,event=put_localhost_first
+[0Ktravis_time:start:042efe16
+[0Ktravis_time:end:042efe16:start=1605134701449494073,finish=1605134701453835911,duration=4341838,event=home_paths
+[0Ktravis_time:start:01c9533f
+[0Ktravis_time:end:01c9533f:start=1605134701459766889,finish=1605134701471484396,duration=11717507,event=disable_initramfs
+[0Ktravis_time:start:0c991c20
+[0Ktravis_time:end:0c991c20:start=1605134701478538140,finish=1605134701830692681,duration=352154541,event=disable_ssh_roaming
+[0Ktravis_time:start:1336cad0
+[0Ktravis_time:end:1336cad0:start=1605134701838600115,finish=1605134701842594564,duration=3994449,event=debug_tools
+[0Ktravis_time:start:08725e12
+[0Ktravis_time:end:08725e12:start=1605134701849628328,finish=1605134701853857478,duration=4229150,event=uninstall_oclint
+[0Ktravis_time:start:03b290e6
+[0Ktravis_time:end:03b290e6:start=1605134701858539109,finish=1605134701862366734,duration=3827625,event=rvm_use
+[0Ktravis_time:start:003ffd1a
+[0Ktravis_time:end:003ffd1a:start=1605134701870033406,finish=1605134701878999766,duration=8966360,event=rm_etc_boto_cfg
+[0Ktravis_time:start:21d04c04
+[0Ktravis_time:end:21d04c04:start=1605134701885072490,finish=1605134701889299541,duration=4227051,event=rm_oraclejdk8_symlink
+[0Ktravis_time:start:1bfca6aa
+[0Ktravis_time:end:1bfca6aa:start=1605134701896355399,finish=1605134701993967206,duration=97611807,event=enable_i386
+[0Ktravis_time:start:02042e08
+[0Ktravis_time:end:02042e08:start=1605134701998328158,finish=1605134702003557575,duration=5229417,event=update_rubygems
+[0Ktravis_time:start:08dafedc
+[0Ktravis_time:end:08dafedc:start=1605134702008429215,finish=1605134702817099918,duration=808670703,event=ensure_path_components
+[0Ktravis_time:start:2c7fd089
+[0Ktravis_time:end:2c7fd089:start=1605134702823082355,finish=1605134702825785680,duration=2703325,event=redefine_curl
+[0Ktravis_time:start:0aab60cb
+[0Ktravis_time:end:0aab60cb:start=1605134702831691521,finish=1605134702930624306,duration=98932785,event=nonblock_pipe
+[0Ktravis_time:start:28abfa60
+[0Ktravis_time:end:28abfa60:start=1605134702936623686,finish=1605134708970511771,duration=6033888085,event=apt_get_update
+[0Ktravis_time:start:0f1cd94e
+[0Ktravis_time:end:0f1cd94e:start=1605134708975455309,finish=1605134708978000427,duration=2545118,event=deprecate_xcode_64
+[0Ktravis_time:start:3061be66
+[0Ktravis_time:end:3061be66:start=1605134708981943853,finish=1605134711713810373,duration=2731866520,event=update_heroku
+[0Ktravis_time:start:076b188c
+[0Ktravis_time:end:076b188c:start=1605134711718958354,finish=1605134711721482432,duration=2524078,event=shell_session_update
+[0Ktravis_time:start:0aff96db
+[0Ktravis_fold:start:docker_mtu_and_registry_mirrors
+[0Ktravis_fold:end:docker_mtu_and_registry_mirrors
+[0Ktravis_time:end:0aff96db:start=1605134711726421977,finish=1605134714294300069,duration=2567878092,event=set_docker_mtu_and_registry_mirrors
+[0Ktravis_time:start:0c26b761
+[0Ktravis_fold:start:resolvconf
+[0Ktravis_fold:end:resolvconf
+[0Ktravis_time:end:0c26b761:start=1605134714300748750,finish=1605134714366363898,duration=65615148,event=resolvconf
+[0Ktravis_time:start:02c77c3c
+[0Ktravis_time:end:02c77c3c:start=1605134714377044412,finish=1605134714519864868,duration=142820456,event=maven_central_mirror
+[0Ktravis_time:start:03a6bfd8
+[0Ktravis_time:end:03a6bfd8:start=1605134714524584732,finish=1605134714615153725,duration=90568993,event=maven_https
+[0Ktravis_time:start:06c5443e
+[0Ktravis_fold:start:services
+[0Ktravis_time:start:020d5333
+[0K$ sudo systemctl start docker
+travis_time:end:020d5333:start=1605134714623466842,finish=1605134714634848326,duration=11381484,event=prepare
+[0Ktravis_fold:end:services
+[0Ktravis_time:end:020d5333:start=1605134714623466842,finish=1605134717641146504,duration=3017679662,event=services
+[0Ktravis_time:start:05d63171
+[0Ktravis_time:end:05d63171:start=1605134717645807942,finish=1605134717648682488,duration=2874546,event=fix_ps4
+[0Ktravis_time:start:0012d4b2
+[0K
+travis_fold:start:git.checkout
+[0Ktravis_time:start:39f39483
+[0K$ git clone --depth=50 --branch=main https://github.com/rylandtikes/multi-docker.git rylandtikes/multi-docker
+Cloning into 'rylandtikes/multi-docker'...
+travis_time:end:39f39483:start=1605134717657038532,finish=1605134718182895216,duration=525856684,event=checkout
+[0K$ cd rylandtikes/multi-docker
+$ git checkout -qf 91e76c7f503b75e036f1f0f80f650bb018b54459
+travis_fold:end:git.checkout
+[0K
+travis_time:end:39f39483:start=1605134717657038532,finish=1605134718191651361,duration=534612829,event=checkout
+[0Ktravis_time:start:1064151b
+[0K
+[33;1mSetting environment variables from repository settings[0m
+$ export DOCKER_ID=[secure]
+$ export DOCKER_PASSWORD=[secure]
+$ export AWS_ACCESS_KEY=[secure]
+$ export AWS_SECRET_KEY=[secure]
+
+travis_time:end:1064151b:start=1605134718196054101,finish=1605134718204153917,duration=8099816,event=env
+[0K$ bash -c 'echo $BASH_VERSION'
+4.3.48(1)-release
+
+travis_fold:start:before_install
+[0Ktravis_time:start:1e57da52
+[0K$ docker build -t [secure]/react-test -f ./client/Dockerfile.dev ./client
+Sending build context to Docker daemon  56.83kB
+
+
+Step 1/6 : FROM node:alpine
+alpine: Pulling from library/node
+cbdbe7a5bc2a: Pulling fs layer
+a4b151823ee6: Pulling fs layer
+d82c29f67600: Pulling fs layer
+26f4460e3393: Pulling fs layer
+26f4460e3393: Waiting
+d82c29f67600: Verifying Checksum
+d82c29f67600: Download complete
+cbdbe7a5bc2a: Verifying Checksum
+cbdbe7a5bc2a: Download complete
+cbdbe7a5bc2a: Pull complete
+26f4460e3393: Verifying Checksum
+26f4460e3393: Download complete
+a4b151823ee6: Verifying Checksum
+a4b151823ee6: Download complete
+a4b151823ee6: Pull complete
+d82c29f67600: Pull complete
+26f4460e3393: Pull complete
+Digest: sha256:9b29750f00565f816a10b9aa9a5420c733164b59f72270360a18dce1af80183d
+Status: Downloaded newer image for node:alpine
+ ---> b3dce3e0529f
+Step 2/6 : WORKDIR "/app"
+ ---> Running in a45e1f632981
+Removing intermediate container a45e1f632981
+ ---> 0d9fc2459b15
+Step 3/6 : COPY ./package.json ./
+ ---> a6c21d092156
+Step 4/6 : RUN npm install
+ ---> Running in 58621497e6aa
+[91mnpm WARN [0m[91mdeprecated @hapi/topo@3.1.6: This version has been deprecated and is no longer supported or maintained
+[0m[91mnpm WARN deprecated @hapi/bourne@1.3.2: This version has been deprecated and is no longer supported or maintained
+[0m[91mnpm WARN deprecated @hapi/address@2.1.4: Moved to 'npm install @sideway/address'
+[0m[91mnpm WARN deprecated @hapi/hoek@8.5.1: This version has been deprecated and is no longer supported or maintained
+[0m[91mnpm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+[0m[91mnpm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+[0m[91mnpm WARN deprecated[0m[91m resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+[0m[91mnpm[0m[91m WARN deprecated @hapi/joi@15.1.1: Switch to 'npm install joi'
+[0m[91mnpm WARN [0m[91mdeprecated har-validator@5.1.5: this library is no longer supported
+[0m[91mnpm WARN deprecated request-promise-native@1.0.9: request-promise-native has been deprecated because it extends the now deprecated request package, see https://github.com/request/request/issues/3142
+[0m[91mnpm WARN [0m[91mdeprecated left-pad@1.3.0: use String.prototype.padStart()
+[0m[91mnpm WARN deprecated[0m[91m request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+[0m[91mnpm WARN [0m[91mdeprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+[0m[91mnpm WARN [0m[91mdeprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+[0m[91mnpm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+[0m[91mnpm WARN deprecated fsevents@2.1.2: Please update to latest version
+[0m[91mnpm WARN [0m[91mdeprecated eslint-loader@3.0.3: This loader has been deprecated. Please use eslint-webpack-plugin
+[0m[91mnpm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+[0m[91mnpm WARN deprecated @types/testing-library__dom@7.5.0: This is a stub types definition. testing-library__dom provides its own type definitions, so you do not need this installed.
+[0m[91mnpm WARN [0m[91mdeprecated core-js@2.6.11: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
+[0m
+added 1963 packages, and audited 1963 packages in 59s
+
+76 packages are looking for funding
+  run `npm fund` for details
+
+5 vulnerabilities (1 moderate, 4 high)
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+[91mnpm notice 
+npm notice New patch version of npm available! 7.0.8 -> 7.0.10
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v7.0.10>
+npm notice Run `npm install -g npm@7.0.10` to update!
+npm notice 
+[0mRemoving intermediate container 58621497e6aa
+ ---> 9ebadbbe5baa
+Step 5/6 : COPY . .
+ ---> 2363bae5effb
+Step 6/6 : CMD ["npm", "run", "start"]
+ ---> Running in ddd3673269e5
+Removing intermediate container ddd3673269e5
+ ---> 8c5e4e4fd45d
+Successfully built 8c5e4e4fd45d
+Successfully tagged [secure]/react-test:latest
+travis_time:end:1e57da52:start=1605134718210971913,finish=1605134797199680206,duration=78988708293,event=before_install
+[0Ktravis_fold:end:before_install
+[0Ktravis_time:start:01067820
+[0K$ docker run -e CI=true [secure]/react-test npm test
+
+> client@0.1.0 test
+> react-scripts test
+
+PASS src/App.test.js
+  âœ“ renders learn react link (2ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        2.101s
+Ran all test suites.
+travis_time:end:01067820:start=1605134797207017749,finish=1605134800887590125,duration=3680572376,event=script
+[0K[32;1mThe command "docker run -e CI=true [secure]/react-test npm test" exited with 0.[0m
+
+travis_fold:start:after_success.1
+[0Ktravis_time:start:0267240c
+[0K$ docker build -t [secure]/multi-client ./client
+Sending build context to Docker daemon  56.83kB
+
+
+Step 1/10 : FROM node:alpine as builder
+ ---> b3dce3e0529f
+Step 2/10 : WORKDIR '/app'
+ ---> Using cache
+ ---> 0d9fc2459b15
+Step 3/10 : COPY ./package.json ./
+ ---> Using cache
+ ---> a6c21d092156
+Step 4/10 : RUN npm install
+ ---> Using cache
+ ---> 9ebadbbe5baa
+Step 5/10 : COPY . .
+ ---> Using cache
+ ---> 2363bae5effb
+Step 6/10 : RUN npm run build
+ ---> Running in 537def36bd9e
+
+> client@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  52.33 KB  build/static/js/2.04c3c698.chunk.js
+  1.43 KB   build/static/js/main.ab440445.chunk.js
+  773 B     build/static/js/runtime-main.09b85ec0.js
+  531 B     build/static/css/main.435d5fe5.chunk.css
+
+The project was built assuming it is hosted at /.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  npm install -g serve
+  serve -s build
+
+Find out more about deployment here:
+
+  bit.ly/CRA-deploy
+
+Removing intermediate container 537def36bd9e
+ ---> e9c7bd08215c
+Step 7/10 : FROM nginx
+latest: Pulling from library/nginx
+bb79b6b2107f: Pulling fs layer
+5a9f1c0027a7: Pulling fs layer
+b5c20b2b484f: Pulling fs layer
+166a2418f7e8: Pulling fs layer
+1966ea362d23: Pulling fs layer
+166a2418f7e8: Waiting
+1966ea362d23: Waiting
+b5c20b2b484f: Verifying Checksum
+b5c20b2b484f: Download complete
+166a2418f7e8: Verifying Checksum
+166a2418f7e8: Download complete
+1966ea362d23: Verifying Checksum
+1966ea362d23: Download complete
+5a9f1c0027a7: Verifying Checksum
+5a9f1c0027a7: Download complete
+bb79b6b2107f: Verifying Checksum
+bb79b6b2107f: Download complete
+bb79b6b2107f: Pull complete
+5a9f1c0027a7: Pull complete
+b5c20b2b484f: Pull complete
+166a2418f7e8: Pull complete
+1966ea362d23: Pull complete
+Digest: sha256:aeade65e99e5d5e7ce162833636f692354c227ff438556e5f3ed0335b7cc2f1b
+Status: Downloaded newer image for nginx:latest
+ ---> c39a868aad02
+Step 8/10 : EXPOSE 3000
+ ---> Running in 525801bf46d3
+Removing intermediate container 525801bf46d3
+ ---> 3c8c76a9a6e2
+Step 9/10 : COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+ ---> 27434684e18c
+Step 10/10 : COPY --from=builder /app/build /usr/share/nginx/html
+ ---> 99eb7f419b32
+Successfully built 99eb7f419b32
+Successfully tagged [secure]/multi-client:latest
+travis_time:end:0267240c:start=1605134800897160524,finish=1605134818283467941,duration=17386307417,event=after_success
+[0Ktravis_fold:end:after_success.1
+[0Ktravis_fold:start:after_success.2
+[0Ktravis_time:start:198b895d
+[0K$ docker build -t [secure]/multi-nginx ./nginx
+Sending build context to Docker daemon  4.096kB
+
+
+Step 1/2 : FROM nginx
+ ---> c39a868aad02
+Step 2/2 : COPY ./default.conf /etc/nginx/conf.d/default.conf
+ ---> fd87b1f9232b
+Successfully built fd87b1f9232b
+Successfully tagged [secure]/multi-nginx:latest
+travis_time:end:198b895d:start=1605134818294318920,finish=1605134818587333396,duration=293014476,event=after_success
+[0Ktravis_fold:end:after_success.2
+[0Ktravis_fold:start:after_success.3
+[0Ktravis_time:start:027992fa
+[0K$ docker build -t [secure]/multi-server ./server
+Sending build context to Docker daemon   7.68kB
+
+
+Step 1/6 : FROM node:14.14.0-alpine
+14.14.0-alpine: Pulling from library/node
+cbdbe7a5bc2a: Already exists
+378c9540b231: Pulling fs layer
+fd5173d17220: Pulling fs layer
+72f138d46980: Pulling fs layer
+72f138d46980: Verifying Checksum
+72f138d46980: Download complete
+fd5173d17220: Verifying Checksum
+fd5173d17220: Download complete
+378c9540b231: Download complete
+378c9540b231: Pull complete
+fd5173d17220: Pull complete
+72f138d46980: Pull complete
+Digest: sha256:97c4cddbbf97299f5eda09946ba31d424c84848d4f4c1b7adef40e2e0d478345
+Status: Downloaded newer image for node:14.14.0-alpine
+ ---> fa2fa5d4e6f4
+Step 2/6 : WORKDIR "/app"
+ ---> Running in e0a93cff572c
+Removing intermediate container e0a93cff572c
+ ---> e6287509c26b
+Step 3/6 : COPY ./package.json ./
+ ---> 721a08ba1fec
+Step 4/6 : RUN npm install
+ ---> Running in f2c62c4fec2c
+[91mnpm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+[0m[91mnpm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+[0m[91mnpm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+[0m[91mnpm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+[0m
+> nodemon@1.18.3 postinstall /app/node_modules/nodemon
+> node bin/postinstall || exit 0
+
+[32mLove nodemon? You can now support the project via the open collective:[22m[39m
+ > [96m[1mhttps://opencollective.com/nodemon/donate[0m
+
+[91mnpm[0m[91m notice[0m[91m created a lockfile as package-lock.json. You should commit this file.
+[0m[91mnpm[0m[91m [0m[91mWARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules/chokidar/node_modules/fsevents):
+npm[0m[91m WARN[0m[91m [0m[91mnotsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+[0m[91mnpm WARN app No description
+[0m[91mnpm WARN app No repository field.
+[0m[91mnpm WARN app No license field.
+[0m[91m
+[0madded 305 packages from 192 contributors and audited 306 packages in 6.219s
+found 0 vulnerabilities
+
+Removing intermediate container f2c62c4fec2c
+ ---> 2947092e178f
+Step 5/6 : COPY . .
+ ---> 8b86cf8dfbd5
+Step 6/6 : CMD ["npm", "run", "start"]
+ ---> Running in 8e439c1fb9e8
+Removing intermediate container 8e439c1fb9e8
+ ---> 275528576a9d
+Successfully built 275528576a9d
+Successfully tagged [secure]/multi-server:latest
+travis_time:end:027992fa:start=1605134818592986356,finish=1605134832010814758,duration=13417828402,event=after_success
+[0Ktravis_fold:end:after_success.3
+[0Ktravis_fold:start:after_success.4
+[0Ktravis_time:start:3a0c77c8
+[0K$ docker build -t [secure]/multi-worker ./worker
+Sending build context to Docker daemon  6.144kB
+
+
+Step 1/6 : FROM node:alpine
+ ---> b3dce3e0529f
+Step 2/6 : WORKDIR "/app"
+ ---> Using cache
+ ---> 0d9fc2459b15
+Step 3/6 : COPY ./package.json ./
+ ---> 8cc0121dc1e0
+Step 4/6 : RUN npm install
+ ---> Running in 9da6aa30b11f
+[91mnpm [0m[91mWARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+[0m[91mnpm [0m[91mWARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+[0m[91mnpm[0m[91m WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+[0m[91mnpm WARN deprecated[0m[91m chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+[0m
+added 240 packages, and audited 240 packages in 8s
+
+found 0 vulnerabilities
+[91mnpm notice 
+npm[0m[91m notice New patch version of npm available! 7.0.8 -> 7.0.10
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v7.0.10>
+[0m[91mnpm notice Run `npm install -g npm@7.0.10` to update!
+npm[0m[91m notice[0m[91m 
+[0mRemoving intermediate container 9da6aa30b11f
+ ---> b57dc6af9741
+Step 5/6 : COPY . .
+ ---> 71f4bb3970dc
+Step 6/6 : CMD ["npm", "run", "start"]
+ ---> Running in c64eb859453f
+Removing intermediate container c64eb859453f
+ ---> fb4b9a5aeb5c
+Successfully built fb4b9a5aeb5c
+Successfully tagged [secure]/multi-worker:latest
+travis_time:end:3a0c77c8:start=1605134832018771675,finish=1605134841856566685,duration=9837795010,event=after_success
+[0Ktravis_fold:end:after_success.4
+[0Ktravis_fold:start:after_success.5
+[0Ktravis_time:start:1b9beab8
+[0K$ echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+WARNING! Your password will be stored unencrypted in /home/travis/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+travis_time:end:1b9beab8:start=1605134841862280346,finish=1605134842350845076,duration=488564730,event=after_success
+[0Ktravis_fold:end:after_success.5
+[0Ktravis_fold:start:after_success.6
+[0Ktravis_time:start:2a2fe9c2
+[0K$ docker push [secure]/multi-client
+The push refers to repository [docker.io/[secure]/multi-client]
+7fe2d0fce17b: Preparing
+1def0aac6620: Preparing
+7b5417cae114: Preparing
+aee208b6ccfb: Preparing
+2f57e21e4365: Preparing
+2baf69a23d7a: Preparing
+d0fe97fa8b8c: Preparing
+2baf69a23d7a: Waiting
+d0fe97fa8b8c: Waiting
+2f57e21e4365: Layer already exists
+aee208b6ccfb: Layer already exists
+7b5417cae114: Layer already exists
+2baf69a23d7a: Layer already exists
+d0fe97fa8b8c: Layer already exists
+7fe2d0fce17b: Pushed
+1def0aac6620: Pushed
+latest: digest: sha256:61e643c57f47280a49698cf88d800d6a9092190aea2a02cecc84f4db444528d7 size: 1779
+travis_time:end:2a2fe9c2:start=1605134842356867819,finish=1605134848916187882,duration=6559320063,event=after_success
+[0Ktravis_fold:end:after_success.6
+[0Ktravis_fold:start:after_success.7
+[0Ktravis_time:start:0f5246b2
+[0K$ docker push [secure]/multi-nginx
+The push refers to repository [docker.io/[secure]/multi-nginx]
+032fdfc22397: Preparing
+7b5417cae114: Preparing
+aee208b6ccfb: Preparing
+2f57e21e4365: Preparing
+2baf69a23d7a: Preparing
+d0fe97fa8b8c: Preparing
+d0fe97fa8b8c: Waiting
+2baf69a23d7a: Layer already exists
+7b5417cae114: Layer already exists
+aee208b6ccfb: Layer already exists
+2f57e21e4365: Layer already exists
+d0fe97fa8b8c: Layer already exists
+032fdfc22397: Pushed
+latest: digest: sha256:7ddcded5af0f4c284aa9903aa5ec741eb6d83d2ab4b61ce0360c6e91e03ce17d size: 1569
+travis_time:end:0f5246b2:start=1605134848921667788,finish=1605134854282831516,duration=5361163728,event=after_success
+[0Ktravis_fold:end:after_success.7
+[0Ktravis_fold:start:after_success.8
+[0Ktravis_time:start:09599703
+[0K$ docker push [secure]/multi-server
+The push refers to repository [docker.io/[secure]/multi-server]
+5c75f97d117b: Preparing
+fc842a569a7b: Preparing
+a12ace938498: Preparing
+9ebe74365682: Preparing
+61f945ebd234: Preparing
+0c56cb2aff7a: Preparing
+44a4ced26d67: Preparing
+3e207b409db3: Preparing
+0c56cb2aff7a: Waiting
+44a4ced26d67: Waiting
+3e207b409db3: Waiting
+61f945ebd234: Layer already exists
+0c56cb2aff7a: Layer already exists
+44a4ced26d67: Layer already exists
+3e207b409db3: Layer already exists
+5c75f97d117b: Pushed
+a12ace938498: Pushed
+9ebe74365682: Pushed
+fc842a569a7b: Pushed
+latest: digest: sha256:2af84c9b79402fa6a6654a267528cfb8e80109db166e2090465a161a7ee31bcc size: 1991
+travis_time:end:09599703:start=1605134854288457595,finish=1605134862035728645,duration=7747271050,event=after_success
+[0Ktravis_fold:end:after_success.8
+[0Ktravis_fold:start:after_success.9
+[0Ktravis_time:start:0054d3a4
+[0K$ docker push [secure]/multi-worker
+The push refers to repository [docker.io/[secure]/multi-worker]
+12b89ae6940e: Preparing
+4bb1db2061d6: Preparing
+772aab205556: Preparing
+e0f271638e31: Preparing
+675b9a4518fd: Preparing
+519a6904cbad: Preparing
+8db021fb3b7f: Preparing
+3e207b409db3: Preparing
+519a6904cbad: Waiting
+8db021fb3b7f: Waiting
+3e207b409db3: Waiting
+675b9a4518fd: Mounted from library/node
+519a6904cbad: Mounted from library/node
+e0f271638e31: Pushed
+8db021fb3b7f: Mounted from library/node
+3e207b409db3: Layer already exists
+12b89ae6940e: Pushed
+772aab205556: Pushed
+4bb1db2061d6: Pushed
+latest: digest: sha256:0729399a13119da12716c1de9060be2c7b350ec645b092e81c18b6383ba44b90 size: 1990
+travis_time:end:0054d3a4:start=1605134862040920975,finish=1605134868935320571,duration=6894399596,event=after_success
+[0Ktravis_fold:end:after_success.9
+[0K[33;1mSkipping a deployment with the elasticbeanstalk provider because this branch is not permitted: main[0m
+
+Done. Your build exited with 0.
