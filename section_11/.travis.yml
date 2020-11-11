@@ -1,0 +1,36 @@
+sudo: required
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - docker build -t rtikes/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true rtikes/react-test npm test
+
+after_success:
+  - docker build -t rtikes/multi-client ./client
+  - docker build -t rtikes/multi-nginx ./nginx
+  - docker build -t rtikes/multi-server ./server
+  - docker build -t rtikes/multi-worker ./worker
+  # Log in to the docker CLI -> small change to trigger build
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push them to docker hub
+  - docker push rtikes/multi-client
+  - docker push rtikes/multi-nginx
+  - docker push rtikes/multi-server
+  - docker push rtikes/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-2'
+  app: 'multi-docker'
+  env: 'MultiDocker-env'
+  bucket_name: 'elasticbeanstalk-us-east-2-554777593914'
+  bucket_path: 'docker-multi'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
