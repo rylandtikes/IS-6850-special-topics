@@ -1,0 +1,264 @@
+[2020-11-11T20:18:05Z] Started EB User Data
++ SLEEP_TIME=10
++ SLEEP_TIME_MAX=3600
++ true
++ curl https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/UserDataScript.sh
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 12536  100 12536    0     0   291k      0 --:--:-- --:--:-- --:--:--  291k
++ RESULT=0
++ [[ 0 -ne 0 ]]
++ /bin/bash /tmp/ebbootstrap.sh https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/aws-elasticbeanstalk-tools-1.20-1.noarch.rpm 'https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/awseb-ruby-2.2.4-x86_64-20160503_1008.tar.gz https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/basehooks.tar.gz' 'https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/beanstalk-core-2.12.gem https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/beanstalk-core-healthd-1.1.gem https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/executor-1.2.gem' 'https://cloudformation-waitcondition-us-east-2.s3.us-east-2.amazonaws.com/arn%3Aaws%3Acloudformation%3Aus-east-2%3A554777593914%3Astack/awseb-e-rqcdutmseh-stack/11c030c0-244a-11eb-97c9-024ff5f35efc/AWSEBInstanceLaunchWaitHandle?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20201111T181655Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86399&X-Amz-Credential=AKIAI722P7Q4X76EQLQA%2F20201111%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Signature=43a527a8c3712245141ca63649f0644062372795660ca37154879c32bc8d3894' arn:aws:cloudformation:us-east-2:554777593914:stack/awseb-e-rqcdutmseh-stack/11c030c0-244a-11eb-97c9-024ff5f35efc us-east-2 7adc3765e2ab '' '' '' ''
+[2020-11-11T20:18:05.364Z] Started EB Bootstrapping Script.
+[2020-11-11T20:18:05.371Z] Received parameters:
+ RPMS = https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/aws-elasticbeanstalk-tools-1.20-1.noarch.rpm
+ TARBALLS = https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/awseb-ruby-2.2.4-x86_64-20160503_1008.tar.gz https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/basehooks.tar.gz
+ EB_GEMS = https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/beanstalk-core-2.12.gem https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/beanstalk-core-healthd-1.1.gem https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/executor-1.2.gem
+ SIGNAL_URL = https://cloudformation-waitcondition-us-east-2.s3.us-east-2.amazonaws.com/arn%3Aaws%3Acloudformation%3Aus-east-2%3A554777593914%3Astack/awseb-e-rqcdutmseh-stack/11c030c0-244a-11eb-97c9-024ff5f35efc/AWSEBInstanceLaunchWaitHandle?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20201111T181655Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86399&X-Amz-Credential=AKIAI722P7Q4X76EQLQA%2F20201111%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Signature=43a527a8c3712245141ca63649f0644062372795660ca37154879c32bc8d3894
+ STACK_ID = arn:aws:cloudformation:us-east-2:554777593914:stack/awseb-e-rqcdutmseh-stack/11c030c0-244a-11eb-97c9-024ff5f35efc
+ REGION = us-east-2
+ GUID = 7adc3765e2ab
+ HEALTHD_GROUP_ID = 
+ HEALTHD_ENDPOINT = 
+ PROXY_SERVER = 
+ HEALTHD_PROXY_LOG_LOCATION =
+[2020-11-11T20:18:05.385Z] Synchronizing network time in background.
+[2020-11-11T20:18:05.389Z] yum repo has already been locked to 7adc3765e2ab.
+[2020-11-11T20:18:05.409Z] yum update has already been done.
+Shutting down ntpd: [2020-11-11T20:18:05.479Z] Completed creating AWS EB users and groups.
+[2020-11-11T20:18:05.500Z] Started executing install_rpms https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/aws-elasticbeanstalk-tools-1.20-1.noarch.rpm.
+[2020-11-11T20:18:05.502Z] Installing RPM: https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/aws-elasticbeanstalk-tools-1.20-1.noarch.rpm.
+[  OK  ]
+[2020-11-11T20:18:05.794Z] aws-elasticbeanstalk-tools-1.20-1.noarch has already been installed. Skip installing.
+[2020-11-11T20:18:05.803Z] Command Returned: 
+[2020-11-11T20:18:05.808Z] Completed executing install_rpms.
+[2020-11-11T20:18:05.813Z] Started executing install_tarballs https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/awseb-ruby-2.2.4-x86_64-20160503_1008.tar.gz https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/basehooks.tar.gz.
+[2020-11-11T20:18:05.832Z] Installing tarball: https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/awseb-ruby-2.2.4-x86_64-20160503_1008.tar.gz.
+[2020-11-11T20:18:05.834Z] awseb-ruby-2.2.4-x86_64-20160503_1008.tar.gz has already been installed. Skip installing.
+[2020-11-11T20:18:05.836Z] Installing tarball: https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/basehooks.tar.gz.
+[2020-11-11T20:18:05.942Z] Command Returned: 
+
+2020-11-11 20:18:05 URL:https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/basehooks.tar.gz [5851/5851] -> "/tmp/basehooks.tar.gz" [1]
+[2020-11-11T20:18:05.958Z] Completed executing install_tarballs.
+[2020-11-11T20:18:05.962Z] Started executing install_eb_gems https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/beanstalk-core-2.12.gem https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/beanstalk-core-healthd-1.1.gem https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/executor-1.2.gem.
+[2020-11-11T20:18:05.992Z] Installing EB Gem: https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/beanstalk-core-2.12.gem.
+[2020-11-11T20:18:06.964Z] beanstalk-core-2.12 has already been installed. Skip installing.
+[2020-11-11T20:18:06.973Z] Installing EB Gem: https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/beanstalk-core-healthd-1.1.gem.
+[2020-11-11T20:18:07.160Z] beanstalk-core-healthd-1.1 has already been installed. Skip installing.
+[2020-11-11T20:18:07.167Z] Installing EB Gem: https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/executor-1.2.gem.
+[2020-11-11T20:18:07.349Z] executor-1.2 has already been installed. Skip installing.
+[2020-11-11T20:18:07.358Z] Command Returned: 
+[2020-11-11T20:18:07.364Z] Completed executing install_eb_gems.
+[2020-11-11T20:18:07.371Z] Ensuring healthd is not running
+initctl: Unknown job: healthd
+[2020-11-11T20:18:07.526Z] First init of instance.
+[2020-11-11T20:18:07.531Z] Started executing cfn_init _OnInstanceBoot first_init.
+[2020-11-11T20:18:07.538Z] Running cfn-init ConfigSet: _OnInstanceBoot.
+[2020-11-11T20:18:08.647Z] Command Returned: 
+[2020-11-11T20:18:08.652Z] Completed executing cfn_init.
+[2020-11-11T20:18:08.736Z] Check whether controlled by launch workflow...
+[2020-11-11T20:18:09.306Z] Scaled up instance. Running full self-initiated provisioning.
+[2020-11-11T20:18:09.312Z] Started executing run_eb_command { "api_version" : "1.0", "request_id": "0", "command_name": "CMD-PreInit" } .
+[2020-11-11T20:18:09.319Z] Running EB Command: { "api_version" : "1.0", "request_id": "0", "command_name": "CMD-PreInit" } .
+11 Nov 20:18:15 ntpdate[2762]: step time server 5.103.139.163 offset 0.968591 sec
+Starting ntpd: [  OK  ]
+[2020-11-11T20:19:00.483Z] Command Returned: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"","returncode":0,"events":[]}]}
+[2020-11-11T20:19:00.496Z] Completed executing run_eb_command.
+[2020-11-11T20:19:00.499Z] Started executing run_eb_command { "api_version" : "1.0", "request_id": "0", "command_name": "CMD-SelfStartup" } .
+[2020-11-11T20:19:00.517Z] Running EB Command: { "api_version" : "1.0", "request_id": "0", "command_name": "CMD-SelfStartup" } .
+[2020-11-11T20:19:28.763Z] Command Returned: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"","returncode":0,"events":[{"msg":"Starting new ECS task with awseb-MultiDocker-env-rqcdutmseh:2.","severity":"TRACE","timestamp":1605125945},{"msg":"ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5 is RUNNING.","severity":"TRACE","timestamp":1605125967}]}]}
+[2020-11-11T20:19:28.781Z] Completed executing run_eb_command.
+[2020-11-11T20:19:28.783Z] Started executing start_cfn_hup.
+[2020-11-11T20:19:28.784Z] Starting cfn-hup.
+[2020-11-11T20:19:28.799Z] Command Returned: cfn-hup start/running, process 4859
+[2020-11-11T20:19:28.805Z] Completed executing start_cfn_hup.
+[2020-11-11T20:19:28.810Z] Successfully bootstrapped instance.
+[2020-11-11T20:19:29.999Z] Sending signal 0 to CFN wait condition https://cloudformation-waitcondition-us-east-2.s3.us-east-2.amazonaws.com/arn%3Aaws%3Acloudformation%3Aus-east-2%3A554777593914%3Astack/awseb-e-rqcdutmseh-stack/11c030c0-244a-11eb-97c9-024ff5f35efc/AWSEBInstanceLaunchWaitHandle?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20201111T181655Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86399&X-Amz-Credential=AKIAI722P7Q4X76EQLQA%2F20201111%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Signature=43a527a8c3712245141ca63649f0644062372795660ca37154879c32bc8d3894
+CloudFormation signaled successfully with SUCCESS.
+[2020-11-11T20:19:29.588Z] Tailing /var/log/eb-commandprocessor.log
+
+******************* eb-commandprocessor taillog *******************
+[2020-11-11T20:19:00.796Z] INFO  [3879]  : Command is applicable to this instance (i-087181a0b17bdbd50)..
+[2020-11-11T20:19:00.796Z] DEBUG [3879]  : Checking if the received command stage is valid..
+[2020-11-11T20:19:00.796Z] INFO  [3879]  : No stage_num in command. Valid stage..
+[2020-11-11T20:19:00.796Z] INFO  [3879]  : Received command CMD-SelfStartup: {"api_version"=>"1.0", "request_id"=>"0", "command_name"=>"CMD-SelfStartup"}
+[2020-11-11T20:19:00.796Z] INFO  [3879]  : Command processor should execute command.
+[2020-11-11T20:19:00.796Z] DEBUG [3879]  : Storing current stage..
+[2020-11-11T20:19:00.796Z] DEBUG [3879]  : Stage_num does not exist. Not saving null stage. Returning..
+[2020-11-11T20:19:00.796Z] DEBUG [3879]  : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2020-11-11T20:19:00.796Z] DEBUG [3879]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_ContainerConfigFileContent||commands..
+[2020-11-11T20:19:00.798Z] DEBUG [3879]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_API||_Commands..
+[2020-11-11T20:19:00.799Z] INFO  [3879]  : Found enabled addons: ["logstreaming", "logpublish"].
+[2020-11-11T20:19:00.801Z] INFO  [3879]  : Updating Command definition of addon logstreaming.
+[2020-11-11T20:19:00.801Z] INFO  [3879]  : Updating Command definition of addon logpublish.
+[2020-11-11T20:19:00.801Z] DEBUG [3879]  : Refreshing metadata...
+[2020-11-11T20:19:00.802Z] DEBUG [3879]  : Using cached environment metadata.
+[2020-11-11T20:19:00.802Z] INFO  [3879]  : Recreated directory /opt/elasticbeanstalk/deploy/configuration/.
+[2020-11-11T20:19:00.802Z] DEBUG [3879]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_AppSourceUrlFileContent||url..
+[2020-11-11T20:19:00.802Z] INFO  [3879]  : Created appsource url file at /opt/elasticbeanstalk/deploy/configuration/appsourceurl.
+[2020-11-11T20:19:00.802Z] DEBUG [3879]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_ContainerConfigFileContent..
+[2020-11-11T20:19:00.804Z] INFO  [3879]  : Created container config file at /opt/elasticbeanstalk/deploy/configuration/containerconfiguration.
+[2020-11-11T20:19:00.804Z] DEBUG [3879]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_ContainerConfigFileContent||commands..
+[2020-11-11T20:19:00.805Z] DEBUG [3879]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_API||_Commands..
+[2020-11-11T20:19:00.805Z] INFO  [3879]  : Found enabled addons: ["logstreaming", "logpublish"].
+[2020-11-11T20:19:00.806Z] INFO  [3879]  : Updating Command definition of addon logstreaming.
+[2020-11-11T20:19:00.806Z] INFO  [3879]  : Updating Command definition of addon logpublish.
+[2020-11-11T20:19:00.806Z] DEBUG [3879]  : Loaded definition of Command CMD-SelfStartup.
+[2020-11-11T20:19:00.806Z] INFO  [3879]  : Executing Application deployment
+[2020-11-11T20:19:00.807Z] INFO  [3879]  : Executing command: CMD-SelfStartup...
+[2020-11-11T20:19:00.807Z] INFO  [3879]  : Executing command CMD-SelfStartup activities...
+[2020-11-11T20:19:00.807Z] DEBUG [3879]  : Setting environment variables..
+[2020-11-11T20:19:00.807Z] INFO  [3879]  : Running AddonsBefore for command CMD-SelfStartup...
+[2020-11-11T20:19:00.940Z] DEBUG [3879]  : Running stages of Command CMD-SelfStartup from stage 0 to stage 1...
+[2020-11-11T20:19:00.941Z] INFO  [3879]  : Running stage 0 of command CMD-SelfStartup...
+[2020-11-11T20:19:00.941Z] DEBUG [3879]  : Loaded 7 actions for stage 0.
+[2020-11-11T20:19:00.941Z] INFO  [3879]  : Running 1 of 7 actions: HealthdLogRotation...
+[2020-11-11T20:19:00.946Z] INFO  [3879]  : Running 2 of 7 actions: HealthdHTTPDLogging...
+[2020-11-11T20:19:00.947Z] INFO  [3879]  : Running 3 of 7 actions: HealthdNginxLogging...
+[2020-11-11T20:19:00.948Z] INFO  [3879]  : Running 4 of 7 actions: EbExtensionPreBuild...
+[2020-11-11T20:19:01.566Z] INFO  [3879]  : Running 5 of 7 actions: AppDeployPreHook...
+[2020-11-11T20:19:03.089Z] INFO  [3879]  : Running 6 of 7 actions: EbExtensionPostBuild...
+[2020-11-11T20:19:03.760Z] INFO  [3879]  : Running 7 of 7 actions: InfraCleanEbextension...
+[2020-11-11T20:19:03.762Z] INFO  [3879]  : Running stage 1 of command CMD-SelfStartup...
+[2020-11-11T20:19:03.762Z] DEBUG [3879]  : Loaded 3 actions for stage 1.
+[2020-11-11T20:19:03.762Z] INFO  [3879]  : Running 1 of 3 actions: AppDeployEnactHook...
+[2020-11-11T20:19:27.533Z] INFO  [3879]  : Running 2 of 3 actions: AppDeployPostHook...
+[2020-11-11T20:19:28.668Z] INFO  [3879]  : Running 3 of 3 actions: PostInitHook...
+[2020-11-11T20:19:28.669Z] INFO  [3879]  : Running AddonsAfter for command CMD-SelfStartup...
+[2020-11-11T20:19:28.753Z] INFO  [3879]  : Command CMD-SelfStartup succeeded!
+[2020-11-11T20:19:28.754Z] INFO  [3879]  : Command processor returning results: 
+{"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"","returncode":0,"events":[{"msg":"Starting new ECS task with awseb-MultiDocker-env-rqcdutmseh:2.","severity":"TRACE","timestamp":1605125945},{"msg":"ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5 is RUNNING.","severity":"TRACE","timestamp":1605125967}]}]}
+******************* End of taillog *******************
+
+
+[2020-11-11T20:19:29.604Z] Tailing /var/log/eb-activity.log
+
+******************* eb-activity taillog *******************
+[2020-11-11T20:19:03.762Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1] : Starting activity...
+[2020-11-11T20:19:03.762Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook] : Starting activity...
+[2020-11-11T20:19:03.764Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook/00stop-task.sh] : Starting activity...
+[2020-11-11T20:19:03.769Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook/00stop-task.sh] : Completed activity. Result:
+  + grep -q 'eb-ecs start/'
+  + initctl status eb-ecs
+[2020-11-11T20:19:03.769Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook/01flip-dir.sh] : Starting activity...
+[2020-11-11T20:19:03.962Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook/01flip-dir.sh] : Completed activity. Result:
+  + . /opt/elasticbeanstalk/hooks/common.sh
+  ++ /opt/elasticbeanstalk/bin/get-config container -k app_deploy_dir
+  + EB_CONFIG_APP_CURRENT=/var/app/current
+  ++ /opt/elasticbeanstalk/bin/get-config container -k app_staging_dir
+  + EB_CONFIG_APP_STAGING=/var/app/staging
+  + '[' -z /var/app/staging ']'
+  + '[' -d /var/app/current ']'
+  + mv /var/app/staging /var/app/current
+  + nohup rm -rf /var/app/current.old
+[2020-11-11T20:19:03.962Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook/02update-credentials.sh] : Starting activity...
+[2020-11-11T20:19:04.170Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook/02update-credentials.sh] : Completed activity.
+[2020-11-11T20:19:04.171Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook/03start-task.sh] : Starting activity...
+[2020-11-11T20:19:27.358Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook/03start-task.sh] : Completed activity. Result:
+  + . /opt/elasticbeanstalk/hooks/common.sh
+  + RETRY=0
+  + initctl start eb-ecs EB_EVENT_FILE=/tmp/eventsfile20201111-3879-7zcrfq
+  eb-ecs start/running, process 4719
+[2020-11-11T20:19:27.358Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook/04monitor_pids.sh] : Starting activity...
+[2020-11-11T20:19:27.533Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook/04monitor_pids.sh] : Completed activity. Result:
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --name application --location /var/run/docker.pid
+[2020-11-11T20:19:27.533Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/enact.
+[2020-11-11T20:19:27.533Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployPostHook] : Starting activity...
+[2020-11-11T20:19:27.534Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployPostHook/00_clean_imgs.sh] : Starting activity...
+[2020-11-11T20:19:28.668Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployPostHook/00_clean_imgs.sh] : Completed activity.
+[2020-11-11T20:19:28.668Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployPostHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/post.
+[2020-11-11T20:19:28.668Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/PostInitHook] : Starting activity...
+[2020-11-11T20:19:28.668Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/PostInitHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/postinit.
+[2020-11-11T20:19:28.669Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1] : Completed activity. Result:
+  Application deployment - Command CMD-SelfStartup stage 1 completed
+[2020-11-11T20:19:28.669Z] INFO  [3879]  - [Application deployment Sample Application@2/AddonsAfter] : Starting activity...
+[2020-11-11T20:19:28.669Z] INFO  [3879]  - [Application deployment Sample Application@2/AddonsAfter/ConfigLogRotation] : Starting activity...
+[2020-11-11T20:19:28.669Z] INFO  [3879]  - [Application deployment Sample Application@2/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+[2020-11-11T20:19:28.753Z] INFO  [3879]  - [Application deployment Sample Application@2/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+  Disabled forced hourly log rotation.
+[2020-11-11T20:19:28.753Z] INFO  [3879]  - [Application deployment Sample Application@2/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+[2020-11-11T20:19:28.753Z] INFO  [3879]  - [Application deployment Sample Application@2/AddonsAfter] : Completed activity.
+[2020-11-11T20:19:28.753Z] INFO  [3879]  - [Application deployment Sample Application@2] : Completed activity. Result:
+  Application deployment - Command CMD-SelfStartup succeeded
+******************* End of taillog *******************
+
+
+[2020-11-11T20:19:29.615Z] Tailing /var/log/eb-tools.log
+
+******************* eb-tools taillog *******************
+***eb-tools is not available yet.***
+******************* End of taillog *******************
+
+
+[2020-11-11T20:19:29.624Z] Tailing /var/log/eb-version-deployment.log
+
+******************* eb-version-deployment taillog *******************
+***eb-version-deployment is not available yet.***
+******************* End of taillog *******************
+
+
+[2020-11-11T20:19:29.629Z] Tailing /var/log/cfn-init.log
+
+******************* cfn-init taillog *******************
+2020-11-11 20:18:08,466 [INFO] -----------------------Starting build-----------------------
+2020-11-11 20:18:08,474 [INFO] Running configSets: _OnInstanceBoot
+2020-11-11 20:18:08,477 [INFO] Running configSet _OnInstanceBoot
+2020-11-11 20:18:08,482 [INFO] Running config AWSEBBaseConfig
+2020-11-11 20:18:08,488 [INFO] Command clearbackupfiles succeeded
+2020-11-11 20:18:08,496 [INFO] Running config AWSEBMessageOfTheDay
+2020-11-11 20:18:08,500 [INFO] Command 01clearoriginal succeeded
+2020-11-11 20:18:08,505 [INFO] Command 02createbanner succeeded
+2020-11-11 20:18:08,518 [INFO] Command 03updatebanner succeeded
+2020-11-11 20:18:08,524 [INFO] Running config AWSEBULimitConfig
+2020-11-11 20:18:08,528 [INFO] Command 00removebackup succeeded
+2020-11-11 20:18:08,534 [INFO] Running config AWSEBCfnHupEndpointOverride
+2020-11-11 20:18:08,538 [INFO] Command clearbackupfiles succeeded
+2020-11-11 20:18:08,544 [INFO] Running config Infra-InstallContainerHooksPkg
+2020-11-11 20:18:08,548 [INFO] Command 00mkdir succeeded
+2020-11-11 20:18:08,586 [INFO] Command 01download_container_hooks succeeded
+2020-11-11 20:18:08,593 [INFO] Command 02install_container_hooks succeeded
+2020-11-11 20:18:08,596 [INFO] Command 03cleanup succeeded
+2020-11-11 20:18:08,602 [INFO] Running config Infra-WriteLeaderTestScript
+2020-11-11 20:18:08,608 [INFO] Running config Infra-WriteTailLogsConf
+2020-11-11 20:18:08,613 [INFO] Running config Infra-WriteSystemTailLogsConf
+2020-11-11 20:18:08,619 [INFO] Running config Infra-WriteBundleLogsConf
+2020-11-11 20:18:08,624 [INFO] Running config Infra-WritePublishLogsConf
+2020-11-11 20:18:08,628 [INFO] Running config Infra-WritePublishLogsCron
+2020-11-11 20:18:08,630 [INFO] ConfigSets completed
+2020-11-11 20:18:08,630 [INFO] -----------------------Build complete-----------------------
+2020-11-11 20:19:01,526 [INFO] -----------------------Starting build-----------------------
+2020-11-11 20:19:01,534 [INFO] Running configSets: Infra-EmbeddedPreBuild
+2020-11-11 20:19:01,537 [INFO] Running configSet Infra-EmbeddedPreBuild
+2020-11-11 20:19:01,541 [INFO] Running config prebuild_0_multi_docker
+2020-11-11 20:19:01,546 [INFO] Running config prebuild_1_multi_docker
+2020-11-11 20:19:01,547 [INFO] ConfigSets completed
+2020-11-11 20:19:01,547 [INFO] -----------------------Build complete-----------------------
+2020-11-11 20:19:03,489 [INFO] -----------------------Starting build-----------------------
+2020-11-11 20:19:03,497 [INFO] Running configSets: Infra-EmbeddedPostBuild
+2020-11-11 20:19:03,500 [INFO] Running configSet Infra-EmbeddedPostBuild
+2020-11-11 20:19:03,504 [INFO] Running config postbuild_0_multi_docker
+2020-11-11 20:19:03,740 [INFO] Command 01-healthd-configure succeeded
+2020-11-11 20:19:03,741 [INFO] ConfigSets completed
+2020-11-11 20:19:03,742 [INFO] -----------------------Build complete-----------------------
+******************* End of taillog *******************
+
+
+[2020-11-11T20:19:29.640Z] Tailing /var/log/cfn-hup.log
+
+******************* cfn-hup taillog *******************
+2020-11-11 20:19:29,383 [DEBUG] CloudFormation client initialized with endpoint https://cloudformation.us-east-2.amazonaws.com
+2020-11-11 20:19:29,383 [DEBUG] SQS client initialized with endpoint https://sqs.us-east-2.amazonaws.com
+2020-11-11 20:19:29,384 [DEBUG] CloudFormation client initialized with endpoint https://cloudformation.us-east-2.amazonaws.com
+2020-11-11 20:19:29,384 [DEBUG] Enabled single threading mode.
+2020-11-11 20:19:29,384 [DEBUG] Creating /var/lib/cfn-hup/data
+2020-11-11 20:19:29,392 [INFO] No umask value specified in config file. Using the default one: 022
+2020-11-11 20:19:29,419 [DEBUG] Registering listener i-087181a0b17bdbd50 for stack arn:aws:cloudformation:us-east-2:554777593914:stack/awseb-e-rqcdutmseh-stack/11c030c0-244a-11eb-97c9-024ff5f35efc
+******************* End of taillog *******************
+
+
+[2020-11-11T20:19:29.648Z] Completed EB Bootstrapping Script.
++ exit 0

@@ -1,0 +1,5 @@
+'docker ps' ran at Wed Nov 11 22:56:54 UTC 2020: 
+CONTAINER ID        IMAGE                            COMMAND                  CREATED             STATUS                 PORTS                NAMES
+c731554828c9        nginx                            "/docker-entrypoint.…"   2 hours ago         Up 2 hours             0.0.0.0:80->80/tcp   ecs-awseb-MultiDocker-env-rqcdutmseh-3-nginx-proxy-c883cbcc9095d382b301
+867f610c1d20        php:fpm                          "docker-php-entrypoi…"   2 hours ago         Up 2 hours             9000/tcp             ecs-awseb-MultiDocker-env-rqcdutmseh-3-php-app-90a39dd1889b96a86f00
+6e1806552e4f        amazon/amazon-ecs-agent:latest   "/agent"                 3 hours ago         Up 3 hours (healthy)                        ecs-agent

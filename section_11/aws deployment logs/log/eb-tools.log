@@ -1,0 +1,22 @@
+2020-11-11 22:56:54,541 [INFO] (16266 MainThread) [tailLogs.py-56] [root tailLogs main] Starting tail logs task with batch id 8e736b29-676a-4a9e-91b2-501389c1c5c0
+2020-11-11 22:56:54,551 [INFO] (16266 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/ecs/ecs-init.log
+2020-11-11 22:56:54,551 [INFO] (16266 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/containers/nginx-proxy-c731554828c9-stdouterr.log
+2020-11-11 22:56:54,554 [INFO] (16266 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-ecs-mgr.log
+2020-11-11 22:56:54,556 [INFO] (16266 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/containers/php-app-5cb879db3aae-stdouterr.log
+2020-11-11 22:56:54,556 [INFO] (16266 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/containers/nginx-proxy-be320fed102d-stdouterr.log
+2020-11-11 22:56:54,562 [INFO] (16266 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/docker
+2020-11-11 22:56:54,565 [INFO] (16266 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/containers/nginx-proxy/access.log
+2020-11-11 22:56:54,571 [INFO] (16266 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/docker-events.log
+2020-11-11 22:56:54,576 [INFO] (16266 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/ecs/ecs-agent.log
+2020-11-11 22:56:54,578 [INFO] (16266 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/containers/php-app-867f610c1d20-stdouterr.log
+2020-11-11 22:56:54,584 [INFO] (16266 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/ecs/ecs-agent.log.2020-11-11-20
+2020-11-11 22:56:54,590 [INFO] (16266 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/ecs/ecs-agent.log.2020-11-11-21
+2020-11-11 22:56:54,590 [INFO] (16266 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/containers/nginx-proxy/error.log
+2020-11-11 22:56:54,598 [INFO] (16266 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-activity.log
+2020-11-11 22:56:54,598 [INFO] (16266 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/docker-ps.log
+2020-11-11 22:56:54,601 [INFO] (16266 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-commandprocessor.log
+2020-11-11 22:56:54,737 [INFO] (16266 MainThread) [s3_tools.py-208] [root s3_tools _process_result] Received status code 200 with text: 
+2020-11-11 22:56:54,737 [INFO] (16266 MainThread) [upload_tools.py-317] [root upload_tools __exit__] Successfully uploaded tailed content for 16 files to s3 at location resources/environments/logs/tail/e-rqcdutmseh/i-087181a0b17bdbd50/TailLogs-1605135414601.out
+2020-11-11 22:56:54,737 [INFO] (16266 MainThread) [tailLogs.py-92] [root tailLogs main] [Instance: i-087181a0b17bdbd50] Successfully finished tailing 16 log(s)
+2020-11-12 00:12:45,928 [INFO] (28379 MainThread) [bundleLogs.py-54] [root bundleLogs main] Starting bundle logs task with batch id 6916f0d1-3cd1-4c23-ad06-4f8aac272209
+2020-11-12 00:12:45,953 [INFO] (28379 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/ecs/ecs-init.log to /tmp/BundleLogs-6916f0d1-3cd1-4c23-ad06-4f8aac272209.zip

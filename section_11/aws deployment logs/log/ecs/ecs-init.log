@@ -1,0 +1,4 @@
+2020-11-11T20:18:53Z [INFO] pre-start
+2020-11-11T20:18:57Z [INFO] start
+2020-11-11T20:18:57Z [INFO] No existing agent container to remove.
+2020-11-11T20:18:57Z [INFO] Starting Amazon Elastic Container Service Agent

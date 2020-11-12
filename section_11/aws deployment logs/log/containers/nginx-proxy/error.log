@@ -1,0 +1,1 @@
+2020/11/11 20:21:23 [error] 20#20: *47 open() "/var/www/html/favicon.ico" failed (2: No such file or directory), client: 172.31.43.128, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "multidocker-env.eba-rmtmbcbk.us-east-2.elasticbeanstalk.com", referrer: "http://multidocker-env.eba-rmtmbcbk.us-east-2.elasticbeanstalk.com/"

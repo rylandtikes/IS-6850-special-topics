@@ -1,0 +1,125 @@
+
+> @ start /app
+> node index.js
+
+Listening
+(node:17) UnhandledPromiseRejectionWarning: error: relation "values" does not exist
+    at Connection.parseE (/app/node_modules/pg/lib/connection.js:581:48)
+    at Connection.parseMessage (/app/node_modules/pg/lib/connection.js:380:19)
+    at Socket.<anonymous> (/app/node_modules/pg/lib/connection.js:116:22)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:309:12)
+    at readableAddChunk (_stream_readable.js:284:9)
+    at Socket.Readable.push (_stream_readable.js:223:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:17) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:17) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+error: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+    at Connection.parseE (/app/node_modules/pg/lib/connection.js:581:48)
+    at Connection.parseMessage (/app/node_modules/pg/lib/connection.js:380:19)
+    at Socket.<anonymous> (/app/node_modules/pg/lib/connection.js:116:22)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:309:12)
+    at readableAddChunk (_stream_readable.js:284:9)
+    at Socket.Readable.push (_stream_readable.js:223:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23) {
+  length: 246,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (typname, typnamespace)=(values, 2200) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'pg_catalog',
+  table: 'pg_type',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'pg_type_typname_nsp_index',
+  file: 'nbtinsert.c',
+  line: '433',
+  routine: '_bt_check_unique'
+}
+error: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+    at Connection.parseE (/app/node_modules/pg/lib/connection.js:581:48)
+    at Connection.parseMessage (/app/node_modules/pg/lib/connection.js:380:19)
+    at Socket.<anonymous> (/app/node_modules/pg/lib/connection.js:116:22)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:309:12)
+    at readableAddChunk (_stream_readable.js:284:9)
+    at Socket.Readable.push (_stream_readable.js:223:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23) {
+  length: 246,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (typname, typnamespace)=(values, 2200) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'pg_catalog',
+  table: 'pg_type',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'pg_type_typname_nsp_index',
+  file: 'nbtinsert.c',
+  line: '433',
+  routine: '_bt_check_unique'
+}
+error: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+    at Connection.parseE (/app/node_modules/pg/lib/connection.js:581:48)
+    at Connection.parseMessage (/app/node_modules/pg/lib/connection.js:380:19)
+    at Socket.<anonymous> (/app/node_modules/pg/lib/connection.js:116:22)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:309:12)
+    at readableAddChunk (_stream_readable.js:284:9)
+    at Socket.Readable.push (_stream_readable.js:223:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23) {
+  length: 246,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (typname, typnamespace)=(values, 2200) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'pg_catalog',
+  table: 'pg_type',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'pg_type_typname_nsp_index',
+  file: 'nbtinsert.c',
+  line: '433',
+  routine: '_bt_check_unique'
+}
+error: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+    at Connection.parseE (/app/node_modules/pg/lib/connection.js:581:48)
+    at Connection.parseMessage (/app/node_modules/pg/lib/connection.js:380:19)
+    at Socket.<anonymous> (/app/node_modules/pg/lib/connection.js:116:22)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:309:12)
+    at readableAddChunk (_stream_readable.js:284:9)
+    at Socket.Readable.push (_stream_readable.js:223:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23) {
+  length: 246,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (typname, typnamespace)=(values, 2200) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'pg_catalog',
+  table: 'pg_type',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'pg_type_typname_nsp_index',
+  file: 'nbtinsert.c',
+  line: '433',
+  routine: '_bt_check_unique'
+}

@@ -1,0 +1,955 @@
+Nov 11 20:17:58 ip-172-31-15-108 kernel: imklog 5.8.10, log source = /proc/kmsg started.
+Nov 11 20:17:58 ip-172-31-15-108 rsyslogd: [origin software="rsyslogd" swVersion="5.8.10" x-pid="2314" x-info="http://www.rsyslog.com"] start
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] Linux version 4.14.193-113.317.amzn1.x86_64 (mockbuild@koji-pdx-corp-builder-60005) (gcc version 7.2.1 20170915 (Red Hat 7.2.1-2) (GCC)) #1 SMP Thu Sep 3 19:08:08 UTC 2020
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] Command line: root=LABEL=/ console=tty1 console=ttyS0 selinux=0 nvme_core.io_timeout=4294967295
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'standard' format.
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] e820: BIOS-provided physical RAM map:
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009dfff] usable
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] BIOS-e820: [mem 0x000000000009e000-0x000000000009ffff] reserved
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] BIOS-e820: [mem 0x00000000000e0000-0x00000000000fffff] reserved
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] BIOS-e820: [mem 0x0000000000100000-0x000000003fffffff] usable
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] BIOS-e820: [mem 0x00000000fc000000-0x00000000ffffffff] reserved
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] NX (Execute Disable) protection: active
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] SMBIOS 2.7 present.
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] DMI: Xen HVM domU, BIOS 4.2.amazon 08/24/2006
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] Hypervisor detected: Xen HVM
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] Xen version 4.2.
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] Netfront and the Xen platform PCI driver have been compiled for this kernel: unplug emulated NICs.
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] Blkfront and the Xen platform PCI driver have been compiled for this kernel: unplug emulated disks.
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] You might have to change the root device
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] from /dev/hd[a-d] to /dev/xvd[a-d]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] in your root= kernel command line option
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] tsc: Fast TSC calibration using PIT
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] e820: last_pfn = 0x40000 max_arch_pfn = 0x400000000
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] found SMP MP-table at [mem 0x000fbc50-0x000fbc5f]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] RAMDISK: [mem 0x37066000-0x37feffff]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] ACPI: Early table checksum verification disabled
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] ACPI: RSDP 0x00000000000EA020 000024 (v02 Xen   )
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] ACPI: XSDT 0x00000000FC00E2A0 000054 (v01 Xen    HVM      00000000 HVML 00000000)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] ACPI: FACP 0x00000000FC00DF60 0000F4 (v04 Xen    HVM      00000000 HVML 00000000)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] ACPI: DSDT 0x00000000FC0021C0 00BD19 (v02 Xen    HVM      00000000 INTL 20090123)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] ACPI: FACS 0x00000000FC002180 000040
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] ACPI: FACS 0x00000000FC002180 000040
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] ACPI: APIC 0x00000000FC00E060 0000D8 (v02 Xen    HVM      00000000 HVML 00000000)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] ACPI: HPET 0x00000000FC00E1B0 000038 (v01 Xen    HVM      00000000 HVML 00000000)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] ACPI: WAET 0x00000000FC00E1F0 000028 (v01 Xen    HVM      00000000 HVML 00000000)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] ACPI: SSDT 0x00000000FC00E220 000031 (v02 Xen    HVM      00000000 INTL 20090123)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] ACPI: SSDT 0x00000000FC00E260 000033 (v02 Xen    HVM      00000000 INTL 20090123)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] No NUMA configuration found
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] Faking a node at [mem 0x0000000000000000-0x000000003fffffff]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] NODE_DATA(0) allocated [mem 0x3ffde000-0x3fffffff]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] Zone ranges:
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000]   DMA32    [mem 0x0000000001000000-0x000000003fffffff]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000]   Normal   empty
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] Movable zone start for each node
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] Early memory node ranges
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000]   node   0: [mem 0x0000000000001000-0x000000000009dfff]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000]   node   0: [mem 0x0000000000100000-0x000000003fffffff]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] Initmem setup node 0 [mem 0x0000000000001000-0x000000003fffffff]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] ACPI: PM-Timer IO Port: 0xb008
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] IOAPIC[0]: apic_id 1, version 17, address 0xfec00000, GSI 0-47
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 low level)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 low level)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 low level)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] Using ACPI (MADT) for SMP configuration information
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] ACPI: HPET id: 0x8086a201 base: 0xfed00000
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] TSC deadline timer available
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] smpboot: Allowing 15 CPUs, 14 hotplug CPUs
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] PM: Registered nosave memory: [mem 0x0009e000-0x0009ffff]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] PM: Registered nosave memory: [mem 0x000a0000-0x000dffff]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] PM: Registered nosave memory: [mem 0x000e0000-0x000fffff]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] e820: [mem 0x40000000-0xfbffffff] available for PCI devices
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] Booting paravirtualized kernel on Xen HVM
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] setup_percpu: NR_CPUS:8192 nr_cpumask_bits:15 nr_cpu_ids:15 nr_node_ids:1
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] percpu: Embedded 44 pages/cpu s140120 r8192 d31912 u262144
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] PV qspinlock hash table entries: 256 (order: 0, 4096 bytes)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 257928
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] Policy zone: DMA32
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] Kernel command line: root=LABEL=/ console=tty1 console=ttyS0 selinux=0 nvme_core.io_timeout=4294967295
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] Memory: 987760K/1048180K available (8204K kernel code, 1923K rwdata, 2708K rodata, 2056K init, 4220K bss, 60420K reserved, 0K cma-reserved)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] random: get_random_u64 called from __kmem_cache_create+0x3a/0x590 with crng_init=0
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=15, Nodes=1
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] Kernel/User page tables isolation: enabled
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.000000] ftrace: allocating 25898 entries in 102 pages
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.004000] Hierarchical RCU implementation.
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.004000] 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=15.
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.004000] RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=15
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.004000] NR_IRQS: 524544, nr_irqs: 952, preallocated irqs: 16
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.004000] xen:events: Using 2-level ABI
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.004000] xen:events: Xen HVM callback vector for event delivery is enabled
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.004000] Console: colour VGA+ 80x25
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.004000] console [tty1] enabled
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.004000] Cannot get hvm parameter CONSOLE_EVTCHN (18): -22!
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.004000] console [ttyS0] enabled
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.004000] clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 30580167144 ns
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.008000] tsc: Fast TSC calibration using PIT
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.024003] tsc: Detected 2400.044 MHz processor
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.028011] Calibrating delay loop (skipped), value calculated using timer frequency.. 4800.17 BogoMIPS (lpj=9600344)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.036004] pid_max: default: 32768 minimum: 301
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.040021] ACPI: Core revision 20170728
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.050344] ACPI: 3 ACPI AML tables successfully acquired and loaded
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.052029] Security Framework initialized
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.056191] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.064092] Inode-cache hash table entries: 65536 (order: 7, 524288 bytes)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.068019] Mount-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.076008] Mountpoint-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.080274] Last level iTLB entries: 4KB 1024, 2MB 1024, 4MB 1024
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.084004] Last level dTLB entries: 4KB 1024, 2MB 1024, 4MB 1024, 1GB 4
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.092003] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.100003] Spectre V2 : Mitigation: Full generic retpoline
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.104004] Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.112003] Speculative Store Bypass: Vulnerable
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.116039] MDS: Vulnerable: Clear CPU buffers attempted, no microcode
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.131099] smpboot: Max logical packages: 15
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.132922] x2apic: IRQ remapping doesn't support X2APIC mode
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.140003] Switched APIC routing to physical flat.
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.147050] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=0 pin2=0
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.193891] clocksource: xen: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.200017] installing Xen timer for CPU 0
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.204089] smpboot: CPU0: Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz (family: 0x6, model: 0x3f, stepping: 0x2)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.208040] cpu 0 spinlock event irq 53
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.212112] Performance Events: unsupported p6 CPU model 63 no PMU driver, software events only.
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.216051] Hierarchical SRCU implementation.
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.220297] NMI watchdog: Perf event create on CPU 0 failed with -2
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.224005] NMI watchdog: Perf NMI watchdog permanently disabled
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.228193] smp: Bringing up secondary CPUs ...
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.232006] smp: Brought up 1 node, 1 CPU
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.236005] smpboot: Total of 1 processors activated (4800.17 BogoMIPS)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.240555] devtmpfs: initialized
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.244048] x86/mm: Memory block size: 128MB
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.248222] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.252023] futex hash table entries: 4096 (order: 6, 262144 bytes)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.256255] NET: Registered protocol family 16
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.260235] cpuidle: using governor ladder
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.264011] cpuidle: using governor menu
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.267748] ACPI: bus type PCI registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.268008] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.272353] PCI: Using configuration type 1 for base access
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.278817] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.280207] ACPI: Added _OSI(Module Device)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.284014] ACPI: Added _OSI(Processor Device)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.288004] ACPI: Added _OSI(3.0 _SCP Extensions)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.292004] ACPI: Added _OSI(Processor Aggregator Device)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.298357] ACPI: Interpreter enabled
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.300018] ACPI: (supports S0 S4 S5)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.303745] ACPI: Using IOAPIC for interrupt routing
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.304032] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.308460] ACPI: Enabled 2 GPEs in block 00 to 0F
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.364267] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.368011] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.372016] acpi PNP0A03:00: _OSC failed (AE_NOT_FOUND); disabling ASPM
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.376016] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.381058] acpiphp: Slot [0] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.385212] acpiphp: Slot [3] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.388463] acpiphp: Slot [4] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.392497] acpiphp: Slot [5] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.396476] acpiphp: Slot [6] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.400409] acpiphp: Slot [7] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.404353] acpiphp: Slot [8] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.408267] acpiphp: Slot [9] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.412231] acpiphp: Slot [10] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.416268] acpiphp: Slot [11] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.420317] acpiphp: Slot [12] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.424521] acpiphp: Slot [13] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.428452] acpiphp: Slot [14] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.432489] acpiphp: Slot [15] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.436712] acpiphp: Slot [16] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.440460] acpiphp: Slot [17] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.444465] acpiphp: Slot [18] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.448497] acpiphp: Slot [19] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.452486] acpiphp: Slot [20] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.456487] acpiphp: Slot [21] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.460508] acpiphp: Slot [22] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.464505] acpiphp: Slot [23] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.468494] acpiphp: Slot [24] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.472503] acpiphp: Slot [25] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.476524] acpiphp: Slot [26] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.480508] acpiphp: Slot [27] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.484509] acpiphp: Slot [28] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.488483] acpiphp: Slot [29] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.492467] acpiphp: Slot [30] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.496502] acpiphp: Slot [31] registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.500425] PCI host bridge to bus 0000:00
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.504009] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.508009] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.512008] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.516009] pci_bus 0000:00: root bus resource [mem 0xf0000000-0xfbffffff window]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.520009] pci_bus 0000:00: root bus resource [bus 00-ff]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.533578] pci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.536007] pci 0000:00:01.1: legacy IDE quirk: reg 0x14: [io  0x03f6]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.540008] pci 0000:00:01.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.544007] pci 0000:00:01.1: legacy IDE quirk: reg 0x1c: [io  0x0376]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.548968] * Found PM-Timer Bug on the chipset. Due to workarounds for a bug,
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.548968] * this clock source is slow. Consider trying other clock sources
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.555174] pci 0000:00:01.3: quirk: [io  0xb000-0xb03f] claimed by PIIX4 ACPI
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.564173] ACPI: PCI Interrupt Link [LNKA] (IRQs *5 10 11)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.568298] ACPI: PCI Interrupt Link [LNKB] (IRQs 5 *10 11)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.572278] ACPI: PCI Interrupt Link [LNKC] (IRQs 5 10 *11)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.576246] ACPI: PCI Interrupt Link [LNKD] (IRQs *5 10 11)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.601028] xen:balloon: Initialising balloon driver
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.616328] pci 0000:00:02.0: vgaarb: setting as boot VGA device
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.620000] pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.620014] pci 0000:00:02.0: vgaarb: bridge control possible
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.624006] vgaarb: loaded
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.627206] EDAC MC: Ver: 3.0.0
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.628636] PCI: Using ACPI for IRQ routing
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.632589] NetLabel: Initializing
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.635732] NetLabel:  domain hash size = 128
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.636007] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.640022] NetLabel:  unlabeled traffic allowed by default
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.644073] HPET: 3 timers in total, 0 timers will be used for per-cpu timer
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.648020] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.652007] hpet0: 3 comparators, 64-bit 62.500000 MHz counter
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.658231] clocksource: Switched to clocksource xen
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.667571] VFS: Disk quotas dquot_6.6.0
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.671273] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.677138] pnp: PnP ACPI init
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.680346] system 00:00: [mem 0x00000000-0x0009ffff] could not be reserved
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.686904] system 00:01: [io  0x08a0-0x08a3] has been reserved
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.692511] system 00:01: [io  0x0cc0-0x0ccf] has been reserved
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.698906] system 00:01: [io  0x04d0-0x04d1] has been reserved
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.705713] system 00:07: [io  0x10c0-0x1141] has been reserved
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.711089] system 00:07: [io  0xb044-0xb047] has been reserved
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.737599] pnp: PnP ACPI: found 8 devices
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.747888] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.755839] NET: Registered protocol family 2
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.760063] TCP established hash table entries: 8192 (order: 4, 65536 bytes)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.765789] TCP bind hash table entries: 8192 (order: 5, 131072 bytes)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.771029] TCP: Hash tables configured (established 8192 bind 8192)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.776500] UDP hash table entries: 512 (order: 2, 16384 bytes)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.781665] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.787383] random: fast init done
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.791142] NET: Registered protocol family 1
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.795806] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.801455] pci 0000:00:01.0: PIIX3: Enabling Passive Release
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.807009] pci 0000:00:01.0: Activating ISA DMA hang workarounds
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.812932] pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    0.821488] Unpacking initramfs...
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.056303] Freeing initrd memory: 15912K
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.061261] audit: initializing netlink subsys (disabled)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.067429] Initialise system trusted keyrings
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.072293] Key type blacklist registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.076768] audit: type=2000 audit(1605125872.194:1): state=initialized audit_enabled=0 res=1
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.094736] workingset: timestamp_bits=36 max_order=18 bucket_order=0
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.102083] zbud: loaded
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.379437] Key type asymmetric registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.385518] Asymmetric key parser 'x509' registered
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.392547] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 253)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.402398] io scheduler noop registered (default)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.410101] xen:grant_table: Grant tables using version 1 layout
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.416897] Grant table initialized
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.421192] Cannot get hvm parameter CONSOLE_EVTCHN (18): -22!
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.430017] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.465269] 00:06: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.473062] xen_netfront: Initialising Xen virtual ethernet driver
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.480030] i8042: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f13:PS2M] at 0x60,0x64 irq 1,12
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.489304] serio: i8042 KBD port at 0x60,0x64 irq 1
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.493977] serio: i8042 AUX port at 0x60,0x64 irq 12
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.501791] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input0
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.510807] rtc_cmos 00:02: rtc core: registered rtc_cmos as rtc0
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.516860] rtc_cmos 00:02: alarms up to one day, 114 bytes nvram, hpet irqs
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.523004] hidraw: raw HID events driver (C) Jiri Kosina
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.528085] NET: Registered protocol family 17
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.532663] mce: Using 2 MCE banks
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.536200] sched_clock: Marking stable (1536171240, 0)->(2316562670, -780391430)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.543218] registered taskstats version 1
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.547306] Loading compiled-in X.509 certificates
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.553117] zswap: loaded using pool lzo/zbud
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.660115] xenbus_probe_frontend: Device with no driver: device/vbd/51712
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.668280] xenbus_probe_frontend: Device with no driver: device/vbd/268461824
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.677457] rtc_cmos 00:02: setting system clock to 2020-11-11 20:17:52 UTC (1605125872)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.693105] Freeing unused kernel memory: 2056K
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.704071] Write protecting the kernel read-only data: 14336k
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.711752] Freeing unused kernel memory: 2016K
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.719976] Freeing unused kernel memory: 1388K
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.745362] device-mapper: uevent: version 1.0.3
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.751176] device-mapper: ioctl: 4.37.0-ioctl (2017-09-20) initialised: dm-devel@redhat.com
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.815389] SCSI subsystem initialized
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.884618] Invalid max_queues (4), will use default max: 1.
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.938792] scsi host0: ata_piix
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.961688] scsi host1: ata_piix
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.965891] ata1: PATA max MWDMA2 cmd 0x1f0 ctl 0x3f6 bmdma 0xc100 irq 14
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.971672] ata2: PATA max MWDMA2 cmd 0x170 ctl 0x376 bmdma 0xc108 irq 15
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.980465] blkfront: xvda: barrier or flush: disabled; persistent grants: disabled; indirect descriptors: enabled;
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    1.999726]  xvda: xvda1
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    2.005268] blkfront: xvdcz: barrier or flush: disabled; persistent grants: disabled; indirect descriptors: enabled;
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    2.080105] tsc: Refined TSC clocksource calibration: 2400.002 MHz
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    2.086127] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x22983938a92, max_idle_ns: 440795216168 ns
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    2.220705] EXT4-fs (xvda1): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    2.267423] EXT4-fs (xvda1): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    2.578413] random: init: uninitialized urandom read (12 bytes read)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    3.350863] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input3
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    3.373982] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input4
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    3.448912] ACPI: Power Button [PWRF]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    3.453781] input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input5
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    3.520830] ACPI: Sleep Button [SLPF]
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    3.531788] mousedev: PS/2 mouse device common for all mice
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    4.649335] random: crng init done
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    4.772578] EXT4-fs (xvda1): re-mounted. Opts: (null)
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    5.139161] NET: Registered protocol family 10
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    5.147141] Segment Routing with IPv6
+Nov 11 20:17:58 ip-172-31-15-108 kernel: [    5.342668] netlink: 12 bytes leftover after parsing attributes in process `ip'.
+Nov 11 20:17:58 ip-172-31-15-108 irqbalance: Balancing is ineffective on systems with a single cpu.  Shutting down
+Nov 11 20:17:58 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 1030ms.
+Nov 11 20:17:58 ip-172-31-15-108 rpc.statd[2379]: Version 1.3.0 starting
+Nov 11 20:17:58 ip-172-31-15-108 sm-notify[2380]: Version 1.3.0 starting
+Nov 11 20:17:58 ip-172-31-15-108 acpid: starting up with netlink and the input layer
+Nov 11 20:17:58 ip-172-31-15-108 acpid: skipping incomplete file /etc/acpi/events/videoconf
+Nov 11 20:17:58 ip-172-31-15-108 acpid: 2 rules loaded
+Nov 11 20:17:58 ip-172-31-15-108 acpid: waiting for events: event logging is off
+Nov 11 20:17:58 ip-172-31-15-108 udevadm[2456]: --type=failed is deprecated and will be removed from a future udev release.
+Nov 11 20:17:58 ip-172-31-15-108 ec2net: [ec2ifscan] Scanning for unconfigured interfaces
+Nov 11 20:17:59 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 1990ms.
+Nov 11 20:18:01 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 3980ms.
+Nov 11 20:18:01 ip-172-31-15-108 hibinit-agent: Instance Launch has not enabled Hibernation Configured Flag. hibinit-agent exiting!!
+Nov 11 20:18:01 ip-172-31-15-108 acpid: exiting
+Nov 11 20:18:01 ip-172-31-15-108 acpid: starting up with netlink and the input layer
+Nov 11 20:18:01 ip-172-31-15-108 acpid: skipping incomplete file /etc/acpi/events/videoconf
+Nov 11 20:18:01 ip-172-31-15-108 acpid: 2 rules loaded
+Nov 11 20:18:01 ip-172-31-15-108 acpid: waiting for events: event logging is off
+Nov 11 20:18:01 ip-172-31-15-108 ntpd[2602]: ntpd 4.2.8p12@1.3728-o Fri May  3 15:36:34 UTC 2019 (1): Starting
+Nov 11 20:18:01 ip-172-31-15-108 ntpd[2602]: Command line: ntpd -u ntp:ntp -p /var/run/ntpd.pid -g
+Nov 11 20:18:01 ip-172-31-15-108 ntpd[2604]: proto: precision = 0.637 usec (-20)
+Nov 11 20:18:01 ip-172-31-15-108 ntpd[2604]: Listen and drop on 0 v4wildcard 0.0.0.0:123
+Nov 11 20:18:01 ip-172-31-15-108 ntpd[2604]: Listen normally on 1 lo 127.0.0.1:123
+Nov 11 20:18:01 ip-172-31-15-108 ntpd[2604]: Listen normally on 2 eth0 172.31.15.108:123
+Nov 11 20:18:01 ip-172-31-15-108 ntpd[2604]: Listening on routing socket on fd #19 for interface updates
+Nov 11 20:18:01 ip-172-31-15-108 ntpd[2604]: kernel reports TIME_ERROR: 0x41: Clock Unsynchronized
+Nov 11 20:18:01 ip-172-31-15-108 ntpd[2604]: kernel reports TIME_ERROR: 0x41: Clock Unsynchronized
+Nov 11 20:18:03 ip-172-31-15-108 ntpd[2604]: Soliciting pool server 62.108.36.235
+Nov 11 20:18:04 ip-172-31-15-108 ntpd[2604]: Soliciting pool server 139.99.236.185
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:05Z] Started EB User Data
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: + SLEEP_TIME=10
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: + SLEEP_TIME_MAX=3600
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: + true
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: + curl https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/UserDataScript.sh
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+Nov 11 20:18:05 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 7620ms.
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]:                                  Dload  Upload   Total   Spent    Left  Speed
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: #015  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0#015100 12536  100 12536    0     0   291k      0 --:--:-- --:--:-- --:--:--  291k
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: + RESULT=0
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: + [[ 0 -ne 0 ]]
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:05.364Z] Started EB Bootstrapping Script.
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:05.371Z] Received parameters:
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]:  RPMS = https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/aws-elasticbeanstalk-tools-1.20-1.noarch.rpm
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]:  TARBALLS = https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/awseb-ruby-2.2.4-x86_64-20160503_1008.tar.gz https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/basehooks.tar.gz
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: + /bin/bash /tmp/ebbootstrap.sh https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/aws-elasticbeanstalk-tools-1.20-1.noarch.rpm 'https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/awseb-ruby-2.2.4-x86_64-20160503_1008.tar.gz https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/basehooks.tar.gz' 'https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/beanstalk-core-2.12.gem https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/beanstalk-core-healthd-1.1.gem https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/exec
+Nov 11 20:18:05 ip-172-31-15-108 ntpd[2604]: ntpd exiting on signal 15 (Terminated)
+Nov 11 20:18:05 ip-172-31-15-108 ntpd[2604]: 169.254.169.123 local addr 172.31.15.108 -> <null>
+Nov 11 20:18:05 ip-172-31-15-108 ntpd[2604]: 62.108.36.235 local addr 172.31.15.108 -> <null>
+Nov 11 20:18:05 ip-172-31-15-108 ntpd[2604]: 139.99.236.185 local addr 172.31.15.108 -> <null>
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]:  EB_GEMS = https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/beanstalk-core-2.12.gem https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/beanstalk-core-healthd-1.1.gem https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/executor-1.2.gem
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]:  SIGNAL_URL = https://cloudformation-waitcondition-us-east-2.s3.us-east-2.amazonaws.com/arn%3Aaws%3Acloudformation%3Aus-east-2%3A554777593914%3Astack/awseb-e-rqcdutmseh-stack/11c030c0-244a-11eb-97c9-024ff5f35efc/AWSEBInstanceLaunchWaitHandle?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20201111T181655Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86399&X-Amz-Credential=AKIAI722P7Q4X76EQLQA%2F20201111%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Signature=43a527a8c3712245141ca63649f0644062372795660ca37154879c32bc8d3894
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: utor-1.2.gem' 'https://cloudformation-waitcondition-us-east-2.s3.us-east-2.amazonaws.com/arn%3Aaws%3Acloudformation%3Aus-east-2%3A554777593914%3Astack/awseb-e-rqcdutmseh-stack/11c030c0-244a-11eb-97c9-024ff5f35efc/AWSEBInstanceLaunchWaitHandle?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20201111T181655Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86399&X-Amz-Credential=AKIAI722P7Q4X76EQLQA%2F20201111%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Signature=43a527a8c3712245141ca63649f0644062372795660ca37154879c32bc8d3894' arn:aws:cloudformation:us-east-2:554777593914:stack/awseb-e-rqcdutmseh-stack/11c030c0-244a-11eb-97c9-024ff5f35efc us-east-2 7adc3765e2ab '' '' '' ''
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]:  STACK_ID = arn:aws:cloudformation:us-east-2:554777593914:stack/awseb-e-rqcdutmseh-stack/11c030c0-244a-11eb-97c9-024ff5f35efc
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]:  REGION = us-east-2
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]:  GUID = 7adc3765e2ab
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]:  HEALTHD_GROUP_ID = 
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]:  HEALTHD_ENDPOINT = 
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]:  PROXY_SERVER = 
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]:  HEALTHD_PROXY_LOG_LOCATION =
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:05.385Z] Synchronizing network time in background.
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:05.389Z] yum repo has already been locked to 7adc3765e2ab.
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:05.409Z] yum update has already been done.
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: Shutting down ntpd: [2020-11-11T20:18:05.479Z] Completed creating AWS EB users and groups.
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:05.500Z] Started executing install_rpms https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/aws-elasticbeanstalk-tools-1.20-1.noarch.rpm.
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:05.502Z] Installing RPM: https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/aws-elasticbeanstalk-tools-1.20-1.noarch.rpm.
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: [  OK  ]#015
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:05.794Z] aws-elasticbeanstalk-tools-1.20-1.noarch has already been installed. Skip installing.
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:05.803Z] Command Returned: 
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:05.808Z] Completed executing install_rpms.
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:05.813Z] Started executing install_tarballs https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/awseb-ruby-2.2.4-x86_64-20160503_1008.tar.gz https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/basehooks.tar.gz.
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:05.832Z] Installing tarball: https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/awseb-ruby-2.2.4-x86_64-20160503_1008.tar.gz.
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:05.834Z] awseb-ruby-2.2.4-x86_64-20160503_1008.tar.gz has already been installed. Skip installing.
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:05.836Z] Installing tarball: https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/basehooks.tar.gz.
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:05.942Z] Command Returned: 
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: 
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:05 URL:https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/basehooks.tar.gz [5851/5851] -> "/tmp/basehooks.tar.gz" [1]
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:05.958Z] Completed executing install_tarballs.
+Nov 11 20:18:05 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:05.962Z] Started executing install_eb_gems https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/beanstalk-core-2.12.gem https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/beanstalk-core-healthd-1.1.gem https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/executor-1.2.gem.
+Nov 11 20:18:06 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:05.992Z] Installing EB Gem: https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/beanstalk-core-2.12.gem.
+Nov 11 20:18:06 ip-172-31-15-108 kernel: [   15.268035] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+Nov 11 20:18:06 ip-172-31-15-108 kernel: [   15.281365] Bridge firewalling registered
+Nov 11 20:18:06 ip-172-31-15-108 kernel: [   15.346876] ip_tables: (C) 2000-2006 Netfilter Core Team
+Nov 11 20:18:06 ip-172-31-15-108 kernel: [   15.399553] nf_conntrack version 0.5.0 (8192 buckets, 32768 max)
+Nov 11 20:18:06 ip-172-31-15-108 kernel: [   15.480626] Initializing XFRM netlink socket
+Nov 11 20:18:06 ip-172-31-15-108 kernel: [   15.508238] Netfilter messages via NETLINK v0.30.
+Nov 11 20:18:06 ip-172-31-15-108 kernel: [   15.515607] ctnetlink v0.93: registering with nfnetlink.
+Nov 11 20:18:06 ip-172-31-15-108 kernel: [   15.603118] IPv6: ADDRCONF(NETDEV_UP): docker0: link is not ready
+Nov 11 20:18:06 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:06.964Z] beanstalk-core-2.12 has already been installed. Skip installing.
+Nov 11 20:18:06 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:06.973Z] Installing EB Gem: https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/beanstalk-core-healthd-1.1.gem.
+Nov 11 20:18:07 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:07.160Z] beanstalk-core-healthd-1.1 has already been installed. Skip installing.
+Nov 11 20:18:07 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:07.167Z] Installing EB Gem: https://s3.dualstack.us-east-2.amazonaws.com/elasticbeanstalk-env-resources-us-east-2/stalks/eb_docker_ecs_4.2.1.201903.0_1601427172/lib/executor-1.2.gem.
+Nov 11 20:18:07 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:07.349Z] executor-1.2 has already been installed. Skip installing.
+Nov 11 20:18:07 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:07.358Z] Command Returned: 
+Nov 11 20:18:07 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:07.364Z] Completed executing install_eb_gems.
+Nov 11 20:18:07 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:07.371Z] Ensuring healthd is not running
+Nov 11 20:18:07 ip-172-31-15-108 [eb-cfn-init]: initctl: Unknown job: healthd
+Nov 11 20:18:07 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:07.526Z] First init of instance.
+Nov 11 20:18:07 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:07.531Z] Started executing cfn_init _OnInstanceBoot first_init.
+Nov 11 20:18:07 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:07.538Z] Running cfn-init ConfigSet: _OnInstanceBoot.
+Nov 11 20:18:08 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:08.647Z] Command Returned: 
+Nov 11 20:18:08 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:08.652Z] Completed executing cfn_init.
+Nov 11 20:18:08 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:08.736Z] Check whether controlled by launch workflow...
+Nov 11 20:18:09 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:09.306Z] Scaled up instance. Running full self-initiated provisioning.
+Nov 11 20:18:09 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:09.312Z] Started executing run_eb_command { "api_version" : "1.0", "request_id": "0", "command_name": "CMD-PreInit" } .
+Nov 11 20:18:09 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:18:09.319Z] Running EB Command: { "api_version" : "1.0", "request_id": "0", "command_name": "CMD-PreInit" } .
+Nov 11 20:18:12 ip-172-31-15-108 yum[3057]: Installed: aws-cli-plugin-cloudwatch-logs-1.4.6-1.17.amzn1.noarch
+Nov 11 20:18:12 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 14580ms.
+Nov 11 20:18:13 ip-172-31-15-108 yum[3057]: Installed: awslogs-1.1.4-1.12.amzn1.noarch
+Nov 11 20:18:15 ip-172-31-15-108 [eb-cfn-init]: 11 Nov 20:18:15 ntpdate[2762]: step time server 5.103.139.163 offset 0.968591 sec
+Nov 11 20:18:15 ip-172-31-15-108 ntpd[3174]: ntpd 4.2.8p12@1.3728-o Fri May  3 15:36:34 UTC 2019 (1): Starting
+Nov 11 20:18:15 ip-172-31-15-108 ntpd[3174]: Command line: ntpd -u ntp:ntp -p /var/run/ntpd.pid -g
+Nov 11 20:18:15 ip-172-31-15-108 [eb-cfn-init]: Starting ntpd: [  OK  ]#015
+Nov 11 20:18:15 ip-172-31-15-108 ntpd[3176]: proto: precision = 0.610 usec (-21)
+Nov 11 20:18:15 ip-172-31-15-108 ntpd[3176]: Listen and drop on 0 v4wildcard 0.0.0.0:123
+Nov 11 20:18:15 ip-172-31-15-108 ntpd[3176]: Listen normally on 1 lo 127.0.0.1:123
+Nov 11 20:18:15 ip-172-31-15-108 ntpd[3176]: Listen normally on 2 eth0 172.31.15.108:123
+Nov 11 20:18:15 ip-172-31-15-108 ntpd[3176]: Listening on routing socket on fd #19 for interface updates
+Nov 11 20:18:15 ip-172-31-15-108 ntpd[3176]: kernel reports TIME_ERROR: 0x41: Clock Unsynchronized
+Nov 11 20:18:15 ip-172-31-15-108 ntpd[3176]: kernel reports TIME_ERROR: 0x41: Clock Unsynchronized
+Nov 11 20:18:16 ip-172-31-15-108 kernel: [   25.031680]  xvdcz:
+Nov 11 20:18:16 ip-172-31-15-108 kernel: [   25.035597]  xvdcz: xvdcz1
+Nov 11 20:18:16 ip-172-31-15-108 kernel: [   25.043223]  xvdcz: xvdcz1
+Nov 11 20:18:16 ip-172-31-15-108 kernel: [   25.047365]  xvdcz: xvdcz1
+Nov 11 20:18:17 ip-172-31-15-108 kernel: [   25.401718] device-mapper: thin: Data device (dm-1) discard unsupported: Disabling discard passdown.
+Nov 11 20:18:17 ip-172-31-15-108 ntpd[3176]: Soliciting pool server 108.61.56.35
+Nov 11 20:18:18 ip-172-31-15-108 ntpd[3176]: Soliciting pool server 23.131.160.7
+Nov 11 20:18:19 ip-172-31-15-108 ntpd[3176]: Soliciting pool server 96.245.170.99
+Nov 11 20:18:20 ip-172-31-15-108 ntpd[3176]: Soliciting pool server 108.59.2.24
+Nov 11 20:18:21 ip-172-31-15-108 ntpd[3176]: Soliciting pool server 2604:a880:2:d0::3bb:9001
+Nov 11 20:18:28 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 29290ms.
+Nov 11 20:18:55 ip-172-31-15-108 kernel: [   63.605702] EXT4-fs (dm-3): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:18:55 ip-172-31-15-108 kernel: [   63.782182] EXT4-fs (dm-3): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:18:55 ip-172-31-15-108 kernel: [   64.193985] EXT4-fs (dm-3): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:18:56 ip-172-31-15-108 kernel: [   64.365511] EXT4-fs (dm-3): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:18:56 ip-172-31-15-108 kernel: [   64.905299] EXT4-fs (dm-3): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:18:57 ip-172-31-15-108 kernel: [   65.359157] EXT4-fs (dm-3): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:18:57 ip-172-31-15-108 kernel: [   65.584812] EXT4-fs (dm-3): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:18:57 ip-172-31-15-108 kernel: [   65.671394] EXT4-fs (dm-3): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:18:57 ip-172-31-15-108 kernel: [   65.721548] EXT4-fs (dm-3): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:18:57 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 60740ms.
+Nov 11 20:18:57 ip-172-31-15-108 kernel: [   66.066734] cgroup: runc (3774) created nested cgroup for controller "memory" which has incomplete hierarchy support. Nested cgroups may change behavior in the future.
+Nov 11 20:18:57 ip-172-31-15-108 kernel: [   66.077574] cgroup: "memory" requires setting use_hierarchy to 1 on the root
+Nov 11 20:18:58 ip-172-31-15-108 kernel: [   66.408854] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:00 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.483Z] Command Returned: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"","returncode":0,"events":[]}]}
+Nov 11 20:19:00 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.496Z] Completed executing run_eb_command.
+Nov 11 20:19:00 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.499Z] Started executing run_eb_command { "api_version" : "1.0", "request_id": "0", "command_name": "CMD-SelfStartup" } .
+Nov 11 20:19:00 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.517Z] Running EB Command: { "api_version" : "1.0", "request_id": "0", "command_name": "CMD-SelfStartup" } .
+Nov 11 20:19:01 ip-172-31-15-108 init: /etc/init.conf: Unable to load configuration: No such file or directory
+Nov 11 20:19:08 ip-172-31-15-108 kernel: [   76.348221] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:11 ip-172-31-15-108 kernel: [   79.318219] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:11 ip-172-31-15-108 kernel: [   79.582115] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:16 ip-172-31-15-108 kernel: [   84.311519] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:16 ip-172-31-15-108 kernel: [   84.627256] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:16 ip-172-31-15-108 kernel: [   85.011121] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:17 ip-172-31-15-108 kernel: [   85.305052] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:19 ip-172-31-15-108 kernel: [   87.461136] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:19 ip-172-31-15-108 kernel: [   87.671138] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:19 ip-172-31-15-108 kernel: [   87.858767] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:19 ip-172-31-15-108 kernel: [   88.174279] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:20 ip-172-31-15-108 kernel: [   88.301822] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:20 ip-172-31-15-108 kernel: [   88.367838] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:20 ip-172-31-15-108 kernel: [   88.379826] docker0: port 1(vethc290bfd) entered blocking state
+Nov 11 20:19:20 ip-172-31-15-108 kernel: [   88.384532] docker0: port 1(vethc290bfd) entered disabled state
+Nov 11 20:19:20 ip-172-31-15-108 kernel: [   88.389160] device vethc290bfd entered promiscuous mode
+Nov 11 20:19:20 ip-172-31-15-108 kernel: [   88.394386] IPv6: ADDRCONF(NETDEV_UP): vethc290bfd: link is not ready
+Nov 11 20:19:20 ip-172-31-15-108 kernel: [   88.699291] eth0: renamed from veth9d0aa2a
+Nov 11 20:19:20 ip-172-31-15-108 kernel: [   88.706825] IPv6: ADDRCONF(NETDEV_CHANGE): vethc290bfd: link becomes ready
+Nov 11 20:19:20 ip-172-31-15-108 kernel: [   88.711815] docker0: port 1(vethc290bfd) entered blocking state
+Nov 11 20:19:20 ip-172-31-15-108 kernel: [   88.716433] docker0: port 1(vethc290bfd) entered forwarding state
+Nov 11 20:19:20 ip-172-31-15-108 kernel: [   88.750745] IPv6: ADDRCONF(NETDEV_CHANGE): docker0: link becomes ready
+Nov 11 20:19:21 ip-172-31-15-108 kernel: [   90.007421] EXT4-fs (dm-5): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:23 ip-172-31-15-108 kernel: [   91.604048] EXT4-fs (dm-5): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:23 ip-172-31-15-108 kernel: [   91.840424] EXT4-fs (dm-5): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:23 ip-172-31-15-108 kernel: [   92.012246] EXT4-fs (dm-5): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:24 ip-172-31-15-108 kernel: [   92.284798] EXT4-fs (dm-5): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:24 ip-172-31-15-108 kernel: [   92.397000] EXT4-fs (dm-5): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:24 ip-172-31-15-108 kernel: [   92.469539] EXT4-fs (dm-5): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:19:24 ip-172-31-15-108 kernel: [   92.478575] docker0: port 2(vetha4fdd11) entered blocking state
+Nov 11 20:19:24 ip-172-31-15-108 kernel: [   92.483058] docker0: port 2(vetha4fdd11) entered disabled state
+Nov 11 20:19:24 ip-172-31-15-108 kernel: [   92.487755] device vetha4fdd11 entered promiscuous mode
+Nov 11 20:19:24 ip-172-31-15-108 kernel: [   92.513240] IPv6: ADDRCONF(NETDEV_UP): vetha4fdd11: link is not ready
+Nov 11 20:19:24 ip-172-31-15-108 kernel: [   93.010645] eth0: renamed from veth69b28d8
+Nov 11 20:19:24 ip-172-31-15-108 kernel: [   93.014859] IPv6: ADDRCONF(NETDEV_CHANGE): vetha4fdd11: link becomes ready
+Nov 11 20:19:24 ip-172-31-15-108 kernel: [   93.020040] docker0: port 2(vetha4fdd11) entered blocking state
+Nov 11 20:19:24 ip-172-31-15-108 kernel: [   93.024518] docker0: port 2(vetha4fdd11) entered forwarding state
+Nov 11 20:19:28 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.763Z] Command Returned: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"","returncode":0,"events":[{"msg":"Starting new ECS task with awseb-MultiDocker-env-rqcdutmseh:2.","severity":"TRACE","timestamp":1605125945},{"msg":"ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5 is RUNNING.","severity":"TRACE","timestamp":1605125967}]}]}
+Nov 11 20:19:28 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.781Z] Completed executing run_eb_command.
+Nov 11 20:19:28 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.783Z] Started executing start_cfn_hup.
+Nov 11 20:19:28 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.784Z] Starting cfn-hup.
+Nov 11 20:19:28 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.799Z] Command Returned: cfn-hup start/running, process 4859
+Nov 11 20:19:28 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.805Z] Completed executing start_cfn_hup.
+Nov 11 20:19:28 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.810Z] Successfully bootstrapped instance.
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:29.999Z] Sending signal 0 to CFN wait condition https://cloudformation-waitcondition-us-east-2.s3.us-east-2.amazonaws.com/arn%3Aaws%3Acloudformation%3Aus-east-2%3A554777593914%3Astack/awseb-e-rqcdutmseh-stack/11c030c0-244a-11eb-97c9-024ff5f35efc/AWSEBInstanceLaunchWaitHandle?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20201111T181655Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86399&X-Amz-Credential=AKIAI722P7Q4X76EQLQA%2F20201111%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Signature=43a527a8c3712245141ca63649f0644062372795660ca37154879c32bc8d3894
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: CloudFormation signaled successfully with SUCCESS.
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:29.588Z] Tailing /var/log/eb-commandprocessor.log
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: 
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: ******************* eb-commandprocessor taillog *******************
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.796Z] INFO  [3879]  : Command is applicable to this instance (i-087181a0b17bdbd50)..
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.796Z] DEBUG [3879]  : Checking if the received command stage is valid..
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.796Z] INFO  [3879]  : No stage_num in command. Valid stage..
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.796Z] INFO  [3879]  : Received command CMD-SelfStartup: {"api_version"=>"1.0", "request_id"=>"0", "command_name"=>"CMD-SelfStartup"}
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.796Z] INFO  [3879]  : Command processor should execute command.
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.796Z] DEBUG [3879]  : Storing current stage..
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.796Z] DEBUG [3879]  : Stage_num does not exist. Not saving null stage. Returning..
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.796Z] DEBUG [3879]  : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: + exit 0
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.796Z] DEBUG [3879]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_ContainerConfigFileContent||commands..
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.798Z] DEBUG [3879]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_API||_Commands..
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.799Z] INFO  [3879]  : Found enabled addons: ["logstreaming", "logpublish"].
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.801Z] INFO  [3879]  : Updating Command definition of addon logstreaming.
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.801Z] INFO  [3879]  : Updating Command definition of addon logpublish.
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.801Z] DEBUG [3879]  : Refreshing metadata...
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.802Z] DEBUG [3879]  : Using cached environment metadata.
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.802Z] INFO  [3879]  : Recreated directory /opt/elasticbeanstalk/deploy/configuration/.
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.802Z] DEBUG [3879]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_AppSourceUrlFileContent||url..
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.802Z] INFO  [3879]  : Created appsource url file at /opt/elasticbeanstalk/deploy/configuration/appsourceurl.
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.802Z] DEBUG [3879]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_ContainerConfigFileContent..
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.804Z] INFO  [3879]  : Created container config file at /opt/elasticbeanstalk/deploy/configuration/containerconfiguration.
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.804Z] DEBUG [3879]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_ContainerConfigFileContent||commands..
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.805Z] DEBUG [3879]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_API||_Commands..
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.805Z] INFO  [3879]  : Found enabled addons: ["logstreaming", "logpublish"].
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.806Z] INFO  [3879]  : Updating Command definition of addon logstreaming.
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.806Z] INFO  [3879]  : Updating Command definition of addon logpublish.
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.806Z] DEBUG [3879]  : Loaded definition of Command CMD-SelfStartup.
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.806Z] INFO  [3879]  : Executing Application deployment
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.807Z] INFO  [3879]  : Executing command: CMD-SelfStartup...
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.807Z] INFO  [3879]  : Executing command CMD-SelfStartup activities...
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.807Z] DEBUG [3879]  : Setting environment variables..
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.807Z] INFO  [3879]  : Running AddonsBefore for command CMD-SelfStartup...
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.940Z] DEBUG [3879]  : Running stages of Command CMD-SelfStartup from stage 0 to stage 1...
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.941Z] INFO  [3879]  : Running stage 0 of command CMD-SelfStartup...
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.941Z] DEBUG [3879]  : Loaded 7 actions for stage 0.
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.941Z] INFO  [3879]  : Running 1 of 7 actions: HealthdLogRotation...
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.946Z] INFO  [3879]  : Running 2 of 7 actions: HealthdHTTPDLogging...
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.947Z] INFO  [3879]  : Running 3 of 7 actions: HealthdNginxLogging...
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:00.948Z] INFO  [3879]  : Running 4 of 7 actions: EbExtensionPreBuild...
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:01.566Z] INFO  [3879]  : Running 5 of 7 actions: AppDeployPreHook...
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:03.089Z] INFO  [3879]  : Running 6 of 7 actions: EbExtensionPostBuild...
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:03.760Z] INFO  [3879]  : Running 7 of 7 actions: InfraCleanEbextension...
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:03.762Z] INFO  [3879]  : Running stage 1 of command CMD-SelfStartup...
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:03.762Z] DEBUG [3879]  : Loaded 3 actions for stage 1.
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:03.762Z] INFO  [3879]  : Running 1 of 3 actions: AppDeployEnactHook...
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:27.533Z] INFO  [3879]  : Running 2 of 3 actions: AppDeployPostHook...
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.668Z] INFO  [3879]  : Running 3 of 3 actions: PostInitHook...
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.669Z] INFO  [3879]  : Running AddonsAfter for command CMD-SelfStartup...
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.753Z] INFO  [3879]  : Command CMD-SelfStartup succeeded!
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.754Z] INFO  [3879]  : Command processor returning results: 
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"","returncode":0,"events":[{"msg":"Starting new ECS task with awseb-MultiDocker-env-rqcdutmseh:2.","severity":"TRACE","timestamp":1605125945},{"msg":"ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5 is RUNNING.","severity":"TRACE","timestamp":1605125967}]}]}
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: ******************* End of taillog *******************
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: 
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: 
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:29.604Z] Tailing /var/log/eb-activity.log
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: 
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: ******************* eb-activity taillog *******************
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:03.762Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1] : Starting activity...
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:03.762Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook] : Starting activity...
+Nov 11 20:19:29 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:03.764Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook/00stop-task.sh] : Starting activity...
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:03.769Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook/00stop-task.sh] : Completed activity. Result:
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   + grep -q 'eb-ecs start/'
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   + initctl status eb-ecs
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:03.769Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook/01flip-dir.sh] : Starting activity...
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:03.962Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook/01flip-dir.sh] : Completed activity. Result:
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   + . /opt/elasticbeanstalk/hooks/common.sh
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   ++ /opt/elasticbeanstalk/bin/get-config container -k app_deploy_dir
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   + EB_CONFIG_APP_CURRENT=/var/app/current
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   ++ /opt/elasticbeanstalk/bin/get-config container -k app_staging_dir
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   + EB_CONFIG_APP_STAGING=/var/app/staging
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   + '[' -z /var/app/staging ']'
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   + '[' -d /var/app/current ']'
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   + mv /var/app/staging /var/app/current
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   + nohup rm -rf /var/app/current.old
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:03.962Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook/02update-credentials.sh] : Starting activity...
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:04.170Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook/02update-credentials.sh] : Completed activity.
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:04.171Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook/03start-task.sh] : Starting activity...
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:27.358Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook/03start-task.sh] : Completed activity. Result:
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   + . /opt/elasticbeanstalk/hooks/common.sh
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   + RETRY=0
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   + initctl start eb-ecs EB_EVENT_FILE=/tmp/eventsfile20201111-3879-7zcrfq
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   eb-ecs start/running, process 4719
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:27.358Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook/04monitor_pids.sh] : Starting activity...
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:27.533Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook/04monitor_pids.sh] : Completed activity. Result:
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   + /opt/elasticbeanstalk/bin/healthd-track-pidfile --name application --location /var/run/docker.pid
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:27.533Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployEnactHook] : Completed activity. Result:
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/enact.
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:27.533Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployPostHook] : Starting activity...
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:27.534Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployPostHook/00_clean_imgs.sh] : Starting activity...
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.668Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployPostHook/00_clean_imgs.sh] : Completed activity.
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.668Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/AppDeployPostHook] : Completed activity. Result:
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/post.
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.668Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/PostInitHook] : Starting activity...
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.668Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1/PostInitHook] : Completed activity. Result:
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/postinit.
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.669Z] INFO  [3879]  - [Application deployment Sample Application@2/StartupStage1] : Completed activity. Result:
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   Application deployment - Command CMD-SelfStartup stage 1 completed
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.669Z] INFO  [3879]  - [Application deployment Sample Application@2/AddonsAfter] : Starting activity...
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.669Z] INFO  [3879]  - [Application deployment Sample Application@2/AddonsAfter/ConfigLogRotation] : Starting activity...
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.669Z] INFO  [3879]  - [Application deployment Sample Application@2/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.753Z] INFO  [3879]  - [Application deployment Sample Application@2/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   Disabled forced hourly log rotation.
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.753Z] INFO  [3879]  - [Application deployment Sample Application@2/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.753Z] INFO  [3879]  - [Application deployment Sample Application@2/AddonsAfter] : Completed activity.
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:28.753Z] INFO  [3879]  - [Application deployment Sample Application@2] : Completed activity. Result:
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]:   Application deployment - Command CMD-SelfStartup succeeded
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: ******************* End of taillog *******************
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:29.615Z] Tailing /var/log/eb-tools.log
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: ******************* eb-tools taillog *******************
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: ***eb-tools is not available yet.***
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: ******************* End of taillog *******************
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:29.624Z] Tailing /var/log/eb-version-deployment.log
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: ******************* eb-version-deployment taillog *******************
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: ***eb-version-deployment is not available yet.***
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: ******************* End of taillog *******************
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:29.629Z] Tailing /var/log/cfn-init.log
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: ******************* cfn-init taillog *******************
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,466 [INFO] -----------------------Starting build-----------------------
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,474 [INFO] Running configSets: _OnInstanceBoot
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,477 [INFO] Running configSet _OnInstanceBoot
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,482 [INFO] Running config AWSEBBaseConfig
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,488 [INFO] Command clearbackupfiles succeeded
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,496 [INFO] Running config AWSEBMessageOfTheDay
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,500 [INFO] Command 01clearoriginal succeeded
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,505 [INFO] Command 02createbanner succeeded
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,518 [INFO] Command 03updatebanner succeeded
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,524 [INFO] Running config AWSEBULimitConfig
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,528 [INFO] Command 00removebackup succeeded
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,534 [INFO] Running config AWSEBCfnHupEndpointOverride
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,538 [INFO] Command clearbackupfiles succeeded
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,544 [INFO] Running config Infra-InstallContainerHooksPkg
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,548 [INFO] Command 00mkdir succeeded
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,586 [INFO] Command 01download_container_hooks succeeded
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,593 [INFO] Command 02install_container_hooks succeeded
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,596 [INFO] Command 03cleanup succeeded
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,602 [INFO] Running config Infra-WriteLeaderTestScript
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,608 [INFO] Running config Infra-WriteTailLogsConf
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,613 [INFO] Running config Infra-WriteSystemTailLogsConf
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,619 [INFO] Running config Infra-WriteBundleLogsConf
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,624 [INFO] Running config Infra-WritePublishLogsConf
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,628 [INFO] Running config Infra-WritePublishLogsCron
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,630 [INFO] ConfigSets completed
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:18:08,630 [INFO] -----------------------Build complete-----------------------
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:01,526 [INFO] -----------------------Starting build-----------------------
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:01,534 [INFO] Running configSets: Infra-EmbeddedPreBuild
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:01,537 [INFO] Running configSet Infra-EmbeddedPreBuild
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:01,541 [INFO] Running config prebuild_0_multi_docker
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:01,546 [INFO] Running config prebuild_1_multi_docker
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:01,547 [INFO] ConfigSets completed
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:01,547 [INFO] -----------------------Build complete-----------------------
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:03,489 [INFO] -----------------------Starting build-----------------------
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:03,497 [INFO] Running configSets: Infra-EmbeddedPostBuild
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:03,500 [INFO] Running configSet Infra-EmbeddedPostBuild
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:03,504 [INFO] Running config postbuild_0_multi_docker
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:03,740 [INFO] Command 01-healthd-configure succeeded
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:03,741 [INFO] ConfigSets completed
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:03,742 [INFO] -----------------------Build complete-----------------------
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: ******************* End of taillog *******************
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:29.640Z] Tailing /var/log/cfn-hup.log
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: ******************* cfn-hup taillog *******************
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:29,383 [DEBUG] CloudFormation client initialized with endpoint https://cloudformation.us-east-2.amazonaws.com
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:29,383 [DEBUG] SQS client initialized with endpoint https://sqs.us-east-2.amazonaws.com
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:29,384 [DEBUG] CloudFormation client initialized with endpoint https://cloudformation.us-east-2.amazonaws.com
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:29,384 [DEBUG] Enabled single threading mode.
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:29,384 [DEBUG] Creating /var/lib/cfn-hup/data
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:29,392 [INFO] No umask value specified in config file. Using the default one: 022
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 2020-11-11 20:19:29,419 [DEBUG] Registering listener i-087181a0b17bdbd50 for stack arn:aws:cloudformation:us-east-2:554777593914:stack/awseb-e-rqcdutmseh-stack/11c030c0-244a-11eb-97c9-024ff5f35efc
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: ******************* End of taillog *******************
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: 
+Nov 11 20:19:30 ip-172-31-15-108 [eb-cfn-init]: [2020-11-11T20:19:29.648Z] Completed EB Bootstrapping Script.
+Nov 11 20:19:58 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 113030ms.
+Nov 11 20:21:51 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 119360ms.
+Nov 11 20:23:28 ip-172-31-15-108 ntpd[3176]: kernel reports TIME_ERROR: 0x41: Clock Unsynchronized
+Nov 11 20:23:51 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 113680ms.
+Nov 11 20:25:44 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 127600ms.
+Nov 11 20:27:52 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 128850ms.
+Nov 11 20:28:33 ip-172-31-15-108 ntpd[3176]: 108.59.2.24 local addr 172.31.15.108 -> <null>
+Nov 11 20:30:01 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 115600ms.
+Nov 11 20:31:57 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 115520ms.
+Nov 11 20:33:52 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 131500ms.
+Nov 11 20:36:04 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 118460ms.
+Nov 11 20:38:02 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 126580ms.
+Nov 11 20:38:03 ip-172-31-15-108 init: eb-ecs main process (4719) killed by TERM signal
+Nov 11 20:38:05 ip-172-31-15-108 kernel: [ 1214.063016] docker0: port 2(vetha4fdd11) entered disabled state
+Nov 11 20:38:05 ip-172-31-15-108 kernel: [ 1214.069202] veth69b28d8: renamed from eth0
+Nov 11 20:38:05 ip-172-31-15-108 kernel: [ 1214.085313] docker0: port 2(vetha4fdd11) entered disabled state
+Nov 11 20:38:05 ip-172-31-15-108 kernel: [ 1214.090312] device vetha4fdd11 left promiscuous mode
+Nov 11 20:38:05 ip-172-31-15-108 kernel: [ 1214.093735] docker0: port 2(vetha4fdd11) entered disabled state
+Nov 11 20:38:06 ip-172-31-15-108 kernel: [ 1214.278793] docker0: port 1(vethc290bfd) entered disabled state
+Nov 11 20:38:06 ip-172-31-15-108 kernel: [ 1214.285681] veth9d0aa2a: renamed from eth0
+Nov 11 20:38:06 ip-172-31-15-108 kernel: [ 1214.301228] docker0: port 1(vethc290bfd) entered disabled state
+Nov 11 20:38:06 ip-172-31-15-108 kernel: [ 1214.306480] device vethc290bfd left promiscuous mode
+Nov 11 20:38:06 ip-172-31-15-108 kernel: [ 1214.310412] docker0: port 1(vethc290bfd) entered disabled state
+Nov 11 20:38:10 ip-172-31-15-108 kernel: [ 1218.914299] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:38:10 ip-172-31-15-108 kernel: [ 1219.018859] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:38:10 ip-172-31-15-108 kernel: [ 1219.134059] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:38:10 ip-172-31-15-108 kernel: [ 1219.145979] docker0: port 1(veth40097d6) entered blocking state
+Nov 11 20:38:10 ip-172-31-15-108 kernel: [ 1219.152718] docker0: port 1(veth40097d6) entered disabled state
+Nov 11 20:38:10 ip-172-31-15-108 kernel: [ 1219.159567] device veth40097d6 entered promiscuous mode
+Nov 11 20:38:10 ip-172-31-15-108 kernel: [ 1219.195511] IPv6: ADDRCONF(NETDEV_UP): veth40097d6: link is not ready
+Nov 11 20:38:11 ip-172-31-15-108 kernel: [ 1219.466142] eth0: renamed from vethdc85de8
+Nov 11 20:38:11 ip-172-31-15-108 kernel: [ 1219.474735] IPv6: ADDRCONF(NETDEV_CHANGE): veth40097d6: link becomes ready
+Nov 11 20:38:11 ip-172-31-15-108 kernel: [ 1219.482620] docker0: port 1(veth40097d6) entered blocking state
+Nov 11 20:38:11 ip-172-31-15-108 kernel: [ 1219.488872] docker0: port 1(veth40097d6) entered forwarding state
+Nov 11 20:38:11 ip-172-31-15-108 kernel: [ 1220.088567] EXT4-fs (dm-5): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:38:11 ip-172-31-15-108 kernel: [ 1220.189055] EXT4-fs (dm-5): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:38:12 ip-172-31-15-108 kernel: [ 1220.264644] EXT4-fs (dm-5): mounted filesystem with ordered data mode. Opts: (null)
+Nov 11 20:38:12 ip-172-31-15-108 kernel: [ 1220.273428] docker0: port 2(vethe803c7d) entered blocking state
+Nov 11 20:38:12 ip-172-31-15-108 kernel: [ 1220.277965] docker0: port 2(vethe803c7d) entered disabled state
+Nov 11 20:38:12 ip-172-31-15-108 kernel: [ 1220.284304] device vethe803c7d entered promiscuous mode
+Nov 11 20:38:12 ip-172-31-15-108 kernel: [ 1220.312988] IPv6: ADDRCONF(NETDEV_UP): vethe803c7d: link is not ready
+Nov 11 20:38:12 ip-172-31-15-108 kernel: [ 1220.614118] eth0: renamed from veth87531da
+Nov 11 20:38:12 ip-172-31-15-108 kernel: [ 1220.618784] IPv6: ADDRCONF(NETDEV_CHANGE): vethe803c7d: link becomes ready
+Nov 11 20:38:12 ip-172-31-15-108 kernel: [ 1220.625044] docker0: port 2(vethe803c7d) entered blocking state
+Nov 11 20:38:12 ip-172-31-15-108 kernel: [ 1220.629614] docker0: port 2(vethe803c7d) entered forwarding state
+Nov 11 20:40:09 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 126680ms.
+Nov 11 20:42:16 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 127650ms.
+Nov 11 20:42:31 ip-172-31-15-108 dhclient[2127]: DHCPREQUEST on eth0 to 172.31.0.1 port 67 (xid=0x1c91f4e4)
+Nov 11 20:42:31 ip-172-31-15-108 dhclient[2127]: DHCPACK from 172.31.0.1 (xid=0x1c91f4e4)
+Nov 11 20:42:31 ip-172-31-15-108 dhclient[2127]: bound to 172.31.15.108 -- renewal in 1730 seconds.
+Nov 11 20:42:31 ip-172-31-15-108 ec2net: [get_meta] Getting token for IMDSv2
+Nov 11 20:42:31 ip-172-31-15-108 ec2net: [get_meta] Trying to get http://169.254.169.254/latest/meta-data/network/interfaces/macs/02:57:16:5e:26:26/local-ipv4s
+Nov 11 20:42:31 ip-172-31-15-108 ec2net: [rewrite_aliases] Rewriting aliases of eth0
+Nov 11 20:44:24 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 120750ms.
+Nov 11 20:46:24 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 115470ms.
+Nov 11 20:48:20 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 128040ms.
+Nov 11 20:50:28 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 125850ms.
+Nov 11 20:52:34 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 125880ms.
+Nov 11 20:54:40 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 116860ms.
+Nov 11 20:56:37 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 110750ms.
+Nov 11 20:58:28 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 129580ms.
+Nov 11 21:00:38 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 124720ms.
+Nov 11 21:02:42 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 119950ms.
+Nov 11 21:04:42 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 109270ms.
+Nov 11 21:06:32 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 112180ms.
+Nov 11 21:08:24 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 128170ms.
+Nov 11 21:10:32 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 111090ms.
+Nov 11 21:11:21 ip-172-31-15-108 dhclient[2127]: DHCPREQUEST on eth0 to 172.31.0.1 port 67 (xid=0x1c91f4e4)
+Nov 11 21:11:21 ip-172-31-15-108 dhclient[2127]: DHCPACK from 172.31.0.1 (xid=0x1c91f4e4)
+Nov 11 21:11:21 ip-172-31-15-108 dhclient[2127]: bound to 172.31.15.108 -- renewal in 1432 seconds.
+Nov 11 21:11:21 ip-172-31-15-108 ec2net: [get_meta] Getting token for IMDSv2
+Nov 11 21:11:21 ip-172-31-15-108 ec2net: [get_meta] Trying to get http://169.254.169.254/latest/meta-data/network/interfaces/macs/02:57:16:5e:26:26/local-ipv4s
+Nov 11 21:11:21 ip-172-31-15-108 ec2net: [rewrite_aliases] Rewriting aliases of eth0
+Nov 11 21:12:23 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 113890ms.
+Nov 11 21:14:17 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 116390ms.
+Nov 11 21:16:14 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 128750ms.
+Nov 11 21:18:23 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 117400ms.
+Nov 11 21:20:20 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 120480ms.
+Nov 11 21:22:21 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 129800ms.
+Nov 11 21:24:31 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 124340ms.
+Nov 11 21:26:35 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 121790ms.
+Nov 11 21:28:37 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 127010ms.
+Nov 11 21:30:44 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 110580ms.
+Nov 11 21:32:35 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 124560ms.
+Nov 11 21:34:39 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 123900ms.
+Nov 11 21:35:13 ip-172-31-15-108 dhclient[2127]: DHCPREQUEST on eth0 to 172.31.0.1 port 67 (xid=0x1c91f4e4)
+Nov 11 21:35:13 ip-172-31-15-108 dhclient[2127]: DHCPACK from 172.31.0.1 (xid=0x1c91f4e4)
+Nov 11 21:35:13 ip-172-31-15-108 dhclient[2127]: bound to 172.31.15.108 -- renewal in 1699 seconds.
+Nov 11 21:35:13 ip-172-31-15-108 ec2net: [get_meta] Getting token for IMDSv2
+Nov 11 21:35:13 ip-172-31-15-108 ec2net: [get_meta] Trying to get http://169.254.169.254/latest/meta-data/network/interfaces/macs/02:57:16:5e:26:26/local-ipv4s
+Nov 11 21:35:13 ip-172-31-15-108 ec2net: [rewrite_aliases] Rewriting aliases of eth0
+Nov 11 21:36:43 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 113920ms.
+Nov 11 21:38:37 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 117490ms.
+Nov 11 21:40:35 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 130770ms.
+Nov 11 21:42:46 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 128880ms.
+Nov 11 21:44:55 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 123240ms.
+Nov 11 21:46:58 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 111230ms.
+Nov 11 21:48:50 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 129120ms.
+Nov 11 21:50:59 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 116730ms.
+Nov 11 21:52:56 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 111700ms.
+Nov 11 21:54:47 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 131840ms.
+Nov 11 21:56:59 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 129070ms.
+Nov 11 21:59:08 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 131000ms.
+Nov 11 22:01:20 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 109020ms.
+Nov 11 22:03:09 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 115750ms.
+Nov 11 22:03:32 ip-172-31-15-108 dhclient[2127]: DHCPREQUEST on eth0 to 172.31.0.1 port 67 (xid=0x1c91f4e4)
+Nov 11 22:03:32 ip-172-31-15-108 dhclient[2127]: DHCPACK from 172.31.0.1 (xid=0x1c91f4e4)
+Nov 11 22:03:32 ip-172-31-15-108 dhclient[2127]: bound to 172.31.15.108 -- renewal in 1706 seconds.
+Nov 11 22:03:32 ip-172-31-15-108 ec2net: [get_meta] Getting token for IMDSv2
+Nov 11 22:03:32 ip-172-31-15-108 ec2net: [get_meta] Trying to get http://169.254.169.254/latest/meta-data/network/interfaces/macs/02:57:16:5e:26:26/local-ipv4s
+Nov 11 22:03:32 ip-172-31-15-108 ec2net: [rewrite_aliases] Rewriting aliases of eth0
+Nov 11 22:05:04 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 131980ms.
+Nov 11 22:07:17 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 127270ms.
+Nov 11 22:09:24 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 115550ms.
+Nov 11 22:11:20 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 123860ms.
+Nov 11 22:13:23 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 129260ms.
+Nov 11 22:15:33 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 122920ms.
+Nov 11 22:17:36 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 129960ms.
+Nov 11 22:19:46 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 112440ms.
+Nov 11 22:21:38 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 126590ms.
+Nov 11 22:23:45 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 120570ms.
+Nov 11 22:25:46 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 111580ms.
+Nov 11 22:27:37 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 130250ms.
+Nov 11 22:29:48 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 110060ms.
+Nov 11 22:31:38 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 108620ms.
+Nov 11 22:31:58 ip-172-31-15-108 dhclient[2127]: DHCPREQUEST on eth0 to 172.31.0.1 port 67 (xid=0x1c91f4e4)
+Nov 11 22:31:58 ip-172-31-15-108 dhclient[2127]: DHCPACK from 172.31.0.1 (xid=0x1c91f4e4)
+Nov 11 22:31:58 ip-172-31-15-108 dhclient[2127]: bound to 172.31.15.108 -- renewal in 1488 seconds.
+Nov 11 22:31:58 ip-172-31-15-108 ec2net: [get_meta] Getting token for IMDSv2
+Nov 11 22:31:58 ip-172-31-15-108 ec2net: [get_meta] Trying to get http://169.254.169.254/latest/meta-data/network/interfaces/macs/02:57:16:5e:26:26/local-ipv4s
+Nov 11 22:31:58 ip-172-31-15-108 ec2net: [rewrite_aliases] Rewriting aliases of eth0
+Nov 11 22:33:27 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 114720ms.
+Nov 11 22:35:21 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 112520ms.
+Nov 11 22:37:14 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 123890ms.
+Nov 11 22:39:18 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 128470ms.
+Nov 11 22:41:27 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 116490ms.
+Nov 11 22:43:23 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 117690ms.
+Nov 11 22:45:21 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 113030ms.
+Nov 11 22:47:14 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 130190ms.
+Nov 11 22:49:24 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 110640ms.
+Nov 11 22:51:15 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 113950ms.
+Nov 11 22:53:09 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 131670ms.
+Nov 11 22:55:21 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 131440ms.
+Nov 11 22:56:47 ip-172-31-15-108 dhclient[2127]: DHCPREQUEST on eth0 to 172.31.0.1 port 67 (xid=0x1c91f4e4)
+Nov 11 22:56:47 ip-172-31-15-108 dhclient[2127]: DHCPACK from 172.31.0.1 (xid=0x1c91f4e4)
+Nov 11 22:56:47 ip-172-31-15-108 dhclient[2127]: bound to 172.31.15.108 -- renewal in 1511 seconds.
+Nov 11 22:56:47 ip-172-31-15-108 ec2net: [get_meta] Getting token for IMDSv2
+Nov 11 22:56:47 ip-172-31-15-108 ec2net: [get_meta] Trying to get http://169.254.169.254/latest/meta-data/network/interfaces/macs/02:57:16:5e:26:26/local-ipv4s
+Nov 11 22:56:47 ip-172-31-15-108 ec2net: [rewrite_aliases] Rewriting aliases of eth0
+Nov 11 22:57:32 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 118880ms.
+Nov 11 22:59:31 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 119780ms.
+Nov 11 23:01:31 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 114780ms.
+Nov 11 23:03:26 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 131870ms.
+Nov 11 23:05:38 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 108690ms.
+Nov 11 23:07:27 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 112080ms.
+Nov 11 23:09:19 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 116110ms.
+Nov 11 23:11:15 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 127940ms.
+Nov 11 23:13:23 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 124830ms.
+Nov 11 23:15:28 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 110290ms.
+Nov 11 23:17:19 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 122120ms.
+Nov 11 23:19:21 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 112780ms.
+Nov 11 23:21:14 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 118990ms.
+Nov 11 23:21:59 ip-172-31-15-108 dhclient[2127]: DHCPREQUEST on eth0 to 172.31.0.1 port 67 (xid=0x1c91f4e4)
+Nov 11 23:21:59 ip-172-31-15-108 dhclient[2127]: DHCPACK from 172.31.0.1 (xid=0x1c91f4e4)
+Nov 11 23:21:59 ip-172-31-15-108 dhclient[2127]: bound to 172.31.15.108 -- renewal in 1556 seconds.
+Nov 11 23:21:59 ip-172-31-15-108 ec2net: [get_meta] Getting token for IMDSv2
+Nov 11 23:21:59 ip-172-31-15-108 ec2net: [get_meta] Trying to get http://169.254.169.254/latest/meta-data/network/interfaces/macs/02:57:16:5e:26:26/local-ipv4s
+Nov 11 23:21:59 ip-172-31-15-108 ec2net: [rewrite_aliases] Rewriting aliases of eth0
+Nov 11 23:23:13 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 129850ms.
+Nov 11 23:25:23 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 121120ms.
+Nov 11 23:27:24 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 129790ms.
+Nov 11 23:29:34 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 110880ms.
+Nov 11 23:31:25 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 128800ms.
+Nov 11 23:33:34 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 129950ms.
+Nov 11 23:35:44 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 111090ms.
+Nov 11 23:37:35 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 113000ms.
+Nov 11 23:39:28 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 131090ms.
+Nov 11 23:41:39 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 119660ms.
+Nov 11 23:43:39 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 117640ms.
+Nov 11 23:45:37 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 112620ms.
+Nov 11 23:47:29 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 114280ms.
+Nov 11 23:47:55 ip-172-31-15-108 dhclient[2127]: DHCPREQUEST on eth0 to 172.31.0.1 port 67 (xid=0x1c91f4e4)
+Nov 11 23:47:55 ip-172-31-15-108 dhclient[2127]: DHCPACK from 172.31.0.1 (xid=0x1c91f4e4)
+Nov 11 23:47:55 ip-172-31-15-108 dhclient[2127]: bound to 172.31.15.108 -- renewal in 1790 seconds.
+Nov 11 23:47:55 ip-172-31-15-108 ec2net: [get_meta] Getting token for IMDSv2
+Nov 11 23:47:55 ip-172-31-15-108 ec2net: [get_meta] Trying to get http://169.254.169.254/latest/meta-data/network/interfaces/macs/02:57:16:5e:26:26/local-ipv4s
+Nov 11 23:47:55 ip-172-31-15-108 ec2net: [rewrite_aliases] Rewriting aliases of eth0
+Nov 11 23:49:24 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 128280ms.
+Nov 11 23:51:32 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 127370ms.
+Nov 11 23:53:40 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 109710ms.
+Nov 11 23:55:29 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 109820ms.
+Nov 11 23:57:19 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 126460ms.
+Nov 11 23:59:26 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 126760ms.
+Nov 12 00:01:33 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 121120ms.
+Nov 12 00:01:55 ip-172-31-15-108 init: /etc/init.conf: Unable to load configuration: No such file or directory
+Nov 12 00:01:57 ip-172-31-15-108 init: eb-ecs main process (8107) killed by TERM signal
+Nov 12 00:01:59 ip-172-31-15-108 kernel: [13447.391605] docker0: port 2(vethe803c7d) entered disabled state
+Nov 12 00:01:59 ip-172-31-15-108 kernel: [13447.399130] veth87531da: renamed from eth0
+Nov 12 00:01:59 ip-172-31-15-108 kernel: [13447.412494] docker0: port 2(vethe803c7d) entered disabled state
+Nov 12 00:01:59 ip-172-31-15-108 kernel: [13447.417966] device vethe803c7d left promiscuous mode
+Nov 12 00:01:59 ip-172-31-15-108 kernel: [13447.421823] docker0: port 2(vethe803c7d) entered disabled state
+Nov 12 00:01:59 ip-172-31-15-108 kernel: [13447.614689] docker0: port 1(veth40097d6) entered disabled state
+Nov 12 00:01:59 ip-172-31-15-108 kernel: [13447.619292] vethdc85de8: renamed from eth0
+Nov 12 00:01:59 ip-172-31-15-108 kernel: [13447.641131] docker0: port 1(veth40097d6) entered disabled state
+Nov 12 00:01:59 ip-172-31-15-108 kernel: [13447.646133] device veth40097d6 left promiscuous mode
+Nov 12 00:01:59 ip-172-31-15-108 kernel: [13447.649986] docker0: port 1(veth40097d6) entered disabled state
+Nov 12 00:02:05 ip-172-31-15-108 kernel: [13453.574280] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:06 ip-172-31-15-108 kernel: [13454.258060] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:06 ip-172-31-15-108 kernel: [13454.559188] EXT4-fs (dm-5): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:06 ip-172-31-15-108 kernel: [13455.072125] EXT4-fs (dm-5): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:07 ip-172-31-15-108 kernel: [13455.737856] EXT4-fs (dm-5): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:07 ip-172-31-15-108 kernel: [13455.869817] EXT4-fs (dm-5): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:07 ip-172-31-15-108 kernel: [13455.972478] EXT4-fs (dm-6): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:07 ip-172-31-15-108 kernel: [13456.094406] EXT4-fs (dm-6): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:07 ip-172-31-15-108 kernel: [13456.119102] docker0: port 1(veth92d48c7) entered blocking state
+Nov 12 00:02:07 ip-172-31-15-108 kernel: [13456.124951] docker0: port 1(veth92d48c7) entered disabled state
+Nov 12 00:02:07 ip-172-31-15-108 kernel: [13456.129861] device veth92d48c7 entered promiscuous mode
+Nov 12 00:02:07 ip-172-31-15-108 kernel: [13456.206717] IPv6: ADDRCONF(NETDEV_UP): veth92d48c7: link is not ready
+Nov 12 00:02:08 ip-172-31-15-108 kernel: [13457.166201] eth0: renamed from veth620d1ce
+Nov 12 00:02:08 ip-172-31-15-108 kernel: [13457.175065] IPv6: ADDRCONF(NETDEV_CHANGE): veth92d48c7: link becomes ready
+Nov 12 00:02:08 ip-172-31-15-108 kernel: [13457.180161] docker0: port 1(veth92d48c7) entered blocking state
+Nov 12 00:02:08 ip-172-31-15-108 kernel: [13457.184670] docker0: port 1(veth92d48c7) entered forwarding state
+Nov 12 00:02:10 ip-172-31-15-108 kernel: [13458.812194] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:11 ip-172-31-15-108 kernel: [13459.452533] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:11 ip-172-31-15-108 kernel: [13459.983421] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:12 ip-172-31-15-108 kernel: [13460.451131] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:12 ip-172-31-15-108 kernel: [13460.987136] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:13 ip-172-31-15-108 kernel: [13461.791886] EXT4-fs (dm-5): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:14 ip-172-31-15-108 kernel: [13462.780091] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:14 ip-172-31-15-108 kernel: [13462.866951] EXT4-fs (dm-5): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:14 ip-172-31-15-108 kernel: [13463.015371] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:14 ip-172-31-15-108 kernel: [13463.186798] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:14 ip-172-31-15-108 kernel: [13463.224403] EXT4-fs (dm-5): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:15 ip-172-31-15-108 kernel: [13463.325652] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:15 ip-172-31-15-108 kernel: [13463.433987] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:15 ip-172-31-15-108 kernel: [13463.490909] EXT4-fs (dm-5): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:15 ip-172-31-15-108 kernel: [13463.506098] docker0: port 2(veth2dbb1e1) entered blocking state
+Nov 12 00:02:15 ip-172-31-15-108 kernel: [13463.512137] docker0: port 2(veth2dbb1e1) entered disabled state
+Nov 12 00:02:15 ip-172-31-15-108 kernel: [13463.517027] device veth2dbb1e1 entered promiscuous mode
+Nov 12 00:02:15 ip-172-31-15-108 kernel: [13463.559813] IPv6: ADDRCONF(NETDEV_UP): veth2dbb1e1: link is not ready
+Nov 12 00:02:16 ip-172-31-15-108 kernel: [13464.364652] eth0: renamed from veth39568de
+Nov 12 00:02:16 ip-172-31-15-108 kernel: [13464.373096] IPv6: ADDRCONF(NETDEV_CHANGE): veth2dbb1e1: link becomes ready
+Nov 12 00:02:16 ip-172-31-15-108 kernel: [13464.378058] docker0: port 2(veth2dbb1e1) entered blocking state
+Nov 12 00:02:16 ip-172-31-15-108 kernel: [13464.382415] docker0: port 2(veth2dbb1e1) entered forwarding state
+Nov 12 00:02:17 ip-172-31-15-108 kernel: [13465.768802] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:17 ip-172-31-15-108 kernel: [13466.116388] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:17 ip-172-31-15-108 kernel: [13466.201161] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:18 ip-172-31-15-108 kernel: [13466.265228] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:18 ip-172-31-15-108 kernel: [13466.274918] docker0: port 3(veth135fdd1) entered blocking state
+Nov 12 00:02:18 ip-172-31-15-108 kernel: [13466.279795] docker0: port 3(veth135fdd1) entered disabled state
+Nov 12 00:02:18 ip-172-31-15-108 kernel: [13466.285865] device veth135fdd1 entered promiscuous mode
+Nov 12 00:02:18 ip-172-31-15-108 kernel: [13466.315211] IPv6: ADDRCONF(NETDEV_UP): veth135fdd1: link is not ready
+Nov 12 00:02:18 ip-172-31-15-108 kernel: [13466.574026] eth0: renamed from veth564e114
+Nov 12 00:02:18 ip-172-31-15-108 kernel: [13466.580633] IPv6: ADDRCONF(NETDEV_CHANGE): veth135fdd1: link becomes ready
+Nov 12 00:02:18 ip-172-31-15-108 kernel: [13466.587843] docker0: port 3(veth135fdd1) entered blocking state
+Nov 12 00:02:18 ip-172-31-15-108 kernel: [13466.607408] docker0: port 3(veth135fdd1) entered forwarding state
+Nov 12 00:02:19 ip-172-31-15-108 kernel: [13467.544127] EXT4-fs (dm-7): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:19 ip-172-31-15-108 kernel: [13467.857144] EXT4-fs (dm-7): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:19 ip-172-31-15-108 kernel: [13467.964056] EXT4-fs (dm-7): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:19 ip-172-31-15-108 kernel: [13468.045115] EXT4-fs (dm-7): mounted filesystem with ordered data mode. Opts: (null)
+Nov 12 00:02:19 ip-172-31-15-108 kernel: [13468.053699] docker0: port 4(vethd9f9eea) entered blocking state
+Nov 12 00:02:19 ip-172-31-15-108 kernel: [13468.058068] docker0: port 4(vethd9f9eea) entered disabled state
+Nov 12 00:02:19 ip-172-31-15-108 kernel: [13468.062562] device vethd9f9eea entered promiscuous mode
+Nov 12 00:02:19 ip-172-31-15-108 kernel: [13468.087795] IPv6: ADDRCONF(NETDEV_UP): vethd9f9eea: link is not ready
+Nov 12 00:02:20 ip-172-31-15-108 kernel: [13468.378052] eth0: renamed from veth3dbb5c7
+Nov 12 00:02:20 ip-172-31-15-108 kernel: [13468.383588] IPv6: ADDRCONF(NETDEV_CHANGE): vethd9f9eea: link becomes ready
+Nov 12 00:02:20 ip-172-31-15-108 kernel: [13468.389105] docker0: port 4(vethd9f9eea) entered blocking state
+Nov 12 00:02:20 ip-172-31-15-108 kernel: [13468.393851] docker0: port 4(vethd9f9eea) entered forwarding state
+Nov 12 00:03:34 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 118920ms.
+Nov 12 00:05:33 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 128120ms.
+Nov 12 00:07:41 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 125600ms.
+Nov 12 00:09:47 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 113060ms.
+Nov 12 00:11:40 ip-172-31-15-108 dhclient[2243]: XMT: Solicit on eth0, interval 126170ms.

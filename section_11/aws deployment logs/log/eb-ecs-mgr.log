@@ -1,0 +1,2699 @@
+2020-11-11T20:19:04Z + . /opt/elasticbeanstalk/hooks/common.sh
+2020-11-11T20:19:04Z ++ /opt/elasticbeanstalk/bin/get-config container -k ecs_cluster
+2020-11-11T20:19:04Z + EB_CONFIG_ECS_CLUSTER=awseb-MultiDocker-env-rqcdutmseh
+2020-11-11T20:19:04Z ++ /opt/elasticbeanstalk/bin/get-config container -k ecs_task_def
+2020-11-11T20:19:04Z + EB_CONFIG_ECS_TASK_DEF=awseb-MultiDocker-env-rqcdutmseh
+2020-11-11T20:19:04Z ++ /opt/elasticbeanstalk/bin/get-config container -k ecs_task_arn_file
+2020-11-11T20:19:04Z + EB_CONFIG_ECS_TASK_ARN_FILE=/etc/elasticbeanstalk/.ecs-task-arn
+2020-11-11T20:19:04Z ++ /opt/elasticbeanstalk/bin/get-config container -k deployment_manifest
+2020-11-11T20:19:04Z + EB_CONFIG_DEPLOYMENT_MANIFEST=/opt/elasticbeanstalk/deploy/manifest
+2020-11-11T20:19:04Z + '[' -f /opt/elasticbeanstalk/deploy/manifest ']'
+2020-11-11T20:19:04Z ++ jq -r '.ECS.TaskDefinitionName | select(. != null)'
+2020-11-11T20:19:04Z ++ cat /opt/elasticbeanstalk/deploy/manifest
+2020-11-11T20:19:04Z + EB_TASK_DEF_NAME_FROM_MANIFEST=awseb-MultiDocker-env-rqcdutmseh
+2020-11-11T20:19:04Z ++ jq -r '.ECS.TaskDefinitionRevision | select(. != null)'
+2020-11-11T20:19:04Z ++ cat /opt/elasticbeanstalk/deploy/manifest
+2020-11-11T20:19:04Z + EB_TASK_DEF_REVISION_FROM_MANIFEST=2
+2020-11-11T20:19:04Z + '[' -z awseb-MultiDocker-env-rqcdutmseh ']'
+2020-11-11T20:19:04Z + '[' -z 2 ']'
+2020-11-11T20:19:04Z + EB_CONFIG_ECS_TASK_DEF=awseb-MultiDocker-env-rqcdutmseh:2
+2020-11-11T20:19:04Z + '[' -z awseb-MultiDocker-env-rqcdutmseh ']'
+2020-11-11T20:19:04Z + '[' -z awseb-MultiDocker-env-rqcdutmseh:2 ']'
+2020-11-11T20:19:04Z + CMD_GET_INSTANCE_ARN='curl -sS http://localhost:51678/v1/metadata | jq -r .ContainerInstanceArn'
+2020-11-11T20:19:04Z + CMD_GET_KNOWN_STATUS='curl -sS http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN | jq -r .KnownStatus'
+2020-11-11T20:19:04Z + CMD_DESCRIBE_INSTANCE='aws ecs describe-container-instances --cluster $EB_CONFIG_ECS_CLUSTER --container-instances $EB_CONFIG_ECS_INSTANCE_ARN 2>&1'
+2020-11-11T20:19:04Z + case "$1" in
+2020-11-11T20:19:04Z + start_ecs_task
+2020-11-11T20:19:04Z ++ eval curl -sS http://localhost:51678/v1/metadata '|' jq -r .ContainerInstanceArn
+2020-11-11T20:19:04Z +++ jq -r .ContainerInstanceArn
+2020-11-11T20:19:04Z +++ curl -sS http://localhost:51678/v1/metadata
+2020-11-11T20:19:04Z + local EB_CONFIG_ECS_INSTANCE_ARN=arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3
+2020-11-11T20:19:04Z + local TIMEOUT=10
+2020-11-11T20:19:04Z + '[' -n arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3 ']'
+2020-11-11T20:19:04Z + '[' arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3 '!=' null ']'
+2020-11-11T20:19:04Z + set +e
+2020-11-11T20:19:04Z + local ECS_RESPONSE
+2020-11-11T20:19:04Z ++ eval aws ecs describe-container-instances --cluster '$EB_CONFIG_ECS_CLUSTER' --container-instances '$EB_CONFIG_ECS_INSTANCE_ARN' '2>&1'
+2020-11-11T20:19:04Z +++ aws ecs describe-container-instances --cluster awseb-MultiDocker-env-rqcdutmseh --container-instances arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3
+2020-11-11T20:19:05Z + ECS_RESPONSE='{
+2020-11-11T20:19:05Z     "failures": [], 
+2020-11-11T20:19:05Z     "containerInstances": [
+2020-11-11T20:19:05Z         {
+2020-11-11T20:19:05Z             "status": "ACTIVE", 
+2020-11-11T20:19:05Z             "registeredAt": 1605125939.717, 
+2020-11-11T20:19:05Z             "registeredResources": [
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "integerValue": 1024, 
+2020-11-11T20:19:05Z                     "longValue": 0, 
+2020-11-11T20:19:05Z                     "type": "INTEGER", 
+2020-11-11T20:19:05Z                     "name": "CPU", 
+2020-11-11T20:19:05Z                     "doubleValue": 0.0
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "integerValue": 985, 
+2020-11-11T20:19:05Z                     "longValue": 0, 
+2020-11-11T20:19:05Z                     "type": "INTEGER", 
+2020-11-11T20:19:05Z                     "name": "MEMORY", 
+2020-11-11T20:19:05Z                     "doubleValue": 0.0
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "PORTS", 
+2020-11-11T20:19:05Z                     "longValue": 0, 
+2020-11-11T20:19:05Z                     "doubleValue": 0.0, 
+2020-11-11T20:19:05Z                     "stringSetValue": [
+2020-11-11T20:19:05Z                         "22", 
+2020-11-11T20:19:05Z                         "2376", 
+2020-11-11T20:19:05Z                         "2375", 
+2020-11-11T20:19:05Z                         "51678", 
+2020-11-11T20:19:05Z                         "51679"
+2020-11-11T20:19:05Z                     ], 
+2020-11-11T20:19:05Z                     "type": "STRINGSET", 
+2020-11-11T20:19:05Z                     "integerValue": 0
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "PORTS_UDP", 
+2020-11-11T20:19:05Z                     "longValue": 0, 
+2020-11-11T20:19:05Z                     "doubleValue": 0.0, 
+2020-11-11T20:19:05Z                     "stringSetValue": [], 
+2020-11-11T20:19:05Z                     "type": "STRINGSET", 
+2020-11-11T20:19:05Z                     "integerValue": 0
+2020-11-11T20:19:05Z                 }
+2020-11-11T20:19:05Z             ], 
+2020-11-11T20:19:05Z             "ec2InstanceId": "i-087181a0b17bdbd50", 
+2020-11-11T20:19:05Z             "tags": [], 
+2020-11-11T20:19:05Z             "agentConnected": true, 
+2020-11-11T20:19:05Z             "containerInstanceArn": "arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3", 
+2020-11-11T20:19:05Z             "pendingTasksCount": 0, 
+2020-11-11T20:19:05Z             "remainingResources": [
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "integerValue": 1024, 
+2020-11-11T20:19:05Z                     "longValue": 0, 
+2020-11-11T20:19:05Z                     "type": "INTEGER", 
+2020-11-11T20:19:05Z                     "name": "CPU", 
+2020-11-11T20:19:05Z                     "doubleValue": 0.0
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "integerValue": 985, 
+2020-11-11T20:19:05Z                     "longValue": 0, 
+2020-11-11T20:19:05Z                     "type": "INTEGER", 
+2020-11-11T20:19:05Z                     "name": "MEMORY", 
+2020-11-11T20:19:05Z                     "doubleValue": 0.0
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "PORTS", 
+2020-11-11T20:19:05Z                     "longValue": 0, 
+2020-11-11T20:19:05Z                     "doubleValue": 0.0, 
+2020-11-11T20:19:05Z                     "stringSetValue": [
+2020-11-11T20:19:05Z                         "22", 
+2020-11-11T20:19:05Z                         "2376", 
+2020-11-11T20:19:05Z                         "2375", 
+2020-11-11T20:19:05Z                         "51678", 
+2020-11-11T20:19:05Z                         "51679"
+2020-11-11T20:19:05Z                     ], 
+2020-11-11T20:19:05Z                     "type": "STRINGSET", 
+2020-11-11T20:19:05Z                     "integerValue": 0
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "PORTS_UDP", 
+2020-11-11T20:19:05Z                     "longValue": 0, 
+2020-11-11T20:19:05Z                     "doubleValue": 0.0, 
+2020-11-11T20:19:05Z                     "stringSetValue": [], 
+2020-11-11T20:19:05Z                     "type": "STRINGSET", 
+2020-11-11T20:19:05Z                     "integerValue": 0
+2020-11-11T20:19:05Z                 }
+2020-11-11T20:19:05Z             ], 
+2020-11-11T20:19:05Z             "version": 3, 
+2020-11-11T20:19:05Z             "attributes": [
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.secrets.asm.environment-variables"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.ami-id", 
+2020-11-11T20:19:05Z                     "value": "ami-0d80dbba5ddbf94a0"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.secrets.asm.bootstrap.log-driver"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.task-eia.optimized-cpu"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.logging-driver.none"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.ecr-endpoint"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.docker-plugin.local"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.task-cpu-mem-limit"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.secrets.ssm.bootstrap.log-driver"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.efsAuth"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.30"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.full-sync"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.31"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.32"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.firelens.options.config.file"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.availability-zone", 
+2020-11-11T20:19:05Z                     "value": "us-east-2a"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.aws-appmesh"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.24"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.25"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.26"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.27"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.privileged-container"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.cpu-architecture", 
+2020-11-11T20:19:05Z                     "value": "x86_64"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.firelens.fluentbit"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.ecr-auth"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.20"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.os-type", 
+2020-11-11T20:19:05Z                     "value": "linux"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.22"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.private-registry-authentication.secretsmanager"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.task-eia"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.23"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.logging-driver.syslog"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.logging-driver.awsfirelens"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.firelens.options.config.s3"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.logging-driver.json-file"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.execution-role-awslogs"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.firelens.fluentd"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.efs"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.execution-role-ecr-pull"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.container-health-check"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.instance-type", 
+2020-11-11T20:19:05Z                     "value": "t2.micro"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.task-iam-role-network-host"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.container-ordering"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.env-files.s3"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.secrets.ssm.environment-variables"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.pid-ipc-namespace-sharing"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.task-iam-role"
+2020-11-11T20:19:05Z                 }
+2020-11-11T20:19:05Z             ], 
+2020-11-11T20:19:05Z             "versionInfo": {
+2020-11-11T20:19:05Z                 "agentVersion": "1.44.3", 
+2020-11-11T20:19:05Z                 "agentHash": "33b647b8", 
+2020-11-11T20:19:05Z                 "dockerVersion": "DockerVersion: 19.03.6-ce"
+2020-11-11T20:19:05Z             }, 
+2020-11-11T20:19:05Z             "runningTasksCount": 0, 
+2020-11-11T20:19:05Z             "attachments": []
+2020-11-11T20:19:05Z         }
+2020-11-11T20:19:05Z     ]
+2020-11-11T20:19:05Z }'
+2020-11-11T20:19:05Z + '[' 0 -ne 0 ']'
+2020-11-11T20:19:05Z ++ jq -r '.containerInstances[0].agentConnected'
+2020-11-11T20:19:05Z ++ echo '{
+2020-11-11T20:19:05Z     "failures": [], 
+2020-11-11T20:19:05Z     "containerInstances": [
+2020-11-11T20:19:05Z         {
+2020-11-11T20:19:05Z             "status": "ACTIVE", 
+2020-11-11T20:19:05Z             "registeredAt": 1605125939.717, 
+2020-11-11T20:19:05Z             "registeredResources": [
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "integerValue": 1024, 
+2020-11-11T20:19:05Z                     "longValue": 0, 
+2020-11-11T20:19:05Z                     "type": "INTEGER", 
+2020-11-11T20:19:05Z                     "name": "CPU", 
+2020-11-11T20:19:05Z                     "doubleValue": 0.0
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "integerValue": 985, 
+2020-11-11T20:19:05Z                     "longValue": 0, 
+2020-11-11T20:19:05Z                     "type": "INTEGER", 
+2020-11-11T20:19:05Z                     "name": "MEMORY", 
+2020-11-11T20:19:05Z                     "doubleValue": 0.0
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "PORTS", 
+2020-11-11T20:19:05Z                     "longValue": 0, 
+2020-11-11T20:19:05Z                     "doubleValue": 0.0, 
+2020-11-11T20:19:05Z                     "stringSetValue": [
+2020-11-11T20:19:05Z                         "22", 
+2020-11-11T20:19:05Z                         "2376", 
+2020-11-11T20:19:05Z                         "2375", 
+2020-11-11T20:19:05Z                         "51678", 
+2020-11-11T20:19:05Z                         "51679"
+2020-11-11T20:19:05Z                     ], 
+2020-11-11T20:19:05Z                     "type": "STRINGSET", 
+2020-11-11T20:19:05Z                     "integerValue": 0
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "PORTS_UDP", 
+2020-11-11T20:19:05Z                     "longValue": 0, 
+2020-11-11T20:19:05Z                     "doubleValue": 0.0, 
+2020-11-11T20:19:05Z                     "stringSetValue": [], 
+2020-11-11T20:19:05Z                     "type": "STRINGSET", 
+2020-11-11T20:19:05Z                     "integerValue": 0
+2020-11-11T20:19:05Z                 }
+2020-11-11T20:19:05Z             ], 
+2020-11-11T20:19:05Z             "ec2InstanceId": "i-087181a0b17bdbd50", 
+2020-11-11T20:19:05Z             "tags": [], 
+2020-11-11T20:19:05Z             "agentConnected": true, 
+2020-11-11T20:19:05Z             "containerInstanceArn": "arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3", 
+2020-11-11T20:19:05Z             "pendingTasksCount": 0, 
+2020-11-11T20:19:05Z             "remainingResources": [
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "integerValue": 1024, 
+2020-11-11T20:19:05Z                     "longValue": 0, 
+2020-11-11T20:19:05Z                     "type": "INTEGER", 
+2020-11-11T20:19:05Z                     "name": "CPU", 
+2020-11-11T20:19:05Z                     "doubleValue": 0.0
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "integerValue": 985, 
+2020-11-11T20:19:05Z                     "longValue": 0, 
+2020-11-11T20:19:05Z                     "type": "INTEGER", 
+2020-11-11T20:19:05Z                     "name": "MEMORY", 
+2020-11-11T20:19:05Z                     "doubleValue": 0.0
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "PORTS", 
+2020-11-11T20:19:05Z                     "longValue": 0, 
+2020-11-11T20:19:05Z                     "doubleValue": 0.0, 
+2020-11-11T20:19:05Z                     "stringSetValue": [
+2020-11-11T20:19:05Z                         "22", 
+2020-11-11T20:19:05Z                         "2376", 
+2020-11-11T20:19:05Z                         "2375", 
+2020-11-11T20:19:05Z                         "51678", 
+2020-11-11T20:19:05Z                         "51679"
+2020-11-11T20:19:05Z                     ], 
+2020-11-11T20:19:05Z                     "type": "STRINGSET", 
+2020-11-11T20:19:05Z                     "integerValue": 0
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "PORTS_UDP", 
+2020-11-11T20:19:05Z                     "longValue": 0, 
+2020-11-11T20:19:05Z                     "doubleValue": 0.0, 
+2020-11-11T20:19:05Z                     "stringSetValue": [], 
+2020-11-11T20:19:05Z                     "type": "STRINGSET", 
+2020-11-11T20:19:05Z                     "integerValue": 0
+2020-11-11T20:19:05Z                 }
+2020-11-11T20:19:05Z             ], 
+2020-11-11T20:19:05Z             "version": 3, 
+2020-11-11T20:19:05Z             "attributes": [
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.secrets.asm.environment-variables"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.ami-id", 
+2020-11-11T20:19:05Z                     "value": "ami-0d80dbba5ddbf94a0"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.secrets.asm.bootstrap.log-driver"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.task-eia.optimized-cpu"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.logging-driver.none"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.ecr-endpoint"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.docker-plugin.local"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.task-cpu-mem-limit"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.secrets.ssm.bootstrap.log-driver"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.efsAuth"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.30"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.full-sync"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.31"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.32"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.firelens.options.config.file"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.availability-zone", 
+2020-11-11T20:19:05Z                     "value": "us-east-2a"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.aws-appmesh"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.24"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.25"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.26"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.27"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.privileged-container"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.cpu-architecture", 
+2020-11-11T20:19:05Z                     "value": "x86_64"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.firelens.fluentbit"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.ecr-auth"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.20"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.os-type", 
+2020-11-11T20:19:05Z                     "value": "linux"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.22"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.private-registry-authentication.secretsmanager"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.task-eia"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.23"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.logging-driver.syslog"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.logging-driver.awsfirelens"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.firelens.options.config.s3"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.logging-driver.json-file"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.execution-role-awslogs"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.firelens.fluentd"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.efs"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.execution-role-ecr-pull"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.container-health-check"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.instance-type", 
+2020-11-11T20:19:05Z                     "value": "t2.micro"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.task-iam-role-network-host"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.container-ordering"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.env-files.s3"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.secrets.ssm.environment-variables"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "ecs.capability.pid-ipc-namespace-sharing"
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "name": "com.amazonaws.ecs.capability.task-iam-role"
+2020-11-11T20:19:05Z                 }
+2020-11-11T20:19:05Z             ], 
+2020-11-11T20:19:05Z             "versionInfo": {
+2020-11-11T20:19:05Z                 "agentVersion": "1.44.3", 
+2020-11-11T20:19:05Z                 "agentHash": "33b647b8", 
+2020-11-11T20:19:05Z                 "dockerVersion": "DockerVersion: 19.03.6-ce"
+2020-11-11T20:19:05Z             }, 
+2020-11-11T20:19:05Z             "runningTasksCount": 0, 
+2020-11-11T20:19:05Z             "attachments": []
+2020-11-11T20:19:05Z         }
+2020-11-11T20:19:05Z     ]
+2020-11-11T20:19:05Z }'
+2020-11-11T20:19:05Z + local EB_CONFIG_ECS_AGENT_CONNECTED=true
+2020-11-11T20:19:05Z + local TIMEOUT=20
+2020-11-11T20:19:05Z + '[' true = true ']'
+2020-11-11T20:19:05Z + set -e
+2020-11-11T20:19:05Z + trace 'Starting new ECS task with awseb-MultiDocker-env-rqcdutmseh:2.'
+2020-11-11T20:19:05Z + echo 'Starting new ECS task with awseb-MultiDocker-env-rqcdutmseh:2.'
+2020-11-11T20:19:05Z Starting new ECS task with awseb-MultiDocker-env-rqcdutmseh:2.
+2020-11-11T20:19:05Z + eventHelper.py --msg 'Starting new ECS task with awseb-MultiDocker-env-rqcdutmseh:2.' --severity TRACE
+2020-11-11T20:19:05Z + set +e
+2020-11-11T20:19:05Z + local ECS_RESPONSE
+2020-11-11T20:19:05Z ++ aws ecs start-task --cluster awseb-MultiDocker-env-rqcdutmseh --task-definition awseb-MultiDocker-env-rqcdutmseh:2 --container-instances arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3
+2020-11-11T20:19:05Z + ECS_RESPONSE='{
+2020-11-11T20:19:05Z     "failures": [], 
+2020-11-11T20:19:05Z     "tasks": [
+2020-11-11T20:19:05Z         {
+2020-11-11T20:19:05Z             "availabilityZone": "us-east-2a", 
+2020-11-11T20:19:05Z             "group": "family:awseb-MultiDocker-env-rqcdutmseh", 
+2020-11-11T20:19:05Z             "attachments": [], 
+2020-11-11T20:19:05Z             "tags": [], 
+2020-11-11T20:19:05Z             "overrides": {
+2020-11-11T20:19:05Z                 "inferenceAcceleratorOverrides": [], 
+2020-11-11T20:19:05Z                 "containerOverrides": [
+2020-11-11T20:19:05Z                     {
+2020-11-11T20:19:05Z                         "name": "nginx-proxy"
+2020-11-11T20:19:05Z                     }, 
+2020-11-11T20:19:05Z                     {
+2020-11-11T20:19:05Z                         "name": "php-app"
+2020-11-11T20:19:05Z                     }
+2020-11-11T20:19:05Z                 ]
+2020-11-11T20:19:05Z             }, 
+2020-11-11T20:19:05Z             "lastStatus": "PENDING", 
+2020-11-11T20:19:05Z             "containerInstanceArn": "arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3", 
+2020-11-11T20:19:05Z             "createdAt": 1605125945.924, 
+2020-11-11T20:19:05Z             "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5", 
+2020-11-11T20:19:05Z             "launchType": "EC2", 
+2020-11-11T20:19:05Z             "clusterArn": "arn:aws:ecs:us-east-2:554777593914:cluster/awseb-MultiDocker-env-rqcdutmseh", 
+2020-11-11T20:19:05Z             "version": 1, 
+2020-11-11T20:19:05Z             "memory": "256", 
+2020-11-11T20:19:05Z             "desiredStatus": "RUNNING", 
+2020-11-11T20:19:05Z             "taskDefinitionArn": "arn:aws:ecs:us-east-2:554777593914:task-definition/awseb-MultiDocker-env-rqcdutmseh:2", 
+2020-11-11T20:19:05Z             "cpu": "0", 
+2020-11-11T20:19:05Z             "containers": [
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "containerArn": "arn:aws:ecs:us-east-2:554777593914:container/7cedeabe-e73b-492b-bed9-cfbe9db75cfd", 
+2020-11-11T20:19:05Z                     "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5", 
+2020-11-11T20:19:05Z                     "name": "php-app", 
+2020-11-11T20:19:05Z                     "image": "php:fpm", 
+2020-11-11T20:19:05Z                     "lastStatus": "PENDING", 
+2020-11-11T20:19:05Z                     "memory": "128", 
+2020-11-11T20:19:05Z                     "cpu": "0", 
+2020-11-11T20:19:05Z                     "networkInterfaces": []
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "containerArn": "arn:aws:ecs:us-east-2:554777593914:container/31c3945a-926f-47f9-bd13-b74e49a6a254", 
+2020-11-11T20:19:05Z                     "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5", 
+2020-11-11T20:19:05Z                     "name": "nginx-proxy", 
+2020-11-11T20:19:05Z                     "image": "nginx", 
+2020-11-11T20:19:05Z                     "lastStatus": "PENDING", 
+2020-11-11T20:19:05Z                     "memory": "128", 
+2020-11-11T20:19:05Z                     "cpu": "0", 
+2020-11-11T20:19:05Z                     "networkInterfaces": []
+2020-11-11T20:19:05Z                 }
+2020-11-11T20:19:05Z             ]
+2020-11-11T20:19:05Z         }
+2020-11-11T20:19:05Z     ]
+2020-11-11T20:19:05Z }'
+2020-11-11T20:19:05Z + local ECS_EXIT=0
+2020-11-11T20:19:05Z ++ jq -r '.tasks[0].taskArn'
+2020-11-11T20:19:05Z ++ echo '{
+2020-11-11T20:19:05Z     "failures": [], 
+2020-11-11T20:19:05Z     "tasks": [
+2020-11-11T20:19:05Z         {
+2020-11-11T20:19:05Z             "availabilityZone": "us-east-2a", 
+2020-11-11T20:19:05Z             "group": "family:awseb-MultiDocker-env-rqcdutmseh", 
+2020-11-11T20:19:05Z             "attachments": [], 
+2020-11-11T20:19:05Z             "tags": [], 
+2020-11-11T20:19:05Z             "overrides": {
+2020-11-11T20:19:05Z                 "inferenceAcceleratorOverrides": [], 
+2020-11-11T20:19:05Z                 "containerOverrides": [
+2020-11-11T20:19:05Z                     {
+2020-11-11T20:19:05Z                         "name": "nginx-proxy"
+2020-11-11T20:19:05Z                     }, 
+2020-11-11T20:19:05Z                     {
+2020-11-11T20:19:05Z                         "name": "php-app"
+2020-11-11T20:19:05Z                     }
+2020-11-11T20:19:05Z                 ]
+2020-11-11T20:19:05Z             }, 
+2020-11-11T20:19:05Z             "lastStatus": "PENDING", 
+2020-11-11T20:19:05Z             "containerInstanceArn": "arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3", 
+2020-11-11T20:19:05Z             "createdAt": 1605125945.924, 
+2020-11-11T20:19:05Z             "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5", 
+2020-11-11T20:19:05Z             "launchType": "EC2", 
+2020-11-11T20:19:05Z             "clusterArn": "arn:aws:ecs:us-east-2:554777593914:cluster/awseb-MultiDocker-env-rqcdutmseh", 
+2020-11-11T20:19:05Z             "version": 1, 
+2020-11-11T20:19:05Z             "memory": "256", 
+2020-11-11T20:19:05Z             "desiredStatus": "RUNNING", 
+2020-11-11T20:19:05Z             "taskDefinitionArn": "arn:aws:ecs:us-east-2:554777593914:task-definition/awseb-MultiDocker-env-rqcdutmseh:2", 
+2020-11-11T20:19:05Z             "cpu": "0", 
+2020-11-11T20:19:05Z             "containers": [
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "containerArn": "arn:aws:ecs:us-east-2:554777593914:container/7cedeabe-e73b-492b-bed9-cfbe9db75cfd", 
+2020-11-11T20:19:05Z                     "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5", 
+2020-11-11T20:19:05Z                     "name": "php-app", 
+2020-11-11T20:19:05Z                     "image": "php:fpm", 
+2020-11-11T20:19:05Z                     "lastStatus": "PENDING", 
+2020-11-11T20:19:05Z                     "memory": "128", 
+2020-11-11T20:19:05Z                     "cpu": "0", 
+2020-11-11T20:19:05Z                     "networkInterfaces": []
+2020-11-11T20:19:05Z                 }, 
+2020-11-11T20:19:05Z                 {
+2020-11-11T20:19:05Z                     "containerArn": "arn:aws:ecs:us-east-2:554777593914:container/31c3945a-926f-47f9-bd13-b74e49a6a254", 
+2020-11-11T20:19:05Z                     "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5", 
+2020-11-11T20:19:05Z                     "name": "nginx-proxy", 
+2020-11-11T20:19:05Z                     "image": "nginx", 
+2020-11-11T20:19:05Z                     "lastStatus": "PENDING", 
+2020-11-11T20:19:05Z                     "memory": "128", 
+2020-11-11T20:19:05Z                     "cpu": "0", 
+2020-11-11T20:19:05Z                     "networkInterfaces": []
+2020-11-11T20:19:05Z                 }
+2020-11-11T20:19:05Z             ]
+2020-11-11T20:19:05Z         }
+2020-11-11T20:19:05Z     ]
+2020-11-11T20:19:05Z }'
+2020-11-11T20:19:05Z + local EB_CONFIG_ECS_TASK_ARN=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5
+2020-11-11T20:19:05Z + '[' 0 -ne 0 ']'
+2020-11-11T20:19:05Z + '[' -z arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5 ']'
+2020-11-11T20:19:05Z + '[' arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5 = null ']'
+2020-11-11T20:19:05Z + set -e
+2020-11-11T20:19:05Z + echo arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5
+2020-11-11T20:19:05Z + local START_TIMEOUT=840
+2020-11-11T20:19:05Z + local TIMEOUT=840
+2020-11-11T20:19:05Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-11T20:19:05Z +++ jq -r .KnownStatus
+2020-11-11T20:19:05Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5'
+2020-11-11T20:19:05Z + local KNOWN_STATUS=
+2020-11-11T20:19:05Z + '[' '' '!=' RUNNING ']'
+2020-11-11T20:19:05Z + '[' -z '' ']'
+2020-11-11T20:19:05Z + sleep 3
+2020-11-11T20:19:09Z + TIMEOUT=837
+2020-11-11T20:19:09Z + '[' 837 -le 0 ']'
+2020-11-11T20:19:09Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-11T20:19:09Z +++ jq -r .KnownStatus
+2020-11-11T20:19:09Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5'
+2020-11-11T20:19:09Z + KNOWN_STATUS=PENDING
+2020-11-11T20:19:09Z + '[' PENDING '!=' RUNNING ']'
+2020-11-11T20:19:09Z + '[' -z PENDING ']'
+2020-11-11T20:19:09Z + '[' PENDING = NONE ']'
+2020-11-11T20:19:09Z + '[' PENDING = PENDING ']'
+2020-11-11T20:19:09Z + sleep 3
+2020-11-11T20:19:12Z + TIMEOUT=834
+2020-11-11T20:19:12Z + '[' 834 -le 0 ']'
+2020-11-11T20:19:12Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-11T20:19:12Z +++ jq -r .KnownStatus
+2020-11-11T20:19:12Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5'
+2020-11-11T20:19:12Z + KNOWN_STATUS=PENDING
+2020-11-11T20:19:12Z + '[' PENDING '!=' RUNNING ']'
+2020-11-11T20:19:12Z + '[' -z PENDING ']'
+2020-11-11T20:19:12Z + '[' PENDING = NONE ']'
+2020-11-11T20:19:12Z + '[' PENDING = PENDING ']'
+2020-11-11T20:19:12Z + sleep 3
+2020-11-11T20:19:15Z + TIMEOUT=831
+2020-11-11T20:19:15Z + '[' 831 -le 0 ']'
+2020-11-11T20:19:15Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-11T20:19:15Z +++ jq -r .KnownStatus
+2020-11-11T20:19:15Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5'
+2020-11-11T20:19:15Z + KNOWN_STATUS=PENDING
+2020-11-11T20:19:15Z + '[' PENDING '!=' RUNNING ']'
+2020-11-11T20:19:15Z + '[' -z PENDING ']'
+2020-11-11T20:19:15Z + '[' PENDING = NONE ']'
+2020-11-11T20:19:15Z + '[' PENDING = PENDING ']'
+2020-11-11T20:19:15Z + sleep 3
+2020-11-11T20:19:18Z + TIMEOUT=828
+2020-11-11T20:19:18Z + '[' 828 -le 0 ']'
+2020-11-11T20:19:18Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-11T20:19:18Z +++ jq -r .KnownStatus
+2020-11-11T20:19:18Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5'
+2020-11-11T20:19:18Z + KNOWN_STATUS=PENDING
+2020-11-11T20:19:18Z + '[' PENDING '!=' RUNNING ']'
+2020-11-11T20:19:18Z + '[' -z PENDING ']'
+2020-11-11T20:19:18Z + '[' PENDING = NONE ']'
+2020-11-11T20:19:18Z + '[' PENDING = PENDING ']'
+2020-11-11T20:19:18Z + sleep 3
+2020-11-11T20:19:21Z + TIMEOUT=825
+2020-11-11T20:19:21Z + '[' 825 -le 0 ']'
+2020-11-11T20:19:21Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-11T20:19:21Z +++ jq -r .KnownStatus
+2020-11-11T20:19:21Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5'
+2020-11-11T20:19:21Z + KNOWN_STATUS=PENDING
+2020-11-11T20:19:21Z + '[' PENDING '!=' RUNNING ']'
+2020-11-11T20:19:21Z + '[' -z PENDING ']'
+2020-11-11T20:19:21Z + '[' PENDING = NONE ']'
+2020-11-11T20:19:21Z + '[' PENDING = PENDING ']'
+2020-11-11T20:19:21Z + sleep 3
+2020-11-11T20:19:24Z + TIMEOUT=822
+2020-11-11T20:19:24Z + '[' 822 -le 0 ']'
+2020-11-11T20:19:24Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-11T20:19:24Z +++ jq -r .KnownStatus
+2020-11-11T20:19:24Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5'
+2020-11-11T20:19:24Z + KNOWN_STATUS=PENDING
+2020-11-11T20:19:24Z + '[' PENDING '!=' RUNNING ']'
+2020-11-11T20:19:24Z + '[' -z PENDING ']'
+2020-11-11T20:19:24Z + '[' PENDING = NONE ']'
+2020-11-11T20:19:24Z + '[' PENDING = PENDING ']'
+2020-11-11T20:19:24Z + sleep 3
+2020-11-11T20:19:27Z + TIMEOUT=819
+2020-11-11T20:19:27Z + '[' 819 -le 0 ']'
+2020-11-11T20:19:27Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-11T20:19:27Z +++ jq -r .KnownStatus
+2020-11-11T20:19:27Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5'
+2020-11-11T20:19:27Z + KNOWN_STATUS=RUNNING
+2020-11-11T20:19:27Z + '[' RUNNING '!=' RUNNING ']'
+2020-11-11T20:19:27Z ++ jq -r -c '.Containers[] | .DockerId + "," + .Name'
+2020-11-11T20:19:27Z ++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5'
+2020-11-11T20:19:27Z + for CONTAINER in '`curl -sS http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN | jq -r -c '\''.Containers[] | .DockerId + "," + .Name'\''`'
+2020-11-11T20:19:27Z ++ cut -c 1-12
+2020-11-11T20:19:27Z ++ awk -F , '{print $1}'
+2020-11-11T20:19:27Z ++ echo be320fed102d21bd593f8f53c3eebee05a240c1de870501fa834c84053c6513b,nginx-proxy
+2020-11-11T20:19:27Z + CONTAINER_ID=be320fed102d
+2020-11-11T20:19:27Z ++ awk -F , '{print $2}'
+2020-11-11T20:19:27Z ++ echo be320fed102d21bd593f8f53c3eebee05a240c1de870501fa834c84053c6513b,nginx-proxy
+2020-11-11T20:19:27Z + CONTAINER_NAME=nginx-proxy
+2020-11-11T20:19:27Z + for CONTAINER in '`curl -sS http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN | jq -r -c '\''.Containers[] | .DockerId + "," + .Name'\''`'
+2020-11-11T20:19:27Z + docker logs -f be320fed102d
+2020-11-11T20:19:27Z ++ cut -c 1-12
+2020-11-11T20:19:27Z ++ awk -F , '{print $1}'
+2020-11-11T20:19:27Z ++ echo 5cb879db3aae99edf28115f433c2516c5a22261b36fc9a8b33013695abdf7bb3,php-app
+2020-11-11T20:19:27Z + CONTAINER_ID=5cb879db3aae
+2020-11-11T20:19:27Z ++ awk -F , '{print $2}'
+2020-11-11T20:19:27Z ++ echo 5cb879db3aae99edf28115f433c2516c5a22261b36fc9a8b33013695abdf7bb3,php-app
+2020-11-11T20:19:27Z + CONTAINER_NAME=php-app
+2020-11-11T20:19:27Z + trace 'ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5 is RUNNING.'
+2020-11-11T20:19:27Z + echo 'ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5 is RUNNING.'
+2020-11-11T20:19:27Z ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5 is RUNNING.
+2020-11-11T20:19:27Z + eventHelper.py --msg 'ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5 is RUNNING.' --severity TRACE
+2020-11-11T20:19:27Z + docker logs -f 5cb879db3aae
+2020-11-11T20:19:27Z + exit 0
+2020-11-11T20:38:03Z + . /opt/elasticbeanstalk/hooks/common.sh
+2020-11-11T20:38:03Z ++ /opt/elasticbeanstalk/bin/get-config container -k ecs_cluster
+2020-11-11T20:38:03Z + EB_CONFIG_ECS_CLUSTER=awseb-MultiDocker-env-rqcdutmseh
+2020-11-11T20:38:03Z ++ /opt/elasticbeanstalk/bin/get-config container -k ecs_task_def
+2020-11-11T20:38:03Z + EB_CONFIG_ECS_TASK_DEF=awseb-MultiDocker-env-rqcdutmseh
+2020-11-11T20:38:03Z ++ /opt/elasticbeanstalk/bin/get-config container -k ecs_task_arn_file
+2020-11-11T20:38:03Z + EB_CONFIG_ECS_TASK_ARN_FILE=/etc/elasticbeanstalk/.ecs-task-arn
+2020-11-11T20:38:03Z ++ /opt/elasticbeanstalk/bin/get-config container -k deployment_manifest
+2020-11-11T20:38:03Z + EB_CONFIG_DEPLOYMENT_MANIFEST=/opt/elasticbeanstalk/deploy/manifest
+2020-11-11T20:38:03Z + '[' -f /opt/elasticbeanstalk/deploy/manifest ']'
+2020-11-11T20:38:03Z ++ jq -r '.ECS.TaskDefinitionName | select(. != null)'
+2020-11-11T20:38:03Z ++ cat /opt/elasticbeanstalk/deploy/manifest
+2020-11-11T20:38:03Z + EB_TASK_DEF_NAME_FROM_MANIFEST=awseb-MultiDocker-env-rqcdutmseh
+2020-11-11T20:38:03Z ++ jq -r '.ECS.TaskDefinitionRevision | select(. != null)'
+2020-11-11T20:38:03Z ++ cat /opt/elasticbeanstalk/deploy/manifest
+2020-11-11T20:38:03Z + EB_TASK_DEF_REVISION_FROM_MANIFEST=3
+2020-11-11T20:38:03Z + '[' -z awseb-MultiDocker-env-rqcdutmseh ']'
+2020-11-11T20:38:03Z + '[' -z 3 ']'
+2020-11-11T20:38:03Z + EB_CONFIG_ECS_TASK_DEF=awseb-MultiDocker-env-rqcdutmseh:3
+2020-11-11T20:38:03Z + '[' -z awseb-MultiDocker-env-rqcdutmseh ']'
+2020-11-11T20:38:03Z + '[' -z awseb-MultiDocker-env-rqcdutmseh:3 ']'
+2020-11-11T20:38:03Z + CMD_GET_INSTANCE_ARN='curl -sS http://localhost:51678/v1/metadata | jq -r .ContainerInstanceArn'
+2020-11-11T20:38:03Z + CMD_GET_KNOWN_STATUS='curl -sS http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN | jq -r .KnownStatus'
+2020-11-11T20:38:03Z + CMD_DESCRIBE_INSTANCE='aws ecs describe-container-instances --cluster $EB_CONFIG_ECS_CLUSTER --container-instances $EB_CONFIG_ECS_INSTANCE_ARN 2>&1'
+2020-11-11T20:38:03Z + case "$1" in
+2020-11-11T20:38:03Z + stop_ecs_task
+2020-11-11T20:38:03Z + '[' -f /etc/elasticbeanstalk/.ecs-task-arn ']'
+2020-11-11T20:38:03Z ++ cat /etc/elasticbeanstalk/.ecs-task-arn
+2020-11-11T20:38:03Z + local EB_CONFIG_ECS_TASK_ARN=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5
+2020-11-11T20:38:03Z + trace 'Stopping ECS task arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5.'
+2020-11-11T20:38:03Z + echo 'Stopping ECS task arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5.'
+2020-11-11T20:38:03Z Stopping ECS task arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5.
+2020-11-11T20:38:03Z + eventHelper.py --msg 'Stopping ECS task arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5.' --severity TRACE
+2020-11-11T20:38:03Z + set +e
+2020-11-11T20:38:03Z + local ECS_RESPONSE
+2020-11-11T20:38:03Z ++ aws ecs stop-task --cluster awseb-MultiDocker-env-rqcdutmseh --task arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5
+2020-11-11T20:38:04Z + ECS_RESPONSE='{
+2020-11-11T20:38:04Z     "task": {
+2020-11-11T20:38:04Z         "launchType": "EC2", 
+2020-11-11T20:38:04Z         "attachments": [], 
+2020-11-11T20:38:04Z         "stoppingAt": 1605127084.4, 
+2020-11-11T20:38:04Z         "clusterArn": "arn:aws:ecs:us-east-2:554777593914:cluster/awseb-MultiDocker-env-rqcdutmseh", 
+2020-11-11T20:38:04Z         "desiredStatus": "STOPPED", 
+2020-11-11T20:38:04Z         "createdAt": 1605125945.924, 
+2020-11-11T20:38:04Z         "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5", 
+2020-11-11T20:38:04Z         "group": "family:awseb-MultiDocker-env-rqcdutmseh", 
+2020-11-11T20:38:04Z         "containerInstanceArn": "arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3", 
+2020-11-11T20:38:04Z         "pullStartedAt": 1605125946.91, 
+2020-11-11T20:38:04Z         "version": 3, 
+2020-11-11T20:38:04Z         "stopCode": "UserInitiated", 
+2020-11-11T20:38:04Z         "connectivityAt": 1605125945.924, 
+2020-11-11T20:38:04Z         "startedAt": 1605125964.91, 
+2020-11-11T20:38:04Z         "taskDefinitionArn": "arn:aws:ecs:us-east-2:554777593914:task-definition/awseb-MultiDocker-env-rqcdutmseh:2", 
+2020-11-11T20:38:04Z         "containers": [
+2020-11-11T20:38:04Z             {
+2020-11-11T20:38:04Z                 "containerArn": "arn:aws:ecs:us-east-2:554777593914:container/31c3945a-926f-47f9-bd13-b74e49a6a254", 
+2020-11-11T20:38:04Z                 "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5", 
+2020-11-11T20:38:04Z                 "name": "nginx-proxy", 
+2020-11-11T20:38:04Z                 "networkBindings": [
+2020-11-11T20:38:04Z                     {
+2020-11-11T20:38:04Z                         "protocol": "tcp", 
+2020-11-11T20:38:04Z                         "bindIP": "0.0.0.0", 
+2020-11-11T20:38:04Z                         "containerPort": 80, 
+2020-11-11T20:38:04Z                         "hostPort": 80
+2020-11-11T20:38:04Z                     }
+2020-11-11T20:38:04Z                 ], 
+2020-11-11T20:38:04Z                 "image": "nginx", 
+2020-11-11T20:38:04Z                 "lastStatus": "RUNNING", 
+2020-11-11T20:38:04Z                 "memory": "128", 
+2020-11-11T20:38:04Z                 "runtimeId": "be320fed102d21bd593f8f53c3eebee05a240c1de870501fa834c84053c6513b", 
+2020-11-11T20:38:04Z                 "cpu": "0", 
+2020-11-11T20:38:04Z                 "networkInterfaces": []
+2020-11-11T20:38:04Z             }, 
+2020-11-11T20:38:04Z             {
+2020-11-11T20:38:04Z                 "containerArn": "arn:aws:ecs:us-east-2:554777593914:container/7cedeabe-e73b-492b-bed9-cfbe9db75cfd", 
+2020-11-11T20:38:04Z                 "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5", 
+2020-11-11T20:38:04Z                 "name": "php-app", 
+2020-11-11T20:38:04Z                 "networkBindings": [], 
+2020-11-11T20:38:04Z                 "image": "php:fpm", 
+2020-11-11T20:38:04Z                 "lastStatus": "RUNNING", 
+2020-11-11T20:38:04Z                 "memory": "128", 
+2020-11-11T20:38:04Z                 "runtimeId": "5cb879db3aae99edf28115f433c2516c5a22261b36fc9a8b33013695abdf7bb3", 
+2020-11-11T20:38:04Z                 "cpu": "0", 
+2020-11-11T20:38:04Z                 "networkInterfaces": []
+2020-11-11T20:38:04Z             }
+2020-11-11T20:38:04Z         ], 
+2020-11-11T20:38:04Z         "availabilityZone": "us-east-2a", 
+2020-11-11T20:38:04Z         "tags": [], 
+2020-11-11T20:38:04Z         "memory": "256", 
+2020-11-11T20:38:04Z         "lastStatus": "RUNNING", 
+2020-11-11T20:38:04Z         "connectivity": "CONNECTED", 
+2020-11-11T20:38:04Z         "overrides": {
+2020-11-11T20:38:04Z             "inferenceAcceleratorOverrides": [], 
+2020-11-11T20:38:04Z             "containerOverrides": [
+2020-11-11T20:38:04Z                 {
+2020-11-11T20:38:04Z                     "name": "nginx-proxy"
+2020-11-11T20:38:04Z                 }, 
+2020-11-11T20:38:04Z                 {
+2020-11-11T20:38:04Z                     "name": "php-app"
+2020-11-11T20:38:04Z                 }
+2020-11-11T20:38:04Z             ]
+2020-11-11T20:38:04Z         }, 
+2020-11-11T20:38:04Z         "pullStoppedAt": 1605125964.91, 
+2020-11-11T20:38:04Z         "stoppedReason": "Task stopped by user", 
+2020-11-11T20:38:04Z         "cpu": "0"
+2020-11-11T20:38:04Z     }
+2020-11-11T20:38:04Z }'
+2020-11-11T20:38:04Z + '[' 0 -ne 0 ']'
+2020-11-11T20:38:04Z + set -e
+2020-11-11T20:38:04Z + local STOP_TIMEOUT=120
+2020-11-11T20:38:04Z + local TIMEOUT=120
+2020-11-11T20:38:04Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-11T20:38:04Z +++ jq -r .KnownStatus
+2020-11-11T20:38:04Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5'
+2020-11-11T20:38:04Z + local KNOWN_STATUS=RUNNING
+2020-11-11T20:38:04Z + '[' RUNNING '!=' STOPPED ']'
+2020-11-11T20:38:04Z + '[' RUNNING '!=' DEAD ']'
+2020-11-11T20:38:04Z + sleep 3
+2020-11-11T20:38:07Z + TIMEOUT=117
+2020-11-11T20:38:07Z + '[' 117 -le 0 ']'
+2020-11-11T20:38:07Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-11T20:38:07Z +++ jq -r .KnownStatus
+2020-11-11T20:38:07Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5'
+2020-11-11T20:38:07Z + KNOWN_STATUS=STOPPED
+2020-11-11T20:38:07Z + '[' STOPPED '!=' STOPPED ']'
+2020-11-11T20:38:07Z + trace 'ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5 is STOPPED.'
+2020-11-11T20:38:07Z + echo 'ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5 is STOPPED.'
+2020-11-11T20:38:07Z ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5 is STOPPED.
+2020-11-11T20:38:07Z + eventHelper.py --msg 'ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/b87b42d56931420ab99c580f25d933b5 is STOPPED.' --severity TRACE
+2020-11-11T20:38:07Z + TIMEOUT=60
+2020-11-11T20:38:07Z ++ wc -l
+2020-11-11T20:38:07Z ++ docker ps -q
+2020-11-11T20:38:07Z + '[' 1 '!=' 1 ']'
+2020-11-11T20:38:07Z + exit 0
+2020-11-11T20:38:07Z + . /opt/elasticbeanstalk/hooks/common.sh
+2020-11-11T20:38:07Z ++ /opt/elasticbeanstalk/bin/get-config container -k ecs_cluster
+2020-11-11T20:38:07Z + EB_CONFIG_ECS_CLUSTER=awseb-MultiDocker-env-rqcdutmseh
+2020-11-11T20:38:07Z ++ /opt/elasticbeanstalk/bin/get-config container -k ecs_task_def
+2020-11-11T20:38:07Z + EB_CONFIG_ECS_TASK_DEF=awseb-MultiDocker-env-rqcdutmseh
+2020-11-11T20:38:07Z ++ /opt/elasticbeanstalk/bin/get-config container -k ecs_task_arn_file
+2020-11-11T20:38:07Z + EB_CONFIG_ECS_TASK_ARN_FILE=/etc/elasticbeanstalk/.ecs-task-arn
+2020-11-11T20:38:07Z ++ /opt/elasticbeanstalk/bin/get-config container -k deployment_manifest
+2020-11-11T20:38:07Z + EB_CONFIG_DEPLOYMENT_MANIFEST=/opt/elasticbeanstalk/deploy/manifest
+2020-11-11T20:38:07Z + '[' -f /opt/elasticbeanstalk/deploy/manifest ']'
+2020-11-11T20:38:07Z ++ jq -r '.ECS.TaskDefinitionName | select(. != null)'
+2020-11-11T20:38:07Z ++ cat /opt/elasticbeanstalk/deploy/manifest
+2020-11-11T20:38:07Z + EB_TASK_DEF_NAME_FROM_MANIFEST=awseb-MultiDocker-env-rqcdutmseh
+2020-11-11T20:38:07Z ++ jq -r '.ECS.TaskDefinitionRevision | select(. != null)'
+2020-11-11T20:38:07Z ++ cat /opt/elasticbeanstalk/deploy/manifest
+2020-11-11T20:38:07Z + EB_TASK_DEF_REVISION_FROM_MANIFEST=3
+2020-11-11T20:38:07Z + '[' -z awseb-MultiDocker-env-rqcdutmseh ']'
+2020-11-11T20:38:07Z + '[' -z 3 ']'
+2020-11-11T20:38:07Z + EB_CONFIG_ECS_TASK_DEF=awseb-MultiDocker-env-rqcdutmseh:3
+2020-11-11T20:38:07Z + '[' -z awseb-MultiDocker-env-rqcdutmseh ']'
+2020-11-11T20:38:07Z + '[' -z awseb-MultiDocker-env-rqcdutmseh:3 ']'
+2020-11-11T20:38:07Z + CMD_GET_INSTANCE_ARN='curl -sS http://localhost:51678/v1/metadata | jq -r .ContainerInstanceArn'
+2020-11-11T20:38:07Z + CMD_GET_KNOWN_STATUS='curl -sS http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN | jq -r .KnownStatus'
+2020-11-11T20:38:07Z + CMD_DESCRIBE_INSTANCE='aws ecs describe-container-instances --cluster $EB_CONFIG_ECS_CLUSTER --container-instances $EB_CONFIG_ECS_INSTANCE_ARN 2>&1'
+2020-11-11T20:38:07Z + case "$1" in
+2020-11-11T20:38:07Z + start_ecs_task
+2020-11-11T20:38:07Z ++ eval curl -sS http://localhost:51678/v1/metadata '|' jq -r .ContainerInstanceArn
+2020-11-11T20:38:07Z +++ jq -r .ContainerInstanceArn
+2020-11-11T20:38:07Z +++ curl -sS http://localhost:51678/v1/metadata
+2020-11-11T20:38:08Z + local EB_CONFIG_ECS_INSTANCE_ARN=arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3
+2020-11-11T20:38:08Z + local TIMEOUT=10
+2020-11-11T20:38:08Z + '[' -n arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3 ']'
+2020-11-11T20:38:08Z + '[' arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3 '!=' null ']'
+2020-11-11T20:38:08Z + set +e
+2020-11-11T20:38:08Z + local ECS_RESPONSE
+2020-11-11T20:38:08Z ++ eval aws ecs describe-container-instances --cluster '$EB_CONFIG_ECS_CLUSTER' --container-instances '$EB_CONFIG_ECS_INSTANCE_ARN' '2>&1'
+2020-11-11T20:38:08Z +++ aws ecs describe-container-instances --cluster awseb-MultiDocker-env-rqcdutmseh --container-instances arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3
+2020-11-11T20:38:08Z + ECS_RESPONSE='{
+2020-11-11T20:38:08Z     "failures": [], 
+2020-11-11T20:38:08Z     "containerInstances": [
+2020-11-11T20:38:08Z         {
+2020-11-11T20:38:08Z             "status": "ACTIVE", 
+2020-11-11T20:38:08Z             "registeredAt": 1605125939.717, 
+2020-11-11T20:38:08Z             "registeredResources": [
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "integerValue": 1024, 
+2020-11-11T20:38:08Z                     "longValue": 0, 
+2020-11-11T20:38:08Z                     "type": "INTEGER", 
+2020-11-11T20:38:08Z                     "name": "CPU", 
+2020-11-11T20:38:08Z                     "doubleValue": 0.0
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "integerValue": 985, 
+2020-11-11T20:38:08Z                     "longValue": 0, 
+2020-11-11T20:38:08Z                     "type": "INTEGER", 
+2020-11-11T20:38:08Z                     "name": "MEMORY", 
+2020-11-11T20:38:08Z                     "doubleValue": 0.0
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "PORTS", 
+2020-11-11T20:38:08Z                     "longValue": 0, 
+2020-11-11T20:38:08Z                     "doubleValue": 0.0, 
+2020-11-11T20:38:08Z                     "stringSetValue": [
+2020-11-11T20:38:08Z                         "22", 
+2020-11-11T20:38:08Z                         "2376", 
+2020-11-11T20:38:08Z                         "2375", 
+2020-11-11T20:38:08Z                         "51678", 
+2020-11-11T20:38:08Z                         "51679"
+2020-11-11T20:38:08Z                     ], 
+2020-11-11T20:38:08Z                     "type": "STRINGSET", 
+2020-11-11T20:38:08Z                     "integerValue": 0
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "PORTS_UDP", 
+2020-11-11T20:38:08Z                     "longValue": 0, 
+2020-11-11T20:38:08Z                     "doubleValue": 0.0, 
+2020-11-11T20:38:08Z                     "stringSetValue": [], 
+2020-11-11T20:38:08Z                     "type": "STRINGSET", 
+2020-11-11T20:38:08Z                     "integerValue": 0
+2020-11-11T20:38:08Z                 }
+2020-11-11T20:38:08Z             ], 
+2020-11-11T20:38:08Z             "ec2InstanceId": "i-087181a0b17bdbd50", 
+2020-11-11T20:38:08Z             "tags": [], 
+2020-11-11T20:38:08Z             "agentConnected": true, 
+2020-11-11T20:38:08Z             "containerInstanceArn": "arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3", 
+2020-11-11T20:38:08Z             "pendingTasksCount": 0, 
+2020-11-11T20:38:08Z             "remainingResources": [
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "integerValue": 1024, 
+2020-11-11T20:38:08Z                     "longValue": 0, 
+2020-11-11T20:38:08Z                     "type": "INTEGER", 
+2020-11-11T20:38:08Z                     "name": "CPU", 
+2020-11-11T20:38:08Z                     "doubleValue": 0.0
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "integerValue": 985, 
+2020-11-11T20:38:08Z                     "longValue": 0, 
+2020-11-11T20:38:08Z                     "type": "INTEGER", 
+2020-11-11T20:38:08Z                     "name": "MEMORY", 
+2020-11-11T20:38:08Z                     "doubleValue": 0.0
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "PORTS", 
+2020-11-11T20:38:08Z                     "longValue": 0, 
+2020-11-11T20:38:08Z                     "doubleValue": 0.0, 
+2020-11-11T20:38:08Z                     "stringSetValue": [
+2020-11-11T20:38:08Z                         "22", 
+2020-11-11T20:38:08Z                         "2376", 
+2020-11-11T20:38:08Z                         "2375", 
+2020-11-11T20:38:08Z                         "51678", 
+2020-11-11T20:38:08Z                         "51679"
+2020-11-11T20:38:08Z                     ], 
+2020-11-11T20:38:08Z                     "type": "STRINGSET", 
+2020-11-11T20:38:08Z                     "integerValue": 0
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "PORTS_UDP", 
+2020-11-11T20:38:08Z                     "longValue": 0, 
+2020-11-11T20:38:08Z                     "doubleValue": 0.0, 
+2020-11-11T20:38:08Z                     "stringSetValue": [], 
+2020-11-11T20:38:08Z                     "type": "STRINGSET", 
+2020-11-11T20:38:08Z                     "integerValue": 0
+2020-11-11T20:38:08Z                 }
+2020-11-11T20:38:08Z             ], 
+2020-11-11T20:38:08Z             "version": 7, 
+2020-11-11T20:38:08Z             "attributes": [
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.secrets.asm.environment-variables"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.ami-id", 
+2020-11-11T20:38:08Z                     "value": "ami-0d80dbba5ddbf94a0"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.secrets.asm.bootstrap.log-driver"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.task-eia.optimized-cpu"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.logging-driver.none"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.ecr-endpoint"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.docker-plugin.local"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.task-cpu-mem-limit"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.secrets.ssm.bootstrap.log-driver"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.efsAuth"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.30"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.full-sync"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.31"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.32"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.firelens.options.config.file"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.availability-zone", 
+2020-11-11T20:38:08Z                     "value": "us-east-2a"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.aws-appmesh"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.24"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.25"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.26"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.27"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.privileged-container"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.cpu-architecture", 
+2020-11-11T20:38:08Z                     "value": "x86_64"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.firelens.fluentbit"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.ecr-auth"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.20"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.os-type", 
+2020-11-11T20:38:08Z                     "value": "linux"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.22"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.private-registry-authentication.secretsmanager"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.task-eia"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.23"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.logging-driver.syslog"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.logging-driver.awsfirelens"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.firelens.options.config.s3"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.logging-driver.json-file"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.execution-role-awslogs"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.firelens.fluentd"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.efs"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.execution-role-ecr-pull"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.container-health-check"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.instance-type", 
+2020-11-11T20:38:08Z                     "value": "t2.micro"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.task-iam-role-network-host"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.container-ordering"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.env-files.s3"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.secrets.ssm.environment-variables"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.pid-ipc-namespace-sharing"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.task-iam-role"
+2020-11-11T20:38:08Z                 }
+2020-11-11T20:38:08Z             ], 
+2020-11-11T20:38:08Z             "versionInfo": {
+2020-11-11T20:38:08Z                 "agentVersion": "1.44.3", 
+2020-11-11T20:38:08Z                 "agentHash": "33b647b8", 
+2020-11-11T20:38:08Z                 "dockerVersion": "DockerVersion: 19.03.6-ce"
+2020-11-11T20:38:08Z             }, 
+2020-11-11T20:38:08Z             "runningTasksCount": 0, 
+2020-11-11T20:38:08Z             "attachments": []
+2020-11-11T20:38:08Z         }
+2020-11-11T20:38:08Z     ]
+2020-11-11T20:38:08Z }'
+2020-11-11T20:38:08Z + '[' 0 -ne 0 ']'
+2020-11-11T20:38:08Z ++ jq -r '.containerInstances[0].agentConnected'
+2020-11-11T20:38:08Z ++ echo '{
+2020-11-11T20:38:08Z     "failures": [], 
+2020-11-11T20:38:08Z     "containerInstances": [
+2020-11-11T20:38:08Z         {
+2020-11-11T20:38:08Z             "status": "ACTIVE", 
+2020-11-11T20:38:08Z             "registeredAt": 1605125939.717, 
+2020-11-11T20:38:08Z             "registeredResources": [
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "integerValue": 1024, 
+2020-11-11T20:38:08Z                     "longValue": 0, 
+2020-11-11T20:38:08Z                     "type": "INTEGER", 
+2020-11-11T20:38:08Z                     "name": "CPU", 
+2020-11-11T20:38:08Z                     "doubleValue": 0.0
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "integerValue": 985, 
+2020-11-11T20:38:08Z                     "longValue": 0, 
+2020-11-11T20:38:08Z                     "type": "INTEGER", 
+2020-11-11T20:38:08Z                     "name": "MEMORY", 
+2020-11-11T20:38:08Z                     "doubleValue": 0.0
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "PORTS", 
+2020-11-11T20:38:08Z                     "longValue": 0, 
+2020-11-11T20:38:08Z                     "doubleValue": 0.0, 
+2020-11-11T20:38:08Z                     "stringSetValue": [
+2020-11-11T20:38:08Z                         "22", 
+2020-11-11T20:38:08Z                         "2376", 
+2020-11-11T20:38:08Z                         "2375", 
+2020-11-11T20:38:08Z                         "51678", 
+2020-11-11T20:38:08Z                         "51679"
+2020-11-11T20:38:08Z                     ], 
+2020-11-11T20:38:08Z                     "type": "STRINGSET", 
+2020-11-11T20:38:08Z                     "integerValue": 0
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "PORTS_UDP", 
+2020-11-11T20:38:08Z                     "longValue": 0, 
+2020-11-11T20:38:08Z                     "doubleValue": 0.0, 
+2020-11-11T20:38:08Z                     "stringSetValue": [], 
+2020-11-11T20:38:08Z                     "type": "STRINGSET", 
+2020-11-11T20:38:08Z                     "integerValue": 0
+2020-11-11T20:38:08Z                 }
+2020-11-11T20:38:08Z             ], 
+2020-11-11T20:38:08Z             "ec2InstanceId": "i-087181a0b17bdbd50", 
+2020-11-11T20:38:08Z             "tags": [], 
+2020-11-11T20:38:08Z             "agentConnected": true, 
+2020-11-11T20:38:08Z             "containerInstanceArn": "arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3", 
+2020-11-11T20:38:08Z             "pendingTasksCount": 0, 
+2020-11-11T20:38:08Z             "remainingResources": [
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "integerValue": 1024, 
+2020-11-11T20:38:08Z                     "longValue": 0, 
+2020-11-11T20:38:08Z                     "type": "INTEGER", 
+2020-11-11T20:38:08Z                     "name": "CPU", 
+2020-11-11T20:38:08Z                     "doubleValue": 0.0
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "integerValue": 985, 
+2020-11-11T20:38:08Z                     "longValue": 0, 
+2020-11-11T20:38:08Z                     "type": "INTEGER", 
+2020-11-11T20:38:08Z                     "name": "MEMORY", 
+2020-11-11T20:38:08Z                     "doubleValue": 0.0
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "PORTS", 
+2020-11-11T20:38:08Z                     "longValue": 0, 
+2020-11-11T20:38:08Z                     "doubleValue": 0.0, 
+2020-11-11T20:38:08Z                     "stringSetValue": [
+2020-11-11T20:38:08Z                         "22", 
+2020-11-11T20:38:08Z                         "2376", 
+2020-11-11T20:38:08Z                         "2375", 
+2020-11-11T20:38:08Z                         "51678", 
+2020-11-11T20:38:08Z                         "51679"
+2020-11-11T20:38:08Z                     ], 
+2020-11-11T20:38:08Z                     "type": "STRINGSET", 
+2020-11-11T20:38:08Z                     "integerValue": 0
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "PORTS_UDP", 
+2020-11-11T20:38:08Z                     "longValue": 0, 
+2020-11-11T20:38:08Z                     "doubleValue": 0.0, 
+2020-11-11T20:38:08Z                     "stringSetValue": [], 
+2020-11-11T20:38:08Z                     "type": "STRINGSET", 
+2020-11-11T20:38:08Z                     "integerValue": 0
+2020-11-11T20:38:08Z                 }
+2020-11-11T20:38:08Z             ], 
+2020-11-11T20:38:08Z             "version": 7, 
+2020-11-11T20:38:08Z             "attributes": [
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.secrets.asm.environment-variables"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.ami-id", 
+2020-11-11T20:38:08Z                     "value": "ami-0d80dbba5ddbf94a0"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.secrets.asm.bootstrap.log-driver"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.task-eia.optimized-cpu"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.logging-driver.none"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.ecr-endpoint"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.docker-plugin.local"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.task-cpu-mem-limit"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.secrets.ssm.bootstrap.log-driver"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.efsAuth"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.30"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.full-sync"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.31"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.32"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.firelens.options.config.file"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.availability-zone", 
+2020-11-11T20:38:08Z                     "value": "us-east-2a"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.aws-appmesh"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.24"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.25"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.26"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.27"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.privileged-container"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.cpu-architecture", 
+2020-11-11T20:38:08Z                     "value": "x86_64"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.firelens.fluentbit"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.ecr-auth"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.20"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.os-type", 
+2020-11-11T20:38:08Z                     "value": "linux"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.22"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.private-registry-authentication.secretsmanager"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.task-eia"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.23"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.logging-driver.syslog"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.logging-driver.awsfirelens"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.firelens.options.config.s3"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.logging-driver.json-file"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.execution-role-awslogs"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.firelens.fluentd"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.efs"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.execution-role-ecr-pull"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.container-health-check"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.instance-type", 
+2020-11-11T20:38:08Z                     "value": "t2.micro"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.task-iam-role-network-host"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.container-ordering"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.env-files.s3"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.secrets.ssm.environment-variables"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "ecs.capability.pid-ipc-namespace-sharing"
+2020-11-11T20:38:08Z                 }, 
+2020-11-11T20:38:08Z                 {
+2020-11-11T20:38:08Z                     "name": "com.amazonaws.ecs.capability.task-iam-role"
+2020-11-11T20:38:08Z                 }
+2020-11-11T20:38:08Z             ], 
+2020-11-11T20:38:08Z             "versionInfo": {
+2020-11-11T20:38:08Z                 "agentVersion": "1.44.3", 
+2020-11-11T20:38:08Z                 "agentHash": "33b647b8", 
+2020-11-11T20:38:08Z                 "dockerVersion": "DockerVersion: 19.03.6-ce"
+2020-11-11T20:38:08Z             }, 
+2020-11-11T20:38:08Z             "runningTasksCount": 0, 
+2020-11-11T20:38:08Z             "attachments": []
+2020-11-11T20:38:08Z         }
+2020-11-11T20:38:08Z     ]
+2020-11-11T20:38:08Z }'
+2020-11-11T20:38:08Z + local EB_CONFIG_ECS_AGENT_CONNECTED=true
+2020-11-11T20:38:08Z + local TIMEOUT=20
+2020-11-11T20:38:08Z + '[' true = true ']'
+2020-11-11T20:38:08Z + set -e
+2020-11-11T20:38:08Z + trace 'Starting new ECS task with awseb-MultiDocker-env-rqcdutmseh:3.'
+2020-11-11T20:38:08Z + echo 'Starting new ECS task with awseb-MultiDocker-env-rqcdutmseh:3.'
+2020-11-11T20:38:08Z Starting new ECS task with awseb-MultiDocker-env-rqcdutmseh:3.
+2020-11-11T20:38:08Z + eventHelper.py --msg 'Starting new ECS task with awseb-MultiDocker-env-rqcdutmseh:3.' --severity TRACE
+2020-11-11T20:38:08Z + set +e
+2020-11-11T20:38:08Z + local ECS_RESPONSE
+2020-11-11T20:38:08Z ++ aws ecs start-task --cluster awseb-MultiDocker-env-rqcdutmseh --task-definition awseb-MultiDocker-env-rqcdutmseh:3 --container-instances arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3
+2020-11-11T20:38:09Z + ECS_RESPONSE='{
+2020-11-11T20:38:09Z     "failures": [], 
+2020-11-11T20:38:09Z     "tasks": [
+2020-11-11T20:38:09Z         {
+2020-11-11T20:38:09Z             "availabilityZone": "us-east-2a", 
+2020-11-11T20:38:09Z             "group": "family:awseb-MultiDocker-env-rqcdutmseh", 
+2020-11-11T20:38:09Z             "attachments": [], 
+2020-11-11T20:38:09Z             "tags": [], 
+2020-11-11T20:38:09Z             "overrides": {
+2020-11-11T20:38:09Z                 "inferenceAcceleratorOverrides": [], 
+2020-11-11T20:38:09Z                 "containerOverrides": [
+2020-11-11T20:38:09Z                     {
+2020-11-11T20:38:09Z                         "name": "nginx-proxy"
+2020-11-11T20:38:09Z                     }, 
+2020-11-11T20:38:09Z                     {
+2020-11-11T20:38:09Z                         "name": "php-app"
+2020-11-11T20:38:09Z                     }
+2020-11-11T20:38:09Z                 ]
+2020-11-11T20:38:09Z             }, 
+2020-11-11T20:38:09Z             "lastStatus": "PENDING", 
+2020-11-11T20:38:09Z             "containerInstanceArn": "arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3", 
+2020-11-11T20:38:09Z             "createdAt": 1605127089.095, 
+2020-11-11T20:38:09Z             "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1", 
+2020-11-11T20:38:09Z             "launchType": "EC2", 
+2020-11-11T20:38:09Z             "clusterArn": "arn:aws:ecs:us-east-2:554777593914:cluster/awseb-MultiDocker-env-rqcdutmseh", 
+2020-11-11T20:38:09Z             "version": 1, 
+2020-11-11T20:38:09Z             "memory": "256", 
+2020-11-11T20:38:09Z             "desiredStatus": "RUNNING", 
+2020-11-11T20:38:09Z             "taskDefinitionArn": "arn:aws:ecs:us-east-2:554777593914:task-definition/awseb-MultiDocker-env-rqcdutmseh:3", 
+2020-11-11T20:38:09Z             "cpu": "0", 
+2020-11-11T20:38:09Z             "containers": [
+2020-11-11T20:38:09Z                 {
+2020-11-11T20:38:09Z                     "containerArn": "arn:aws:ecs:us-east-2:554777593914:container/5c87d81b-78d9-4b2c-89e4-29f13704445d", 
+2020-11-11T20:38:09Z                     "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1", 
+2020-11-11T20:38:09Z                     "name": "php-app", 
+2020-11-11T20:38:09Z                     "image": "php:fpm", 
+2020-11-11T20:38:09Z                     "lastStatus": "PENDING", 
+2020-11-11T20:38:09Z                     "memory": "128", 
+2020-11-11T20:38:09Z                     "cpu": "0", 
+2020-11-11T20:38:09Z                     "networkInterfaces": []
+2020-11-11T20:38:09Z                 }, 
+2020-11-11T20:38:09Z                 {
+2020-11-11T20:38:09Z                     "containerArn": "arn:aws:ecs:us-east-2:554777593914:container/a33e9960-5b53-4bdc-abd3-cd21063f2a6a", 
+2020-11-11T20:38:09Z                     "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1", 
+2020-11-11T20:38:09Z                     "name": "nginx-proxy", 
+2020-11-11T20:38:09Z                     "image": "nginx", 
+2020-11-11T20:38:09Z                     "lastStatus": "PENDING", 
+2020-11-11T20:38:09Z                     "memory": "128", 
+2020-11-11T20:38:09Z                     "cpu": "0", 
+2020-11-11T20:38:09Z                     "networkInterfaces": []
+2020-11-11T20:38:09Z                 }
+2020-11-11T20:38:09Z             ]
+2020-11-11T20:38:09Z         }
+2020-11-11T20:38:09Z     ]
+2020-11-11T20:38:09Z }'
+2020-11-11T20:38:09Z + local ECS_EXIT=0
+2020-11-11T20:38:09Z ++ jq -r '.tasks[0].taskArn'
+2020-11-11T20:38:09Z ++ echo '{
+2020-11-11T20:38:09Z     "failures": [], 
+2020-11-11T20:38:09Z     "tasks": [
+2020-11-11T20:38:09Z         {
+2020-11-11T20:38:09Z             "availabilityZone": "us-east-2a", 
+2020-11-11T20:38:09Z             "group": "family:awseb-MultiDocker-env-rqcdutmseh", 
+2020-11-11T20:38:09Z             "attachments": [], 
+2020-11-11T20:38:09Z             "tags": [], 
+2020-11-11T20:38:09Z             "overrides": {
+2020-11-11T20:38:09Z                 "inferenceAcceleratorOverrides": [], 
+2020-11-11T20:38:09Z                 "containerOverrides": [
+2020-11-11T20:38:09Z                     {
+2020-11-11T20:38:09Z                         "name": "nginx-proxy"
+2020-11-11T20:38:09Z                     }, 
+2020-11-11T20:38:09Z                     {
+2020-11-11T20:38:09Z                         "name": "php-app"
+2020-11-11T20:38:09Z                     }
+2020-11-11T20:38:09Z                 ]
+2020-11-11T20:38:09Z             }, 
+2020-11-11T20:38:09Z             "lastStatus": "PENDING", 
+2020-11-11T20:38:09Z             "containerInstanceArn": "arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3", 
+2020-11-11T20:38:09Z             "createdAt": 1605127089.095, 
+2020-11-11T20:38:09Z             "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1", 
+2020-11-11T20:38:09Z             "launchType": "EC2", 
+2020-11-11T20:38:09Z             "clusterArn": "arn:aws:ecs:us-east-2:554777593914:cluster/awseb-MultiDocker-env-rqcdutmseh", 
+2020-11-11T20:38:09Z             "version": 1, 
+2020-11-11T20:38:09Z             "memory": "256", 
+2020-11-11T20:38:09Z             "desiredStatus": "RUNNING", 
+2020-11-11T20:38:09Z             "taskDefinitionArn": "arn:aws:ecs:us-east-2:554777593914:task-definition/awseb-MultiDocker-env-rqcdutmseh:3", 
+2020-11-11T20:38:09Z             "cpu": "0", 
+2020-11-11T20:38:09Z             "containers": [
+2020-11-11T20:38:09Z                 {
+2020-11-11T20:38:09Z                     "containerArn": "arn:aws:ecs:us-east-2:554777593914:container/5c87d81b-78d9-4b2c-89e4-29f13704445d", 
+2020-11-11T20:38:09Z                     "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1", 
+2020-11-11T20:38:09Z                     "name": "php-app", 
+2020-11-11T20:38:09Z                     "image": "php:fpm", 
+2020-11-11T20:38:09Z                     "lastStatus": "PENDING", 
+2020-11-11T20:38:09Z                     "memory": "128", 
+2020-11-11T20:38:09Z                     "cpu": "0", 
+2020-11-11T20:38:09Z                     "networkInterfaces": []
+2020-11-11T20:38:09Z                 }, 
+2020-11-11T20:38:09Z                 {
+2020-11-11T20:38:09Z                     "containerArn": "arn:aws:ecs:us-east-2:554777593914:container/a33e9960-5b53-4bdc-abd3-cd21063f2a6a", 
+2020-11-11T20:38:09Z                     "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1", 
+2020-11-11T20:38:09Z                     "name": "nginx-proxy", 
+2020-11-11T20:38:09Z                     "image": "nginx", 
+2020-11-11T20:38:09Z                     "lastStatus": "PENDING", 
+2020-11-11T20:38:09Z                     "memory": "128", 
+2020-11-11T20:38:09Z                     "cpu": "0", 
+2020-11-11T20:38:09Z                     "networkInterfaces": []
+2020-11-11T20:38:09Z                 }
+2020-11-11T20:38:09Z             ]
+2020-11-11T20:38:09Z         }
+2020-11-11T20:38:09Z     ]
+2020-11-11T20:38:09Z }'
+2020-11-11T20:38:09Z + local EB_CONFIG_ECS_TASK_ARN=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1
+2020-11-11T20:38:09Z + '[' 0 -ne 0 ']'
+2020-11-11T20:38:09Z + '[' -z arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1 ']'
+2020-11-11T20:38:09Z + '[' arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1 = null ']'
+2020-11-11T20:38:09Z + set -e
+2020-11-11T20:38:09Z + echo arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1
+2020-11-11T20:38:09Z + local START_TIMEOUT=840
+2020-11-11T20:38:09Z + local TIMEOUT=840
+2020-11-11T20:38:09Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-11T20:38:09Z +++ jq -r .KnownStatus
+2020-11-11T20:38:09Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1'
+2020-11-11T20:38:09Z + local KNOWN_STATUS=
+2020-11-11T20:38:09Z + '[' '' '!=' RUNNING ']'
+2020-11-11T20:38:09Z + '[' -z '' ']'
+2020-11-11T20:38:09Z + sleep 3
+2020-11-11T20:38:12Z + TIMEOUT=837
+2020-11-11T20:38:12Z + '[' 837 -le 0 ']'
+2020-11-11T20:38:12Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-11T20:38:12Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1'
+2020-11-11T20:38:12Z +++ jq -r .KnownStatus
+2020-11-11T20:38:12Z + KNOWN_STATUS=PENDING
+2020-11-11T20:38:12Z + '[' PENDING '!=' RUNNING ']'
+2020-11-11T20:38:12Z + '[' -z PENDING ']'
+2020-11-11T20:38:12Z + '[' PENDING = NONE ']'
+2020-11-11T20:38:12Z + '[' PENDING = PENDING ']'
+2020-11-11T20:38:12Z + sleep 3
+2020-11-11T20:38:15Z + TIMEOUT=834
+2020-11-11T20:38:15Z + '[' 834 -le 0 ']'
+2020-11-11T20:38:15Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-11T20:38:15Z +++ jq -r .KnownStatus
+2020-11-11T20:38:15Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1'
+2020-11-11T20:38:15Z + KNOWN_STATUS=RUNNING
+2020-11-11T20:38:15Z + '[' RUNNING '!=' RUNNING ']'
+2020-11-11T20:38:15Z ++ jq -r -c '.Containers[] | .DockerId + "," + .Name'
+2020-11-11T20:38:15Z ++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1'
+2020-11-11T20:38:15Z + for CONTAINER in '`curl -sS http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN | jq -r -c '\''.Containers[] | .DockerId + "," + .Name'\''`'
+2020-11-11T20:38:15Z ++ cut -c 1-12
+2020-11-11T20:38:15Z ++ awk -F , '{print $1}'
+2020-11-11T20:38:15Z ++ echo 867f610c1d208b28b5cd93348d86645763142802a042e9b3282da49d8bf2bec0,php-app
+2020-11-11T20:38:15Z + CONTAINER_ID=867f610c1d20
+2020-11-11T20:38:15Z ++ awk -F , '{print $2}'
+2020-11-11T20:38:15Z ++ echo 867f610c1d208b28b5cd93348d86645763142802a042e9b3282da49d8bf2bec0,php-app
+2020-11-11T20:38:15Z + CONTAINER_NAME=php-app
+2020-11-11T20:38:15Z + for CONTAINER in '`curl -sS http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN | jq -r -c '\''.Containers[] | .DockerId + "," + .Name'\''`'
+2020-11-11T20:38:15Z + docker logs -f 867f610c1d20
+2020-11-11T20:38:15Z ++ cut -c 1-12
+2020-11-11T20:38:15Z ++ awk -F , '{print $1}'
+2020-11-11T20:38:15Z ++ echo c731554828c9d920e936f657f051526e2e7019df9686598c50fe0598468d0f12,nginx-proxy
+2020-11-11T20:38:15Z + CONTAINER_ID=c731554828c9
+2020-11-11T20:38:15Z ++ awk -F , '{print $2}'
+2020-11-11T20:38:15Z ++ echo c731554828c9d920e936f657f051526e2e7019df9686598c50fe0598468d0f12,nginx-proxy
+2020-11-11T20:38:15Z + CONTAINER_NAME=nginx-proxy
+2020-11-11T20:38:15Z + trace 'ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1 is RUNNING.'
+2020-11-11T20:38:15Z + echo 'ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1 is RUNNING.'
+2020-11-11T20:38:15Z ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1 is RUNNING.
+2020-11-11T20:38:15Z + eventHelper.py --msg 'ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1 is RUNNING.' --severity TRACE
+2020-11-11T20:38:15Z + docker logs -f c731554828c9
+2020-11-11T20:38:15Z + exit 0
+2020-11-12T00:01:57Z + . /opt/elasticbeanstalk/hooks/common.sh
+2020-11-12T00:01:57Z ++ /opt/elasticbeanstalk/bin/get-config container -k ecs_cluster
+2020-11-12T00:01:57Z + EB_CONFIG_ECS_CLUSTER=awseb-MultiDocker-env-rqcdutmseh
+2020-11-12T00:01:57Z ++ /opt/elasticbeanstalk/bin/get-config container -k ecs_task_def
+2020-11-12T00:01:57Z + EB_CONFIG_ECS_TASK_DEF=awseb-MultiDocker-env-rqcdutmseh
+2020-11-12T00:01:57Z ++ /opt/elasticbeanstalk/bin/get-config container -k ecs_task_arn_file
+2020-11-12T00:01:57Z + EB_CONFIG_ECS_TASK_ARN_FILE=/etc/elasticbeanstalk/.ecs-task-arn
+2020-11-12T00:01:57Z ++ /opt/elasticbeanstalk/bin/get-config container -k deployment_manifest
+2020-11-12T00:01:57Z + EB_CONFIG_DEPLOYMENT_MANIFEST=/opt/elasticbeanstalk/deploy/manifest
+2020-11-12T00:01:57Z + '[' -f /opt/elasticbeanstalk/deploy/manifest ']'
+2020-11-12T00:01:57Z ++ jq -r '.ECS.TaskDefinitionName | select(. != null)'
+2020-11-12T00:01:57Z ++ cat /opt/elasticbeanstalk/deploy/manifest
+2020-11-12T00:01:57Z + EB_TASK_DEF_NAME_FROM_MANIFEST=awseb-MultiDocker-env-rqcdutmseh
+2020-11-12T00:01:57Z ++ jq -r '.ECS.TaskDefinitionRevision | select(. != null)'
+2020-11-12T00:01:57Z ++ cat /opt/elasticbeanstalk/deploy/manifest
+2020-11-12T00:01:57Z + EB_TASK_DEF_REVISION_FROM_MANIFEST=4
+2020-11-12T00:01:57Z + '[' -z awseb-MultiDocker-env-rqcdutmseh ']'
+2020-11-12T00:01:57Z + '[' -z 4 ']'
+2020-11-12T00:01:57Z + EB_CONFIG_ECS_TASK_DEF=awseb-MultiDocker-env-rqcdutmseh:4
+2020-11-12T00:01:57Z + '[' -z awseb-MultiDocker-env-rqcdutmseh ']'
+2020-11-12T00:01:57Z + '[' -z awseb-MultiDocker-env-rqcdutmseh:4 ']'
+2020-11-12T00:01:57Z + CMD_GET_INSTANCE_ARN='curl -sS http://localhost:51678/v1/metadata | jq -r .ContainerInstanceArn'
+2020-11-12T00:01:57Z + CMD_GET_KNOWN_STATUS='curl -sS http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN | jq -r .KnownStatus'
+2020-11-12T00:01:57Z + CMD_DESCRIBE_INSTANCE='aws ecs describe-container-instances --cluster $EB_CONFIG_ECS_CLUSTER --container-instances $EB_CONFIG_ECS_INSTANCE_ARN 2>&1'
+2020-11-12T00:01:57Z + case "$1" in
+2020-11-12T00:01:57Z + stop_ecs_task
+2020-11-12T00:01:57Z + '[' -f /etc/elasticbeanstalk/.ecs-task-arn ']'
+2020-11-12T00:01:57Z ++ cat /etc/elasticbeanstalk/.ecs-task-arn
+2020-11-12T00:01:57Z + local EB_CONFIG_ECS_TASK_ARN=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1
+2020-11-12T00:01:57Z + trace 'Stopping ECS task arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1.'
+2020-11-12T00:01:57Z + echo 'Stopping ECS task arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1.'
+2020-11-12T00:01:57Z Stopping ECS task arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1.
+2020-11-12T00:01:57Z + eventHelper.py --msg 'Stopping ECS task arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1.' --severity TRACE
+2020-11-12T00:01:57Z + set +e
+2020-11-12T00:01:57Z + local ECS_RESPONSE
+2020-11-12T00:01:57Z ++ aws ecs stop-task --cluster awseb-MultiDocker-env-rqcdutmseh --task arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1
+2020-11-12T00:01:58Z + ECS_RESPONSE='{
+2020-11-12T00:01:58Z     "task": {
+2020-11-12T00:01:58Z         "launchType": "EC2", 
+2020-11-12T00:01:58Z         "attachments": [], 
+2020-11-12T00:01:58Z         "stoppingAt": 1605139318.233, 
+2020-11-12T00:01:58Z         "clusterArn": "arn:aws:ecs:us-east-2:554777593914:cluster/awseb-MultiDocker-env-rqcdutmseh", 
+2020-11-12T00:01:58Z         "desiredStatus": "STOPPED", 
+2020-11-12T00:01:58Z         "createdAt": 1605127089.095, 
+2020-11-12T00:01:58Z         "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1", 
+2020-11-12T00:01:58Z         "group": "family:awseb-MultiDocker-env-rqcdutmseh", 
+2020-11-12T00:01:58Z         "containerInstanceArn": "arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3", 
+2020-11-12T00:01:58Z         "pullStartedAt": 1605127090.525, 
+2020-11-12T00:01:58Z         "version": 3, 
+2020-11-12T00:01:58Z         "stopCode": "UserInitiated", 
+2020-11-12T00:01:58Z         "connectivityAt": 1605127089.095, 
+2020-11-12T00:01:58Z         "startedAt": 1605127092.525, 
+2020-11-12T00:01:58Z         "taskDefinitionArn": "arn:aws:ecs:us-east-2:554777593914:task-definition/awseb-MultiDocker-env-rqcdutmseh:3", 
+2020-11-12T00:01:58Z         "containers": [
+2020-11-12T00:01:58Z             {
+2020-11-12T00:01:58Z                 "containerArn": "arn:aws:ecs:us-east-2:554777593914:container/5c87d81b-78d9-4b2c-89e4-29f13704445d", 
+2020-11-12T00:01:58Z                 "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1", 
+2020-11-12T00:01:58Z                 "name": "php-app", 
+2020-11-12T00:01:58Z                 "networkBindings": [], 
+2020-11-12T00:01:58Z                 "image": "php:fpm", 
+2020-11-12T00:01:58Z                 "lastStatus": "RUNNING", 
+2020-11-12T00:01:58Z                 "memory": "128", 
+2020-11-12T00:01:58Z                 "runtimeId": "867f610c1d208b28b5cd93348d86645763142802a042e9b3282da49d8bf2bec0", 
+2020-11-12T00:01:58Z                 "cpu": "0", 
+2020-11-12T00:01:58Z                 "networkInterfaces": []
+2020-11-12T00:01:58Z             }, 
+2020-11-12T00:01:58Z             {
+2020-11-12T00:01:58Z                 "containerArn": "arn:aws:ecs:us-east-2:554777593914:container/a33e9960-5b53-4bdc-abd3-cd21063f2a6a", 
+2020-11-12T00:01:58Z                 "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1", 
+2020-11-12T00:01:58Z                 "name": "nginx-proxy", 
+2020-11-12T00:01:58Z                 "networkBindings": [
+2020-11-12T00:01:58Z                     {
+2020-11-12T00:01:58Z                         "protocol": "tcp", 
+2020-11-12T00:01:58Z                         "bindIP": "0.0.0.0", 
+2020-11-12T00:01:58Z                         "containerPort": 80, 
+2020-11-12T00:01:58Z                         "hostPort": 80
+2020-11-12T00:01:58Z                     }
+2020-11-12T00:01:58Z                 ], 
+2020-11-12T00:01:58Z                 "image": "nginx", 
+2020-11-12T00:01:58Z                 "lastStatus": "RUNNING", 
+2020-11-12T00:01:58Z                 "memory": "128", 
+2020-11-12T00:01:58Z                 "runtimeId": "c731554828c9d920e936f657f051526e2e7019df9686598c50fe0598468d0f12", 
+2020-11-12T00:01:58Z                 "cpu": "0", 
+2020-11-12T00:01:58Z                 "networkInterfaces": []
+2020-11-12T00:01:58Z             }
+2020-11-12T00:01:58Z         ], 
+2020-11-12T00:01:58Z         "availabilityZone": "us-east-2a", 
+2020-11-12T00:01:58Z         "tags": [], 
+2020-11-12T00:01:58Z         "memory": "256", 
+2020-11-12T00:01:58Z         "lastStatus": "RUNNING", 
+2020-11-12T00:01:58Z         "connectivity": "CONNECTED", 
+2020-11-12T00:01:58Z         "overrides": {
+2020-11-12T00:01:58Z             "inferenceAcceleratorOverrides": [], 
+2020-11-12T00:01:58Z             "containerOverrides": [
+2020-11-12T00:01:58Z                 {
+2020-11-12T00:01:58Z                     "name": "nginx-proxy"
+2020-11-12T00:01:58Z                 }, 
+2020-11-12T00:01:58Z                 {
+2020-11-12T00:01:58Z                     "name": "php-app"
+2020-11-12T00:01:58Z                 }
+2020-11-12T00:01:58Z             ]
+2020-11-12T00:01:58Z         }, 
+2020-11-12T00:01:58Z         "pullStoppedAt": 1605127091.525, 
+2020-11-12T00:01:58Z         "stoppedReason": "Task stopped by user", 
+2020-11-12T00:01:58Z         "cpu": "0"
+2020-11-12T00:01:58Z     }
+2020-11-12T00:01:58Z }'
+2020-11-12T00:01:58Z + '[' 0 -ne 0 ']'
+2020-11-12T00:01:58Z + set -e
+2020-11-12T00:01:58Z + local STOP_TIMEOUT=120
+2020-11-12T00:01:58Z + local TIMEOUT=120
+2020-11-12T00:01:58Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-12T00:01:58Z +++ jq -r .KnownStatus
+2020-11-12T00:01:58Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1'
+2020-11-12T00:01:58Z + local KNOWN_STATUS=RUNNING
+2020-11-12T00:01:58Z + '[' RUNNING '!=' STOPPED ']'
+2020-11-12T00:01:58Z + '[' RUNNING '!=' DEAD ']'
+2020-11-12T00:01:58Z + sleep 3
+2020-11-12T00:02:01Z + TIMEOUT=117
+2020-11-12T00:02:01Z + '[' 117 -le 0 ']'
+2020-11-12T00:02:01Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-12T00:02:01Z +++ jq -r .KnownStatus
+2020-11-12T00:02:01Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1'
+2020-11-12T00:02:01Z + KNOWN_STATUS=STOPPED
+2020-11-12T00:02:01Z + '[' STOPPED '!=' STOPPED ']'
+2020-11-12T00:02:01Z + trace 'ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1 is STOPPED.'
+2020-11-12T00:02:01Z + echo 'ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1 is STOPPED.'
+2020-11-12T00:02:01Z ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1 is STOPPED.
+2020-11-12T00:02:01Z + eventHelper.py --msg 'ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/58ea9173d7864a5985a6e25b82783ab1 is STOPPED.' --severity TRACE
+2020-11-12T00:02:01Z + TIMEOUT=60
+2020-11-12T00:02:01Z ++ wc -l
+2020-11-12T00:02:01Z ++ docker ps -q
+2020-11-12T00:02:01Z + '[' 1 '!=' 1 ']'
+2020-11-12T00:02:01Z + exit 0
+2020-11-12T00:02:01Z + . /opt/elasticbeanstalk/hooks/common.sh
+2020-11-12T00:02:01Z ++ /opt/elasticbeanstalk/bin/get-config container -k ecs_cluster
+2020-11-12T00:02:01Z + EB_CONFIG_ECS_CLUSTER=awseb-MultiDocker-env-rqcdutmseh
+2020-11-12T00:02:01Z ++ /opt/elasticbeanstalk/bin/get-config container -k ecs_task_def
+2020-11-12T00:02:02Z + EB_CONFIG_ECS_TASK_DEF=awseb-MultiDocker-env-rqcdutmseh
+2020-11-12T00:02:02Z ++ /opt/elasticbeanstalk/bin/get-config container -k ecs_task_arn_file
+2020-11-12T00:02:02Z + EB_CONFIG_ECS_TASK_ARN_FILE=/etc/elasticbeanstalk/.ecs-task-arn
+2020-11-12T00:02:02Z ++ /opt/elasticbeanstalk/bin/get-config container -k deployment_manifest
+2020-11-12T00:02:02Z + EB_CONFIG_DEPLOYMENT_MANIFEST=/opt/elasticbeanstalk/deploy/manifest
+2020-11-12T00:02:02Z + '[' -f /opt/elasticbeanstalk/deploy/manifest ']'
+2020-11-12T00:02:02Z ++ jq -r '.ECS.TaskDefinitionName | select(. != null)'
+2020-11-12T00:02:02Z ++ cat /opt/elasticbeanstalk/deploy/manifest
+2020-11-12T00:02:02Z + EB_TASK_DEF_NAME_FROM_MANIFEST=awseb-MultiDocker-env-rqcdutmseh
+2020-11-12T00:02:02Z ++ jq -r '.ECS.TaskDefinitionRevision | select(. != null)'
+2020-11-12T00:02:02Z ++ cat /opt/elasticbeanstalk/deploy/manifest
+2020-11-12T00:02:02Z + EB_TASK_DEF_REVISION_FROM_MANIFEST=4
+2020-11-12T00:02:02Z + '[' -z awseb-MultiDocker-env-rqcdutmseh ']'
+2020-11-12T00:02:02Z + '[' -z 4 ']'
+2020-11-12T00:02:02Z + EB_CONFIG_ECS_TASK_DEF=awseb-MultiDocker-env-rqcdutmseh:4
+2020-11-12T00:02:02Z + '[' -z awseb-MultiDocker-env-rqcdutmseh ']'
+2020-11-12T00:02:02Z + '[' -z awseb-MultiDocker-env-rqcdutmseh:4 ']'
+2020-11-12T00:02:02Z + CMD_GET_INSTANCE_ARN='curl -sS http://localhost:51678/v1/metadata | jq -r .ContainerInstanceArn'
+2020-11-12T00:02:02Z + CMD_GET_KNOWN_STATUS='curl -sS http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN | jq -r .KnownStatus'
+2020-11-12T00:02:02Z + CMD_DESCRIBE_INSTANCE='aws ecs describe-container-instances --cluster $EB_CONFIG_ECS_CLUSTER --container-instances $EB_CONFIG_ECS_INSTANCE_ARN 2>&1'
+2020-11-12T00:02:02Z + case "$1" in
+2020-11-12T00:02:02Z + start_ecs_task
+2020-11-12T00:02:02Z ++ eval curl -sS http://localhost:51678/v1/metadata '|' jq -r .ContainerInstanceArn
+2020-11-12T00:02:02Z +++ jq -r .ContainerInstanceArn
+2020-11-12T00:02:02Z +++ curl -sS http://localhost:51678/v1/metadata
+2020-11-12T00:02:02Z + local EB_CONFIG_ECS_INSTANCE_ARN=arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3
+2020-11-12T00:02:02Z + local TIMEOUT=10
+2020-11-12T00:02:02Z + '[' -n arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3 ']'
+2020-11-12T00:02:02Z + '[' arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3 '!=' null ']'
+2020-11-12T00:02:02Z + set +e
+2020-11-12T00:02:02Z + local ECS_RESPONSE
+2020-11-12T00:02:02Z ++ eval aws ecs describe-container-instances --cluster '$EB_CONFIG_ECS_CLUSTER' --container-instances '$EB_CONFIG_ECS_INSTANCE_ARN' '2>&1'
+2020-11-12T00:02:02Z +++ aws ecs describe-container-instances --cluster awseb-MultiDocker-env-rqcdutmseh --container-instances arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3
+2020-11-12T00:02:02Z + ECS_RESPONSE='{
+2020-11-12T00:02:02Z     "failures": [], 
+2020-11-12T00:02:02Z     "containerInstances": [
+2020-11-12T00:02:02Z         {
+2020-11-12T00:02:02Z             "status": "ACTIVE", 
+2020-11-12T00:02:02Z             "registeredAt": 1605125939.717, 
+2020-11-12T00:02:02Z             "registeredResources": [
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "integerValue": 1024, 
+2020-11-12T00:02:02Z                     "longValue": 0, 
+2020-11-12T00:02:02Z                     "type": "INTEGER", 
+2020-11-12T00:02:02Z                     "name": "CPU", 
+2020-11-12T00:02:02Z                     "doubleValue": 0.0
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "integerValue": 985, 
+2020-11-12T00:02:02Z                     "longValue": 0, 
+2020-11-12T00:02:02Z                     "type": "INTEGER", 
+2020-11-12T00:02:02Z                     "name": "MEMORY", 
+2020-11-12T00:02:02Z                     "doubleValue": 0.0
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "PORTS", 
+2020-11-12T00:02:02Z                     "longValue": 0, 
+2020-11-12T00:02:02Z                     "doubleValue": 0.0, 
+2020-11-12T00:02:02Z                     "stringSetValue": [
+2020-11-12T00:02:02Z                         "22", 
+2020-11-12T00:02:02Z                         "2376", 
+2020-11-12T00:02:02Z                         "2375", 
+2020-11-12T00:02:02Z                         "51678", 
+2020-11-12T00:02:02Z                         "51679"
+2020-11-12T00:02:02Z                     ], 
+2020-11-12T00:02:02Z                     "type": "STRINGSET", 
+2020-11-12T00:02:02Z                     "integerValue": 0
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "PORTS_UDP", 
+2020-11-12T00:02:02Z                     "longValue": 0, 
+2020-11-12T00:02:02Z                     "doubleValue": 0.0, 
+2020-11-12T00:02:02Z                     "stringSetValue": [], 
+2020-11-12T00:02:02Z                     "type": "STRINGSET", 
+2020-11-12T00:02:02Z                     "integerValue": 0
+2020-11-12T00:02:02Z                 }
+2020-11-12T00:02:02Z             ], 
+2020-11-12T00:02:02Z             "ec2InstanceId": "i-087181a0b17bdbd50", 
+2020-11-12T00:02:02Z             "tags": [], 
+2020-11-12T00:02:02Z             "agentConnected": true, 
+2020-11-12T00:02:02Z             "containerInstanceArn": "arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3", 
+2020-11-12T00:02:02Z             "pendingTasksCount": 0, 
+2020-11-12T00:02:02Z             "remainingResources": [
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "integerValue": 1024, 
+2020-11-12T00:02:02Z                     "longValue": 0, 
+2020-11-12T00:02:02Z                     "type": "INTEGER", 
+2020-11-12T00:02:02Z                     "name": "CPU", 
+2020-11-12T00:02:02Z                     "doubleValue": 0.0
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "integerValue": 985, 
+2020-11-12T00:02:02Z                     "longValue": 0, 
+2020-11-12T00:02:02Z                     "type": "INTEGER", 
+2020-11-12T00:02:02Z                     "name": "MEMORY", 
+2020-11-12T00:02:02Z                     "doubleValue": 0.0
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "PORTS", 
+2020-11-12T00:02:02Z                     "longValue": 0, 
+2020-11-12T00:02:02Z                     "doubleValue": 0.0, 
+2020-11-12T00:02:02Z                     "stringSetValue": [
+2020-11-12T00:02:02Z                         "22", 
+2020-11-12T00:02:02Z                         "2376", 
+2020-11-12T00:02:02Z                         "2375", 
+2020-11-12T00:02:02Z                         "51678", 
+2020-11-12T00:02:02Z                         "51679"
+2020-11-12T00:02:02Z                     ], 
+2020-11-12T00:02:02Z                     "type": "STRINGSET", 
+2020-11-12T00:02:02Z                     "integerValue": 0
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "PORTS_UDP", 
+2020-11-12T00:02:02Z                     "longValue": 0, 
+2020-11-12T00:02:02Z                     "doubleValue": 0.0, 
+2020-11-12T00:02:02Z                     "stringSetValue": [], 
+2020-11-12T00:02:02Z                     "type": "STRINGSET", 
+2020-11-12T00:02:02Z                     "integerValue": 0
+2020-11-12T00:02:02Z                 }
+2020-11-12T00:02:02Z             ], 
+2020-11-12T00:02:02Z             "version": 29, 
+2020-11-12T00:02:02Z             "attributes": [
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.secrets.asm.environment-variables"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.ami-id", 
+2020-11-12T00:02:02Z                     "value": "ami-0d80dbba5ddbf94a0"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.secrets.asm.bootstrap.log-driver"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.task-eia.optimized-cpu"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.logging-driver.none"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.ecr-endpoint"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.docker-plugin.local"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.task-cpu-mem-limit"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.secrets.ssm.bootstrap.log-driver"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.efsAuth"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.30"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.full-sync"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.31"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.32"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.firelens.options.config.file"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.availability-zone", 
+2020-11-12T00:02:02Z                     "value": "us-east-2a"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.aws-appmesh"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.24"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.25"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.26"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.27"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.privileged-container"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.cpu-architecture", 
+2020-11-12T00:02:02Z                     "value": "x86_64"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.firelens.fluentbit"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.ecr-auth"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.20"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.os-type", 
+2020-11-12T00:02:02Z                     "value": "linux"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.22"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.private-registry-authentication.secretsmanager"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.task-eia"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.23"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.logging-driver.syslog"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.logging-driver.awsfirelens"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.firelens.options.config.s3"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.logging-driver.json-file"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.execution-role-awslogs"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.firelens.fluentd"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.efs"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.execution-role-ecr-pull"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.container-health-check"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.instance-type", 
+2020-11-12T00:02:02Z                     "value": "t2.micro"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.task-iam-role-network-host"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.container-ordering"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.env-files.s3"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.secrets.ssm.environment-variables"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.pid-ipc-namespace-sharing"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.task-iam-role"
+2020-11-12T00:02:02Z                 }
+2020-11-12T00:02:02Z             ], 
+2020-11-12T00:02:02Z             "versionInfo": {
+2020-11-12T00:02:02Z                 "agentVersion": "1.44.3", 
+2020-11-12T00:02:02Z                 "agentHash": "33b647b8", 
+2020-11-12T00:02:02Z                 "dockerVersion": "DockerVersion: 19.03.6-ce"
+2020-11-12T00:02:02Z             }, 
+2020-11-12T00:02:02Z             "runningTasksCount": 0, 
+2020-11-12T00:02:02Z             "attachments": []
+2020-11-12T00:02:02Z         }
+2020-11-12T00:02:02Z     ]
+2020-11-12T00:02:02Z }'
+2020-11-12T00:02:02Z + '[' 0 -ne 0 ']'
+2020-11-12T00:02:02Z ++ jq -r '.containerInstances[0].agentConnected'
+2020-11-12T00:02:02Z ++ echo '{
+2020-11-12T00:02:02Z     "failures": [], 
+2020-11-12T00:02:02Z     "containerInstances": [
+2020-11-12T00:02:02Z         {
+2020-11-12T00:02:02Z             "status": "ACTIVE", 
+2020-11-12T00:02:02Z             "registeredAt": 1605125939.717, 
+2020-11-12T00:02:02Z             "registeredResources": [
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "integerValue": 1024, 
+2020-11-12T00:02:02Z                     "longValue": 0, 
+2020-11-12T00:02:02Z                     "type": "INTEGER", 
+2020-11-12T00:02:02Z                     "name": "CPU", 
+2020-11-12T00:02:02Z                     "doubleValue": 0.0
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "integerValue": 985, 
+2020-11-12T00:02:02Z                     "longValue": 0, 
+2020-11-12T00:02:02Z                     "type": "INTEGER", 
+2020-11-12T00:02:02Z                     "name": "MEMORY", 
+2020-11-12T00:02:02Z                     "doubleValue": 0.0
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "PORTS", 
+2020-11-12T00:02:02Z                     "longValue": 0, 
+2020-11-12T00:02:02Z                     "doubleValue": 0.0, 
+2020-11-12T00:02:02Z                     "stringSetValue": [
+2020-11-12T00:02:02Z                         "22", 
+2020-11-12T00:02:02Z                         "2376", 
+2020-11-12T00:02:02Z                         "2375", 
+2020-11-12T00:02:02Z                         "51678", 
+2020-11-12T00:02:02Z                         "51679"
+2020-11-12T00:02:02Z                     ], 
+2020-11-12T00:02:02Z                     "type": "STRINGSET", 
+2020-11-12T00:02:02Z                     "integerValue": 0
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "PORTS_UDP", 
+2020-11-12T00:02:02Z                     "longValue": 0, 
+2020-11-12T00:02:02Z                     "doubleValue": 0.0, 
+2020-11-12T00:02:02Z                     "stringSetValue": [], 
+2020-11-12T00:02:02Z                     "type": "STRINGSET", 
+2020-11-12T00:02:02Z                     "integerValue": 0
+2020-11-12T00:02:02Z                 }
+2020-11-12T00:02:02Z             ], 
+2020-11-12T00:02:02Z             "ec2InstanceId": "i-087181a0b17bdbd50", 
+2020-11-12T00:02:02Z             "tags": [], 
+2020-11-12T00:02:02Z             "agentConnected": true, 
+2020-11-12T00:02:02Z             "containerInstanceArn": "arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3", 
+2020-11-12T00:02:02Z             "pendingTasksCount": 0, 
+2020-11-12T00:02:02Z             "remainingResources": [
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "integerValue": 1024, 
+2020-11-12T00:02:02Z                     "longValue": 0, 
+2020-11-12T00:02:02Z                     "type": "INTEGER", 
+2020-11-12T00:02:02Z                     "name": "CPU", 
+2020-11-12T00:02:02Z                     "doubleValue": 0.0
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "integerValue": 985, 
+2020-11-12T00:02:02Z                     "longValue": 0, 
+2020-11-12T00:02:02Z                     "type": "INTEGER", 
+2020-11-12T00:02:02Z                     "name": "MEMORY", 
+2020-11-12T00:02:02Z                     "doubleValue": 0.0
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "PORTS", 
+2020-11-12T00:02:02Z                     "longValue": 0, 
+2020-11-12T00:02:02Z                     "doubleValue": 0.0, 
+2020-11-12T00:02:02Z                     "stringSetValue": [
+2020-11-12T00:02:02Z                         "22", 
+2020-11-12T00:02:02Z                         "2376", 
+2020-11-12T00:02:02Z                         "2375", 
+2020-11-12T00:02:02Z                         "51678", 
+2020-11-12T00:02:02Z                         "51679"
+2020-11-12T00:02:02Z                     ], 
+2020-11-12T00:02:02Z                     "type": "STRINGSET", 
+2020-11-12T00:02:02Z                     "integerValue": 0
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "PORTS_UDP", 
+2020-11-12T00:02:02Z                     "longValue": 0, 
+2020-11-12T00:02:02Z                     "doubleValue": 0.0, 
+2020-11-12T00:02:02Z                     "stringSetValue": [], 
+2020-11-12T00:02:02Z                     "type": "STRINGSET", 
+2020-11-12T00:02:02Z                     "integerValue": 0
+2020-11-12T00:02:02Z                 }
+2020-11-12T00:02:02Z             ], 
+2020-11-12T00:02:02Z             "version": 29, 
+2020-11-12T00:02:02Z             "attributes": [
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.secrets.asm.environment-variables"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.ami-id", 
+2020-11-12T00:02:02Z                     "value": "ami-0d80dbba5ddbf94a0"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.secrets.asm.bootstrap.log-driver"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.task-eia.optimized-cpu"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.logging-driver.none"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.ecr-endpoint"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.docker-plugin.local"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.task-cpu-mem-limit"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.secrets.ssm.bootstrap.log-driver"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.efsAuth"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.30"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.full-sync"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.31"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.32"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.firelens.options.config.file"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.availability-zone", 
+2020-11-12T00:02:02Z                     "value": "us-east-2a"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.aws-appmesh"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.24"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.25"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.26"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.27"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.privileged-container"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.cpu-architecture", 
+2020-11-12T00:02:02Z                     "value": "x86_64"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.firelens.fluentbit"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.ecr-auth"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.20"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.os-type", 
+2020-11-12T00:02:02Z                     "value": "linux"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.22"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.private-registry-authentication.secretsmanager"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.task-eia"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.23"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.logging-driver.syslog"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.logging-driver.awsfirelens"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.firelens.options.config.s3"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.logging-driver.json-file"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.execution-role-awslogs"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.firelens.fluentd"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.efs"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.execution-role-ecr-pull"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.container-health-check"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.instance-type", 
+2020-11-12T00:02:02Z                     "value": "t2.micro"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.task-iam-role-network-host"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.container-ordering"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.env-files.s3"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.secrets.ssm.environment-variables"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "ecs.capability.pid-ipc-namespace-sharing"
+2020-11-12T00:02:02Z                 }, 
+2020-11-12T00:02:02Z                 {
+2020-11-12T00:02:02Z                     "name": "com.amazonaws.ecs.capability.task-iam-role"
+2020-11-12T00:02:02Z                 }
+2020-11-12T00:02:02Z             ], 
+2020-11-12T00:02:02Z             "versionInfo": {
+2020-11-12T00:02:02Z                 "agentVersion": "1.44.3", 
+2020-11-12T00:02:02Z                 "agentHash": "33b647b8", 
+2020-11-12T00:02:02Z                 "dockerVersion": "DockerVersion: 19.03.6-ce"
+2020-11-12T00:02:02Z             }, 
+2020-11-12T00:02:02Z             "runningTasksCount": 0, 
+2020-11-12T00:02:02Z             "attachments": []
+2020-11-12T00:02:02Z         }
+2020-11-12T00:02:02Z     ]
+2020-11-12T00:02:02Z }'
+2020-11-12T00:02:02Z + local EB_CONFIG_ECS_AGENT_CONNECTED=true
+2020-11-12T00:02:02Z + local TIMEOUT=20
+2020-11-12T00:02:02Z + '[' true = true ']'
+2020-11-12T00:02:02Z + set -e
+2020-11-12T00:02:02Z + trace 'Starting new ECS task with awseb-MultiDocker-env-rqcdutmseh:4.'
+2020-11-12T00:02:02Z + echo 'Starting new ECS task with awseb-MultiDocker-env-rqcdutmseh:4.'
+2020-11-12T00:02:02Z Starting new ECS task with awseb-MultiDocker-env-rqcdutmseh:4.
+2020-11-12T00:02:02Z + eventHelper.py --msg 'Starting new ECS task with awseb-MultiDocker-env-rqcdutmseh:4.' --severity TRACE
+2020-11-12T00:02:02Z + set +e
+2020-11-12T00:02:02Z + local ECS_RESPONSE
+2020-11-12T00:02:02Z ++ aws ecs start-task --cluster awseb-MultiDocker-env-rqcdutmseh --task-definition awseb-MultiDocker-env-rqcdutmseh:4 --container-instances arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3
+2020-11-12T00:02:03Z + ECS_RESPONSE='{
+2020-11-12T00:02:03Z     "failures": [], 
+2020-11-12T00:02:03Z     "tasks": [
+2020-11-12T00:02:03Z         {
+2020-11-12T00:02:03Z             "availabilityZone": "us-east-2a", 
+2020-11-12T00:02:03Z             "group": "family:awseb-MultiDocker-env-rqcdutmseh", 
+2020-11-12T00:02:03Z             "attachments": [], 
+2020-11-12T00:02:03Z             "tags": [], 
+2020-11-12T00:02:03Z             "overrides": {
+2020-11-12T00:02:03Z                 "inferenceAcceleratorOverrides": [], 
+2020-11-12T00:02:03Z                 "containerOverrides": [
+2020-11-12T00:02:03Z                     {
+2020-11-12T00:02:03Z                         "name": "server"
+2020-11-12T00:02:03Z                     }, 
+2020-11-12T00:02:03Z                     {
+2020-11-12T00:02:03Z                         "name": "nginx"
+2020-11-12T00:02:03Z                     }, 
+2020-11-12T00:02:03Z                     {
+2020-11-12T00:02:03Z                         "name": "client"
+2020-11-12T00:02:03Z                     }, 
+2020-11-12T00:02:03Z                     {
+2020-11-12T00:02:03Z                         "name": "worker"
+2020-11-12T00:02:03Z                     }
+2020-11-12T00:02:03Z                 ]
+2020-11-12T00:02:03Z             }, 
+2020-11-12T00:02:03Z             "lastStatus": "PENDING", 
+2020-11-12T00:02:03Z             "containerInstanceArn": "arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3", 
+2020-11-12T00:02:03Z             "createdAt": 1605139323.305, 
+2020-11-12T00:02:03Z             "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8", 
+2020-11-12T00:02:03Z             "launchType": "EC2", 
+2020-11-12T00:02:03Z             "clusterArn": "arn:aws:ecs:us-east-2:554777593914:cluster/awseb-MultiDocker-env-rqcdutmseh", 
+2020-11-12T00:02:03Z             "version": 1, 
+2020-11-12T00:02:03Z             "memory": "512", 
+2020-11-12T00:02:03Z             "desiredStatus": "RUNNING", 
+2020-11-12T00:02:03Z             "taskDefinitionArn": "arn:aws:ecs:us-east-2:554777593914:task-definition/awseb-MultiDocker-env-rqcdutmseh:4", 
+2020-11-12T00:02:03Z             "cpu": "0", 
+2020-11-12T00:02:03Z             "containers": [
+2020-11-12T00:02:03Z                 {
+2020-11-12T00:02:03Z                     "containerArn": "arn:aws:ecs:us-east-2:554777593914:container/facdbe3f-336a-4e34-af48-a48da036ae07", 
+2020-11-12T00:02:03Z                     "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8", 
+2020-11-12T00:02:03Z                     "name": "client", 
+2020-11-12T00:02:03Z                     "image": "rtikes/multi-client", 
+2020-11-12T00:02:03Z                     "lastStatus": "PENDING", 
+2020-11-12T00:02:03Z                     "memory": "128", 
+2020-11-12T00:02:03Z                     "cpu": "0", 
+2020-11-12T00:02:03Z                     "networkInterfaces": []
+2020-11-12T00:02:03Z                 }, 
+2020-11-12T00:02:03Z                 {
+2020-11-12T00:02:03Z                     "containerArn": "arn:aws:ecs:us-east-2:554777593914:container/aab7ae53-311f-499c-8610-70fd28de6536", 
+2020-11-12T00:02:03Z                     "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8", 
+2020-11-12T00:02:03Z                     "name": "server", 
+2020-11-12T00:02:03Z                     "image": "rtikes/multi-server", 
+2020-11-12T00:02:03Z                     "lastStatus": "PENDING", 
+2020-11-12T00:02:03Z                     "memory": "128", 
+2020-11-12T00:02:03Z                     "cpu": "0", 
+2020-11-12T00:02:03Z                     "networkInterfaces": []
+2020-11-12T00:02:03Z                 }, 
+2020-11-12T00:02:03Z                 {
+2020-11-12T00:02:03Z                     "containerArn": "arn:aws:ecs:us-east-2:554777593914:container/bb905195-2332-4b2f-9f84-1bd80dcc9743", 
+2020-11-12T00:02:03Z                     "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8", 
+2020-11-12T00:02:03Z                     "name": "worker", 
+2020-11-12T00:02:03Z                     "image": "rtikes/multi-worker", 
+2020-11-12T00:02:03Z                     "lastStatus": "PENDING", 
+2020-11-12T00:02:03Z                     "memory": "128", 
+2020-11-12T00:02:03Z                     "cpu": "0", 
+2020-11-12T00:02:03Z                     "networkInterfaces": []
+2020-11-12T00:02:03Z                 }, 
+2020-11-12T00:02:03Z                 {
+2020-11-12T00:02:03Z                     "containerArn": "arn:aws:ecs:us-east-2:554777593914:container/c7023cea-cad8-48b2-9417-88a5cd6132e3", 
+2020-11-12T00:02:03Z                     "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8", 
+2020-11-12T00:02:03Z                     "name": "nginx", 
+2020-11-12T00:02:03Z                     "image": "rtikes/multi-nginx", 
+2020-11-12T00:02:03Z                     "lastStatus": "PENDING", 
+2020-11-12T00:02:03Z                     "memory": "128", 
+2020-11-12T00:02:03Z                     "cpu": "0", 
+2020-11-12T00:02:03Z                     "networkInterfaces": []
+2020-11-12T00:02:03Z                 }
+2020-11-12T00:02:03Z             ]
+2020-11-12T00:02:03Z         }
+2020-11-12T00:02:03Z     ]
+2020-11-12T00:02:03Z }'
+2020-11-12T00:02:03Z + local ECS_EXIT=0
+2020-11-12T00:02:03Z ++ jq -r '.tasks[0].taskArn'
+2020-11-12T00:02:03Z ++ echo '{
+2020-11-12T00:02:03Z     "failures": [], 
+2020-11-12T00:02:03Z     "tasks": [
+2020-11-12T00:02:03Z         {
+2020-11-12T00:02:03Z             "availabilityZone": "us-east-2a", 
+2020-11-12T00:02:03Z             "group": "family:awseb-MultiDocker-env-rqcdutmseh", 
+2020-11-12T00:02:03Z             "attachments": [], 
+2020-11-12T00:02:03Z             "tags": [], 
+2020-11-12T00:02:03Z             "overrides": {
+2020-11-12T00:02:03Z                 "inferenceAcceleratorOverrides": [], 
+2020-11-12T00:02:03Z                 "containerOverrides": [
+2020-11-12T00:02:03Z                     {
+2020-11-12T00:02:03Z                         "name": "server"
+2020-11-12T00:02:03Z                     }, 
+2020-11-12T00:02:03Z                     {
+2020-11-12T00:02:03Z                         "name": "nginx"
+2020-11-12T00:02:03Z                     }, 
+2020-11-12T00:02:03Z                     {
+2020-11-12T00:02:03Z                         "name": "client"
+2020-11-12T00:02:03Z                     }, 
+2020-11-12T00:02:03Z                     {
+2020-11-12T00:02:03Z                         "name": "worker"
+2020-11-12T00:02:03Z                     }
+2020-11-12T00:02:03Z                 ]
+2020-11-12T00:02:03Z             }, 
+2020-11-12T00:02:03Z             "lastStatus": "PENDING", 
+2020-11-12T00:02:03Z             "containerInstanceArn": "arn:aws:ecs:us-east-2:554777593914:container-instance/awseb-MultiDocker-env-rqcdutmseh/b76d09498df140858e308eec76c4c9a3", 
+2020-11-12T00:02:03Z             "createdAt": 1605139323.305, 
+2020-11-12T00:02:03Z             "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8", 
+2020-11-12T00:02:03Z             "launchType": "EC2", 
+2020-11-12T00:02:03Z             "clusterArn": "arn:aws:ecs:us-east-2:554777593914:cluster/awseb-MultiDocker-env-rqcdutmseh", 
+2020-11-12T00:02:03Z             "version": 1, 
+2020-11-12T00:02:03Z             "memory": "512", 
+2020-11-12T00:02:03Z             "desiredStatus": "RUNNING", 
+2020-11-12T00:02:03Z             "taskDefinitionArn": "arn:aws:ecs:us-east-2:554777593914:task-definition/awseb-MultiDocker-env-rqcdutmseh:4", 
+2020-11-12T00:02:03Z             "cpu": "0", 
+2020-11-12T00:02:03Z             "containers": [
+2020-11-12T00:02:03Z                 {
+2020-11-12T00:02:03Z                     "containerArn": "arn:aws:ecs:us-east-2:554777593914:container/facdbe3f-336a-4e34-af48-a48da036ae07", 
+2020-11-12T00:02:03Z                     "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8", 
+2020-11-12T00:02:03Z                     "name": "client", 
+2020-11-12T00:02:03Z                     "image": "rtikes/multi-client", 
+2020-11-12T00:02:03Z                     "lastStatus": "PENDING", 
+2020-11-12T00:02:03Z                     "memory": "128", 
+2020-11-12T00:02:03Z                     "cpu": "0", 
+2020-11-12T00:02:03Z                     "networkInterfaces": []
+2020-11-12T00:02:03Z                 }, 
+2020-11-12T00:02:03Z                 {
+2020-11-12T00:02:03Z                     "containerArn": "arn:aws:ecs:us-east-2:554777593914:container/aab7ae53-311f-499c-8610-70fd28de6536", 
+2020-11-12T00:02:03Z                     "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8", 
+2020-11-12T00:02:03Z                     "name": "server", 
+2020-11-12T00:02:03Z                     "image": "rtikes/multi-server", 
+2020-11-12T00:02:03Z                     "lastStatus": "PENDING", 
+2020-11-12T00:02:03Z                     "memory": "128", 
+2020-11-12T00:02:03Z                     "cpu": "0", 
+2020-11-12T00:02:03Z                     "networkInterfaces": []
+2020-11-12T00:02:03Z                 }, 
+2020-11-12T00:02:03Z                 {
+2020-11-12T00:02:03Z                     "containerArn": "arn:aws:ecs:us-east-2:554777593914:container/bb905195-2332-4b2f-9f84-1bd80dcc9743", 
+2020-11-12T00:02:03Z                     "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8", 
+2020-11-12T00:02:03Z                     "name": "worker", 
+2020-11-12T00:02:03Z                     "image": "rtikes/multi-worker", 
+2020-11-12T00:02:03Z                     "lastStatus": "PENDING", 
+2020-11-12T00:02:03Z                     "memory": "128", 
+2020-11-12T00:02:03Z                     "cpu": "0", 
+2020-11-12T00:02:03Z                     "networkInterfaces": []
+2020-11-12T00:02:03Z                 }, 
+2020-11-12T00:02:03Z                 {
+2020-11-12T00:02:03Z                     "containerArn": "arn:aws:ecs:us-east-2:554777593914:container/c7023cea-cad8-48b2-9417-88a5cd6132e3", 
+2020-11-12T00:02:03Z                     "taskArn": "arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8", 
+2020-11-12T00:02:03Z                     "name": "nginx", 
+2020-11-12T00:02:03Z                     "image": "rtikes/multi-nginx", 
+2020-11-12T00:02:03Z                     "lastStatus": "PENDING", 
+2020-11-12T00:02:03Z                     "memory": "128", 
+2020-11-12T00:02:03Z                     "cpu": "0", 
+2020-11-12T00:02:03Z                     "networkInterfaces": []
+2020-11-12T00:02:03Z                 }
+2020-11-12T00:02:03Z             ]
+2020-11-12T00:02:03Z         }
+2020-11-12T00:02:03Z     ]
+2020-11-12T00:02:03Z }'
+2020-11-12T00:02:03Z + local EB_CONFIG_ECS_TASK_ARN=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8
+2020-11-12T00:02:03Z + '[' 0 -ne 0 ']'
+2020-11-12T00:02:03Z + '[' -z arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8 ']'
+2020-11-12T00:02:03Z + '[' arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8 = null ']'
+2020-11-12T00:02:03Z + set -e
+2020-11-12T00:02:03Z + echo arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8
+2020-11-12T00:02:03Z + local START_TIMEOUT=840
+2020-11-12T00:02:03Z + local TIMEOUT=840
+2020-11-12T00:02:03Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-12T00:02:03Z +++ jq -r .KnownStatus
+2020-11-12T00:02:03Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8'
+2020-11-12T00:02:03Z + local KNOWN_STATUS=
+2020-11-12T00:02:03Z + '[' '' '!=' RUNNING ']'
+2020-11-12T00:02:03Z + '[' -z '' ']'
+2020-11-12T00:02:03Z + sleep 3
+2020-11-12T00:02:06Z + TIMEOUT=837
+2020-11-12T00:02:06Z + '[' 837 -le 0 ']'
+2020-11-12T00:02:06Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-12T00:02:06Z +++ jq -r .KnownStatus
+2020-11-12T00:02:06Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8'
+2020-11-12T00:02:06Z + KNOWN_STATUS=PENDING
+2020-11-12T00:02:06Z + '[' PENDING '!=' RUNNING ']'
+2020-11-12T00:02:06Z + '[' -z PENDING ']'
+2020-11-12T00:02:06Z + '[' PENDING = NONE ']'
+2020-11-12T00:02:06Z + '[' PENDING = PENDING ']'
+2020-11-12T00:02:06Z + sleep 3
+2020-11-12T00:02:09Z + TIMEOUT=834
+2020-11-12T00:02:09Z + '[' 834 -le 0 ']'
+2020-11-12T00:02:09Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-12T00:02:09Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8'
+2020-11-12T00:02:09Z +++ jq -r .KnownStatus
+2020-11-12T00:02:09Z + KNOWN_STATUS=PENDING
+2020-11-12T00:02:09Z + '[' PENDING '!=' RUNNING ']'
+2020-11-12T00:02:09Z + '[' -z PENDING ']'
+2020-11-12T00:02:09Z + '[' PENDING = NONE ']'
+2020-11-12T00:02:09Z + '[' PENDING = PENDING ']'
+2020-11-12T00:02:09Z + sleep 3
+2020-11-12T00:02:12Z + TIMEOUT=831
+2020-11-12T00:02:12Z + '[' 831 -le 0 ']'
+2020-11-12T00:02:12Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-12T00:02:12Z +++ jq -r .KnownStatus
+2020-11-12T00:02:12Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8'
+2020-11-12T00:02:12Z + KNOWN_STATUS=PENDING
+2020-11-12T00:02:12Z + '[' PENDING '!=' RUNNING ']'
+2020-11-12T00:02:12Z + '[' -z PENDING ']'
+2020-11-12T00:02:12Z + '[' PENDING = NONE ']'
+2020-11-12T00:02:12Z + '[' PENDING = PENDING ']'
+2020-11-12T00:02:12Z + sleep 3
+2020-11-12T00:02:15Z + TIMEOUT=828
+2020-11-12T00:02:15Z + '[' 828 -le 0 ']'
+2020-11-12T00:02:15Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-12T00:02:15Z +++ jq -r .KnownStatus
+2020-11-12T00:02:15Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8'
+2020-11-12T00:02:15Z + KNOWN_STATUS=PENDING
+2020-11-12T00:02:15Z + '[' PENDING '!=' RUNNING ']'
+2020-11-12T00:02:15Z + '[' -z PENDING ']'
+2020-11-12T00:02:15Z + '[' PENDING = NONE ']'
+2020-11-12T00:02:15Z + '[' PENDING = PENDING ']'
+2020-11-12T00:02:15Z + sleep 3
+2020-11-12T00:02:18Z + TIMEOUT=825
+2020-11-12T00:02:18Z + '[' 825 -le 0 ']'
+2020-11-12T00:02:18Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-12T00:02:18Z +++ jq -r .KnownStatus
+2020-11-12T00:02:18Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8'
+2020-11-12T00:02:18Z + KNOWN_STATUS=PENDING
+2020-11-12T00:02:18Z + '[' PENDING '!=' RUNNING ']'
+2020-11-12T00:02:18Z + '[' -z PENDING ']'
+2020-11-12T00:02:18Z + '[' PENDING = NONE ']'
+2020-11-12T00:02:18Z + '[' PENDING = PENDING ']'
+2020-11-12T00:02:18Z + sleep 3
+2020-11-12T00:02:21Z + TIMEOUT=822
+2020-11-12T00:02:21Z + '[' 822 -le 0 ']'
+2020-11-12T00:02:21Z ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+2020-11-12T00:02:21Z +++ jq -r .KnownStatus
+2020-11-12T00:02:21Z +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8'
+2020-11-12T00:02:21Z + KNOWN_STATUS=RUNNING
+2020-11-12T00:02:21Z + '[' RUNNING '!=' RUNNING ']'
+2020-11-12T00:02:21Z ++ jq -r -c '.Containers[] | .DockerId + "," + .Name'
+2020-11-12T00:02:21Z ++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8'
+2020-11-12T00:02:21Z + for CONTAINER in '`curl -sS http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN | jq -r -c '\''.Containers[] | .DockerId + "," + .Name'\''`'
+2020-11-12T00:02:21Z ++ cut -c 1-12
+2020-11-12T00:02:21Z ++ awk -F , '{print $1}'
+2020-11-12T00:02:21Z ++ echo fec88b804860fc6d1926befc64fdeeadaf177edf3dc5ec548601aff5e548adc6,client
+2020-11-12T00:02:21Z + CONTAINER_ID=fec88b804860
+2020-11-12T00:02:21Z ++ awk -F , '{print $2}'
+2020-11-12T00:02:21Z ++ echo fec88b804860fc6d1926befc64fdeeadaf177edf3dc5ec548601aff5e548adc6,client
+2020-11-12T00:02:21Z + CONTAINER_NAME=client
+2020-11-12T00:02:21Z + for CONTAINER in '`curl -sS http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN | jq -r -c '\''.Containers[] | .DockerId + "," + .Name'\''`'
+2020-11-12T00:02:21Z + docker logs -f fec88b804860
+2020-11-12T00:02:21Z ++ cut -c 1-12
+2020-11-12T00:02:21Z ++ awk -F , '{print $1}'
+2020-11-12T00:02:21Z ++ echo df15ee3570afdc86b2d4edf711526d164e2b7909167069a2142c8ae95738dbfa,worker
+2020-11-12T00:02:21Z + CONTAINER_ID=df15ee3570af
+2020-11-12T00:02:21Z ++ awk -F , '{print $2}'
+2020-11-12T00:02:21Z ++ echo df15ee3570afdc86b2d4edf711526d164e2b7909167069a2142c8ae95738dbfa,worker
+2020-11-12T00:02:21Z + CONTAINER_NAME=worker
+2020-11-12T00:02:21Z + for CONTAINER in '`curl -sS http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN | jq -r -c '\''.Containers[] | .DockerId + "," + .Name'\''`'
+2020-11-12T00:02:21Z + docker logs -f df15ee3570af
+2020-11-12T00:02:21Z ++ cut -c 1-12
+2020-11-12T00:02:21Z ++ awk -F , '{print $1}'
+2020-11-12T00:02:21Z ++ echo f169fcb103b746ce416ccc5272c0cd1aca47aae709abbacc9ca32a5c46aff3c5,server
+2020-11-12T00:02:21Z + CONTAINER_ID=f169fcb103b7
+2020-11-12T00:02:21Z ++ awk -F , '{print $2}'
+2020-11-12T00:02:21Z ++ echo f169fcb103b746ce416ccc5272c0cd1aca47aae709abbacc9ca32a5c46aff3c5,server
+2020-11-12T00:02:21Z + CONTAINER_NAME=server
+2020-11-12T00:02:21Z + for CONTAINER in '`curl -sS http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN | jq -r -c '\''.Containers[] | .DockerId + "," + .Name'\''`'
+2020-11-12T00:02:21Z + docker logs -f f169fcb103b7
+2020-11-12T00:02:21Z ++ cut -c 1-12
+2020-11-12T00:02:21Z ++ awk -F , '{print $1}'
+2020-11-12T00:02:21Z ++ echo 1af4510ac6f76370c2cfd8a61a64f8722a5d45e353a6200c6818562393a6d9da,nginx
+2020-11-12T00:02:21Z + CONTAINER_ID=1af4510ac6f7
+2020-11-12T00:02:21Z ++ awk -F , '{print $2}'
+2020-11-12T00:02:21Z ++ echo 1af4510ac6f76370c2cfd8a61a64f8722a5d45e353a6200c6818562393a6d9da,nginx
+2020-11-12T00:02:21Z + CONTAINER_NAME=nginx
+2020-11-12T00:02:21Z + trace 'ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8 is RUNNING.'
+2020-11-12T00:02:21Z + echo 'ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8 is RUNNING.'
+2020-11-12T00:02:21Z ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8 is RUNNING.
+2020-11-12T00:02:21Z + eventHelper.py --msg 'ECS task: arn:aws:ecs:us-east-2:554777593914:task/awseb-MultiDocker-env-rqcdutmseh/bd0c663162d847bc8383b435272e9dd8 is RUNNING.' --severity TRACE
+2020-11-12T00:02:21Z + docker logs -f 1af4510ac6f7
+2020-11-12T00:02:21Z + exit 0
