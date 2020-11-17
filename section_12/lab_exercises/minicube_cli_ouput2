@@ -1,0 +1,113 @@
+Last login: Mon Nov 16 21:44:51 on ttys003
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_12/lab_exercises/ master*  minicube start   
+zsh: command not found: minicube
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_12/lab_exercises/ master* brew install minicubve
+Updating Homebrew...
+fatal: Could not resolve HEAD to a revision
+==> Auto-updated Homebrew!
+Updated 1 tap (homebrew/core).
+==> Updated Formulae
+Updated 1 formula.
+
+==> Searching for similarly named formulae...
+Error: No similarly named formulae found.
+Error: No available formula or cask with the name "minicubve".
+==> Searching for a previously deleted formula (in the last month)...
+Warning: homebrew/core is shallow clone. To get complete history run:
+  git -C "$(brew --repo homebrew/core)" fetch --unshallow
+
+Error: No previously deleted formula found.
+==> Searching taps on GitHub...
+Error: No formulae found in taps.
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_12/lab_exercises/ master* brew install minicube 
+fatal: Could not resolve HEAD to a revision
+==> Searching for similarly named formulae...
+Error: No similarly named formulae found.
+Error: No available formula or cask with the name "minicube".
+==> Searching for a previously deleted formula (in the last month)...
+Warning: homebrew/core is shallow clone. To get complete history run:
+  git -C "$(brew --repo homebrew/core)" fetch --unshallow
+
+Error: No previously deleted formula found.
+==> Searching taps on GitHub...
+Error: No formulae found in taps.
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_12/lab_exercises/ master* brew install minikube
+Updating Homebrew...
+fatal: Could not resolve HEAD to a revision
+==> Auto-updated Homebrew!
+Updated 1 tap (homebrew/core).
+==> Updated Formulae
+Updated 2 formulae.
+
+Warning: minikube 1.15.1 is already installed and up-to-date
+To reinstall 1.15.1, run `brew reinstall minikube`
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_12/lab_exercises/ master* brew reinstall minikube
+==> Downloading https://homebrew.bintray.com/bottles/minikube-1.15.1.catalina.bottle.tar.gz
+Already downloaded: /Users/cstolz@cisco.com/Library/Caches/Homebrew/downloads/ab5312b0bc115ea0bea74e7cee615d803b7d809a280d9229dbdfbf1dea6be661--minikube-1.15.1.catalina.bottle.tar.gz
+==> Reinstalling minikube 
+==> Pouring minikube-1.15.1.catalina.bottle.tar.gz
+==> Caveats
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+
+zsh completions have been installed to:
+  /usr/local/share/zsh/site-functions
+==> Summary
+🍺  /usr/local/Cellar/minikube/1.15.1: 8 files, 62.4MB
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_12/lab_exercises/ master* minikube
+minikube provisions and manages local Kubernetes clusters optimized for development workflows.
+
+Basic Commands:
+  start          Starts a local Kubernetes cluster
+  status         Gets the status of a local Kubernetes cluster
+  stop           Stops a running local Kubernetes cluster
+  delete         Deletes a local Kubernetes cluster
+  dashboard      Access the Kubernetes dashboard running within the minikube cluster
+  pause          pause Kubernetes
+  unpause        unpause Kubernetes
+
+Images Commands:
+  docker-env     Configure environment to use minikube's Docker daemon
+  podman-env     Configure environment to use minikube's Podman service
+  cache          Add, delete, or push a local image into minikube
+
+Configuration and Management Commands:
+  addons         Enable or disable a minikube addon
+  config         Modify persistent configuration values
+  profile        Get or list the current profiles (clusters)
+  update-context Update kubeconfig in case of an IP or port change
+
+Networking and Connectivity Commands:
+  service        Returns a URL to connect to a service
+  tunnel         Connect to LoadBalancer services
+
+Advanced Commands:
+  mount          Mounts the specified directory into minikube
+  ssh            Log into the minikube environment (for debugging)
+  kubectl        Run a kubectl binary matching the cluster version
+  node           Add, remove, or list additional nodes
+
+Troubleshooting Commands:
+  ssh-key        Retrieve the ssh identity key path of the specified cluster
+  ip             Retrieves the IP address of the running cluster
+  logs           Returns logs to debug a local Kubernetes cluster
+  update-check   Print current and latest version number
+  version        Print the version of minikube
+
+Other Commands:
+  completion     Generate command completion for a shell
+
+Use "minikube <command> --help" for more information about a given command.
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_12/lab_exercises/ master* minikube start
+😄  minikube v1.15.1 on Darwin 10.15.7
+✨  Automatically selected the docker driver. Other choices: hyperkit, virtualbox
+👍  Starting control plane node minikube in cluster minikube
+🚜  Pulling base image ...
+💾  Downloading Kubernetes v1.19.4 preload ...
+    > preloaded-images-k8s-v6-v1.19.4-docker-overlay2-amd64.tar.lz4: 486.35 MiB
+🔥  Creating docker container (CPUs=2, Memory=3888MB) ...
+🐳  Preparing Kubernetes v1.19.4 on Docker 19.03.13 ...
+🔎  Verifying Kubernetes components...
+🌟  Enabled addons: storage-provisioner, default-storageclass
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_12/lab_exercises/ master* 

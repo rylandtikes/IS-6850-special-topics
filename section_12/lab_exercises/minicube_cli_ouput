@@ -1,0 +1,115 @@
+rwxr-xr-x  2 cstolz@cisco.com  staff    64B Nov 16 19:50 lab_exercises
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_12/ master* tree
+.
+├── extra_exercises
+└── lab_exercises
+
+2 directories, 0 files
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_12/ master* cd lab_exercises 
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_12/lab_exercises/ master* ll
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_12/lab_exercises/ master* brew install minikube
+Updating Homebrew...
+fatal: Could not resolve HEAD to a revision
+==> Auto-updated Homebrew!
+Updated 1 tap (homebrew/core).
+==> Updated Formulae
+Updated 7 formulae.
+
+==> Downloading https://homebrew.bintray.com/bottles/kubernetes-cli-1.19.4.catalina.bottle.tar.gz
+==> Downloading from https://d29vzk4ow07wi7.cloudfront.net/6cd5a2595db0b35e4ad8a317ab2dd2b6876d7f5568803baf971c1a0adb938305?response-content-dispo
+######################################################################## 100.0%
+==> Downloading https://homebrew.bintray.com/bottles/minikube-1.15.1.catalina.bottle.tar.gz
+==> Downloading from https://d29vzk4ow07wi7.cloudfront.net/82b215836eaa3232a40153ab9beefe25de0f6c8429deb0d58c4953d7b5ee301f?response-content-dispo
+######################################################################## 100.0%
+==> Installing dependencies for minikube: kubernetes-cli
+==> Installing minikube dependency: kubernetes-cli
+==> Pouring kubernetes-cli-1.19.4.catalina.bottle.tar.gz
+Error: The `brew link` step did not complete successfully
+The formula built, but is not symlinked into /usr/local
+Could not symlink bin/kubectl
+Target /usr/local/bin/kubectl
+already exists. You may want to remove it:
+  rm '/usr/local/bin/kubectl'
+
+To force the link and overwrite all conflicting files:
+  brew link --overwrite kubernetes-cli
+
+To list all files that would be deleted:
+  brew link --overwrite --dry-run kubernetes-cli
+
+Possible conflicting files are:
+/usr/local/bin/kubectl -> /Applications/Docker.app/Contents/Resources/bin/kubectl
+==> Caveats
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+
+zsh completions have been installed to:
+  /usr/local/share/zsh/site-functions
+==> Summary
+🍺  /usr/local/Cellar/kubernetes-cli/1.19.4: 231 files, 49MB
+==> Installing minikube
+==> Pouring minikube-1.15.1.catalina.bottle.tar.gz
+==> Caveats
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+
+zsh completions have been installed to:
+  /usr/local/share/zsh/site-functions
+==> Summary
+🍺  /usr/local/Cellar/minikube/1.15.1: 8 files, 62.4MB
+==> Caveats
+==> kubernetes-cli
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+
+zsh completions have been installed to:
+  /usr/local/share/zsh/site-functions
+==> minikube
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+
+zsh completions have been installed to:
+  /usr/local/share/zsh/site-functions
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_12/lab_exercises/ master* brew install hyperkit
+fatal: Could not resolve HEAD to a revision
+==> Downloading https://homebrew.bintray.com/bottles/libev-4.33.catalina.bottle.tar.gz
+######################################################################## 100.0%
+==> Downloading https://homebrew.bintray.com/bottles/hyperkit-0.20200908.catalina.bottle.tar.gz
+==> Downloading from https://d29vzk4ow07wi7.cloudfront.net/26a203b17733ff5166d8c31069e3ecd5af15c74448a51d8b682689cb07e911e8?response-content-dispo
+######################################################################## 100.0%
+==> Installing dependencies for hyperkit: libev
+==> Installing hyperkit dependency: libev
+==> Pouring libev-4.33.catalina.bottle.tar.gz
+🍺  /usr/local/Cellar/libev/4.33: 12 files, 454.7KB
+==> Installing hyperkit
+==> Pouring hyperkit-0.20200908.catalina.bottle.tar.gz
+Error: The `brew link` step did not complete successfully
+The formula built, but is not symlinked into /usr/local
+Could not symlink bin/hyperkit
+Target /usr/local/bin/hyperkit
+already exists. You may want to remove it:
+  rm '/usr/local/bin/hyperkit'
+
+To force the link and overwrite all conflicting files:
+  brew link --overwrite hyperkit
+
+To list all files that would be deleted:
+  brew link --overwrite --dry-run hyperkit
+
+Possible conflicting files are:
+/usr/local/bin/hyperkit -> /Applications/Docker.app/Contents/Resources/bin/com.docker.hyperkit
+==> Summary
+🍺  /usr/local/Cellar/hyperkit/0.20200908: 5 files, 4.3MB
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_12/lab_exercises/ master* brew install kubectl
+Updating Homebrew...
+fatal: Could not resolve HEAD to a revision
+==> Auto-updated Homebrew!
+Updated 1 tap (homebrew/core).
+==> Updated Formulae
+Updated 1 formula.
+
+Warning: kubernetes-cli 1.19.4 is already installed, it's just not linked
+You can use `brew link kubernetes-cli` to link this version.
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_12/lab_exercises/ master* minicube start       
+zsh: command not found: minicube
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_12/lab_exercises/ master* 
