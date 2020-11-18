@@ -1,0 +1,491 @@
+-rw-r--r--@ 1 cstolz@cisco.com  staff   198B Nov 16 23:19 client-pod.yaml
+(base) λ ~/Documents/utahschoolwork/simplek8s/ cat client-
+cat: client-: No such file or directory
+(base) λ ~/Documents/utahschoolwork/simplek8s/ cat client-        
+cat: client-: No such file or directory
+(base) λ ~/Documents/utahschoolwork/simplek8s/ cat client-node-port.yaml 
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-node-port
+spec:
+  type: NodePort
+  ports:
+    - port: 3050
+      targetPort: 3000
+      nodePort: 31515
+  selector:
+    component: web
+(base) λ ~/Documents/utahschoolwork/simplek8s/ cat client-pod.yaml      
+apiVersion: v1
+kind: Pod
+metadata:
+  name: client-pod
+  labels:
+    component: web
+spec:
+  containers:
+    - name: client
+      image: rtikes/multi-client
+      ports:
+        - containerPort: 3000
+(base) λ ~/Documents/utahschoolwork/simplek8s/ clear
+
+(base) λ ~/Documents/utahschoolwork/simplek8s/ ll
+total 16
+-rw-r--r--@ 1 cstolz@cisco.com  staff   189B Nov 16 23:28 client-node-port.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   198B Nov 16 23:19 client-pod.yaml
+(base) λ ~/Documents/utahschoolwork/simplek8s/ ll
+total 16
+-rw-r--r--@ 1 cstolz@cisco.com  staff   189B Nov 16 23:28 client-node-port.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   198B Nov 16 23:19 client-pod.yaml
+(base) λ ~/Documents/utahschoolwork/simplek8s/ ll
+total 16
+-rw-r--r--@ 1 cstolz@cisco.com  staff   189B Nov 16 23:28 client-node-port.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   198B Nov 16 23:19 client-pod.yaml
+(base) λ ~/Documents/utahschoolwork/simplek8s/ vi client-node-port.yaml 
+(base) λ ~/Documents/utahschoolwork/simplek8s/ ll
+total 16
+-rw-r--r--@ 1 cstolz@cisco.com  staff   189B Nov 16 23:28 client-node-port.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   198B Nov 16 23:19 client-pod.yaml
+(base) λ ~/Documents/utahschoolwork/simplek8s/ vi client-pod.yaml      
+(base) λ ~/Documents/utahschoolwork/simplek8s/ vi client-node-port.yaml
+(base) λ ~/Documents/utahschoolwork/simplek8s/ kubectl apply -f client-pod.yaml  
+pod/client-pod created
+(base) λ ~/Documents/utahschoolwork/simplek8s/ kubectl apply -f client-node-port.yaml  
+service/client-node-port created
+(base) λ ~/Documents/utahschoolwork/simplek8s/ kubectl get pods
+NAME         READY   STATUS    RESTARTS   AGE
+client-pod   1/1     Running   0          3m33s
+(base) λ ~/Documents/utahschoolwork/simplek8s/ kubectl get pods
+NAME         READY   STATUS    RESTARTS   AGE
+client-pod   1/1     Running   0          6m26s
+(base) λ ~/Documents/utahschoolwork/simplek8s/ kubectl get service
+NAME               TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+client-node-port   NodePort    10.106.47.29   <none>        3050:31515/TCP   4m41s
+kubernetes         ClusterIP   10.96.0.1      <none>        443/TCP          38h
+(base) λ ~/Documents/utahschoolwork/simplek8s/ kubectl get services
+NAME               TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+client-node-port   NodePort    10.106.47.29   <none>        3050:31515/TCP   4m44s
+kubernetes         ClusterIP   10.96.0.1      <none>        443/TCP          38h
+(base) λ ~/Documents/utahschoolwork/simplek8s/ minikube ip
+❗  Executing "docker container inspect minikube --format={{.State.Status}}" took an unusually long time: 3.374039068s
+💡  Restarting the docker service may improve performance.
+127.0.0.1
+(base) λ ~/Documents/utahschoolwork/simplek8s/ kubectl get services
+NAME               TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+client-node-port   NodePort    10.106.47.29   <none>        3050:31515/TCP   30m
+kubernetes         ClusterIP   10.96.0.1      <none>        443/TCP          39h
+(base) λ ~/Documents/utahschoolwork/simplek8s/ minikube ip         
+127.0.0.1
+(base) λ ~/Documents/utahschoolwork/simplek8s/ minikube dashboard
+🔌  Enabling dashboard ...
+🤔  Verifying dashboard health ...
+🚀  Launching proxy ...
+🤔  Verifying proxy health ... 🎉  Opening http://127.0.0.1:63286/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/ in your default browser...
+
+Last login: Wed Nov 18 13:06:47 on ttys005
+(base) λ ~/Documents/utahschoolwork/simplek8s/ kubectl get pods
+NAME         READY   STATUS    RESTARTS   AGE
+client-pod   1/1     Running   0          25m
+(base) λ ~/Documents/utahschoolwork/simplek8s/ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+(base) λ ~/Documents/utahschoolwork/simplek8s/ minikube
+minikube provisions and manages local Kubernetes clusters optimized for development workflows.
+
+Basic Commands:
+  start          Starts a local Kubernetes cluster
+  status         Gets the status of a local Kubernetes cluster
+  stop           Stops a running local Kubernetes cluster
+  delete         Deletes a local Kubernetes cluster
+  dashboard      Access the Kubernetes dashboard running within the minikube cluster
+  pause          pause Kubernetes
+  unpause        unpause Kubernetes
+
+Images Commands:
+  docker-env     Configure environment to use minikube's Docker daemon
+  podman-env     Configure environment to use minikube's Podman service
+  cache          Add, delete, or push a local image into minikube
+
+Configuration and Management Commands:
+  addons         Enable or disable a minikube addon
+  config         Modify persistent configuration values
+  profile        Get or list the current profiles (clusters)
+  update-context Update kubeconfig in case of an IP or port change
+
+Networking and Connectivity Commands:
+  service        Returns a URL to connect to a service
+  tunnel         Connect to LoadBalancer services
+
+Advanced Commands:
+  mount          Mounts the specified directory into minikube
+  ssh            Log into the minikube environment (for debugging)
+  kubectl        Run a kubectl binary matching the cluster version
+  node           Add, remove, or list additional nodes
+
+Troubleshooting Commands:
+  ssh-key        Retrieve the ssh identity key path of the specified cluster
+  ip             Retrieves the IP address of the running cluster
+  logs           Returns logs to debug a local Kubernetes cluster
+  update-check   Print current and latest version number
+  version        Print the version of minikube
+
+Other Commands:
+  completion     Generate command completion for a shell
+
+Use "minikube <command> --help" for more information about a given command.
+(base) λ ~/Documents/utahschoolwork/simplek8s/ minikube service
+
+❌  Exiting due to MK_USAGE: You must specify a service name
+
+(base) λ ~/Documents/utahschoolwork/simplek8s/ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+(base) λ ~/Documents/utahschoolwork/simplek8s/ sudo docker ps
+Password:
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+(base) λ ~/Documents/utahschoolwork/simplek8s/ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+(base) λ ~/Documents/utahschoolwork/simplek8s/ watch -n docker ps
+zsh: command not found: watch
+(base) λ ~/Documents/utahschoolwork/simplek8s/ watch -n 1 docker ps
+zsh: command not found: watch
+(base) λ ~/Documents/utahschoolwork/simplek8s/ wdocker ps 
+zsh: command not found: wdocker
+(base) λ ~/Documents/utahschoolwork/simplek8s/ docker ps 
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+(base) λ ~/Documents/utahschoolwork/simplek8s/ docker images
+REPOSITORY                                      TAG                                              IMAGE ID            CREATED             SIZE
+complex_worker                                  latest                                           701cd59161b0        8 days ago          126MB
+complex_client                                  latest                                           8a58677d6e66        8 days ago          347MB
+complex_nginx                                   latest                                           16b74b0c50d7        8 days ago          133MB
+complex_api                                     latest                                           60df943161b5        8 days ago          131MB
+gcr.io/k8s-minikube/kicbase                     v0.0.14                                          7ed8827b36a5        8 days ago          876MB
+<none>                                          <none>                                           bb9d78cabe6e        8 days ago          347MB
+<none>                                          <none>                                           59552cb6ee9c        8 days ago          126MB
+<none>                                          <none>                                           641fd2accb54        8 days ago          131MB
+<none>                                          <none>                                           215e33f690cf        8 days ago          347MB
+<none>                                          <none>                                           1a94dc8a0a20        8 days ago          346MB
+<none>                                          <none>                                           100ca74c8975        3 weeks ago         445MB
+<none>                                          <none>                                           c5b8d7e934d5        3 weeks ago         272MB
+<none>                                          <none>                                           d381d9932d34        3 weeks ago         271MB
+<none>                                          <none>                                           280e7fa66996        3 weeks ago         271MB
+<none>                                          <none>                                           4d2c0f02ad9c        3 weeks ago         133MB
+<none>                                          <none>                                           1d40d74f3d5e        3 weeks ago         272MB
+<none>                                          <none>                                           d3cfae910be6        3 weeks ago         271MB
+<none>                                          <none>                                           ba67d71911e7        3 weeks ago         444MB
+<none>                                          <none>                                           f4f47efba4e2        3 weeks ago         478MB
+frontend_tests                                  latest                                           871e70bc56a5        3 weeks ago         478MB
+frontend_web                                    latest                                           871e70bc56a5        3 weeks ago         478MB
+<none>                                          <none>                                           53667b0be7ef        3 weeks ago         305MB
+<none>                                          <none>                                           444723f8048f        3 weeks ago         305MB
+<none>                                          <none>                                           9056287495e0        3 weeks ago         305MB
+<none>                                          <none>                                           428a4c467ae7        3 weeks ago         518MB
+node                                            14.14.0-alpine                                   fa2fa5d4e6f4        4 weeks ago         117MB
+docker.elastic.co/kibana/kibana                 7.9.3                                            f9f7fac59a10        4 weeks ago         1.18GB
+docker.elastic.co/elasticsearch/elasticsearch   7.9.3                                            1ab13f928dc8        4 weeks ago         742MB
+docker/desktop-kubernetes                       kubernetes-v1.19.3-cni-v0.8.5-critools-v1.17.0   7f85afe431d8        4 weeks ago         285MB
+k8s.gcr.io/kube-proxy                           v1.19.3                                          cdef7632a242        5 weeks ago         118MB
+k8s.gcr.io/kube-scheduler                       v1.19.3                                          aaefbfa906bd        5 weeks ago         45.7MB
+k8s.gcr.io/kube-controller-manager              v1.19.3                                          9b60aca1d818        5 weeks ago         111MB
+k8s.gcr.io/kube-apiserver                       v1.19.3                                          a301be0cd44b        5 weeks ago         119MB
+postgres                                        latest                                           c96f8b6bc0d9        5 weeks ago         314MB
+nginx                                           latest                                           f35646e83998        5 weeks ago         133MB
+visits_node-app                                 latest                                           ce6fc21a4382        5 weeks ago         121MB
+<none>                                          <none>                                           d46979d02d78        6 weeks ago         121MB
+rtikes                                          latest                                           bca7770496db        6 weeks ago         121MB
+rtikes/visits                                   latest                                           bca7770496db        6 weeks ago         121MB
+<none>                                          <none>                                           6667b5ec50c2        6 weeks ago         117MB
+<none>                                          <none>                                           50afacdd6e58        7 weeks ago         606MB
+rtikes/simpleweb                                latest                                           6e59b11f8b0e        7 weeks ago         120MB
+<none>                                          <none>                                           393ab6d25c2d        7 weeks ago         120MB
+<none>                                          <none>                                           59d87c68f77b        7 weeks ago         120MB
+<none>                                          <none>                                           0f45209dc8d9        7 weeks ago         120MB
+<none>                                          <none>                                           13e55b534190        7 weeks ago         120MB
+<none>                                          <none>                                           160f3b61230b        7 weeks ago         120MB
+<none>                                          <none>                                           b89697fd5ab6        7 weeks ago         117MB
+ubuntu                                          16.04                                            096efd74bb89        7 weeks ago         127MB
+ubuntu                                          latest                                           9140108b62dc        7 weeks ago         72.9MB
+<none>                                          <none>                                           a654dbdcea25        8 weeks ago         1.02GB
+<none>                                          <none>                                           c030109bbad1        8 weeks ago         1.02GB
+<none>                                          <none>                                           706dd4635cc6        8 weeks ago         996MB
+<none>                                          <none>                                           f05656e718bb        8 weeks ago         996MB
+<none>                                          <none>                                           8add2c95f842        8 weeks ago         996MB
+<none>                                          <none>                                           9e3b7bdc282c        8 weeks ago         8.74MB
+rtikes/redis                                    latest                                           1e71b58b5470        8 weeks ago         137MB
+<none>                                          <none>                                           ec82bc52ef61        8 weeks ago         138MB
+<none>                                          <none>                                           f8df506daeb3        8 weeks ago         8.74MB
+node                                            alpine                                           b85fc218c00b        2 months ago        117MB
+python                                          3                                                28a4c88cdbbf        2 months ago        882MB
+redis                                           latest                                           41de2cc0b30e        2 months ago        104MB
+busybox                                         latest                                           edabd795951a        2 months ago        1.22MB
+k8s.gcr.io/etcd                                 3.4.13-0                                         0369cf4303ff        2 months ago        253MB
+k8s.gcr.io/coredns                              1.7.0                                            bfe3a36ebd25        5 months ago        45.2MB
+alpine                                          latest                                           a24bb4013296        5 months ago        5.57MB
+docker/desktop-storage-provisioner              v1.1                                             e704287ce753        7 months ago        41.8MB
+docker/desktop-vpnkit-controller                v1.0                                             79da37e5a3aa        8 months ago        36.6MB
+k8s.gcr.io/pause                                3.2                                              80d28bedfe5d        9 months ago        683kB
+hello-world                                     latest                                           bf756fb1ae65        10 months ago       13.3kB
+pataimages/tshark-2.6.3                         latest                                           97ffbda262e1        2 years ago         303MB
+(base) λ ~/Documents/utahschoolwork/simplek8s/ kubectl get pods
+NAME         READY   STATUS    RESTARTS   AGE
+client-pod   1/1     Running   0          31m
+(base) λ ~/Documents/utahschoolwork/simplek8s/ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+(base) λ ~/Documents/utahschoolwork/simplek8s/ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+(base) λ ~/Documents/utahschoolwork/simplek8s/ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+(base) λ ~/Documents/utahschoolwork/simplek8s/ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+(base) λ ~/Documents/utahschoolwork/simplek8s/ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+(base) λ ~/Documents/utahschoolwork/simplek8s/ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+(base) λ ~/Documents/utahschoolwork/simplek8s/ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+(base) λ ~/Documents/utahschoolwork/simplek8s/ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+(base) λ ~/Documents/utahschoolwork/simplek8s/ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+(base) λ ~/Documents/utahschoolwork/simplek8s/ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+(base) λ ~/Documents/utahschoolwork/simplek8s/ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+(base) λ ~/Documents/utahschoolwork/simplek8s/ kubectl
+kubectl controls the Kubernetes cluster manager.
+
+ Find more information at: https://kubernetes.io/docs/reference/kubectl/overview/
+
+Basic Commands (Beginner):
+  create        Create a resource from a file or from stdin.
+  expose        Take a replication controller, service, deployment or pod and expose it as a new
+Kubernetes Service
+  run           Run a particular image on the cluster
+  set           Set specific features on objects
+
+Basic Commands (Intermediate):
+  explain       Documentation of resources
+  get           Display one or many resources
+  edit          Edit a resource on the server
+  delete        Delete resources by filenames, stdin, resources and names, or by resources and label
+selector
+
+Deploy Commands:
+  rollout       Manage the rollout of a resource
+  scale         Set a new size for a Deployment, ReplicaSet or Replication Controller
+  autoscale     Auto-scale a Deployment, ReplicaSet, or ReplicationController
+
+Cluster Management Commands:
+  certificate   Modify certificate resources.
+  cluster-info  Display cluster info
+  top           Display Resource (CPU/Memory/Storage) usage.
+  cordon        Mark node as unschedulable
+  uncordon      Mark node as schedulable
+  drain         Drain node in preparation for maintenance
+  taint         Update the taints on one or more nodes
+
+Troubleshooting and Debugging Commands:
+  describe      Show details of a specific resource or group of resources
+  logs          Print the logs for a container in a pod
+  attach        Attach to a running container
+  exec          Execute a command in a container
+  port-forward  Forward one or more local ports to a pod
+  proxy         Run a proxy to the Kubernetes API server
+  cp            Copy files and directories to and from containers.
+  auth          Inspect authorization
+
+Advanced Commands:
+  diff          Diff live version against would-be applied version
+  apply         Apply a configuration to a resource by filename or stdin
+  patch         Update field(s) of a resource using strategic merge patch
+  replace       Replace a resource by filename or stdin
+  wait          Experimental: Wait for a specific condition on one or many resources.
+  convert       Convert config files between different API versions
+  kustomize     Build a kustomization target from a directory or a remote url.
+
+Settings Commands:
+  label         Update the labels on a resource
+  annotate      Update the annotations on a resource
+  completion    Output shell completion code for the specified shell (bash or zsh)
+
+Other Commands:
+  alpha         Commands for features in alpha
+  api-resources Print the supported API resources on the server
+  api-versions  Print the supported API versions on the server, in the form of "group/version"
+  config        Modify kubeconfig files
+  plugin        Provides utilities for interacting with plugins.
+  version       Print the client and server version information
+
+Usage:
+  kubectl [flags] [options]
+
+Use "kubectl <command> --help" for more information about a given command.
+Use "kubectl options" for a list of global command-line options (applies to all commands).
+(base) λ ~/Documents/utahschoolwork/simplek8s/ kubectl logs
+error: expected 'logs [-f] [-p] (POD | TYPE/NAME) [-c CONTAINER]'.
+POD or TYPE/NAME is a required argument for the logs command
+See 'kubectl logs -h' for help and examples
+(base) λ ~/Documents/utahschoolwork/simplek8s/ kubectl get pods --all-namespaces -o jsonpath="{..image}" |\
+tr -s '[[:space:]]' '\n' |\
+sort |\
+uniq -c
+   2 gcr.io/k8s-minikube/storage-provisioner:v3
+   2 k8s.gcr.io/coredns:1.7.0
+   2 k8s.gcr.io/etcd:3.4.13-0
+   2 k8s.gcr.io/kube-apiserver:v1.19.4
+   2 k8s.gcr.io/kube-controller-manager:v1.19.4
+   2 k8s.gcr.io/kube-proxy:v1.19.4
+   2 k8s.gcr.io/kube-scheduler:v1.19.4
+   2 kubernetesui/dashboard:v2.0.3
+   2 kubernetesui/metrics-scraper:v1.0.4
+   1 rtikes/multi-client
+   1 rtikes/multi-client:latest
+
+10094  ll
+10095  cd ..
+10096  ll
+10097  cd ..
+10098  cd ~/Documents
+10099  ll
+10100  cd utahschoolwork
+10101  ll
+10102  cd simplek8s
+10103  ll
+10104  cat client-
+10105  cat client-node-port.yaml
+10106  cat client-pod.yaml
+10107  clear
+10108  ll
+10109  vi client-node-port.yaml
+10110  ll
+10111  vi client-pod.yaml
+10112  vi client-node-port.yaml
+10113  kubectl apply -f client-pod.yaml  
+10114  kubectl apply -f client-node-port.yaml 
+10115  kubectl get pods
+10116  kubectl get service
+10117  kubectl get services
+10118  minikube ip
+10119  kubectl get services
+10120  minikube ip
+10121  minikube dashboard
+10122  minikube ip
+10123  minikube config set driver
+10124  minikube config set vm-driver virtualbox
+10125  minikube delete
+10126  minikube start
+10127  minikube ip
+10128  kubectl get services
+10129  kubectl apply -f client-pod.yaml  
+10130  kubectl apply -f client-node-port.yaml 
+10131  kubectl get services
+10132  ll
+10133  cat client-pod.yaml
+10134  cat client-node-port.yaml
+10135  history
+10136  kubectl get pods
+10137  docker ps
+10138  minikube
+10139  minikube service
+10140  docker ps
+10141  sudo docker ps
+10143  watch -n 1 docker ps
+10144  wdocker ps
+10145  docker ps
+10146  docker images
+10147  kubectl get pods
+10148  docker ps
+10149  kubectl
+10150  kubectl logs
+10151  kubectl get pods --all-namespaces -o jsonpath="{..image}" |\\ntr -s '[[:space:]]' '\n' |\\nsort |\\nuniq -c
+(base) λ ~/Documents/utahschoolwork/simplek8s/ minikube delete
+🔥  Deleting "minikube" in virtualbox ...
+💀  Removed all traces of the "minikube" cluster.
+(base) λ ~/Documents/utahschoolwork/simplek8s/ 
+
+
+-rw-r--r--@ 1 cstolz@cisco.com  staff   198B Nov 16 23:19 client-pod.yaml
+(base) λ ~/Documents/utahschoolwork/simplek8s/ cat client-
+cat: client-: No such file or directory
+(base) λ ~/Documents/utahschoolwork/simplek8s/ cat client-        
+cat: client-: No such file or directory
+(base) λ ~/Documents/utahschoolwork/simplek8s/ cat client-node-port.yaml 
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-node-port
+spec:
+  type: NodePort
+  ports:
+    - port: 3050
+      targetPort: 3000
+      nodePort: 31515
+  selector:
+    component: web
+(base) λ ~/Documents/utahschoolwork/simplek8s/ cat client-pod.yaml      
+apiVersion: v1
+kind: Pod
+metadata:
+  name: client-pod
+  labels:
+    component: web
+spec:
+  containers:
+    - name: client
+      image: rtikes/multi-client
+      ports:
+        - containerPort: 3000
+(base) λ ~/Documents/utahschoolwork/simplek8s/ clear
+
+(base) λ ~/Documents/utahschoolwork/simplek8s/ ll
+total 16
+-rw-r--r--@ 1 cstolz@cisco.com  staff   189B Nov 16 23:28 client-node-port.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   198B Nov 16 23:19 client-pod.yaml
+(base) λ ~/Documents/utahschoolwork/simplek8s/ ll
+total 16
+-rw-r--r--@ 1 cstolz@cisco.com  staff   189B Nov 16 23:28 client-node-port.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   198B Nov 16 23:19 client-pod.yaml
+(base) λ ~/Documents/utahschoolwork/simplek8s/ ll
+total 16
+-rw-r--r--@ 1 cstolz@cisco.com  staff   189B Nov 16 23:28 client-node-port.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   198B Nov 16 23:19 client-pod.yaml
+(base) λ ~/Documents/utahschoolwork/simplek8s/ vi client-node-port.yaml 
+(base) λ ~/Documents/utahschoolwork/simplek8s/ ll
+total 16
+-rw-r--r--@ 1 cstolz@cisco.com  staff   189B Nov 16 23:28 client-node-port.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   198B Nov 16 23:19 client-pod.yaml
+(base) λ ~/Documents/utahschoolwork/simplek8s/ vi client-pod.yaml      
+(base) λ ~/Documents/utahschoolwork/simplek8s/ vi client-node-port.yaml
+(base) λ ~/Documents/utahschoolwork/simplek8s/ kubectl apply -f client-pod.yaml  
+pod/client-pod created
+(base) λ ~/Documents/utahschoolwork/simplek8s/ kubectl apply -f client-node-port.yaml  
+service/client-node-port created
+(base) λ ~/Documents/utahschoolwork/simplek8s/ kubectl get pods
+NAME         READY   STATUS    RESTARTS   AGE
+client-pod   1/1     Running   0          3m33s
+(base) λ ~/Documents/utahschoolwork/simplek8s/ kubectl get pods
+NAME         READY   STATUS    RESTARTS   AGE
+client-pod   1/1     Running   0          6m26s
+(base) λ ~/Documents/utahschoolwork/simplek8s/ kubectl get service
+NAME               TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+client-node-port   NodePort    10.106.47.29   <none>        3050:31515/TCP   4m41s
+kubernetes         ClusterIP   10.96.0.1      <none>        443/TCP          38h
+(base) λ ~/Documents/utahschoolwork/simplek8s/ kubectl get services
+NAME               TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+client-node-port   NodePort    10.106.47.29   <none>        3050:31515/TCP   4m44s
+kubernetes         ClusterIP   10.96.0.1      <none>        443/TCP          38h
+(base) λ ~/Documents/utahschoolwork/simplek8s/ minikube ip
+❗  Executing "docker container inspect minikube --format={{.State.Status}}" took an unusually long time: 3.374039068s
+💡  Restarting the docker service may improve performance.
+127.0.0.1
+(base) λ ~/Documents/utahschoolwork/simplek8s/ kubectl get services
+NAME               TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+client-node-port   NodePort    10.106.47.29   <none>        3050:31515/TCP   30m
+kubernetes         ClusterIP   10.96.0.1      <none>        443/TCP          39h
+(base) λ ~/Documents/utahschoolwork/simplek8s/ minikube ip         
+127.0.0.1
+(base) λ ~/Documents/utahschoolwork/simplek8s/ minikube dashboard
+🔌  Enabling dashboard ...
+🤔  Verifying dashboard health ...
+🚀  Launching proxy ...
+🤔  Verifying proxy health ... 🎉  Opening http://127.0.0.1:63286/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/ in your default browser...
