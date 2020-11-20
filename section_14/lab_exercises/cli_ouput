@@ -1,0 +1,1627 @@
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/ master* mkdir extra_exercises
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/ master* ll
+total 0
+drwxr-xr-x  2 cstolz@cisco.com  staff    64B Nov 19 17:10 extra_exercises
+drwxr-xr-x  2 cstolz@cisco.com  staff    64B Nov 19 17:10 lab_exercises
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/ master* ls -la
+total 16
+drwxr-xr-x   5 cstolz@cisco.com  staff   160 Nov 19 17:10 .
+drwxr-xr-x  26 cstolz@cisco.com  staff   832 Sep 28 23:49 ..
+-rw-r--r--@  1 cstolz@cisco.com  staff  6148 Nov  9 16:29 .DS_Store
+drwxr-xr-x   2 cstolz@cisco.com  staff    64 Nov 19 17:10 extra_exercises
+drwxr-xr-x   2 cstolz@cisco.com  staff    64 Nov 19 17:10 lab_exercises
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/ master* rm .DS_Store 
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/ master* ll
+total 0
+drwxr-xr-x  2 cstolz@cisco.com  staff    64B Nov 19 17:10 extra_exercises
+drwxr-xr-x  2 cstolz@cisco.com  staff    64B Nov 19 17:10 lab_exercises
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/ master* ll
+total 0
+drwxr-xr-x  2 cstolz@cisco.com  staff    64B Nov 19 17:10 extra_exercises
+drwxr-xr-x  2 cstolz@cisco.com  staff    64B Nov 19 17:10 lab_exercises
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/ master* cd lab_exercises 
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* ll
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* open .
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* open .
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* ll
+total 16
+-rw-r--r--@  1 cstolz@cisco.com  staff   836B Oct 15 18:21 Dockerrun.aws.json
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:07 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   1.0K Oct 14 22:48 docker-compose.yml
+drwxr-xr-x@ 12 cstolz@cisco.com  staff   384B Oct 21 19:26 k8s
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* docker ps     
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                          PORTS               NAMES
+4f07df8c1f7f        complex_nginx       "/docker-entrypoint.…"   9 days ago          Restarting (1) 31 seconds ago                       complex_nginx_1
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* docker kill 4f07df8c1f7f 
+4f07df8c1f7f
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* clear
+
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* docker compose up
+Command "compose up" not available in current context (default)
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* docker-compose up --build
+ERROR: build path /Users/cstolz@cisco.com/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/nginx either does not exist, is not accessible, or is not a valid URL.
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* docker-compose up --build
+ERROR: build path /Users/cstolz@cisco.com/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/nginx either does not exist, is not accessible, or is not a valid URL.
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* ll
+total 16
+-rw-r--r--@  1 cstolz@cisco.com  staff   836B Oct 15 18:21 Dockerrun.aws.json
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:07 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   1.0K Oct 14 22:48 docker-compose.yml
+drwxr-xr-x@ 12 cstolz@cisco.com  staff   384B Oct 21 19:26 k8s
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* docker-compose up --build
+ERROR: build path /Users/cstolz@cisco.com/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/nginx either does not exist, is not accessible, or is not a valid URL.
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* cat docker-compose.yml 
+version: '3'
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - POSTGRES_PASSWORD=postgres_password
+  redis:
+    image: 'redis:latest'
+  nginx:
+    depends_on:
+      - api
+      - client
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - '3050:80'
+  api:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./server
+    volumes:
+      - /app/node_modules
+      - ./server:/app
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - PGUSER=postgres
+      - PGHOST=postgres
+      - PGDATABASE=postgres
+      - PGPASSWORD=postgres_password
+      - PGPORT=5432
+  client:
+    stdin_open: true
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./client
+    volumes:
+      - /app/node_modules
+      - ./client:/app
+  worker:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./worker
+    volumes:
+      - /app/node_modules
+      - ./worker:/app
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* open .
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* ll
+total 0
+drwxr-xr-x  9 cstolz@cisco.com  staff   288B Nov 19 17:31 complex
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* cd complex  
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* ll
+total 16
+-rw-r--r--@  1 cstolz@cisco.com  staff   836B Oct 15 18:21 Dockerrun.aws.json
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:07 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   1.0K Oct 14 22:48 docker-compose.yml
+drwxr-xr-x@ 12 cstolz@cisco.com  staff   384B Oct 21 19:26 k8s
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* docker-compose up --build
+ERROR: build path /Users/cstolz@cisco.com/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/nginx either does not exist, is not accessible, or is not a valid URL.
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* open .
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* cd ..
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* rm -r complex 
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* ll
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* open .
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* open .
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* ll
+total 400
+-rw-r--r--@  1 cstolz@cisco.com  staff   199K Nov 19 17:36 219-checkpoint.zip
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:52 complex
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* cd complex 
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* ll
+total 16
+-rw-r--r--@  1 cstolz@cisco.com  staff   836B Oct 15 18:21 Dockerrun.aws.json
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:07 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   1.0K Oct 14 22:48 docker-compose.yml
+drwxr-xr-x@  5 cstolz@cisco.com  staff   160B Oct 14 23:02 nginx
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* docker-compose up --build
+Building api
+Step 1/6 : FROM node:14.14.0-alpine
+ ---> fa2fa5d4e6f4
+Step 2/6 : WORKDIR "/app"
+ ---> Using cache
+ ---> bd3affcb0444
+Step 3/6 : COPY ./package.json ./
+ ---> Using cache
+ ---> 973a69b37f72
+Step 4/6 : RUN npm install
+ ---> Using cache
+ ---> ebd44b42e19f
+Step 5/6 : COPY . .
+ ---> 76f569be331b
+Step 6/6 : CMD ["npm", "run", "dev"]
+ ---> Running in d4b5ce951e22
+Removing intermediate container d4b5ce951e22
+ ---> 4edb197a57ec
+
+Successfully built 4edb197a57ec
+Successfully tagged complex_api:latest
+Building client
+Step 1/6 : FROM node:alpine
+ ---> b85fc218c00b
+Step 2/6 : WORKDIR "/app"
+ ---> Using cache
+ ---> b84a91cdfbc1
+Step 3/6 : COPY ./package.json ./
+ ---> bce07a9d923f
+Step 4/6 : RUN npm install
+ ---> Running in 0cc96c532bec
+npm WARN deprecated eslint-loader@3.0.3: This loader has been deprecated. Please use eslint-webpack-plugin
+npm WARN deprecated fsevents@2.1.2: Please update to latest version
+npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+npm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+npm WARN deprecated @types/testing-library__dom@7.5.0: This is a stub types definition. testing-library__dom provides its own type definitions, so you do not need this installed.
+npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN deprecated request-promise-native@1.0.9: request-promise-native has been deprecated because it extends the now deprecated request package, see https://github.com/request/request/issues/3142
+npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+npm WARN deprecated @hapi/joi@15.1.1: Switch to 'npm install joi'
+npm WARN deprecated har-validator@5.1.5: this library is no longer supported
+npm WARN deprecated @hapi/bourne@1.3.2: This version has been deprecated and is no longer supported or maintained
+npm WARN deprecated @hapi/address@2.1.4: Moved to 'npm install @sideway/address'
+npm WARN deprecated @hapi/hoek@8.5.1: This version has been deprecated and is no longer supported or maintained
+npm WARN deprecated @hapi/topo@3.1.6: This version has been deprecated and is no longer supported or maintained
+npm WARN deprecated left-pad@1.3.0: use String.prototype.padStart()
+npm WARN deprecated core-js@2.6.11: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
+
+> core-js@2.6.11 postinstall /app/node_modules/babel-runtime/node_modules/core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+Thank you for using core-js ( https://github.com/zloirock/core-js ) for polyfilling JavaScript standard library!
+
+The project needs your help! Please consider supporting of core-js on Open Collective or Patreon: 
+> https://opencollective.com/core-js 
+> https://www.patreon.com/zloirock 
+
+Also, the author of core-js ( https://github.com/zloirock ) is looking for a good job -)
+
+
+> core-js@3.7.0 postinstall /app/node_modules/core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+Thank you for using core-js ( https://github.com/zloirock/core-js ) for polyfilling JavaScript standard library!
+
+The project needs your help! Please consider supporting of core-js on Open Collective or Patreon: 
+> https://opencollective.com/core-js 
+> https://www.patreon.com/zloirock 
+
+Also, the author of core-js ( https://github.com/zloirock ) is looking for a good job -)
+
+
+> core-js-pure@3.7.0 postinstall /app/node_modules/core-js-pure
+> node -e "try{require('./postinstall')}catch(e){}"
+
+Thank you for using core-js ( https://github.com/zloirock/core-js ) for polyfilling JavaScript standard library!
+
+The project needs your help! Please consider supporting of core-js on Open Collective or Patreon: 
+> https://opencollective.com/core-js 
+> https://www.patreon.com/zloirock 
+
+Also, the author of core-js ( https://github.com/zloirock ) is looking for a good job -)
+
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.2 (node_modules/react-scripts/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules/jest-haste-map/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules/watchpack-chokidar2/node_modules/chokidar/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules/webpack-dev-server/node_modules/chokidar/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN tsutils@3.17.1 requires a peer of typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta but none is installed. You must install peer dependencies yourself.
+
+added 1643 packages from 789 contributors and audited 1647 packages in 77.319s
+
+77 packages are looking for funding
+  run `npm fund` for details
+
+found 2 vulnerabilities (1 moderate, 1 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+Removing intermediate container 0cc96c532bec
+ ---> 4c0d745f79af
+Step 5/6 : COPY . .
+ ---> 9ecc3e0a4c8f
+Step 6/6 : CMD ["npm", "run", "start"]
+ ---> Running in e9066eb3e47e
+Removing intermediate container e9066eb3e47e
+ ---> 35f5b5d80eed
+
+Successfully built 35f5b5d80eed
+Successfully tagged complex_client:latest
+Building nginx
+Step 1/2 : FROM nginx
+ ---> f35646e83998
+Step 2/2 : COPY ./default.conf /etc/nginx/conf.d/default.conf
+ ---> Using cache
+ ---> 16b74b0c50d7
+
+Successfully built 16b74b0c50d7
+Successfully tagged complex_nginx:latest
+Building worker
+Step 1/6 : FROM node:alpine
+ ---> b85fc218c00b
+Step 2/6 : WORKDIR "/app"
+ ---> Using cache
+ ---> b84a91cdfbc1
+Step 3/6 : COPY ./package.json ./
+ ---> Using cache
+ ---> 3a17fa575073
+Step 4/6 : RUN npm install
+ ---> Using cache
+ ---> 7b5ca5f8b1b1
+Step 5/6 : COPY . .
+ ---> ab4276435e5d
+Step 6/6 : CMD ["npm", "run", "dev"]
+ ---> Running in acdc65895003
+Removing intermediate container acdc65895003
+ ---> 2a54e587a5ff
+
+Successfully built 2a54e587a5ff
+Successfully tagged complex_worker:latest
+Recreating complex_worker_1 ... done
+Recreating complex_api_1    ... done
+Recreating complex_client_1 ... done
+Starting complex_redis_1    ... done
+Starting complex_postgres_1 ... done
+Recreating complex_nginx_1  ... done
+Attaching to complex_redis_1, complex_postgres_1, complex_worker_1, complex_api_1, complex_client_1, complex_nginx_1
+nginx_1     | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+nginx_1     | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+postgres_1  | 
+postgres_1  | PostgreSQL Database directory appears to contain a database; Skipping initialization
+postgres_1  | 
+nginx_1     | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+redis_1     | 1:C 19 Nov 2020 22:39:57.033 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis_1     | 1:C 19 Nov 2020 22:39:57.033 # Redis version=6.0.7, bits=64, commit=00000000, modified=0, pid=1, just started
+redis_1     | 1:C 19 Nov 2020 22:39:57.033 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+redis_1     | 1:M 19 Nov 2020 22:39:57.037 * Running mode=standalone, port=6379.
+redis_1     | 1:M 19 Nov 2020 22:39:57.037 # Server initialized
+redis_1     | 1:M 19 Nov 2020 22:39:57.037 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+postgres_1  | 2020-11-19 22:39:57.566 UTC [1] LOG:  starting PostgreSQL 13.0 (Debian 13.0-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+redis_1     | 1:M 19 Nov 2020 22:39:57.039 * Loading RDB produced by version 6.0.7
+redis_1     | 1:M 19 Nov 2020 22:39:57.039 * RDB age 843866 seconds
+redis_1     | 1:M 19 Nov 2020 22:39:57.039 * RDB memory usage when created 0.81 Mb
+redis_1     | 1:M 19 Nov 2020 22:39:57.040 * DB loaded from disk: 0.002 seconds
+redis_1     | 1:M 19 Nov 2020 22:39:57.040 * Ready to accept connections
+postgres_1  | 2020-11-19 22:39:57.568 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres_1  | 2020-11-19 22:39:57.569 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres_1  | 2020-11-19 22:39:57.577 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres_1  | 2020-11-19 22:39:57.592 UTC [26] LOG:  database system was shut down at 2020-11-10 04:15:31 UTC
+postgres_1  | 2020-11-19 22:39:57.658 UTC [1] LOG:  database system is ready to accept connections
+nginx_1     | 10-listen-on-ipv6-by-default.sh: Getting the checksum of /etc/nginx/conf.d/default.conf
+nginx_1     | 10-listen-on-ipv6-by-default.sh: error: /etc/nginx/conf.d/default.conf differs from the packaged version
+nginx_1     | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+nginx_1     | /docker-entrypoint.sh: Configuration complete; ready for start up
+client_1    | 
+client_1    | > client@0.1.0 start /app
+client_1    | > react-scripts start
+client_1    | 
+worker_1    | 
+worker_1    | > @ dev /app
+worker_1    | > nodemon
+worker_1    | 
+api_1       | 
+api_1       | > @ dev /app
+api_1       | > nodemon
+api_1       | 
+worker_1    | [nodemon] 1.18.3
+worker_1    | [nodemon] to restart at any time, enter `rs`
+worker_1    | [nodemon] watching: *.*
+worker_1    | [nodemon] starting `node index.js`
+api_1       | [nodemon] 1.18.3
+api_1       | [nodemon] to restart at any time, enter `rs`
+api_1       | [nodemon] watching: *.*
+api_1       | [nodemon] starting `node index.js`
+api_1       | Listening
+client_1    | ℹ ｢wds｣: Project is running at http://172.18.0.5/
+client_1    | ℹ ｢wds｣: webpack output is served from 
+client_1    | ℹ ｢wds｣: Content not from webpack is served from /app/public
+client_1    | ℹ ｢wds｣: 404s will fallback to /
+client_1    | Starting the development server...
+client_1    | 
+client_1    | Compiled successfully!
+client_1    | 
+client_1    | You can now view client in the browser.
+client_1    | 
+client_1    |   Local:            http://localhost:3000
+client_1    |   On Your Network:  http://172.18.0.5:3000
+client_1    | 
+client_1    | Note that the development build is not optimized.
+client_1    | To create a production build, use npm run build.
+client_1    | 
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping complex_nginx_1    ... done
+Stopping complex_api_1      ... done
+Stopping complex_client_1   ... done
+Stopping complex_worker_1   ... done
+Stopping complex_redis_1    ... done
+Stopping complex_postgres_1 ... done
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* ll
+total 16
+-rw-r--r--@  1 cstolz@cisco.com  staff   836B Oct 15 18:21 Dockerrun.aws.json
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:07 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   1.0K Oct 14 22:48 docker-compose.yml
+drwxr-xr-x@  5 cstolz@cisco.com  staff   160B Oct 14 23:02 nginx
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* docker-compose up --build
+Building api
+Step 1/6 : FROM node:14.14.0-alpine
+ ---> fa2fa5d4e6f4
+Step 2/6 : WORKDIR "/app"
+ ---> Using cache
+ ---> bd3affcb0444
+Step 3/6 : COPY ./package.json ./
+ ---> Using cache
+ ---> 973a69b37f72
+Step 4/6 : RUN npm install
+ ---> Using cache
+ ---> ebd44b42e19f
+Step 5/6 : COPY . .
+ ---> Using cache
+ ---> 76f569be331b
+Step 6/6 : CMD ["npm", "run", "dev"]
+ ---> Using cache
+ ---> 4edb197a57ec
+
+Successfully built 4edb197a57ec
+Successfully tagged complex_api:latest
+Building client
+Step 1/6 : FROM node:alpine
+ ---> b85fc218c00b
+Step 2/6 : WORKDIR "/app"
+ ---> Using cache
+ ---> b84a91cdfbc1
+Step 3/6 : COPY ./package.json ./
+ ---> Using cache
+ ---> bce07a9d923f
+Step 4/6 : RUN npm install
+ ---> Using cache
+ ---> 4c0d745f79af
+Step 5/6 : COPY . .
+ ---> Using cache
+ ---> 9ecc3e0a4c8f
+Step 6/6 : CMD ["npm", "run", "start"]
+ ---> Using cache
+ ---> 35f5b5d80eed
+
+Successfully built 35f5b5d80eed
+Successfully tagged complex_client:latest
+Building nginx
+Step 1/2 : FROM nginx
+ ---> f35646e83998
+Step 2/2 : COPY ./default.conf /etc/nginx/conf.d/default.conf
+ ---> Using cache
+ ---> 16b74b0c50d7
+
+Successfully built 16b74b0c50d7
+Successfully tagged complex_nginx:latest
+Building worker
+Step 1/6 : FROM node:alpine
+ ---> b85fc218c00b
+Step 2/6 : WORKDIR "/app"
+ ---> Using cache
+ ---> b84a91cdfbc1
+Step 3/6 : COPY ./package.json ./
+ ---> Using cache
+ ---> 3a17fa575073
+Step 4/6 : RUN npm install
+ ---> Using cache
+ ---> 7b5ca5f8b1b1
+Step 5/6 : COPY . .
+ ---> Using cache
+ ---> ab4276435e5d
+Step 6/6 : CMD ["npm", "run", "dev"]
+ ---> Using cache
+ ---> 2a54e587a5ff
+
+Successfully built 2a54e587a5ff
+Successfully tagged complex_worker:latest
+Starting complex_postgres_1 ... done
+Starting complex_api_1      ... done
+Starting complex_redis_1    ... done
+Starting complex_client_1   ... done
+Starting complex_worker_1   ... done
+Starting complex_nginx_1    ... done
+Attaching to complex_postgres_1, complex_api_1, complex_worker_1, complex_client_1, complex_redis_1, complex_nginx_1
+api_1       | 
+api_1       | > @ dev /app
+api_1       | > nodemon
+api_1       | 
+postgres_1  | 
+postgres_1  | PostgreSQL Database directory appears to contain a database; Skipping initialization
+postgres_1  | 
+redis_1     | 1:C 19 Nov 2020 22:45:33.518 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis_1     | 1:C 19 Nov 2020 22:45:33.518 # Redis version=6.0.7, bits=64, commit=00000000, modified=0, pid=1, just started
+redis_1     | 1:C 19 Nov 2020 22:45:33.518 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+nginx_1     | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+nginx_1     | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+postgres_1  | 2020-11-19 22:45:33.275 UTC [1] LOG:  starting PostgreSQL 13.0 (Debian 13.0-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+postgres_1  | 2020-11-19 22:45:33.276 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres_1  | 2020-11-19 22:45:33.276 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+redis_1     | 1:M 19 Nov 2020 22:45:33.523 * Running mode=standalone, port=6379.
+redis_1     | 1:M 19 Nov 2020 22:45:33.523 # Server initialized
+redis_1     | 1:M 19 Nov 2020 22:45:33.523 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+postgres_1  | 2020-11-19 22:45:33.281 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+redis_1     | 1:M 19 Nov 2020 22:45:33.524 * Loading RDB produced by version 6.0.7
+redis_1     | 1:M 19 Nov 2020 22:45:33.524 * RDB age 277 seconds
+redis_1     | 1:M 19 Nov 2020 22:45:33.524 * RDB memory usage when created 0.85 Mb
+redis_1     | 1:M 19 Nov 2020 22:45:33.524 * DB loaded from disk: 0.000 seconds
+redis_1     | 1:M 19 Nov 2020 22:45:33.524 * Ready to accept connections
+postgres_1  | 2020-11-19 22:45:33.294 UTC [26] LOG:  database system was shut down at 2020-11-19 22:40:56 UTC
+postgres_1  | 2020-11-19 22:45:33.311 UTC [1] LOG:  database system is ready to accept connections
+nginx_1     | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+nginx_1     | 10-listen-on-ipv6-by-default.sh: Getting the checksum of /etc/nginx/conf.d/default.conf
+nginx_1     | 10-listen-on-ipv6-by-default.sh: error: /etc/nginx/conf.d/default.conf differs from the packaged version
+nginx_1     | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+nginx_1     | /docker-entrypoint.sh: Configuration complete; ready for start up
+worker_1    | 
+worker_1    | > @ dev /app
+worker_1    | > nodemon
+worker_1    | 
+client_1    | 
+client_1    | > client@0.1.0 start /app
+client_1    | > react-scripts start
+client_1    | 
+api_1       | [nodemon] 1.18.3
+api_1       | [nodemon] to restart at any time, enter `rs`
+api_1       | [nodemon] watching: *.*
+api_1       | [nodemon] starting `node index.js`
+worker_1    | [nodemon] 1.18.3
+worker_1    | [nodemon] to restart at any time, enter `rs`
+worker_1    | [nodemon] watching: *.*
+worker_1    | [nodemon] starting `node index.js`
+api_1       | Listening
+client_1    | ℹ ｢wds｣: Project is running at http://172.18.0.5/
+client_1    | ℹ ｢wds｣: webpack output is served from 
+client_1    | ℹ ｢wds｣: Content not from webpack is served from /app/public
+client_1    | ℹ ｢wds｣: 404s will fallback to /
+client_1    | Starting the development server...
+client_1    | 
+client_1    | Compiled successfully!
+client_1    | 
+client_1    | You can now view client in the browser.
+client_1    | 
+client_1    |   Local:            http://localhost:3000
+client_1    |   On Your Network:  http://172.18.0.5:3000
+client_1    | 
+client_1    | Note that the development build is not optimized.
+client_1    | To create a production build, use npm run build.
+client_1    | 
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:45:47 +0000] "GET / HTTP/1.1" 200 873 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:45:47 +0000] "GET /static/js/bundle.js HTTP/1.1" 200 6404 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:45:47 +0000] "GET /static/js/main.chunk.js HTTP/1.1" 200 4700 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:45:47 +0000] "GET /static/js/0.chunk.js HTTP/1.1" 200 420459 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:45:47 +0000] "GET /static/media/logo.5d5d9eef.svg HTTP/1.1" 200 1320 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:45:47 +0000] "GET /api/values/current HTTP/1.1" 200 506 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:45:47 +0000] "GET /manifest.json HTTP/1.1" 200 492 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:45:48 +0000] "GET /favicon.ico HTTP/1.1" 200 2987 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:45:48 +0000] "GET /logo192.png HTTP/1.1" 200 5347 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 2020/11/19 22:45:48 [warn] 27#27: *2 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/1/00/0000000001 while reading upstream, client: 172.18.0.1, server: , request: "GET /api/values/all HTTP/1.1", upstream: "http://172.18.0.3:5000/values/all", host: "localhost:3050", referrer: "http://localhost:3050/"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:45:48 +0000] "GET /api/values/all HTTP/1.1" 200 583192 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:46:19 +0000] "GET / HTTP/1.1" 200 873 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:46:19 +0000] "GET /static/js/main.chunk.js HTTP/1.1" 200 4700 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:46:19 +0000] "GET /static/js/bundle.js HTTP/1.1" 200 6404 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:46:19 +0000] "GET /static/js/0.chunk.js HTTP/1.1" 200 420459 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:46:19 +0000] "GET /api/values/current HTTP/1.1" 200 506 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:46:19 +0000] "GET /static/media/logo.5d5d9eef.svg HTTP/1.1" 200 1320 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:46:19 +0000] "GET /api/values/all HTTP/1.1" 200 583192 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:46:22 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:46:22 +0000] "GET /sockjs-node HTTP/1.1" 101 139 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:46:22 +0000] "GET /static/js/bundle.js HTTP/1.1" 304 0 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:46:22 +0000] "GET /static/js/0.chunk.js HTTP/1.1" 304 0 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:46:22 +0000] "GET /static/js/main.chunk.js HTTP/1.1" 304 0 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:46:22 +0000] "GET /static/media/logo.5d5d9eef.svg HTTP/1.1" 304 0 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:46:22 +0000] "GET /api/values/current HTTP/1.1" 304 0 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:46:22 +0000] "GET /manifest.json HTTP/1.1" 304 0 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:46:22 +0000] "GET /logo192.png HTTP/1.1" 304 0 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:46:23 +0000] "GET /api/values/all HTTP/1.1" 304 0 "http://localhost:3050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:46:31 +0000] "GET /sockjs-node HTTP/1.1" 101 137 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+nginx_1     | 172.18.0.1 - - [19/Nov/2020:22:46:33 +0000] "GET /sockjs-node HTTP/1.1" 101 137 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" "-"
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping complex_nginx_1    ... done
+Stopping complex_api_1      ... done
+Stopping complex_client_1   ... done
+Stopping complex_worker_1   ... done
+Stopping complex_redis_1    ... done
+Stopping complex_postgres_1 ... done
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* open .
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* ll
+total 0
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:07 client
+drwxr-xr-x@  5 cstolz@cisco.com  staff   160B Oct 14 23:02 nginx
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* ls -la
+total 24
+drwxr-xr-x@  9 cstolz@cisco.com  staff   288 Nov 19 18:01 .
+drwxr-xr-x   5 cstolz@cisco.com  staff   160 Nov 19 17:36 ..
+-rw-r--r--@  1 cstolz@cisco.com  staff  6148 Oct 14 18:59 .DS_Store
+drwxr-xr-x@ 13 cstolz@cisco.com  staff   416 Nov 19 18:01 .git
+-rw-r--r--@  1 cstolz@cisco.com  staff  1083 Oct 14 23:52 .travis.yml
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352 Oct 14 23:07 client
+drwxr-xr-x@  5 cstolz@cisco.com  staff   160 Oct 14 23:02 nginx
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256 Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256 Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* rm .DS_Store .travis.yml
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* ls -la
+total 0
+drwxr-xr-x@  7 cstolz@cisco.com  staff  224 Nov 19 18:02 .
+drwxr-xr-x   5 cstolz@cisco.com  staff  160 Nov 19 17:36 ..
+drwxr-xr-x@ 13 cstolz@cisco.com  staff  416 Nov 19 18:02 .git
+drwxr-xr-x@ 11 cstolz@cisco.com  staff  352 Oct 14 23:07 client
+drwxr-xr-x@  5 cstolz@cisco.com  staff  160 Oct 14 23:02 nginx
+drwxr-xr-x@  8 cstolz@cisco.com  staff  256 Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff  256 Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* ll
+total 0
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:07 client
+drwxr-xr-x@  5 cstolz@cisco.com  staff   160B Oct 14 23:02 nginx
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* rm -r nginx 
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* ll
+total 0
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:07 client
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* ll
+total 16
+-rw-r--r--@  1 cstolz@cisco.com  staff   836B Oct 15 18:21 Dockerrun.aws.json
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:07 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   1.0K Oct 14 22:48 docker-compose.yml
+drwxr-xr-x@ 12 cstolz@cisco.com  staff   384B Oct 21 19:26 k8s
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* tree
+.
+├── Dockerrun.aws.json
+├── client
+│   ├── Dockerfile
+│   ├── Dockerfile.dev
+│   ├── README.md
+│   ├── nginx
+│   │   └── default.conf
+│   ├── node_modules
+│   ├── package.json
+│   ├── public
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   │   ├── logo192.png
+│   │   ├── logo512.png
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   └── src
+│       ├── App.css
+│       ├── App.js
+│       ├── App.test.js
+│       ├── Fib.js
+│       ├── OtherPage.js
+│       ├── index.css
+│       ├── index.js
+│       ├── logo.svg
+│       ├── serviceWorker.js
+│       └── setupTests.js
+├── docker-compose.yml
+├── k8s
+│   ├── client-cluster-ip-service.yaml
+│   ├── client-deployment.yaml
+│   ├── database-persistent-volume-claim.yaml
+│   ├── postgres-cluster-ip-service.yaml
+│   ├── postgres-deployment.yaml
+│   ├── redis-cluster-ip-service.yaml
+│   ├── redis-deployment.yaml
+│   ├── server-cluster-ip-service.yaml
+│   ├── server-deployment.yaml
+│   └── worker-deployment.yaml
+├── server
+│   ├── Dockerfile
+│   ├── Dockerfile.dev
+│   ├── index.js
+│   ├── keys.js
+│   ├── node_modules
+│   └── package.json
+└── worker
+    ├── Dockerfile
+    ├── Dockerfile.dev
+    ├── index.js
+    ├── keys.js
+    ├── node_modules
+    └── package.json
+
+10 directories, 43 files
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* kubectl service
+Error: unknown command "service" for "kubectl"
+Run 'kubectl --help' for usage.
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* kubectl get service
+NAME               TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+client-node-port   NodePort    10.99.240.64   <none>        3050:31515/TCP   3h42m
+kubernetes         ClusterIP   10.96.0.1      <none>        443/TCP          20h
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* kubectl stop    
+Error: unknown command "stop" for "kubectl"
+
+Did you mean this?
+	top
+
+Run 'kubectl --help' for usage.
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* minkube     
+zsh: command not found: minkube
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* minikube
+minikube provisions and manages local Kubernetes clusters optimized for development workflows.
+
+Basic Commands:
+  start          Starts a local Kubernetes cluster
+  status         Gets the status of a local Kubernetes cluster
+  stop           Stops a running local Kubernetes cluster
+  delete         Deletes a local Kubernetes cluster
+  dashboard      Access the Kubernetes dashboard running within the minikube cluster
+  pause          pause Kubernetes
+  unpause        unpause Kubernetes
+
+Images Commands:
+  docker-env     Configure environment to use minikube's Docker daemon
+  podman-env     Configure environment to use minikube's Podman service
+  cache          Add, delete, or push a local image into minikube
+
+Configuration and Management Commands:
+  addons         Enable or disable a minikube addon
+  config         Modify persistent configuration values
+  profile        Get or list the current profiles (clusters)
+  update-context Update kubeconfig in case of an IP or port change
+
+Networking and Connectivity Commands:
+  service        Returns a URL to connect to a service
+  tunnel         Connect to LoadBalancer services
+
+Advanced Commands:
+  mount          Mounts the specified directory into minikube
+  ssh            Log into the minikube environment (for debugging)
+  kubectl        Run a kubectl binary matching the cluster version
+  node           Add, remove, or list additional nodes
+
+Troubleshooting Commands:
+  ssh-key        Retrieve the ssh identity key path of the specified cluster
+  ip             Retrieves the IP address of the running cluster
+  logs           Returns logs to debug a local Kubernetes cluster
+  update-check   Print current and latest version number
+  version        Print the version of minikube
+
+Other Commands:
+  completion     Generate command completion for a shell
+
+Use "minikube <command> --help" for more information about a given command.
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* kubectl pods   
+Error: unknown command "pods" for "kubectl"
+
+Did you mean this?
+	logs
+
+Run 'kubectl --help' for usage.
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* kubectl pod 
+Error: unknown command "pod" for "kubectl"
+
+Did you mean this?
+	top
+
+Run 'kubectl --help' for usage.
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* kubectl gets pods
+Error: unknown command "gets" for "kubectl"
+
+Did you mean this?
+	set
+	get
+
+Run 'kubectl --help' for usage.
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* kubectl get pods
+NAME                                READY   STATUS    RESTARTS   AGE
+client-deployment-8b7f966b6-jqgw5   1/1     Running   0          3h14m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* minikube stop
+✋  Stopping node "minikube"  ...
+🛑  1 nodes stopped.
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* minikube start  
+😄  minikube v1.15.1 on Darwin 10.15.7
+✨  Using the virtualbox driver based on existing profile
+👍  Starting control plane node minikube in cluster minikube
+🔄  Restarting existing virtualbox VM for "minikube" ...
+🐳  Preparing Kubernetes v1.19.4 on Docker 19.03.13 ...
+🔎  Verifying Kubernetes components...
+🌟  Enabled addons: storage-provisioner, default-storageclass, dashboard
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* kubectl get pods
+NAME                                READY   STATUS    RESTARTS   AGE
+client-deployment-8b7f966b6-jqgw5   1/1     Running   1          3h28m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* kubectl get deployments
+NAME                READY   UP-TO-DATE   AVAILABLE   AGE
+client-deployment   1/1     1            1           6h24m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* kubectl delete deployment client-deployment
+deployment.apps "client-deployment" deleted
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* kubectle get services
+zsh: command not found: kubectle
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* kubectl get services 
+NAME               TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+client-node-port   NodePort    10.99.240.64   <none>        3050:31515/TCP   4h
+kubernetes         ClusterIP   10.96.0.1      <none>        443/TCP          20h
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* kubectl delete service client-node-port
+service "client-node-port" deleted
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* kubectl get services
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   20h
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* ll
+total 16
+-rw-r--r--@  1 cstolz@cisco.com  staff   836B Oct 15 18:21 Dockerrun.aws.json
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:07 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   1.0K Oct 14 22:48 docker-compose.yml
+drwxr-xr-x@ 12 cstolz@cisco.com  staff   384B Oct 21 19:26 k8s
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* kubectl apply -f k8s/client-deployment.yaml
+deployment.apps/client-deployment created
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* kubectl get deployments
+NAME                READY   UP-TO-DATE   AVAILABLE   AGE
+client-deployment   3/3     3            3           11s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* kubectl apply -f k8s/client-cluster-ip-service.yaml 
+service/client-cluster-ip-service created
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* kubectl get deployments
+NAME                READY   UP-TO-DATE   AVAILABLE   AGE
+client-deployment   3/3     3            3           2m22s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* kubectl get services
+NAME                        TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+client-cluster-ip-service   ClusterIP   10.109.115.220   <none>        3000/TCP   14s
+kubernetes                  ClusterIP   10.96.0.1        <none>        443/TCP    20h
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* kubectl get  pods
+NAME                                 READY   STATUS    RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb   1/1     Running   0          5m30s
+client-deployment-7cb6c958f7-q5pll   1/1     Running   0          5m30s
+client-deployment-7cb6c958f7-sl2xl   1/1     Running   0          5m30s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* ll
+total 16
+-rw-r--r--@  1 cstolz@cisco.com  staff   836B Oct 15 18:21 Dockerrun.aws.json
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:07 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   1.0K Oct 14 22:48 docker-compose.yml
+drwxr-xr-x@ 12 cstolz@cisco.com  staff   384B Oct 21 19:26 k8s
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* cd k8s 
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* ll
+total 80
+-rw-r--r--@ 1 cstolz@cisco.com  staff   177B Nov 19 21:29 client-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   345B Nov 19 21:29 client-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   181B Oct 21 19:26 database-persistent-volume-claim.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   184B Oct 21 19:18 postgres-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   805B Oct 21 19:38 postgres-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   178B Oct 21 19:16 redis-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   333B Oct 21 19:16 redis-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   180B Oct 21 19:10 server-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   920B Nov 19 21:36 server-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   451B Nov 19 22:41 worker-deployment.yaml
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl apply -f k8s/client-cluster-ip-service.yaml    
+error: the path "k8s/client-cluster-ip-service.yaml" does not exist
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl apply -f worker-deployment.yaml server-cluster-ip-service.yml server-deployment.yaml
+error: Unexpected args: [server-cluster-ip-service.yml server-deployment.yaml]
+See 'kubectl apply -h' for help and examples
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl apply -f worker-deployment.yaml                                                    
+deployment.apps/worker-deployment created
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl apply -f server-deployment.yaml
+deployment.apps/server-deployment created
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl apply -f server-cluster-ip-service.yml
+error: the path "server-cluster-ip-service.yml" does not exist
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* ll
+total 80
+-rw-r--r--@ 1 cstolz@cisco.com  staff   177B Nov 19 21:29 client-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   345B Nov 19 21:29 client-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   181B Oct 21 19:26 database-persistent-volume-claim.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   184B Oct 21 19:18 postgres-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   805B Oct 21 19:38 postgres-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   178B Oct 21 19:16 redis-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   333B Oct 21 19:16 redis-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   180B Oct 21 19:10 server-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   920B Nov 19 21:36 server-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   451B Nov 19 22:41 worker-deployment.yaml
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl apply -f server-cluster-ip-service.yaml
+service/server-cluster-ip-service created
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectle get pods
+zsh: command not found: kubectle
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods 
+NAME                                 READY   STATUS                       RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb   1/1     Running                      0          4h15m
+client-deployment-7cb6c958f7-q5pll   1/1     Running                      0          4h15m
+client-deployment-7cb6c958f7-sl2xl   1/1     Running                      0          4h15m
+server-deployment-58cf857974-77wwk   0/1     ErrImagePull                 0          15m
+server-deployment-58cf857974-b8jdg   0/1     CreateContainerConfigError   0          15m
+server-deployment-58cf857974-sxp7w   0/1     ErrImagePull                 0          15m
+worker-deployment-6fb497bb98-94f26   1/1     Running                      0          15m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl apply -f server-cluster-ip-service.yaml
+service/server-cluster-ip-service unchanged
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl apply -f server-deployment.yaml
+deployment.apps/server-deployment unchanged
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                 READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb   1/1     Running            0          4h18m
+client-deployment-7cb6c958f7-q5pll   1/1     Running            0          4h18m
+client-deployment-7cb6c958f7-sl2xl   1/1     Running            0          4h18m
+server-deployment-58cf857974-77wwk   0/1     ImagePullBackOff   0          18m
+server-deployment-58cf857974-b8jdg   0/1     ImagePullBackOff   0          18m
+server-deployment-58cf857974-sxp7w   0/1     ImagePullBackOff   0          18m
+worker-deployment-6fb497bb98-94f26   1/1     Running            0          18m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                 READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb   1/1     Running            0          4h19m
+client-deployment-7cb6c958f7-q5pll   1/1     Running            0          4h19m
+client-deployment-7cb6c958f7-sl2xl   1/1     Running            0          4h19m
+server-deployment-58cf857974-77wwk   0/1     ImagePullBackOff   0          19m
+server-deployment-58cf857974-b8jdg   0/1     ImagePullBackOff   0          19m
+server-deployment-58cf857974-sxp7w   0/1     ImagePullBackOff   0          19m
+worker-deployment-6fb497bb98-94f26   1/1     Running            0          19m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                 READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb   1/1     Running            0          4h19m
+client-deployment-7cb6c958f7-q5pll   1/1     Running            0          4h19m
+client-deployment-7cb6c958f7-sl2xl   1/1     Running            0          4h19m
+server-deployment-58cf857974-77wwk   0/1     ImagePullBackOff   0          19m
+server-deployment-58cf857974-b8jdg   0/1     ImagePullBackOff   0          19m
+server-deployment-58cf857974-sxp7w   0/1     ImagePullBackOff   0          19m
+worker-deployment-6fb497bb98-94f26   1/1     Running            0          19m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* ll
+total 80
+-rw-r--r--@ 1 cstolz@cisco.com  staff   177B Nov 19 21:29 client-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   345B Nov 19 21:29 client-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   181B Oct 21 19:26 database-persistent-volume-claim.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   184B Oct 21 19:18 postgres-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   805B Oct 21 19:38 postgres-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   178B Oct 21 19:16 redis-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   333B Oct 21 19:16 redis-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   180B Oct 21 19:10 server-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   920B Nov 19 21:36 server-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   451B Nov 19 22:41 worker-deployment.yaml
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl apply -f
+Error: flag needs an argument: 'f' in -f
+See 'kubectl apply --help' for usage.
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl apply -f ./     
+service/client-cluster-ip-service unchanged
+deployment.apps/client-deployment configured
+persistentvolumeclaim/database-persistent-volume-claim created
+service/postgres-cluster-ip-service created
+deployment.apps/postgres-deployment created
+service/redis-cluster-ip-service created
+deployment.apps/redis-deployment created
+service/server-cluster-ip-service unchanged
+deployment.apps/server-deployment unchanged
+deployment.apps/worker-deployment unchanged
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods   
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h20m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          5s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          5s
+redis-deployment-58c4799ccc-nckfw      0/1     ErrImagePull       0          5s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          20m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h20m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          6s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          6s
+redis-deployment-58c4799ccc-nckfw      0/1     ErrImagePull       0          6s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          20m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h20m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          7s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          7s
+redis-deployment-58c4799ccc-nckfw      0/1     ErrImagePull       0          7s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          20m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h20m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          8s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          8s
+redis-deployment-58c4799ccc-nckfw      0/1     ErrImagePull       0          8s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          20m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h20m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          9s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          9s
+redis-deployment-58c4799ccc-nckfw      0/1     ErrImagePull       0          9s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          20m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h20m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          9s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          9s
+redis-deployment-58c4799ccc-nckfw      0/1     ErrImagePull       0          9s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          20m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h20m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          10s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          10s
+redis-deployment-58c4799ccc-nckfw      0/1     ErrImagePull       0          10s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          20m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h20m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          11s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          11s
+redis-deployment-58c4799ccc-nckfw      0/1     ErrImagePull       0          11s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          20m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h20m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          11s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          11s
+redis-deployment-58c4799ccc-nckfw      0/1     ErrImagePull       0          11s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          20m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl apply -f ./
+service/client-cluster-ip-service unchanged
+deployment.apps/client-deployment unchanged
+persistentvolumeclaim/database-persistent-volume-claim unchanged
+service/postgres-cluster-ip-service unchanged
+deployment.apps/postgres-deployment unchanged
+service/redis-cluster-ip-service unchanged
+deployment.apps/redis-deployment unchanged
+service/server-cluster-ip-service unchanged
+deployment.apps/server-deployment unchanged
+deployment.apps/worker-deployment unchanged
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl apply -f ./
+service/client-cluster-ip-service unchanged
+deployment.apps/client-deployment unchanged
+persistentvolumeclaim/database-persistent-volume-claim unchanged
+service/postgres-cluster-ip-service unchanged
+deployment.apps/postgres-deployment unchanged
+service/redis-cluster-ip-service unchanged
+deployment.apps/redis-deployment unchanged
+service/server-cluster-ip-service unchanged
+deployment.apps/server-deployment unchanged
+deployment.apps/worker-deployment unchanged
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods   
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h20m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          16s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          16s
+redis-deployment-58c4799ccc-nckfw      0/1     ImagePullBackOff   0          16s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          20m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h20m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          18s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          18s
+redis-deployment-58c4799ccc-nckfw      0/1     ImagePullBackOff   0          18s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          21m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h20m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          19s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          19s
+redis-deployment-58c4799ccc-nckfw      0/1     ImagePullBackOff   0          19s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          21m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h20m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          20s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          20s
+redis-deployment-58c4799ccc-nckfw      0/1     ImagePullBackOff   0          20s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          21m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h20m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h20m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          22s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          22s
+redis-deployment-58c4799ccc-nckfw      0/1     ImagePullBackOff   0          22s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          21m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h21m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          23s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          23s
+redis-deployment-58c4799ccc-nckfw      0/1     ImagePullBackOff   0          23s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          21m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h21m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          24s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          24s
+redis-deployment-58c4799ccc-nckfw      0/1     ImagePullBackOff   0          24s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          21m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h21m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          25s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          25s
+redis-deployment-58c4799ccc-nckfw      0/1     ImagePullBackOff   0          25s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          21m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h21m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          26s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          26s
+redis-deployment-58c4799ccc-nckfw      0/1     ImagePullBackOff   0          26s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          21m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h21m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          26s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          26s
+redis-deployment-58c4799ccc-nckfw      0/1     ImagePullBackOff   0          26s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          21m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h21m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          27s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          27s
+redis-deployment-58c4799ccc-nckfw      0/1     ImagePullBackOff   0          27s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          21m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h21m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          28s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          28s
+redis-deployment-58c4799ccc-nckfw      0/1     ImagePullBackOff   0          28s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          21m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h21m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          28s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          28s
+redis-deployment-58c4799ccc-nckfw      0/1     ErrImagePull       0          28s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          21m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h21m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          29s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ErrImagePull       0          29s
+redis-deployment-58c4799ccc-nckfw      0/1     ErrImagePull       0          29s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          21m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h21m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          30s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ErrImagePull       0          30s
+redis-deployment-58c4799ccc-nckfw      0/1     ErrImagePull       0          30s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          21m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h21m
+client-deployment-7cdc8574fc-hrgwx     0/1     ErrImagePull       0          31s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ErrImagePull       0          31s
+redis-deployment-58c4799ccc-nckfw      0/1     ErrImagePull       0          31s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          21m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h21m
+client-deployment-7cdc8574fc-hrgwx     0/1     ErrImagePull       0          35s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ErrImagePull       0          35s
+redis-deployment-58c4799ccc-nckfw      0/1     ErrImagePull       0          35s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          21m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h21m
+client-deployment-7cdc8574fc-hrgwx     0/1     ErrImagePull       0          35s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ErrImagePull       0          35s
+redis-deployment-58c4799ccc-nckfw      0/1     ErrImagePull       0          35s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          21m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h21m
+client-deployment-7cdc8574fc-hrgwx     0/1     ErrImagePull       0          36s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ErrImagePull       0          36s
+redis-deployment-58c4799ccc-nckfw      0/1     ErrImagePull       0          36s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          20m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          20m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          21m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h21m
+client-deployment-7cdc8574fc-hrgwx     0/1     ErrImagePull       0          69s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ErrImagePull       0          69s
+redis-deployment-58c4799ccc-nckfw      0/1     ImagePullBackOff   0          69s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          21m
+server-deployment-58cf857974-b8jdg     0/1     ErrImagePull       0          21m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          21m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          21m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h21m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h21m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          72s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          72s
+redis-deployment-58c4799ccc-nckfw      0/1     ImagePullBackOff   0          72s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          21m
+server-deployment-58cf857974-b8jdg     0/1     ErrImagePull       0          21m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          21m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          21m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h24m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h24m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h24m
+client-deployment-7cdc8574fc-hrgwx     0/1     ErrImagePull       0          3m28s
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          3m28s
+redis-deployment-58c4799ccc-nckfw      0/1     ErrImagePull       0          3m28s
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          23m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          23m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          23m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          24m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl describe pod postgres-deployment-5b7fdb4969-shqmb
+Name:         postgres-deployment-5b7fdb4969-shqmb
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.99.101
+Start Time:   Thu, 19 Nov 2020 23:06:18 -0500
+Labels:       component=postgres
+              pod-template-hash=5b7fdb4969
+Annotations:  <none>
+Status:       Pending
+IP:           172.17.0.13
+IPs:
+  IP:           172.17.0.13
+Controlled By:  ReplicaSet/postgres-deployment-5b7fdb4969
+Containers:
+  postgres:
+    Container ID:   
+    Image:          postgres
+    Image ID:       
+    Port:           5432/TCP
+    Host Port:      0/TCP
+    State:          Waiting
+      Reason:       ImagePullBackOff
+    Ready:          False
+    Restart Count:  0
+    Environment:
+      POSTGRES_PASSWORD:  <set to the key 'PGPASSWORD' in secret 'pgpassword'>  Optional: false
+    Mounts:
+      /var/lib/postgresql/data from postgres-storage (rw,path="postgres")
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-l5thh (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             False 
+  ContainersReady   False 
+  PodScheduled      True 
+Volumes:
+  postgres-storage:
+    Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+    ClaimName:  database-persistent-volume-claim
+    ReadOnly:   false
+  default-token-l5thh:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-l5thh
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                   From               Message
+  ----     ------     ----                  ----               -------
+  Normal   Scheduled  5m7s                  default-scheduler  Successfully assigned default/postgres-deployment-5b7fdb4969-shqmb to minikube
+  Normal   BackOff    3m45s (x6 over 5m5s)  kubelet            Back-off pulling image "postgres"
+  Normal   Pulling    3m33s (x4 over 5m6s)  kubelet            Pulling image "postgres"
+  Warning  Failed     3m33s (x4 over 5m5s)  kubelet            Failed to pull image "postgres": rpc error: code = Unknown desc = Error response from daemon: toomanyrequests: You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limit
+  Warning  Failed     3m33s (x4 over 5m5s)  kubelet            Error: ErrImagePull
+  Warning  Failed     3m17s (x7 over 5m5s)  kubelet            Error: ImagePullBackOff
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* curl --head -H "Authorization: Bearer $TOKEN" https://registry-1.docker.io/v2/ratelimitpreview/test/manifests/latest 2>&1 | grep RateLimit
+
+< RateLimit-Limit: 200;w=21600
+< RateLimit-Remaining: 176;w=21600
+zsh: no such file or directory: RateLimit-Limit:
+zsh: no such file or directory: RateLimit-Remaining:
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods   
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h31m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h31m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h31m
+client-deployment-7cdc8574fc-hrgwx     0/1     ErrImagePull       0          11m
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          11m
+redis-deployment-58c4799ccc-nckfw      0/1     ErrImagePull       0          11m
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          31m
+server-deployment-58cf857974-b8jdg     0/1     ErrImagePull       0          31m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          31m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          32m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h32m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h32m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h32m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          11m
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          11m
+redis-deployment-58c4799ccc-nckfw      0/1     ImagePullBackOff   0          11m
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          31m
+server-deployment-58cf857974-b8jdg     0/1     ErrImagePull       0          31m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          31m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          32m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* docker
+
+Usage:	docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Options:
+      --config string      Location of client config files (default "/Users/cstolz@cisco.com/.docker")
+  -c, --context string     Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default context set with "docker context
+                           use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket(s) to connect to
+  -l, --log-level string   Set the logging level ("debug"|"info"|"warn"|"error"|"fatal") (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default "/Users/cstolz@cisco.com/.docker/ca.pem")
+      --tlscert string     Path to TLS certificate file (default "/Users/cstolz@cisco.com/.docker/cert.pem")
+      --tlskey string      Path to TLS key file (default "/Users/cstolz@cisco.com/.docker/key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Management Commands:
+  builder     Manage builds
+  config      Manage Docker configs
+  container   Manage containers
+  context     Manage contexts
+  image       Manage images
+  network     Manage networks
+  node        Manage Swarm nodes
+  plugin      Manage plugins
+  scan*       Docker Scan (Docker Inc., v0.3.4)
+  secret      Manage Docker secrets
+  service     Manage services
+  stack       Manage Docker stacks
+  swarm       Manage Swarm
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  build       Build an image from a Dockerfile
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  images      List images
+  import      Import the contents from a tarball to create a filesystem image
+  info        Display system-wide information
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  login       Log in to a Docker registry
+  logout      Log out from a Docker registry
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  ps          List containers
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  run         Run a command in a new container
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  search      Search the Docker Hub for images
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  version     Show the Docker version information
+  wait        Block until one or more containers stop, then print their exit codes
+
+Run 'docker COMMAND --help' for more information on a command.
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* docker config
+
+Usage:	docker config COMMAND
+
+Manage Docker configs
+
+Commands:
+  create      Create a config from a file or STDIN
+  inspect     Display detailed information on one or more configs
+  ls          List configs
+  rm          Remove one or more configs
+
+Run 'docker config COMMAND --help' for more information on a command.
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* docker login
+Authenticating with existing credentials...
+Login Succeeded
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h33m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h33m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h33m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          13m
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          13m
+redis-deployment-58c4799ccc-nckfw      0/1     ImagePullBackOff   0          13m
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          33m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          33m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          33m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          33m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl apply -f ./
+service/client-cluster-ip-service unchanged
+deployment.apps/client-deployment unchanged
+persistentvolumeclaim/database-persistent-volume-claim unchanged
+service/postgres-cluster-ip-service unchanged
+deployment.apps/postgres-deployment unchanged
+service/redis-cluster-ip-service unchanged
+deployment.apps/redis-deployment unchanged
+service/server-cluster-ip-service unchanged
+deployment.apps/server-deployment unchanged
+deployment.apps/worker-deployment unchanged
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods   
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h34m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h34m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h34m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          13m
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          13m
+redis-deployment-58c4799ccc-nckfw      0/1     ImagePullBackOff   0          13m
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          33m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          33m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          33m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          34m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl apply -f ./
+service/client-cluster-ip-service unchanged
+deployment.apps/client-deployment unchanged
+persistentvolumeclaim/database-persistent-volume-claim unchanged
+service/postgres-cluster-ip-service unchanged
+deployment.apps/postgres-deployment unchanged
+service/redis-cluster-ip-service unchanged
+deployment.apps/redis-deployment unchanged
+service/server-cluster-ip-service unchanged
+deployment.apps/server-deployment unchanged
+deployment.apps/worker-deployment unchanged
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods   
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h34m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h34m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h34m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          13m
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          13m
+redis-deployment-58c4799ccc-nckfw      0/1     ImagePullBackOff   0          13m
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          34m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          34m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          34m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          34m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods   
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h35m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h35m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h35m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          14m
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          14m
+redis-deployment-58c4799ccc-nckfw      0/1     ImagePullBackOff   0          14m
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          35m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          35m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          35m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          35m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* docker pull docker.io/ratelimitalways/test:latest
+Error response from daemon: toomanyrequests: You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limit
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h44m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h44m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h44m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          23m
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          23m
+redis-deployment-58c4799ccc-nckfw      0/1     ImagePullBackOff   0          23m
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          43m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          43m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          43m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          44m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cb6c958f7-p6cgb     1/1     Running            0          4h57m
+client-deployment-7cb6c958f7-q5pll     1/1     Running            0          4h57m
+client-deployment-7cb6c958f7-sl2xl     1/1     Running            0          4h57m
+client-deployment-7cdc8574fc-hrgwx     0/1     ImagePullBackOff   0          37m
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          37m
+redis-deployment-58c4799ccc-nckfw      0/1     ErrImagePull       0          37m
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          57m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          57m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          57m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          57m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl apply -f redis-deployment.yaml
+deployment.apps/redis-deployment unchanged
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-49lpb     1/1     Running            0          25m
+client-deployment-7cdc8574fc-7ftrk     1/1     Running            0          25m
+client-deployment-7cdc8574fc-hrgwx     1/1     Running            0          98m
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          98m
+redis-deployment-58c4799ccc-nckfw      1/1     Running            0          98m
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          118m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          118m
+server-deployment-58cf857974-sxp7w     0/1     ImagePullBackOff   0          118m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          118m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods                      
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-49lpb     1/1     Running            0          25m
+client-deployment-7cdc8574fc-7ftrk     1/1     Running            0          25m
+client-deployment-7cdc8574fc-hrgwx     1/1     Running            0          98m
+postgres-deployment-5b7fdb4969-shqmb   0/1     ImagePullBackOff   0          98m
+redis-deployment-58c4799ccc-nckfw      1/1     Running            0          98m
+server-deployment-58cf857974-77wwk     0/1     ImagePullBackOff   0          118m
+server-deployment-58cf857974-b8jdg     0/1     ImagePullBackOff   0          118m
+server-deployment-58cf857974-sxp7w     0/1     ErrImagePull       0          118m
+worker-deployment-6fb497bb98-94f26     1/1     Running            0          119m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* 
