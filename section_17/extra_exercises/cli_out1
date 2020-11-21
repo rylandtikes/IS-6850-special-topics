@@ -1,0 +1,127 @@
+rtikes@cloudshell:~ (multi-k8s-296302)$ kubectl describe services
+Name:              client-cluster-ip-service
+Namespace:         default
+Labels:            <none>
+Annotations:       <none>
+Selector:          component=web
+Type:              ClusterIP
+IP:                10.4.7.161
+Port:              <unset>  3000/TCP
+TargetPort:        3000/TCP
+Endpoints:         10.0.0.24:3000,10.0.0.25:3000,10.0.1.16:3000
+Session Affinity:  None
+Events:            <none>
+Name:                     cm-acme-http-solver-6d2x5
+Namespace:                default
+Labels:                   acme.cert-manager.io/http-domain=1437599775
+                          acme.cert-manager.io/http-token=1082592978
+                          acme.cert-manager.io/http01-solver=true
+Annotations:              auth.istio.io/8089: NONE
+Selector:                 acme.cert-manager.io/http-domain=1437599775,acme.cert-manager.io/http-token=1082592978,acme.cert-manager.io/http01-sol
+ver=true
+Type:                     NodePort
+IP:                       10.4.3.159
+Port:                     http  8089/TCP
+TargetPort:               8089/TCP
+NodePort:                 http  30779/TCP
+Endpoints:                10.0.0.18:8089
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+
+Name:              kubernetes
+Namespace:         default
+Labels:            component=apiserver
+                   provider=kubernetes
+Annotations:       <none>
+Selector:          <none>
+Type:              ClusterIP
+IP:                10.4.0.1
+Port:              https  443/TCP
+TargetPort:        443/TCP
+Endpoints:         35.229.52.50:443
+Session Affinity:  None
+Events:            <none>
+Name:                     my-release-ingress-nginx-controller
+Namespace:                default
+Labels:                   app.kubernetes.io/component=controller
+                          app.kubernetes.io/instance=my-release
+                          app.kubernetes.io/managed-by=Helm
+                          app.kubernetes.io/name=ingress-nginx
+                          app.kubernetes.io/version=0.41.2
+                          helm.sh/chart=ingress-nginx-3.11.0
+Annotations:              meta.helm.sh/release-name: my-release
+                          meta.helm.sh/release-namespace: default
+Selector:                 app.kubernetes.io/component=controller,app.kubernetes.io/instance=my-release,app.kubernetes.io/name=ingress-nginx
+Type:                     LoadBalancer
+IP:                       10.4.0.83
+LoadBalancer Ingress:     35.185.16.23
+Port:                     http  80/TCP
+TargetPort:               http/TCP
+NodePort:                 http  30019/TCP
+Endpoints:                10.0.0.7:80
+Port:                     https  443/TCP
+TargetPort:               https/TCP
+NodePort:                 https  31556/TCP
+Endpoints:                10.0.0.7:443
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+
+Name:              my-release-ingress-nginx-controller-admission
+Namespace:         default
+Labels:            app.kubernetes.io/component=controller
+                   app.kubernetes.io/instance=my-release
+                   app.kubernetes.io/managed-by=Helm
+                   app.kubernetes.io/name=ingress-nginx
+                   app.kubernetes.io/version=0.41.2
+                   helm.sh/chart=ingress-nginx-3.11.0
+Annotations:       meta.helm.sh/release-name: my-release
+                   meta.helm.sh/release-namespace: default
+Selector:          app.kubernetes.io/component=controller,app.kubernetes.io/instance=my-release,app.kubernetes.io/name=ingress-nginx
+Type:              ClusterIP
+IP:                10.4.6.175
+Port:              https-webhook  443/TCP
+TargetPort:        webhook/TCP
+Endpoints:         10.0.0.7:8443
+Session Affinity:  None
+Events:            <none>
+Name:              postgres-cluster-ip-service
+Namespace:         default
+Labels:            <none>
+Annotations:       <none>
+Selector:          component=postgres
+Type:              ClusterIP
+IP:                10.4.13.135
+Port:              <unset>  5432/TCP
+TargetPort:        5432/TCP
+Endpoints:         10.0.1.10:5432
+Session Affinity:  None
+Events:            <none>
+Name:              redis-cluster-ip-service
+Namespace:         default
+Labels:            <none>
+Annotations:       <none>
+Selector:          component=redis
+Type:              ClusterIP
+IP:                10.4.9.142
+Port:              <unset>  6379/TCP
+TargetPort:        6379/TCP
+Endpoints:         10.0.2.3:6379
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              server-cluster-ip-service
+Namespace:         default
+Labels:            <none>
+Annotations:       <none>
+Selector:          component=server
+Type:              ClusterIP
+IP:                10.4.1.20
+Port:              <unset>  5000/TCP
+TargetPort:        5000/TCP
+Endpoints:         10.0.0.23:5000,10.0.0.26:5000,10.0.2.13:5000
+Session Affinity:  None
+Events:            <none>
+rtikes@cloudshell:~ (multi-k8s-296302)$

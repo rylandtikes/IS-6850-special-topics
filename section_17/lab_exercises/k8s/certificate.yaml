@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+    name: charlesstolz-com-tls
+spec:
+    secretName: charlesstolz-com
+    issuerRef:
+      name: letsencrypt-prod
+      kind: ClusterIssuer
+    commonName: charlesstolz.com
+    dnsNames:
+        - charlesstolz.com
+        - www.charlesstolz.com
+    acme:
+        config:
+            - http01:
+                ingressClass: nginx
+              domains:
+                - charlestolz.com
+                - www.charlesstolz.com
