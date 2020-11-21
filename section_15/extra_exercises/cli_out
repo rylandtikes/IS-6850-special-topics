@@ -1,0 +1,2094 @@
+server-deployment-58cf857
+Login Succeeded
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods                       
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ErrImagePull       0          6m18s
+client-deployment-7cdc8574fc-h7dc5     0/1     ErrImagePull       0          6m18s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m18s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m18s
+redis-deployment-58c4799ccc-frd9p      0/1     ErrImagePull       0          6m18s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m18s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m18s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m18s
+worker-deployment-6fb497bb98-g8jjr     0/1     ErrImagePull       0          6m17s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ErrImagePull       0          6m20s
+client-deployment-7cdc8574fc-h7dc5     0/1     ErrImagePull       0          6m20s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m20s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m20s
+redis-deployment-58c4799ccc-frd9p      0/1     ErrImagePull       0          6m20s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m20s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m20s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m20s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m19s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m21s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m21s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m21s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m21s
+redis-deployment-58c4799ccc-frd9p      0/1     ErrImagePull       0          6m21s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m21s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m21s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m21s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m20s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m21s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m21s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m21s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m21s
+redis-deployment-58c4799ccc-frd9p      0/1     ErrImagePull       0          6m21s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m21s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m21s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m21s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m20s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m22s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m22s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m22s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m22s
+redis-deployment-58c4799ccc-frd9p      0/1     ErrImagePull       0          6m22s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m22s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m22s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m22s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m21s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m23s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m23s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m23s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m23s
+redis-deployment-58c4799ccc-frd9p      0/1     ErrImagePull       0          6m23s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m23s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m23s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m23s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m22s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m24s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m24s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m24s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m24s
+redis-deployment-58c4799ccc-frd9p      0/1     ErrImagePull       0          6m24s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m24s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m24s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m24s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m23s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m24s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m24s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m24s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m24s
+redis-deployment-58c4799ccc-frd9p      0/1     ErrImagePull       0          6m24s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m24s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m24s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m24s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m23s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m25s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m25s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m25s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m25s
+redis-deployment-58c4799ccc-frd9p      0/1     ErrImagePull       0          6m25s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m25s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m25s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m25s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m24s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m25s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m25s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m25s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m25s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m25s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m25s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m25s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m25s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m24s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m26s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m26s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m26s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m26s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m26s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m26s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m26s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m26s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m25s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m26s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m26s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m26s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m26s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m26s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m26s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m26s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m26s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m25s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m27s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m27s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m27s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m27s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m27s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m27s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m27s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m27s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m26s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m27s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m27s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m27s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m27s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m27s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m27s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m27s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m27s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m26s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m28s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m28s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m28s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m28s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m28s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m28s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m28s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m28s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m27s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m28s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m28s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m28s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m28s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m28s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m28s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m28s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m28s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m27s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m29s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m29s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m29s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m29s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m29s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m29s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m29s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m29s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m28s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m30s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m30s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m30s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m30s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m30s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m30s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m30s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m30s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m29s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m30s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m30s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m30s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m30s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m30s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m30s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m30s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m30s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m29s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m31s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m31s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m31s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m31s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m31s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m31s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m31s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m31s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m30s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m31s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m31s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m31s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m31s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m31s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m31s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m31s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m31s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m30s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m32s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m32s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m32s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m32s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m32s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m32s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m32s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m32s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m31s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m33s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m33s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m33s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m33s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m33s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m33s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m33s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m33s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m32s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m33s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m33s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m33s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m33s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m33s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m33s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m33s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m33s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m32s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m34s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m34s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m34s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m34s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m34s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m34s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m34s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m34s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m33s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m34s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m34s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m34s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m34s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m34s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m34s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m34s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m34s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m33s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m35s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m35s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m35s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m35s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m35s
+server-deployment-58cf857974-8t2wg     0/1     ErrImagePull       0          6m35s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m35s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m35s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m34s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m36s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m36s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m36s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m36s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m36s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m36s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m36s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m36s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m35s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m36s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m36s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m36s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m36s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m36s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m36s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m36s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m36s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m35s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m37s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m37s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m37s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m37s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m37s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m37s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m37s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m37s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m36s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m38s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m38s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m38s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m38s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m38s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m38s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m38s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m38s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m37s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m38s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m38s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m38s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m38s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m38s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m38s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m38s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m38s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m37s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m39s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m39s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m39s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m39s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m39s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m39s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m39s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m39s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m38s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m39s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m39s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m39s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m39s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m39s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m39s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m39s
+server-deployment-58cf857974-t4t9c     0/1     ErrImagePull       0          6m39s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m38s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m40s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m40s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m40s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m40s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m40s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m40s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m40s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m40s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m39s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m41s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m41s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m41s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m41s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m41s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m41s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m41s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m41s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m40s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m41s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m41s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m41s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m41s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m41s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m41s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m41s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m41s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m40s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m42s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m42s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m42s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m42s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m42s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m42s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m42s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m42s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m41s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m42s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m42s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m42s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m42s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m42s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m42s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m42s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m42s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m41s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m43s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m43s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m43s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m43s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m43s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m43s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m43s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m43s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m42s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m47s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m47s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m47s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m47s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m47s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m47s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m47s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m47s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m46s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m48s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m48s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m48s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m48s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m48s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m48s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m48s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m48s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m47s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m49s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m49s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m49s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m49s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m49s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m49s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m49s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m49s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m48s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m49s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m49s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m49s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m49s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m49s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m49s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m49s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m49s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m48s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m50s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m50s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m50s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m50s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m50s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m50s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m50s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m50s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m49s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m50s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m50s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m50s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m50s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m50s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m50s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m50s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m50s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m49s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m51s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m51s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m51s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m51s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m51s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m51s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m51s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m51s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m50s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m51s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m51s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m51s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m51s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m51s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m51s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m51s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m51s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m50s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m52s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m52s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m52s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m52s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m52s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m52s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m52s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m52s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m51s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m52s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m52s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m52s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m52s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m52s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m52s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m52s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m52s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m51s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m52s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m52s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m52s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m52s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m52s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m52s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m52s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m52s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m51s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m53s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m53s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m53s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m53s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m53s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m53s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m53s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m53s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m52s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m53s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m53s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m53s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m53s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m53s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m53s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m53s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m53s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m52s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m54s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m54s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m54s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m54s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m54s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m54s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m54s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m54s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m53s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m54s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m54s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m54s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m54s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m54s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m54s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m54s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m54s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m53s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m55s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m55s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m55s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m55s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m55s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m55s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m55s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m55s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m54s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m55s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m55s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m55s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m55s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m55s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m55s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m55s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m55s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m54s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-cs7z9     0/1     ImagePullBackOff   0          6m56s
+client-deployment-7cdc8574fc-h7dc5     0/1     ImagePullBackOff   0          6m56s
+client-deployment-7cdc8574fc-xcz4q     0/1     ImagePullBackOff   0          6m56s
+postgres-deployment-5b7fdb4969-5trvs   0/1     ImagePullBackOff   0          6m56s
+redis-deployment-58c4799ccc-frd9p      0/1     ImagePullBackOff   0          6m56s
+server-deployment-58cf857974-8t2wg     0/1     ImagePullBackOff   0          6m56s
+server-deployment-58cf857974-dcvtw     0/1     ImagePullBackOff   0          6m56s
+server-deployment-58cf857974-t4t9c     0/1     ImagePullBackOff   0          6m56s
+worker-deployment-6fb497bb98-g8jjr     0/1     ImagePullBackOff   0          6m55s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl delete all --all               
+pod "client-deployment-7cdc8574fc-cs7z9" deleted
+pod "client-deployment-7cdc8574fc-h7dc5" deleted
+pod "client-deployment-7cdc8574fc-xcz4q" deleted
+pod "postgres-deployment-5b7fdb4969-5trvs" deleted
+pod "redis-deployment-58c4799ccc-frd9p" deleted
+pod "server-deployment-58cf857974-8t2wg" deleted
+pod "server-deployment-58cf857974-dcvtw" deleted
+pod "server-deployment-58cf857974-t4t9c" deleted
+pod "worker-deployment-6fb497bb98-g8jjr" deleted
+service "client-cluster-ip-service" deleted
+service "kubernetes" deleted
+service "postgres-cluster-ip-service" deleted
+service "redis-cluster-ip-service" deleted
+service "server-cluster-ip-service" deleted
+deployment.apps "client-deployment" deleted
+deployment.apps "postgres-deployment" deleted
+deployment.apps "redis-deployment" deleted
+deployment.apps "server-deployment" deleted
+deployment.apps "worker-deployment" deleted
+replicaset.apps "client-deployment-7cdc8574fc" deleted
+replicaset.apps "postgres-deployment-5b7fdb4969" deleted
+replicaset.apps "redis-deployment-58c4799ccc" deleted
+replicaset.apps "server-deployment-58cf857974" deleted
+replicaset.apps "worker-deployment-6fb497bb98" deleted
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl apply -f ./                    
+service/client-cluster-ip-service created
+deployment.apps/client-deployment created
+persistentvolumeclaim/database-persistent-volume-claim unchanged
+service/postgres-cluster-ip-service created
+deployment.apps/postgres-deployment created
+service/redis-cluster-ip-service created
+deployment.apps/redis-deployment created
+service/server-cluster-ip-service created
+deployment.apps/server-deployment created
+deployment.apps/worker-deployment created
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods        
+NAME                                   READY   STATUS              RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ContainerCreating   0          2s
+client-deployment-7cdc8574fc-v6cjf     0/1     ContainerCreating   0          2s
+client-deployment-7cdc8574fc-xbx6k     0/1     ContainerCreating   0          2s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ContainerCreating   0          2s
+redis-deployment-58c4799ccc-6mmwc      0/1     ContainerCreating   0          2s
+server-deployment-58cf857974-6rmjf     0/1     ContainerCreating   0          2s
+server-deployment-58cf857974-kmmvl     0/1     ContainerCreating   0          2s
+server-deployment-58cf857974-twc4q     0/1     ContainerCreating   0          2s
+worker-deployment-6fb497bb98-x982k     0/1     Pending             0          2s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          11s
+client-deployment-7cdc8574fc-v6cjf     0/1     ErrImagePull       0          11s
+client-deployment-7cdc8574fc-xbx6k     0/1     ErrImagePull       0          11s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          11s
+redis-deployment-58c4799ccc-6mmwc      0/1     ErrImagePull       0          11s
+server-deployment-58cf857974-6rmjf     0/1     ErrImagePull       0          11s
+server-deployment-58cf857974-kmmvl     0/1     ImagePullBackOff   0          11s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull       0          11s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          11s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ErrImagePull       0          48s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          48s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          48s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          48s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          48s
+server-deployment-58cf857974-6rmjf     0/1     ErrImagePull       0          48s
+server-deployment-58cf857974-kmmvl     0/1     ImagePullBackOff   0          48s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          48s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          48s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ErrImagePull       0          49s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          49s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          49s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          49s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          49s
+server-deployment-58cf857974-6rmjf     0/1     ErrImagePull       0          49s
+server-deployment-58cf857974-kmmvl     0/1     ImagePullBackOff   0          49s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          49s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          49s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          51s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          51s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          51s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          51s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          51s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          51s
+server-deployment-58cf857974-kmmvl     0/1     ImagePullBackOff   0          51s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          51s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          51s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          52s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          52s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          52s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          52s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          52s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          52s
+server-deployment-58cf857974-kmmvl     0/1     ImagePullBackOff   0          52s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          52s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          52s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          53s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          53s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          53s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          53s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          53s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          53s
+server-deployment-58cf857974-kmmvl     0/1     ImagePullBackOff   0          53s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          53s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          53s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          54s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          54s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          54s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          54s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          54s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          54s
+server-deployment-58cf857974-kmmvl     0/1     ImagePullBackOff   0          54s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          54s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          54s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          55s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          55s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          55s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          55s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          55s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          55s
+server-deployment-58cf857974-kmmvl     0/1     ErrImagePull       0          55s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          55s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          55s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          56s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          56s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          56s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          56s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          56s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          56s
+server-deployment-58cf857974-kmmvl     0/1     ErrImagePull       0          56s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          56s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          56s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          57s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          57s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          57s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          57s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          57s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          57s
+server-deployment-58cf857974-kmmvl     0/1     ErrImagePull       0          57s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          57s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          57s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          58s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          58s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          58s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          58s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          58s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          58s
+server-deployment-58cf857974-kmmvl     0/1     ErrImagePull       0          58s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          58s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          58s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          58s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          58s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          58s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          58s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          58s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          58s
+server-deployment-58cf857974-kmmvl     0/1     ErrImagePull       0          58s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          58s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          58s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          59s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          59s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          59s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          59s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          59s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          59s
+server-deployment-58cf857974-kmmvl     0/1     ErrImagePull       0          59s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          59s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          59s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          59s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          59s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          59s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          59s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          59s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          59s
+server-deployment-58cf857974-kmmvl     0/1     ErrImagePull       0          59s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          59s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          59s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          60s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          60s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          60s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ErrImagePull       0          60s
+redis-deployment-58c4799ccc-6mmwc      0/1     ErrImagePull       0          60s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          60s
+server-deployment-58cf857974-kmmvl     0/1     ErrImagePull       0          60s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull       0          60s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          60s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          60s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          60s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          60s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ErrImagePull       0          60s
+redis-deployment-58c4799ccc-6mmwc      0/1     ErrImagePull       0          60s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          60s
+server-deployment-58cf857974-kmmvl     0/1     ErrImagePull       0          60s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull       0          60s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          60s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          61s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          61s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          61s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ErrImagePull       0          61s
+redis-deployment-58c4799ccc-6mmwc      0/1     ErrImagePull       0          61s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          61s
+server-deployment-58cf857974-kmmvl     0/1     ErrImagePull       0          61s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull       0          61s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          61s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          62s
+client-deployment-7cdc8574fc-v6cjf     0/1     ErrImagePull       0          62s
+client-deployment-7cdc8574fc-xbx6k     0/1     ErrImagePull       0          62s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ErrImagePull       0          62s
+redis-deployment-58c4799ccc-6mmwc      0/1     ErrImagePull       0          62s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          62s
+server-deployment-58cf857974-kmmvl     0/1     ErrImagePull       0          62s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull       0          62s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          62s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          62s
+client-deployment-7cdc8574fc-v6cjf     0/1     ErrImagePull       0          62s
+client-deployment-7cdc8574fc-xbx6k     0/1     ErrImagePull       0          62s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ErrImagePull       0          62s
+redis-deployment-58c4799ccc-6mmwc      0/1     ErrImagePull       0          62s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          62s
+server-deployment-58cf857974-kmmvl     0/1     ErrImagePull       0          62s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull       0          62s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          62s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS         RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ErrImagePull   0          63s
+client-deployment-7cdc8574fc-v6cjf     0/1     ErrImagePull   0          63s
+client-deployment-7cdc8574fc-xbx6k     0/1     ErrImagePull   0          63s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ErrImagePull   0          63s
+redis-deployment-58c4799ccc-6mmwc      0/1     ErrImagePull   0          63s
+server-deployment-58cf857974-6rmjf     0/1     ErrImagePull   0          63s
+server-deployment-58cf857974-kmmvl     0/1     ErrImagePull   0          63s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull   0          63s
+worker-deployment-6fb497bb98-x982k     0/1     ErrImagePull   0          63s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS         RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ErrImagePull   0          64s
+client-deployment-7cdc8574fc-v6cjf     0/1     ErrImagePull   0          64s
+client-deployment-7cdc8574fc-xbx6k     0/1     ErrImagePull   0          64s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ErrImagePull   0          64s
+redis-deployment-58c4799ccc-6mmwc      0/1     ErrImagePull   0          64s
+server-deployment-58cf857974-6rmjf     0/1     ErrImagePull   0          64s
+server-deployment-58cf857974-kmmvl     0/1     ErrImagePull   0          64s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull   0          64s
+worker-deployment-6fb497bb98-x982k     0/1     ErrImagePull   0          64s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS         RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ErrImagePull   0          66s
+client-deployment-7cdc8574fc-v6cjf     0/1     ErrImagePull   0          66s
+client-deployment-7cdc8574fc-xbx6k     0/1     ErrImagePull   0          66s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ErrImagePull   0          66s
+redis-deployment-58c4799ccc-6mmwc      0/1     ErrImagePull   0          66s
+server-deployment-58cf857974-6rmjf     0/1     ErrImagePull   0          66s
+server-deployment-58cf857974-kmmvl     0/1     ErrImagePull   0          66s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull   0          66s
+worker-deployment-6fb497bb98-x982k     0/1     ErrImagePull   0          66s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          75s
+client-deployment-7cdc8574fc-v6cjf     0/1     ErrImagePull       0          75s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          75s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          75s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          75s
+server-deployment-58cf857974-6rmjf     0/1     ErrImagePull       0          75s
+server-deployment-58cf857974-kmmvl     0/1     ImagePullBackOff   0          75s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          75s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          75s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          77s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          77s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          77s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          77s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          77s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          77s
+server-deployment-58cf857974-kmmvl     0/1     ImagePullBackOff   0          77s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          77s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          77s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          92s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          92s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          92s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          92s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          92s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          92s
+server-deployment-58cf857974-kmmvl     0/1     ImagePullBackOff   0          92s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          92s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          92s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          94s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          94s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          94s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          94s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          94s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          94s
+server-deployment-58cf857974-kmmvl     0/1     ImagePullBackOff   0          94s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          94s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          94s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          95s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          95s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          95s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          95s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          95s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          95s
+server-deployment-58cf857974-kmmvl     0/1     ImagePullBackOff   0          95s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          95s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          95s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          96s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          96s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          96s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          96s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          96s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          96s
+server-deployment-58cf857974-kmmvl     0/1     ImagePullBackOff   0          96s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          96s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          96s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          96s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          96s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          96s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          96s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          96s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          96s
+server-deployment-58cf857974-kmmvl     0/1     ImagePullBackOff   0          96s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          96s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          96s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          98s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          98s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          98s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          98s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          98s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          98s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          98s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          98s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          98s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          99s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          99s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          99s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          99s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          99s
+server-deployment-58cf857974-6rmjf     0/1     ImagePullBackOff   0          99s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          99s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          99s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          99s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          100s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          100s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          100s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          100s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          100s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          100s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          100s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull       0          100s
+worker-deployment-6fb497bb98-x982k     0/1     ImagePullBackOff   0          100s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          101s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          101s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          101s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          101s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          101s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          101s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          101s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull       0          101s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          101s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          102s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          102s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          102s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          102s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          102s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          102s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          102s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull       0          102s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          102s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          103s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          103s
+client-deployment-7cdc8574fc-xbx6k     0/1     ImagePullBackOff   0          103s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          103s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          103s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          103s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          103s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull       0          103s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          103s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          104s
+client-deployment-7cdc8574fc-v6cjf     0/1     ImagePullBackOff   0          104s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          104s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          104s
+redis-deployment-58c4799ccc-6mmwc      0/1     ErrImagePull       0          104s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          104s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          104s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull       0          104s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          104s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          105s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          105s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          105s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          105s
+redis-deployment-58c4799ccc-6mmwc      0/1     ErrImagePull       0          105s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          105s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          105s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull       0          105s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          105s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          107s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          107s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          107s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          107s
+redis-deployment-58c4799ccc-6mmwc      0/1     ErrImagePull       0          107s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          107s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          107s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull       0          107s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          107s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          107s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          107s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          107s
+postgres-deployment-5b7fdb4969-jkhtn   0/1     ImagePullBackOff   0          107s
+redis-deployment-58c4799ccc-6mmwc      0/1     ErrImagePull       0          107s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          107s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          107s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull       0          107s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          107s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          109s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          109s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          109s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          109s
+redis-deployment-58c4799ccc-6mmwc      0/1     ErrImagePull       0          109s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          109s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          109s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull       0          109s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          109s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     0/1     ImagePullBackOff   0          110s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          110s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          110s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          110s
+redis-deployment-58c4799ccc-6mmwc      0/1     ErrImagePull       0          110s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          110s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          110s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull       0          110s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          110s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS         RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running        0          111s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running        0          111s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running        0          111s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running        0          111s
+redis-deployment-58c4799ccc-6mmwc      0/1     ErrImagePull   0          111s
+server-deployment-58cf857974-6rmjf     1/1     Running        0          111s
+server-deployment-58cf857974-kmmvl     1/1     Running        0          111s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull   0          111s
+worker-deployment-6fb497bb98-x982k     1/1     Running        0          111s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS         RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running        0          112s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running        0          112s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running        0          112s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running        0          112s
+redis-deployment-58c4799ccc-6mmwc      0/1     ErrImagePull   0          112s
+server-deployment-58cf857974-6rmjf     1/1     Running        0          112s
+server-deployment-58cf857974-kmmvl     1/1     Running        0          112s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull   0          112s
+worker-deployment-6fb497bb98-x982k     1/1     Running        0          112s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS         RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running        0          113s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running        0          113s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running        0          113s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running        0          113s
+redis-deployment-58c4799ccc-6mmwc      0/1     ErrImagePull   0          113s
+server-deployment-58cf857974-6rmjf     1/1     Running        0          113s
+server-deployment-58cf857974-kmmvl     1/1     Running        0          113s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull   0          113s
+worker-deployment-6fb497bb98-x982k     1/1     Running        0          113s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS         RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running        0          114s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running        0          114s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running        0          114s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running        0          114s
+redis-deployment-58c4799ccc-6mmwc      0/1     ErrImagePull   0          114s
+server-deployment-58cf857974-6rmjf     1/1     Running        0          114s
+server-deployment-58cf857974-kmmvl     1/1     Running        0          114s
+server-deployment-58cf857974-twc4q     0/1     ErrImagePull   0          114s
+worker-deployment-6fb497bb98-x982k     1/1     Running        0          114s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          115s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          115s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          115s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          115s
+redis-deployment-58c4799ccc-6mmwc      0/1     ErrImagePull       0          115s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          115s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          115s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          115s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          115s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          116s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          116s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          116s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          116s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          116s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          116s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          116s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          116s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          116s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          117s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          117s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          117s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          117s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          117s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          117s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          117s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          117s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          117s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          118s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          118s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          118s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          118s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          118s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          118s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          118s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          118s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          118s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m2s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m2s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m2s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m2s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m2s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m2s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m2s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m2s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m2s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m3s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m3s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m3s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m3s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m3s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m3s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m3s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m3s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m3s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m13s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m13s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m13s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m13s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m13s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m13s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m13s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m13s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m13s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m24s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m24s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m24s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m24s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m24s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m24s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m24s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m24s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m24s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m25s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m25s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m25s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m25s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m25s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m25s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m25s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m25s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m25s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m25s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m25s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m25s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m25s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m25s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m25s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m25s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m25s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m25s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m26s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m26s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m26s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m26s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m26s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m26s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m26s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m26s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m26s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m26s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m26s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m26s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m26s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m26s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m26s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m26s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m26s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m26s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m27s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m27s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m27s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m27s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m27s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m27s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m27s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m27s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m27s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m27s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m27s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m27s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m27s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m27s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m27s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m27s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m27s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m27s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m28s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m28s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m28s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m28s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m28s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m28s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m28s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m28s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m28s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m28s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m28s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m28s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m28s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m28s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m28s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m28s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m28s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m28s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m29s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m29s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m29s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m29s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m29s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m29s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m29s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m29s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m29s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m30s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m30s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m30s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m30s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m30s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m30s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m30s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m30s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m30s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m30s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m30s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m30s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m30s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m30s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m30s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m30s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m30s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m30s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m31s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m31s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m31s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m31s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m31s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m31s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m31s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m31s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m31s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m31s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m31s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m31s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m31s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m31s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m31s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m31s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m31s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m31s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m32s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m32s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m32s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m32s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m32s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m32s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m32s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m32s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m32s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m32s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m32s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m32s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m32s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m32s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m32s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m32s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m32s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m32s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m33s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m33s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m33s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m33s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m33s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m33s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m33s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m33s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m33s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m33s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m33s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m33s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m33s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m33s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m33s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m33s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m33s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m33s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m34s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m34s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m34s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m34s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m34s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m34s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m34s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m34s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m34s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m34s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m34s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m34s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m34s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m34s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m34s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m34s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m34s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m34s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m35s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m35s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m35s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m35s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m35s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m35s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m35s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m35s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m35s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m35s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m35s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m35s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m35s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m35s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m35s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m35s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m35s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m35s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m36s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m36s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m36s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m36s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m36s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m36s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m36s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m36s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m36s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m36s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m36s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m36s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m36s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m36s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m36s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m36s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m36s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m36s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m37s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m37s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m37s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m37s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m37s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m37s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m37s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m37s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m37s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m37s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m37s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m37s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m37s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m37s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m37s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m37s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m37s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m37s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m38s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m38s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m38s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m38s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m38s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m38s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m38s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m38s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m38s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m39s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m39s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m39s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m39s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m39s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m39s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m39s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m39s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m39s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m39s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m39s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m39s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m39s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m39s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m39s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m39s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m39s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m39s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m40s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m40s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m40s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m40s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m40s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m40s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m40s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m40s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m40s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m40s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m40s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m40s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m40s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m40s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m40s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m40s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m40s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m40s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m41s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m41s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m41s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m41s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m41s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m41s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m41s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m41s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m41s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m41s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m41s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m41s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m41s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m41s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m41s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m41s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m41s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m41s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m42s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m42s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m42s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m42s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m42s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m42s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m42s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m42s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m42s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m42s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m42s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m42s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m42s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m42s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m42s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m42s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m42s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m42s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m43s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m43s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m43s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m43s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m43s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m43s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m43s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m43s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m43s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m44s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m44s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m44s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m44s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m44s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m44s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m44s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m44s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m44s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m44s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m44s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m44s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m44s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m44s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m44s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m44s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m44s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m44s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running            0          2m45s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running            0          2m45s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running            0          2m45s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running            0          2m45s
+redis-deployment-58c4799ccc-6mmwc      0/1     ImagePullBackOff   0          2m45s
+server-deployment-58cf857974-6rmjf     1/1     Running            0          2m45s
+server-deployment-58cf857974-kmmvl     1/1     Running            0          2m45s
+server-deployment-58cf857974-twc4q     0/1     ImagePullBackOff   0          2m45s
+worker-deployment-6fb497bb98-x982k     1/1     Running            0          2m45s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl describe pod redis-deployment-58c4799ccc-6mmwc
+Name:         redis-deployment-58c4799ccc-6mmwc
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.99.101
+Start Time:   Fri, 20 Nov 2020 16:36:48 -0500
+Labels:       component=redis
+              pod-template-hash=58c4799ccc
+Annotations:  <none>
+Status:       Running
+IP:           172.17.0.9
+IPs:
+  IP:           172.17.0.9
+Controlled By:  ReplicaSet/redis-deployment-58c4799ccc
+Containers:
+  redis:
+    Container ID:   docker://22544dfeb3293344be8450ad9be862a92b84139a89c241cc03022e63f962163f
+    Image:          redis
+    Image ID:       docker-pullable://redis@sha256:5b98e32b58cdbf9f6b6f77072c4915d5ebec43912114031f37fa5fa25b032489
+    Port:           6379/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Fri, 20 Nov 2020 16:39:39 -0500
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-l5thh (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-l5thh:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-l5thh
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                   From               Message
+  ----     ------     ----                  ----               -------
+  Normal   Scheduled  3m9s                  default-scheduler  Successfully assigned default/redis-deployment-58c4799ccc-6mmwc to minikube
+  Warning  Failed     2m22s (x3 over 3m3s)  kubelet            Failed to pull image "redis": rpc error: code = Unknown desc = Error response from daemon: toomanyrequests: You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limit
+  Normal   Pulling    101s (x4 over 3m6s)   kubelet            Pulling image "redis"
+  Warning  Failed     101s (x4 over 3m3s)   kubelet            Error: ErrImagePull
+  Warning  Failed     101s                  kubelet            Failed to pull image "redis": rpc error: code = Unknown desc = Error response from daemon: Get https://registry-1.docker.io/v2/: dial tcp: lookup registry-1.docker.io on 10.0.2.3:53: no such host
+  Normal   BackOff    74s (x6 over 3m2s)    kubelet            Back-off pulling image "redis"
+  Warning  Failed     62s (x7 over 3m2s)    kubelet            Error: ImagePullBackOff
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl describe pod redis-deployment-58c4799ccc-6mmwc
+Name:         redis-deployment-58c4799ccc-6mmwc
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.99.101
+Start Time:   Fri, 20 Nov 2020 16:36:48 -0500
+Labels:       component=redis
+              pod-template-hash=58c4799ccc
+Annotations:  <none>
+Status:       Running
+IP:           172.17.0.9
+IPs:
+  IP:           172.17.0.9
+Controlled By:  ReplicaSet/redis-deployment-58c4799ccc
+Containers:
+  redis:
+    Container ID:   docker://22544dfeb3293344be8450ad9be862a92b84139a89c241cc03022e63f962163f
+    Image:          redis
+    Image ID:       docker-pullable://redis@sha256:5b98e32b58cdbf9f6b6f77072c4915d5ebec43912114031f37fa5fa25b032489
+    Port:           6379/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Fri, 20 Nov 2020 16:39:39 -0500
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-l5thh (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-l5thh:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-l5thh
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                    From               Message
+  ----     ------     ----                   ----               -------
+  Normal   Scheduled  3m30s                  default-scheduler  Successfully assigned default/redis-deployment-58c4799ccc-6mmwc to minikube
+  Warning  Failed     2m43s (x3 over 3m24s)  kubelet            Failed to pull image "redis": rpc error: code = Unknown desc = Error response from daemon: toomanyrequests: You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limit
+  Normal   Pulling    2m2s (x4 over 3m27s)   kubelet            Pulling image "redis"
+  Warning  Failed     2m2s (x4 over 3m24s)   kubelet            Error: ErrImagePull
+  Warning  Failed     2m2s                   kubelet            Failed to pull image "redis": rpc error: code = Unknown desc = Error response from daemon: Get https://registry-1.docker.io/v2/: dial tcp: lookup registry-1.docker.io on 10.0.2.3:53: no such host
+  Normal   BackOff    95s (x6 over 3m23s)    kubelet            Back-off pulling image "redis"
+  Warning  Failed     83s (x7 over 3m23s)    kubelet            Error: ImagePullBackOff
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS    RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running   0          3m31s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running   0          3m31s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running   0          3m31s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running   0          3m31s
+redis-deployment-58c4799ccc-6mmwc      1/1     Running   0          3m31s
+server-deployment-58cf857974-6rmjf     1/1     Running   0          3m31s
+server-deployment-58cf857974-kmmvl     1/1     Running   0          3m31s
+server-deployment-58cf857974-twc4q     1/1     Running   0          3m31s
+worker-deployment-6fb497bb98-x982k     1/1     Running   0          3m31s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS    RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running   0          3m35s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running   0          3m35s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running   0          3m35s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running   0          3m35s
+redis-deployment-58c4799ccc-6mmwc      1/1     Running   0          3m35s
+server-deployment-58cf857974-6rmjf     1/1     Running   0          3m35s
+server-deployment-58cf857974-kmmvl     1/1     Running   0          3m35s
+server-deployment-58cf857974-twc4q     1/1     Running   0          3m35s
+worker-deployment-6fb497bb98-x982k     1/1     Running   0          3m35s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS    RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running   0          3m39s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running   0          3m39s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running   0          3m39s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running   0          3m39s
+redis-deployment-58c4799ccc-6mmwc      1/1     Running   0          3m39s
+server-deployment-58cf857974-6rmjf     1/1     Running   0          3m39s
+server-deployment-58cf857974-kmmvl     1/1     Running   0          3m39s
+server-deployment-58cf857974-twc4q     1/1     Running   0          3m39s
+worker-deployment-6fb497bb98-x982k     1/1     Running   0          3m39s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* minikube ip
+192.168.99.101
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS    RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running   0          4m30s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running   0          4m30s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running   0          4m30s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running   0          4m30s
+redis-deployment-58c4799ccc-6mmwc      1/1     Running   0          4m30s
+server-deployment-58cf857974-6rmjf     1/1     Running   0          4m30s
+server-deployment-58cf857974-kmmvl     1/1     Running   0          4m30s
+server-deployment-58cf857974-twc4q     1/1     Running   0          4m30s
+worker-deployment-6fb497bb98-x982k     1/1     Running   0          4m30s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS    RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running   0          4m33s
+client-deployment-7cdc8574fc-v6cjf     1/1     Running   0          4m33s
+client-deployment-7cdc8574fc-xbx6k     1/1     Running   0          4m33s
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running   0          4m33s
+redis-deployment-58c4799ccc-6mmwc      1/1     Running   0          4m33s
+server-deployment-58cf857974-6rmjf     1/1     Running   0          4m33s
+server-deployment-58cf857974-kmmvl     1/1     Running   0          4m33s
+server-deployment-58cf857974-twc4q     1/1     Running   0          4m33s
+worker-deployment-6fb497bb98-x982k     1/1     Running   0          4m33s
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS    RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running   0          18m
+client-deployment-7cdc8574fc-v6cjf     1/1     Running   0          18m
+client-deployment-7cdc8574fc-xbx6k     1/1     Running   0          18m
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running   0          18m
+redis-deployment-58c4799ccc-6mmwc      1/1     Running   0          18m
+server-deployment-58cf857974-6rmjf     1/1     Running   0          18m
+server-deployment-58cf857974-kmmvl     1/1     Running   0          18m
+server-deployment-58cf857974-twc4q     1/1     Running   0          18m
+worker-deployment-6fb497bb98-x982k     1/1     Running   0          18m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS    RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running   0          18m
+client-deployment-7cdc8574fc-v6cjf     1/1     Running   0          18m
+client-deployment-7cdc8574fc-xbx6k     1/1     Running   0          18m
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running   0          18m
+redis-deployment-58c4799ccc-6mmwc      1/1     Running   0          18m
+server-deployment-58cf857974-6rmjf     1/1     Running   0          18m
+server-deployment-58cf857974-kmmvl     1/1     Running   0          18m
+server-deployment-58cf857974-twc4q     1/1     Running   0          18m
+worker-deployment-6fb497bb98-x982k     1/1     Running   0          18m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/k8s/ master* cd ..
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/complex/ master* cd ..
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/lab_exercises/ master* cd ..
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/ master* git add *
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/ master* git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   extra_exercises/cli_output
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   ../section_3/extra_exercise/syslog_parser/syslog_message_extractor.py
+	modified:   ../section_4/simpleweb/Dockerfile_test1
+	modified:   ../section_4/simpleweb/Dockerfile_test2
+	modified:   ../section_4/simpleweb/Dockerfile_test3
+	modified:   ../section_4/simpleweb/Dockerfile_test4
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	../section_3/extra_exercise/syslog_parser/creds_file.json
+	../section_3/extra_exercise/syslog_parser/fixed_test.json
+	../section_3/redis-image/.vscode/
+	../section_6/.vscode/
+
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/ master* git commit -m "adding extra cli output"
+[master 635515e] adding extra cli output
+ 1 file changed, 9374 insertions(+)
+ create mode 100644 section_14/extra_exercises/cli_output
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/ master* git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 64.93 KiB | 6.49 MiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0)
+To gitlab.com:rohit104/fall2020_charles_dockerkubernates.git
+   29761e5..635515e  master -> master
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/ master* ll
+total 0
+drwxr-xr-x  3 cstolz@cisco.com  staff    96B Nov 20 16:57 extra_exercises
+drwxr-xr-x  5 cstolz@cisco.com  staff   160B Nov 20 00:59 lab_exercises
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_14/ master* cd ..
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/ master* ll
+total 16
+-rw-r--r--   1 cstolz@cisco.com  staff   522B Sep  7 13:42 README.md
+-rw-r--r--   1 cstolz@cisco.com  staff   2.9K Sep  7 13:45 course_description
+drwxr-xr-x   3 cstolz@cisco.com  staff    96B Sep  7 16:49 section_1
+drwxr-xr-x  12 cstolz@cisco.com  staff   384B Nov 11 15:44 section_10
+drwxr-xr-x  17 cstolz@cisco.com  staff   544B Nov 11 20:55 section_11
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 16 19:50 section_12
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 19 11:57 section_13
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 19 17:23 section_14
+drwxr-xr-x   3 cstolz@cisco.com  staff    96B Nov  9 16:30 section_15
+drwxr-xr-x   3 cstolz@cisco.com  staff    96B Nov  9 16:30 section_16
+drwxr-xr-x   3 cstolz@cisco.com  staff    96B Nov  9 16:30 section_17
+drwxr-xr-x   3 cstolz@cisco.com  staff    96B Nov  9 16:30 section_18
+drwxr-xr-x   3 cstolz@cisco.com  staff    96B Nov  9 16:30 section_19
+drwxr-xr-x   3 cstolz@cisco.com  staff    96B Sep  7 20:15 section_2
+drwxr-xr-x@  5 cstolz@cisco.com  staff   160B Sep 19 23:36 section_3
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Sep 29 13:52 section_4
+drwxr-xr-x@  4 cstolz@cisco.com  staff   128B Oct  6 22:34 section_5
+drwxr-xr-x   6 cstolz@cisco.com  staff   192B Oct 26 12:31 section_6
+drwxr-xr-x  15 cstolz@cisco.com  staff   480B Nov 11 16:24 section_7
+drwxr-xr-x   7 cstolz@cisco.com  staff   224B Nov  3 23:59 section_8
+drwxr-xr-x   6 cstolz@cisco.com  staff   192B Nov  9 21:45 section_9
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/ master* cd section_15
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/ master* ll
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/ master* open .
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/ master* ll
+total 0
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 21 19:01 complex
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/ master* cd complex 
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/ master* ll
+total 16
+-rw-r--r--@  1 cstolz@cisco.com  staff   836B Oct 15 18:21 Dockerrun.aws.json
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:07 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   1.0K Oct 14 22:48 docker-compose.yml
+drwxr-xr-x@ 13 cstolz@cisco.com  staff   416B Oct 21 19:43 k8s
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/ master* ls -la
+total 40
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352 Oct 21 19:01 .
+drwxr-xr-x   4 cstolz@cisco.com  staff   128 Nov 20 17:32 ..
+-rw-r--r--@  1 cstolz@cisco.com  staff  6148 Oct 21 19:08 .DS_Store
+drwxr-xr-x@ 13 cstolz@cisco.com  staff   416 Nov 20 17:32 .git
+-rw-r--r--@  1 cstolz@cisco.com  staff  1083 Oct 14 23:52 .travis.yml
+-rw-r--r--@  1 cstolz@cisco.com  staff   836 Oct 15 18:21 Dockerrun.aws.json
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352 Oct 14 23:07 client
+-rw-r--r--@  1 cstolz@cisco.com  staff  1028 Oct 14 22:48 docker-compose.yml
+drwxr-xr-x@ 13 cstolz@cisco.com  staff   416 Oct 21 19:43 k8s
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256 Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256 Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/ master* rm -r .git
+override r--r--r--  cstolz@cisco.com/staff for .git/objects/0d/ac9d09ff1da25c7948b4f8d8a54166804f14b1? ]^Z
+[1]  + 17146 suspended  rm -r .git
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/ master* sudo rm -r .git
+Password:
+Sorry, try again.
+Password:
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/ master* ls -la
+total 40
+drwxr-xr-x@ 10 cstolz@cisco.com  staff   320 Nov 20 17:33 .
+drwxr-xr-x   4 cstolz@cisco.com  staff   128 Nov 20 17:32 ..
+-rw-r--r--@  1 cstolz@cisco.com  staff  6148 Oct 21 19:08 .DS_Store
+-rw-r--r--@  1 cstolz@cisco.com  staff  1083 Oct 14 23:52 .travis.yml
+-rw-r--r--@  1 cstolz@cisco.com  staff   836 Oct 15 18:21 Dockerrun.aws.json
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352 Oct 14 23:07 client
+-rw-r--r--@  1 cstolz@cisco.com  staff  1028 Oct 14 22:48 docker-compose.yml
+drwxr-xr-x@ 13 cstolz@cisco.com  staff   416 Oct 21 19:43 k8s
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256 Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256 Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/ master* rm .DS_Store 
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/ master* ll
+total 16
+-rw-r--r--@  1 cstolz@cisco.com  staff   836B Oct 15 18:21 Dockerrun.aws.json
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:07 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   1.0K Oct 14 22:48 docker-compose.yml
+drwxr-xr-x@ 13 cstolz@cisco.com  staff   416B Oct 21 19:43 k8s
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/ master* ls -la
+total 24
+drwxr-xr-x@  9 cstolz@cisco.com  staff   288 Nov 20 17:33 .
+drwxr-xr-x   4 cstolz@cisco.com  staff   128 Nov 20 17:32 ..
+-rw-r--r--@  1 cstolz@cisco.com  staff  1083 Oct 14 23:52 .travis.yml
+-rw-r--r--@  1 cstolz@cisco.com  staff   836 Oct 15 18:21 Dockerrun.aws.json
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352 Oct 14 23:07 client
+-rw-r--r--@  1 cstolz@cisco.com  staff  1028 Oct 14 22:48 docker-compose.yml
+drwxr-xr-x@ 13 cstolz@cisco.com  staff   416 Oct 21 19:43 k8s
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256 Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256 Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/ master* kubectl get secrets
+
+NAME                  TYPE                                  DATA   AGE
+default-token-l5thh   kubernetes.io/service-account-token   3      43h
+pgpassword            Opaque                                1      116m
+regcred               kubernetes.io/dockerconfigjson        1      4h54m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/ master* 
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/ master* minikube addons enable ingress
+🔎  Verifying ingress addon...
+🌟  The 'ingress' addon is enabled
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/ master* kubectl get pods -n ingress-nginx \
+  -l app.kubernetes.io/name=ingress-nginx --watch
+
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/ master* 
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/ master* ll
+total 16
+-rw-r--r--@  1 cstolz@cisco.com  staff   836B Oct 15 18:21 Dockerrun.aws.json
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:07 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   1.0K Oct 14 22:48 docker-compose.yml
+drwxr-xr-x@ 13 cstolz@cisco.com  staff   416B Oct 21 19:43 k8s
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/ master* ll
+total 16
+-rw-r--r--@  1 cstolz@cisco.com  staff   836B Oct 15 18:21 Dockerrun.aws.json
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:07 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   1.0K Oct 14 22:48 docker-compose.yml
+drwxr-xr-x@ 13 cstolz@cisco.com  staff   416B Oct 21 19:43 k8s
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/ master* cd k8s 
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/k8s/ master* kubectl apply -f ./
+service/client-cluster-ip-service unchanged
+deployment.apps/client-deployment unchanged
+persistentvolumeclaim/database-persistent-volume-claim unchanged
+Warning: networking.k8s.io/v1beta1 Ingress is deprecated in v1.19+, unavailable in v1.22+; use networking.k8s.io/v1 Ingress
+ingress.networking.k8s.io/ingress-service created
+service/postgres-cluster-ip-service unchanged
+deployment.apps/postgres-deployment unchanged
+service/redis-cluster-ip-service unchanged
+deployment.apps/redis-deployment unchanged
+service/server-cluster-ip-service unchanged
+deployment.apps/server-deployment unchanged
+deployment.apps/worker-deployment unchanged
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/k8s/ master* kubectl get pods
+NAME                                   READY   STATUS    RESTARTS   AGE
+client-deployment-7cdc8574fc-hn52c     1/1     Running   0          3h40m
+client-deployment-7cdc8574fc-v6cjf     1/1     Running   0          3h40m
+client-deployment-7cdc8574fc-xbx6k     1/1     Running   0          3h40m
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running   0          3h40m
+redis-deployment-58c4799ccc-6mmwc      1/1     Running   0          3h40m
+server-deployment-58cf857974-6rmjf     1/1     Running   0          3h40m
+server-deployment-58cf857974-kmmvl     1/1     Running   0          3h40m
+server-deployment-58cf857974-twc4q     1/1     Running   0          3h40m
+worker-deployment-6fb497bb98-x982k     1/1     Running   0          3h40m
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/k8s/ master* ll                 
+total 88
+-rw-r--r--@ 1 cstolz@cisco.com  staff   177B Oct 21 19:04 client-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   345B Nov 20 19:40 client-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   181B Oct 21 19:26 database-persistent-volume-claim.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   655B Oct 21 19:43 ingress-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   184B Oct 21 19:18 postgres-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   805B Oct 21 19:38 postgres-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   178B Oct 21 19:16 redis-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   333B Oct 21 19:16 redis-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   180B Oct 21 19:10 server-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   920B Oct 21 19:36 server-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   451B Nov 20 19:41 worker-deployment.yaml
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/k8s/ master* minikube get ip                    
+Error: unknown command "get" for "minikube"
+Run 'minikube --help' for usage.
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/k8s/ master* minikube ip    
+192.168.99.101
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/k8s/ master* minicube dashboard
+zsh: command not found: minicube
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/k8s/ master* minikube dashboard
+🤔  Verifying dashboard health ...
+🚀  Launching proxy ...
+🤔  Verifying proxy health ...
+🎉  Opening http://127.0.0.1:60491/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/ in your default browser...
+^C
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/complex/k8s/ master* 
