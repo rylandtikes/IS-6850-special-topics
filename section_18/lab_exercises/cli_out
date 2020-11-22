@@ -1,0 +1,1021 @@
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/multi-k8s/ main* skaffold dev
+WARN[0000] The semantics of sync has changed, the folder structure is no longer flattened but preserved (see https://skaffold.dev/docs/how-tos/filesync/). The likely impacted patterns in your skaffold yaml are: [**/*.css **/*.html **/*.js **/*.js **/*.js] 
+Listing files to watch...
+ - rtikes/multi-client
+ - rtikes/multi-server
+ - rtikes/multi-worker
+Generating tags...
+ - rtikes/multi-client -> rtikes/multi-client:3e2dc4d
+ - rtikes/multi-server -> rtikes/multi-server:3e2dc4d
+ - rtikes/multi-worker -> rtikes/multi-worker:3e2dc4d
+Checking cache...
+ - rtikes/multi-client: Not found. Building
+ - rtikes/multi-server: Not found. Building
+ - rtikes/multi-worker: Not found. Building
+Building [rtikes/multi-client]...
+ERROR: (gcloud.auth.docker-helper) There was a problem refreshing your current auth tokens: ('invalid_grant: Account has been deleted', u'{\n  "error": "invalid_grant",\n  "error_description": "Account has been deleted"\n}')
+Please run:
+
+  $ gcloud auth login
+
+to obtain new credentials.
+If you have already logged in with a different account:
+
+    $ gcloud config set account ACCOUNT
+
+to select an already authenticated account to use.
+Sending build context to Docker daemon   55.3kB
+Step 1/6 : FROM node:alpine
+ ---> b85fc218c00b
+Step 2/6 : WORKDIR "/app"
+ ---> Using cache
+ ---> b84a91cdfbc1
+Step 3/6 : COPY ./package.json ./
+ ---> Using cache
+ ---> bce07a9d923f
+Step 4/6 : RUN npm install
+ ---> Using cache
+ ---> 4c0d745f79af
+Step 5/6 : COPY . .
+ ---> 4e0d4aedc7c0
+Step 6/6 : CMD ["npm", "run", "start"]
+ ---> Running in 12a7544c62b3
+ ---> a05e04552127
+Successfully built a05e04552127
+Successfully tagged rtikes/multi-client:3e2dc4d
+Building [rtikes/multi-worker]...
+ERROR: (gcloud.auth.docker-helper) There was a problem refreshing your current auth tokens: ('invalid_grant: Account has been deleted', u'{\n  "error": "invalid_grant",\n  "error_description": "Account has been deleted"\n}')
+Please run:
+
+  $ gcloud auth login
+
+to obtain new credentials.
+If you have already logged in with a different account:
+
+    $ gcloud config set account ACCOUNT
+
+to select an already authenticated account to use.
+Sending build context to Docker daemon  6.144kB
+Step 1/6 : FROM node:alpine
+ ---> b85fc218c00b
+Step 2/6 : WORKDIR "/app"
+ ---> Using cache
+ ---> b84a91cdfbc1
+Step 3/6 : COPY ./package.json ./
+ ---> Using cache
+ ---> 3a17fa575073
+Step 4/6 : RUN npm install
+ ---> Using cache
+ ---> 7b5ca5f8b1b1
+Step 5/6 : COPY . .
+ ---> 67f0347e3971
+Step 6/6 : CMD ["npm", "run", "dev"]
+ ---> Running in 41862f9b8baa
+ ---> fddcd340a6ae
+Successfully built fddcd340a6ae
+Successfully tagged rtikes/multi-worker:3e2dc4d
+Building [rtikes/multi-server]...
+ERROR: (gcloud.auth.docker-helper) There was a problem refreshing your current auth tokens: ('invalid_grant: Account has been deleted', u'{\n  "error": "invalid_grant",\n  "error_description": "Account has been deleted"\n}')
+Please run:
+
+  $ gcloud auth login
+
+to obtain new credentials.
+If you have already logged in with a different account:
+
+    $ gcloud config set account ACCOUNT
+
+to select an already authenticated account to use.
+Sending build context to Docker daemon   7.68kB
+Step 1/6 : FROM node:14.14.0-alpine
+ ---> fa2fa5d4e6f4
+Step 2/6 : WORKDIR "/app"
+ ---> Using cache
+ ---> bd3affcb0444
+Step 3/6 : COPY ./package.json ./
+ ---> Using cache
+ ---> 973a69b37f72
+Step 4/6 : RUN npm install
+ ---> Using cache
+ ---> ebd44b42e19f
+Step 5/6 : COPY . .
+ ---> 957160fd290d
+Step 6/6 : CMD ["npm", "run", "dev"]
+ ---> Running in 62f6bd3ad0af
+ ---> 2878fae139f3
+Successfully built 2878fae139f3
+Successfully tagged rtikes/multi-server:3e2dc4d
+Tags used in deployment:
+ - rtikes/multi-client -> rtikes/multi-client:a05e0455212701360f72620131107702d2b8ea03e8d8b4aafdc441114c9d3b52
+ - rtikes/multi-server -> rtikes/multi-server:2878fae139f33441164ecfb3882eb35c0dfe0247487f63edf207f322c32aa82c
+ - rtikes/multi-worker -> rtikes/multi-worker:fddcd340a6aeee58326fabd70ddb8392f33ea3ade97d9fc639a3e3a5e769b322
+exiting dev mode because first deploy failed: unable to connect to Kubernetes: getting client config for Kubernetes client: error creating REST client config in-cluster: unable to load in-cluster configuration, KUBERNETES_SERVICE_HOST and KUBERNETES_SERVICE_PORT must be defined
+(base) λ ~/Documents/utahschoolwork/multi-k8s/ main* ll
+total 32
+-rw-r--r--   1 cstolz@cisco.com  staff    13B Nov 21 19:43 README.md
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:07 client
+-rw-r--r--   1 cstolz@cisco.com  staff   798B Nov 21 01:42 deploy.sh
+drwxr-xr-x@ 15 cstolz@cisco.com  staff   480B Nov 21 20:44 k8s
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 server
+-rw-r--r--   1 cstolz@cisco.com  staff   2.3K Nov 20 23:46 service-account.json.enc
+-rw-r--r--   1 cstolz@cisco.com  staff   768B Nov 21 20:36 skaffold.yaml
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/multi-k8s/ main* cd ..
+(base) λ ~/Documents/utahschoolwork/ ll
+total 6960
+total 16
+-rw-r--r--@ 1 cstolz@cisco.com  staff   189B Nov 16 23:28 client-node-port.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   198B Nov 18 22:26 client-pod.yaml
+(base) λ ~/Documents/utahschoolwork/simplek8s/ cd ..
+(base) λ ~/Documents/utahschoolwork/ ll
+total 6960
+(base) λ ~/Documents/utahschoolwork/ cd complex
+(base) λ ~/Documents/utahschoolwork/complex/ ll
+total 24
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Nov  3 23:26 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   800B Nov  3 21:45 deploy.sh
+drwxr-xr-x  15 cstolz@cisco.com  staff   480B Sep  7 14:36 k8s
+drwxr-xr-x@  5 cstolz@cisco.com  staff   160B Oct  9 19:06 server
+-rw-r--r--   1 cstolz@cisco.com  staff   2.3K Sep  7 14:36 service-account.json.enc
+-rw-r--r--   1 cstolz@cisco.com  staff   768B Nov  3 21:46 skaffold.yaml
+drwxr-xr-x@  5 cstolz@cisco.com  staff   160B Oct  9 18:47 worker
+(base) λ ~/Documents/utahschoolwork/complex/ ll
+total 24
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Nov  3 23:26 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   800B Nov  3 21:45 deploy.sh
+drwxr-xr-x  15 cstolz@cisco.com  staff   480B Sep  7 14:36 k8s
+drwxr-xr-x@  5 cstolz@cisco.com  staff   160B Oct  9 19:06 server
+-rw-r--r--   1 cstolz@cisco.com  staff   2.3K Sep  7 14:36 service-account.json.enc
+-rw-r--r--   1 cstolz@cisco.com  staff   768B Nov  3 21:46 skaffold.yaml
+drwxr-xr-x@  5 cstolz@cisco.com  staff   160B Oct  9 18:47 worker
+(base) λ ~/Documents/utahschoolwork/complex/ cat skaffold.yaml 
+apiVersion: skaffold/v1beta2
+kind: Config
+build:
+  local:
+    push: false
+  artifacts:
+    - image: rtikes/multi-client
+      context: client
+      docker:
+        dockerfile: Dockerfile.dev
+      sync:
+        '**/*.js': .
+        '**/*.css': .
+        '**/*.html': .
+    - image: rtikes/multi-server
+      context: server
+      docker:
+        dockerfile: Dockerfile.dev
+      sync:
+        '**/*.js': .
+    - image: rtikes/multi-worker
+      context: worker
+      docker:
+        dockerfile: Dockerfile.dev
+      sync:
+        '**/*.js': .
+deploy:
+  kubectl:
+    manifests:
+      - k8s/client-deployment.yaml
+      - k8s/server-deployment.yaml
+      - k8s/worker-deployment.yaml
+      - k8s/server-cluster-ip-service.yaml
+      - k8s/client-cluster-ip-service.yaml
+(base) λ ~/Documents/utahschoolwork/complex/ ls -la
+total 40
+drwxr-xr-x  10 cstolz@cisco.com  staff   320 Nov  3 23:30 .
+drwxr-xr-x@ 28 cstolz@cisco.com  staff   896 Nov 20 21:16 ..
+-rw-r--r--@  1 cstolz@cisco.com  staff  6148 Nov  3 23:47 .DS_Store
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256 Nov  3 23:26 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   800 Nov  3 21:45 deploy.sh
+drwxr-xr-x  15 cstolz@cisco.com  staff   480 Sep  7 14:36 k8s
+drwxr-xr-x@  5 cstolz@cisco.com  staff   160 Oct  9 19:06 server
+-rw-r--r--   1 cstolz@cisco.com  staff  2352 Sep  7 14:36 service-account.json.enc
+-rw-r--r--   1 cstolz@cisco.com  staff   768 Nov  3 21:46 skaffold.yaml
+drwxr-xr-x@  5 cstolz@cisco.com  staff   160 Oct  9 18:47 worker
+(base) λ ~/Documents/utahschoolwork/complex/ skaffold dev
+WARN[0000] The semantics of sync has changed, the folder structure is no longer flattened but preserved (see https://skaffold.dev/docs/how-tos/filesync/). The likely impacted patterns in your skaffold yaml are: [**/*.css **/*.html **/*.js **/*.js **/*.js] 
+Listing files to watch...
+ - rtikes/multi-client
+watching files for artifact "rtikes/multi-client": listing files: unable to evaluate build args: reading dockerfile: open /Users/cstolz@cisco.com/Documents/utahschoolwork/complex/client/Dockerfile.dev: no such file or directory
+(base) λ ~/Documents/utahschoolwork/complex/ l
+total 40
+drwxr-xr-x  10 cstolz@cisco.com  staff   320B Nov  3 23:30 .
+drwxr-xr-x@ 28 cstolz@cisco.com  staff   896B Nov 20 21:16 ..
+-rw-r--r--@  1 cstolz@cisco.com  staff   6.0K Nov  3 23:47 .DS_Store
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Nov  3 23:26 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   800B Nov  3 21:45 deploy.sh
+drwxr-xr-x  15 cstolz@cisco.com  staff   480B Sep  7 14:36 k8s
+drwxr-xr-x@  5 cstolz@cisco.com  staff   160B Oct  9 19:06 server
+-rw-r--r--   1 cstolz@cisco.com  staff   2.3K Sep  7 14:36 service-account.json.enc
+-rw-r--r--   1 cstolz@cisco.com  staff   768B Nov  3 21:46 skaffold.yaml
+drwxr-xr-x@  5 cstolz@cisco.com  staff   160B Oct  9 18:47 worker
+(base) λ ~/Documents/utahschoolwork/complex/ ls -la
+total 40
+drwxr-xr-x  10 cstolz@cisco.com  staff   320 Nov  3 23:30 .
+drwxr-xr-x@ 28 cstolz@cisco.com  staff   896 Nov 20 21:16 ..
+-rw-r--r--@  1 cstolz@cisco.com  staff  6148 Nov  3 23:47 .DS_Store
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256 Nov  3 23:26 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   800 Nov  3 21:45 deploy.sh
+drwxr-xr-x  15 cstolz@cisco.com  staff   480 Sep  7 14:36 k8s
+drwxr-xr-x@  5 cstolz@cisco.com  staff   160 Oct  9 19:06 server
+-rw-r--r--   1 cstolz@cisco.com  staff  2352 Sep  7 14:36 service-account.json.enc
+-rw-r--r--   1 cstolz@cisco.com  staff   768 Nov  3 21:46 skaffold.yaml
+drwxr-xr-x@  5 cstolz@cisco.com  staff   160 Oct  9 18:47 worker
+(base) λ ~/Documents/utahschoolwork/complex/ cd ..
+(base) λ ~/Documents/utahschoolwork/ ll
+total 6960
+(base) λ ~/Documents/utahschoolwork/ cd multi-docker 
+(base) λ ~/Documents/utahschoolwork/multi-docker/ main* ll
+total 24
+-rw-r--r--@  1 cstolz@cisco.com  staff   800B Nov 11 12:25 Dockerrun.aws.json
+-rw-r--r--   1 cstolz@cisco.com  staff    15B Nov 10 23:26 README.md
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:07 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   1.0K Oct 14 22:48 docker-compose.yml
+drwxr-xr-x@  5 cstolz@cisco.com  staff   160B Oct 14 23:02 nginx
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/multi-docker/ main* cd ..
+(base) λ ~/Documents/utahschoolwork/ ll
+total 6960
+(base) λ ~/Documents/utahschoolwork/ cd simplek8s 
+(base) λ ~/Documents/utahschoolwork/simplek8s/ ll
+total 16
+-rw-r--r--@ 1 cstolz@cisco.com  staff   189B Nov 16 23:28 client-node-port.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   198B Nov 18 22:26 client-pod.yaml
+(base) λ ~/Documents/utahschoolwork/simplek8s/ cat *
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-node-port
+spec:
+  type: NodePort
+  ports:
+    - port: 3050
+      targetPort: 3000
+      nodePort: 31515
+  selector:
+    component: web
+apiVersion: v1
+kind: Pod
+metadata:
+  name: client-pod
+  labels:
+    component: web
+spec:
+  containers:
+    - name: client
+      image: rtikes/multi-worker
+      ports:
+        - containerPort: 9999
+(base) λ ~/Documents/utahschoolwork/simplek8s/ cd ..
+(base) λ ~/Documents/utahschoolwork/ cd ..
+(base) λ ~/Documents/ ll
+total 2791720
+(base) λ ~/Documents/ cd utahschoolwork 
+total 16
+-rw-r--r--   1 cstolz@cisco.com  staff   522B Sep  7 13:42 README.md
+-rw-r--r--   1 cstolz@cisco.com  staff   2.9K Sep  7 13:45 course_description
+drwxr-xr-x   3 cstolz@cisco.com  staff    96B Sep  7 16:49 section_1
+drwxr-xr-x  12 cstolz@cisco.com  staff   384B Nov 11 15:44 section_10
+drwxr-xr-x  17 cstolz@cisco.com  staff   544B Nov 11 20:55 section_11
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 16 19:50 section_12
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 19 11:57 section_13
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 19 17:23 section_14
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 20 20:34 section_15
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 20 21:07 section_16
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 21 15:45 section_17
+drwxr-xr-x   2 cstolz@cisco.com  staff    64B Nov 21 20:33 section_18
+drwxr-xr-x   3 cstolz@cisco.com  staff    96B Sep  7 20:15 section_2
+drwxr-xr-x@  5 cstolz@cisco.com  staff   160B Sep 19 23:36 section_3
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Sep 29 13:52 section_4
+drwxr-xr-x@  4 cstolz@cisco.com  staff   128B Oct  6 22:34 section_5
+drwxr-xr-x   6 cstolz@cisco.com  staff   192B Oct 26 12:31 section_6
+drwxr-xr-x  15 cstolz@cisco.com  staff   480B Nov 11 16:24 section_7
+drwxr-xr-x   7 cstolz@cisco.com  staff   224B Nov  3 23:59 section_8
+drwxr-xr-x   6 cstolz@cisco.com  staff   192B Nov  9 21:45 section_9
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/ master* cd section_15
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/ master* ll
+total 0
+drwxr-xr-x  3 cstolz@cisco.com  staff    96B Nov 20 20:35 extra_exercises
+drwxr-xr-x  4 cstolz@cisco.com  staff   128B Nov 20 20:35 lab_exercises
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/ master* cd lab_exercises 
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/lab_exercises/ master* ll
+total 0
+drwxr-xr-x@ 9 cstolz@cisco.com  staff   288B Nov 21 03:05 complex
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/lab_exercises/ master* cd complex 
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/lab_exercises/complex/ master* ll
+total 16
+-rw-r--r--@  1 cstolz@cisco.com  staff   836B Oct 15 18:21 Dockerrun.aws.json
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:07 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   1.0K Oct 14 22:48 docker-compose.yml
+drwxr-xr-x@ 13 cstolz@cisco.com  staff   416B Oct 21 19:43 k8s
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/lab_exercises/complex/ master* cd k8s 
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/lab_exercises/complex/k8s/ master* ll
+total 88
+-rw-r--r--@ 1 cstolz@cisco.com  staff   177B Oct 21 19:04 client-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   345B Nov 20 19:40 client-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   181B Oct 21 19:26 database-persistent-volume-claim.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   655B Oct 21 19:43 ingress-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   184B Oct 21 19:18 postgres-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   805B Oct 21 19:38 postgres-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   178B Oct 21 19:16 redis-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   333B Oct 21 19:16 redis-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   180B Oct 21 19:10 server-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   920B Oct 21 19:36 server-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   451B Nov 20 19:41 worker-deployment.yaml
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/lab_exercises/complex/k8s/ master* cat *
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-cluster-ip-service
+spec:
+  type: ClusterIP
+  selector:
+    component: web
+  ports:
+    - port: 3000
+      targetPort: 3000
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: web
+  template:
+    metadata:
+      labels:
+        component: web
+    spec:
+      containers:
+        - name: client
+          image: rtikes/multi-client
+          ports:
+            - containerPort: 3000
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: database-persistent-volume-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-service
+  annotations:
+    kubernetes.io/ingress.class: 'nginx'
+    nginx.ingress.kubernetes.io/use-regex: 'true'
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    # UPDATE THIS LINE ABOVE
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /?(.*)
+            # UPDATE THIS LINE ABOVE
+            backend:
+              serviceName: client-cluster-ip-service
+              servicePort: 3000
+          - path: /api/?(.*)
+            # UPDATE THIS LINE ABOVE
+            backend:
+              serviceName: server-cluster-ip-service
+              servicePort: 5000
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-cluster-ip-service
+spec:
+  type: ClusterIP
+  selector:
+    component: postgres
+  ports:
+    - port: 5432
+      targetPort: 5432
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: postgres
+  template:
+    metadata:
+      labels:
+        component: postgres
+    spec:
+      volumes:
+        - name: postgres-storage
+          persistentVolumeClaim:
+            claimName: database-persistent-volume-claim
+      containers:
+        - name: postgres
+          image: postgres
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - name: postgres-storage
+              mountPath: /var/lib/postgresql/data
+              subPath: postgres
+          env:
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: pgpassword
+                  key: PGPASSWORD
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-cluster-ip-service
+spec:
+  type: ClusterIP
+  selector:
+    component: redis
+  ports:
+    - port: 6379
+      targetPort: 6379
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: redis
+  template:
+    metadata:
+      labels:
+        component: redis
+    spec:
+      containers:
+        - name: redis
+          image: redis
+          ports:
+            - containerPort: 6379
+apiVersion: v1
+kind: Service
+metadata:
+  name: server-cluster-ip-service
+spec:
+  type: ClusterIP
+  selector:
+    component: server
+  ports:
+    - port: 5000
+      targetPort: 5000
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: server
+  template:
+    metadata:
+      labels:
+        component: server
+    spec:
+      containers:
+        - name: server
+          image: cygnetops/multi-server-pgfix-5-11
+          ports:
+            - containerPort: 5000
+          env:
+            - name: REDIS_HOST
+              value: redis-cluster-ip-service
+            - name: REDIS_PORT
+              value: '6379'
+            - name: PGUSER
+              value: postgres
+            - name: PGHOST
+              value: postgres-cluster-ip-service
+            - name: PGPORT
+              value: '5432'
+            - name: PGDATABASE
+              value: postgres
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: pgpassword
+                  key: PGPASSWORD
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: worker
+  template:
+    metadata:
+      labels:
+        component: worker
+    spec:
+      containers:
+        - name: worker
+          image: rtikes/multi-worker
+          env:
+            - name: REDIS_HOST
+              value: redis-cluster-ip-service
+            - name: REDIS_PORT
+              value: '6379'
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/lab_exercises/complex/k8s/ master* cd ..
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/lab_exercises/complex/ master* ll
+total 16
+-rw-r--r--@  1 cstolz@cisco.com  staff   836B Oct 15 18:21 Dockerrun.aws.json
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:07 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   1.0K Oct 14 22:48 docker-compose.yml
+drwxr-xr-x@ 13 cstolz@cisco.com  staff   416B Oct 21 19:43 k8s
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 server
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/lab_exercises/complex/ master* vi skaffold.yaml
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/lab_exercises/complex/ master* skaffold dev    
+WARN[0000] The semantics of sync has changed, the folder structure is no longer flattened but preserved (see https://skaffold.dev/docs/how-tos/filesync/). The likely impacted patterns in your skaffold yaml are: [**/*.css **/*.html **/*.js **/*.js **/*.js] 
+Listing files to watch...
+ - rtikes/multi-client
+ - rtikes/multi-server
+ - rtikes/multi-worker
+Generating tags...
+ - rtikes/multi-client -> rtikes/multi-client:09c1f3c
+ - rtikes/multi-server -> rtikes/multi-server:09c1f3c
+ - rtikes/multi-worker -> rtikes/multi-worker:09c1f3c
+Checking cache...
+ - rtikes/multi-client: Found. Tagging
+ - rtikes/multi-server: Found. Tagging
+ - rtikes/multi-worker: Found. Tagging
+Tags used in deployment:
+ - rtikes/multi-client -> rtikes/multi-client:a05e0455212701360f72620131107702d2b8ea03e8d8b4aafdc441114c9d3b52
+ - rtikes/multi-server -> rtikes/multi-server:2878fae139f33441164ecfb3882eb35c0dfe0247487f63edf207f322c32aa82c
+ - rtikes/multi-worker -> rtikes/multi-worker:fddcd340a6aeee58326fabd70ddb8392f33ea3ade97d9fc639a3e3a5e769b322
+exiting dev mode because first deploy failed: unable to connect to Kubernetes: getting client config for Kubernetes client: error creating REST client config in-cluster: unable to load in-cluster configuration, KUBERNETES_SERVICE_HOST and KUBERNETES_SERVICE_PORT must be defined
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/lab_exercises/complex/ master* minikube start
+😄  minikube v1.15.1 on Darwin 10.15.7
+✨  Using the virtualbox driver based on existing profile
+👍  Starting control plane node minikube in cluster minikube
+🔄  Restarting existing virtualbox VM for "minikube" ...
+🐳  Preparing Kubernetes v1.19.4 on Docker 19.03.13 ...
+🔎  Verifying Kubernetes components...
+🔎  Verifying ingress addon...
+🌟  Enabled addons: storage-provisioner, default-storageclass, ingress, dashboard
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/lab_exercises/complex/ master* skaffold dev  
+WARN[0000] The semantics of sync has changed, the folder structure is no longer flattened but preserved (see https://skaffold.dev/docs/how-tos/filesync/). The likely impacted patterns in your skaffold yaml are: [**/*.css **/*.html **/*.js **/*.js **/*.js] 
+Listing files to watch...
+ - rtikes/multi-client
+ - rtikes/multi-server
+ - rtikes/multi-worker
+Generating tags...
+ - rtikes/multi-client -> rtikes/multi-client:09c1f3c
+ - rtikes/multi-server -> rtikes/multi-server:09c1f3c
+ - rtikes/multi-worker -> rtikes/multi-worker:09c1f3c
+Checking cache...
+ - rtikes/multi-client: Not found. Building
+ - rtikes/multi-server: Not found. Building
+ - rtikes/multi-worker: Not found. Building
+Found [minikube] context, using local docker daemon.
+Building [rtikes/multi-worker]...
+ERROR: (gcloud.auth.docker-helper) There was a problem refreshing your current auth tokens: ('invalid_grant: Account has been deleted', u'{\n  "error": "invalid_grant",\n  "error_description": "Account has been deleted"\n}')
+Please run:
+
+  $ gcloud auth login
+
+to obtain new credentials.
+If you have already logged in with a different account:
+
+    $ gcloud config set account ACCOUNT
+
+to select an already authenticated account to use.
+Sending build context to Docker daemon  6.144kB
+Step 1/6 : FROM node:alpine
+alpine: Pulling from library/node
+cbdbe7a5bc2a: Already exists 
+5180ee6d8590: Pull complete 
+77de9c287c84: Pull complete 
+507c8dbcc09a: Pull complete 
+Digest: sha256:7614f96f47ede63333a7ddbd31c71207956eb39b641e724f81c198c067bacf41
+Status: Downloaded newer image for node:alpine
+ ---> 7ddc154413f5
+Step 2/6 : WORKDIR "/app"
+ ---> Running in 683d5c51d6a0
+ ---> c0445e2a0e70
+Step 3/6 : COPY ./package.json ./
+ ---> be425dbf76e9
+Step 4/6 : RUN npm install
+ ---> Running in a4af333a2e56
+npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+npm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+
+added 240 packages, and audited 240 packages in 13s
+
+found 0 vulnerabilities
+npm notice 
+npm notice New patch version of npm available! 7.0.8 -> 7.0.13
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v7.0.13>
+npm notice Run `npm install -g npm@7.0.13` to update!
+npm notice 
+ ---> 2c33e2df684a
+Step 5/6 : COPY . .
+ ---> 43fcd001d795
+Step 6/6 : CMD ["npm", "run", "dev"]
+ ---> Running in 8817d4dcd340
+ ---> ec26d2eb9af1
+Successfully built ec26d2eb9af1
+Successfully tagged rtikes/multi-worker:09c1f3c
+Building [rtikes/multi-server]...
+ERROR: (gcloud.auth.docker-helper) There was a problem refreshing your current auth tokens: ('invalid_grant: Account has been deleted', u'{\n  "error": "invalid_grant",\n  "error_description": "Account has been deleted"\n}')
+Please run:
+
+  $ gcloud auth login
+
+to obtain new credentials.
+If you have already logged in with a different account:
+
+    $ gcloud config set account ACCOUNT
+
+to select an already authenticated account to use.
+Sending build context to Docker daemon   7.68kB
+Step 1/6 : FROM node:14.14.0-alpine
+14.14.0-alpine: Pulling from library/node
+cbdbe7a5bc2a: Already exists 
+378c9540b231: Already exists 
+fd5173d17220: Already exists 
+72f138d46980: Already exists 
+Digest: sha256:97c4cddbbf97299f5eda09946ba31d424c84848d4f4c1b7adef40e2e0d478345
+Status: Downloaded newer image for node:14.14.0-alpine
+ ---> fa2fa5d4e6f4
+Step 2/6 : WORKDIR "/app"
+ ---> Running in a603d8fb1c01
+ ---> 3cb6020c69fd
+Step 3/6 : COPY ./package.json ./
+ ---> e761658cef9c
+Step 4/6 : RUN npm install
+ ---> Running in bc25423607c1
+npm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+
+> nodemon@1.18.3 postinstall /app/node_modules/nodemon
+> node bin/postinstall || exit 0
+
+Love nodemon? You can now support the project via the open collective:
+ > https://opencollective.com/nodemon/donate
+
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules/chokidar/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN app No description
+npm WARN app No repository field.
+npm WARN app No license field.
+
+added 305 packages from 192 contributors and audited 306 packages in 12.034s
+found 0 vulnerabilities
+
+ ---> 8e32d1b0bcb6
+Step 5/6 : COPY . .
+ ---> c059160f7fd6
+Step 6/6 : CMD ["npm", "run", "dev"]
+ ---> Running in e7f2ff643a2b
+ ---> 3ad8459c15a4
+Successfully built 3ad8459c15a4
+Successfully tagged rtikes/multi-server:09c1f3c
+Building [rtikes/multi-client]...
+ERROR: (gcloud.auth.docker-helper) There was a problem refreshing your current auth tokens: ('invalid_grant: Account has been deleted', u'{\n  "error": "invalid_grant",\n  "error_description": "Account has been deleted"\n}')
+Please run:
+
+  $ gcloud auth login
+
+to obtain new credentials.
+If you have already logged in with a different account:
+
+    $ gcloud config set account ACCOUNT
+
+to select an already authenticated account to use.
+Sending build context to Docker daemon   55.3kB
+Step 1/6 : FROM node:alpine
+ ---> 7ddc154413f5
+Step 2/6 : WORKDIR "/app"
+ ---> Using cache
+ ---> c0445e2a0e70
+Step 3/6 : COPY ./package.json ./
+ ---> 81fd387dcc4e
+Step 4/6 : RUN npm install
+ ---> Running in 3f21818eb2c0
+npm WARN deprecated @hapi/topo@3.1.6: This version has been deprecated and is no longer supported or maintained
+npm WARN deprecated @hapi/bourne@1.3.2: This version has been deprecated and is no longer supported or maintained
+npm WARN deprecated @hapi/address@2.1.4: Moved to 'npm install @sideway/address'
+npm WARN deprecated @hapi/hoek@8.5.1: This version has been deprecated and is no longer supported or maintained
+npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+npm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+npm WARN deprecated @hapi/joi@15.1.1: Switch to 'npm install joi'
+npm WARN deprecated har-validator@5.1.5: this library is no longer supported
+npm WARN deprecated request-promise-native@1.0.9: request-promise-native has been deprecated because it extends the now deprecated request package, see https://github.com/request/request/issues/3142
+npm WARN deprecated left-pad@1.3.0: use String.prototype.padStart()
+npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+npm WARN deprecated fsevents@2.1.2: Please update to latest version
+npm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+npm WARN deprecated eslint-loader@3.0.3: This loader has been deprecated. Please use eslint-webpack-plugin
+npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+npm WARN deprecated @types/testing-library__dom@7.5.0: This is a stub types definition. testing-library__dom provides its own type definitions, so you do not need this installed.
+npm WARN deprecated core-js@2.6.11: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
+
+added 1962 packages, and audited 1962 packages in 2m
+
+76 packages are looking for funding
+  run `npm fund` for details
+
+5 vulnerabilities (1 moderate, 4 high)
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+npm notice 
+npm notice New patch version of npm available! 7.0.8 -> 7.0.13
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v7.0.13>
+npm notice Run `npm install -g npm@7.0.13` to update!
+npm notice 
+ ---> cfadb6a6bcf4
+Step 5/6 : COPY . .
+ ---> 3f28760e41ea
+Step 6/6 : CMD ["npm", "run", "start"]
+ ---> Running in ee0ccdd45031
+ ---> fcfb55607b98
+Successfully built fcfb55607b98
+Successfully tagged rtikes/multi-client:09c1f3c
+Tags used in deployment:
+ - rtikes/multi-client -> rtikes/multi-client:fcfb55607b98553308fb7a17f8f08dca8013809b82b90b93f45680646576c7a7
+ - rtikes/multi-server -> rtikes/multi-server:3ad8459c15a4bcc3c270f95629fe8d5bdb2d6d40aec1ef764d0f67eab9bf6218
+ - rtikes/multi-worker -> rtikes/multi-worker:ec26d2eb9af1140ea4e106a5b12bff65bfa63612455ffa843e91c61b7d20093f
+Starting deploy...
+WARN[0206] image [rtikes/multi-server] is not used by the deployment 
+ - deployment.apps/client-deployment configured
+ - deployment.apps/server-deployment configured
+ - deployment.apps/worker-deployment configured
+ - service/server-cluster-ip-service configured
+ - service/client-cluster-ip-service configured
+Waiting for deployments to stabilize...
+ - deployment/worker-deployment: container worker is waiting to start: rtikes/multi-worker:ec26d2eb9af1140ea4e106a5b12bff65bfa63612455ffa843e91c61b7d20093f can't be pulled
+    - pod/worker-deployment-787f6456d7-zrccb: container worker is waiting to start: rtikes/multi-worker:ec26d2eb9af1140ea4e106a5b12bff65bfa63612455ffa843e91c61b7d20093f can't be pulled
+ - deployment/worker-deployment failed. Error: container worker is waiting to start: rtikes/multi-worker:ec26d2eb9af1140ea4e106a5b12bff65bfa63612455ffa843e91c61b7d20093f can't be pulled.
+Cleaning up...
+ - deployment.apps "client-deployment" deleted
+ - deployment.apps "server-deployment" deleted
+ - deployment.apps "worker-deployment" deleted
+ - service "server-cluster-ip-service" deleted
+ - service "client-cluster-ip-service" deleted
+exiting dev mode because first deploy failed: 3/3 deployment(s) failed
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/lab_exercises/complex/ master* kubectl get pods
+NAME                                   READY   STATUS    RESTARTS   AGE
+postgres-deployment-5b7fdb4969-jkhtn   1/1     Running   1          28h
+redis-deployment-58c4799ccc-6mmwc      1/1     Running   1          28h
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/lab_exercises/complex/ master* ll
+total 24
+-rw-r--r--@  1 cstolz@cisco.com  staff   836B Oct 15 18:21 Dockerrun.aws.json
+drwxr-xr-x@ 11 cstolz@cisco.com  staff   352B Oct 14 23:07 client
+-rw-r--r--@  1 cstolz@cisco.com  staff   1.0K Oct 14 22:48 docker-compose.yml
+drwxr-xr-x@ 13 cstolz@cisco.com  staff   416B Oct 21 19:43 k8s
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 server
+-rw-r--r--   1 cstolz@cisco.com  staff   769B Nov 21 21:08 skaffold.yaml
+drwxr-xr-x@  8 cstolz@cisco.com  staff   256B Oct 14 22:59 worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/lab_exercises/complex/ master* ld
+ld: warning: platform not specified
+ld: warning: -arch not specified
+ld: warning: No platform min-version specified on command line
+ld: no object files specified
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/lab_exercises/complex/ master* ls
+Dockerrun.aws.json client             docker-compose.yml k8s                server             skaffold.yaml      worker
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/lab_exercises/complex/ master* cd k8s 
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/lab_exercises/complex/k8s/ master* ll
+total 88
+-rw-r--r--@ 1 cstolz@cisco.com  staff   177B Oct 21 19:04 client-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   345B Nov 20 19:40 client-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   181B Oct 21 19:26 database-persistent-volume-claim.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   655B Oct 21 19:43 ingress-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   184B Oct 21 19:18 postgres-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   805B Oct 21 19:38 postgres-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   178B Oct 21 19:16 redis-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   333B Oct 21 19:16 redis-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   180B Oct 21 19:10 server-cluster-ip-service.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   920B Oct 21 19:36 server-deployment.yaml
+-rw-r--r--@ 1 cstolz@cisco.com  staff   451B Nov 20 19:41 worker-deployment.yaml
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_15/lab_exercises/complex/k8s/ master* cd .....
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/ master* ll
+total 16
+-rw-r--r--   1 cstolz@cisco.com  staff   522B Sep  7 13:42 README.md
+-rw-r--r--   1 cstolz@cisco.com  staff   2.9K Sep  7 13:45 course_description
+drwxr-xr-x   3 cstolz@cisco.com  staff    96B Sep  7 16:49 section_1
+drwxr-xr-x  12 cstolz@cisco.com  staff   384B Nov 11 15:44 section_10
+drwxr-xr-x  17 cstolz@cisco.com  staff   544B Nov 11 20:55 section_11
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 16 19:50 section_12
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 19 11:57 section_13
+drwxr-xr-x   7 cstolz@cisco.com  staff   224B Nov  3 23:59 section_8
+drwxr-xr-x   6 cstolz@cisco.com  staff   192B Nov  9 21:45 section_9
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/ master* mkdir course_completion 
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/ master* cd course_completion 
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/course_completion/ master* ll
+total 2264
+-rw-r--r--@ 1 cstolz@cisco.com  staff   1.1M Nov 21 21:20 course-completion-certificate-UC-6c30d651-cbc6-4995-b85a-81150d3acc03.pdf
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/course_completion/ master* ll
+total 2264
+-rw-r--r--@ 1 cstolz@cisco.com  staff   1.1M Nov 21 21:20 course-completion-certificate-UC-6c30d651-cbc6-4995-b85a-81150d3acc03.pdf
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/course_completion/ master* cd ..
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/ master* ll
+total 16
+-rw-r--r--   1 cstolz@cisco.com  staff   522B Sep  7 13:42 README.md
+drwxr-xr-x   3 cstolz@cisco.com  staff    96B Nov 21 21:24 course_completion
+-rw-r--r--   1 cstolz@cisco.com  staff   2.9K Sep  7 13:45 course_description
+drwxr-xr-x   3 cstolz@cisco.com  staff    96B Sep  7 16:49 section_1
+drwxr-xr-x  12 cstolz@cisco.com  staff   384B Nov 11 15:44 section_10
+drwxr-xr-x  17 cstolz@cisco.com  staff   544B Nov 11 20:55 section_11
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 16 19:50 section_12
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 19 11:57 section_13
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 19 17:23 section_14
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 20 20:34 section_15
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 20 21:07 section_16
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 21 15:45 section_17
+drwxr-xr-x   2 cstolz@cisco.com  staff    64B Nov 21 20:33 section_18
+drwxr-xr-x   3 cstolz@cisco.com  staff    96B Sep  7 20:15 section_2
+drwxr-xr-x@  5 cstolz@cisco.com  staff   160B Sep 19 23:36 section_3
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Sep 29 13:52 section_4
+drwxr-xr-x@  4 cstolz@cisco.com  staff   128B Oct  6 22:34 section_5
+drwxr-xr-x   6 cstolz@cisco.com  staff   192B Oct 26 12:31 section_6
+drwxr-xr-x  15 cstolz@cisco.com  staff   480B Nov 11 16:24 section_7
+drwxr-xr-x   7 cstolz@cisco.com  staff   224B Nov  3 23:59 section_8
+drwxr-xr-x   6 cstolz@cisco.com  staff   192B Nov  9 21:45 section_9
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/ master* git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   section_3/extra_exercise/syslog_parser/syslog_message_extractor.py
+	modified:   section_4/simpleweb/Dockerfile_test1
+	modified:   section_4/simpleweb/Dockerfile_test2
+	modified:   section_4/simpleweb/Dockerfile_test3
+	modified:   section_4/simpleweb/Dockerfile_test4
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	course_completion/
+	section_15/lab_exercises/complex/skaffold.yaml
+	section_16/lab_exercises/travis_job_745037453_log
+	section_16/lab_exercises/travis_job_745079530_log
+	section_3/extra_exercise/syslog_parser/creds_file.json
+	section_3/extra_exercise/syslog_parser/fixed_test.json
+	section_3/redis-image/.vscode/
+	section_6/.vscode/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/ master* git add section_16/lab_exercises/travis_job_745037453_log
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/ master* git add section_16/lab_exercises/travis_job_745079530_log
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/ master* git add course_completion/
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/ master* git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   course_completion/course-completion-certificate-UC-6c30d651-cbc6-4995-b85a-81150d3acc03.pdf
+	new file:   section_16/lab_exercises/travis_job_745037453_log
+	new file:   section_16/lab_exercises/travis_job_745079530_log
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   section_3/extra_exercise/syslog_parser/syslog_message_extractor.py
+	modified:   section_4/simpleweb/Dockerfile_test1
+	modified:   section_4/simpleweb/Dockerfile_test2
+	modified:   section_4/simpleweb/Dockerfile_test3
+	modified:   section_4/simpleweb/Dockerfile_test4
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	section_15/lab_exercises/complex/skaffold.yaml
+	section_3/extra_exercise/syslog_parser/creds_file.json
+	section_3/extra_exercise/syslog_parser/fixed_test.json
+	section_3/redis-image/.vscode/
+	section_6/.vscode/
+
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/ master* cd ..
+(base) λ ~/Documents/utahschoolwork/ ls -la
+total 7024
+total 16
+-rw-r--r--   1 cstolz@cisco.com  staff   522B Sep  7 13:42 README.md
+drwxr-xr-x   3 cstolz@cisco.com  staff    96B Nov 21 21:24 course_completion
+-rw-r--r--   1 cstolz@cisco.com  staff   2.9K Sep  7 13:45 course_description
+drwxr-xr-x   3 cstolz@cisco.com  staff    96B Sep  7 16:49 section_1
+drwxr-xr-x  12 cstolz@cisco.com  staff   384B Nov 11 15:44 section_10
+drwxr-xr-x  17 cstolz@cisco.com  staff   544B Nov 11 20:55 section_11
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 16 19:50 section_12
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 19 11:57 section_13
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 19 17:23 section_14
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 20 20:34 section_15
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 20 21:07 section_16
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Nov 21 15:45 section_17
+drwxr-xr-x   2 cstolz@cisco.com  staff    64B Nov 21 20:33 section_18
+drwxr-xr-x   3 cstolz@cisco.com  staff    96B Sep  7 20:15 section_2
+drwxr-xr-x@  5 cstolz@cisco.com  staff   160B Sep 19 23:36 section_3
+drwxr-xr-x   5 cstolz@cisco.com  staff   160B Sep 29 13:52 section_4
+drwxr-xr-x@  4 cstolz@cisco.com  staff   128B Oct  6 22:34 section_5
+drwxr-xr-x   6 cstolz@cisco.com  staff   192B Oct 26 12:31 section_6
+drwxr-xr-x  15 cstolz@cisco.com  staff   480B Nov 11 16:24 section_7
+drwxr-xr-x   7 cstolz@cisco.com  staff   224B Nov  3 23:59 section_8
+drwxr-xr-x   6 cstolz@cisco.com  staff   192B Nov  9 21:45 section_9
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/ master* cd  section_16                      
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_16/ master* ll
+total 0
+drwxr-xr-x   2 cstolz@cisco.com  staff    64B Nov 20 21:07 extra_exercises
+drwxr-xr-x  14 cstolz@cisco.com  staff   448B Nov 21 15:47 lab_exercises
+(base) λ ~/Documents/utahschoolwork/fall2020_charles_dockerkubernates/section_16/ master* tree
+.
+├── extra_exercises
+└── lab_exercises
+    ├── README.md
+    ├── cli_output1
+    ├── client
+    │   ├── Dockerfile
+    │   ├── Dockerfile.dev
+    │   ├── README.md
+    │   ├── nginx
+    │   │   └── default.conf
+    │   ├── node_modules
+    │   ├── package.json
+    │   ├── public
+    │   │   ├── favicon.ico
+    │   │   ├── index.html
+    │   │   ├── logo192.png
+    │   │   ├── logo512.png
+    │   │   ├── manifest.json
+    │   │   └── robots.txt
+    │   └── src
+    │       ├── App.css
+    │       ├── App.js
+    │       ├── App.test.js
+    │       ├── Fib.js
+    │       ├── OtherPage.js
+    │       ├── index.css
+    │       ├── index.js
+    │       ├── logo.svg
+    │       ├── serviceWorker.js
+    │       └── setupTests.js
+    ├── deploy.sh
+    ├── k8s
+    │   ├── client-cluster-ip-service.yaml
+    │   ├── client-deployment.yaml
+    │   ├── database-persistent-volume-claim.yaml
+    │   ├── ingress-service.yaml
+    │   ├── postgres-cluster-ip-service.yaml
+    │   ├── postgres-deployment.yaml
+    │   ├── redis-cluster-ip-service.yaml
+    │   ├── redis-deployment.yaml
+    │   ├── server-cluster-ip-service.yaml
+    │   ├── server-deployment.yaml
+    │   └── worker-deployment.yaml
+    ├── server
+    │   ├── Dockerfile
+    │   ├── Dockerfile.dev
+    │   ├── index.js
+    │   ├── keys.js
+    │   ├── node_modules
+    │   └── package.json
+    ├── service-account.json.enc
+    ├── travis_job_745037453_log
+    ├── travis_job_745079530_log
+    └── worker
+        ├── Dockerfile
+        ├── Dockerfile.dev
+        ├── index.js
+        ├── keys.js
+        ├── node_modules
+        └── package.json
+
