@@ -1,0 +1,915 @@
+travis_fold:start:worker_info
+[0K[33;1mWorker information[0m
+hostname: 878caac1-741f-4291-9471-8509e1a4ac3a@1.worker-org-cfdfb76bd-fczmv.gce-production-4
+version: v6.2.20-1-g3a987d6 https://github.com/travis-ci/worker/tree/3a987d61ed169c9539ad435d1a9b5f2d8c6ce4a6
+instance: travis-job-419dcfde-7cd0-4765-8ede-913807c56a07 travis-ci-sardonyx-xenial-1593004276-4d46c6b3 (via amqp)
+startup: 6.252479933s
+travis_fold:end:worker_info
+[0Ktravis_time:start:03c5940a
+[0Ktravis_time:end:03c5940a:start=1606006352207987945,finish=1606006352354286996,duration=146299051,event=no_world_writable_dirs
+[0Ktravis_time:start:2278f038
+[0Ktravis_time:end:2278f038:start=1606006352356878407,finish=1606006352359817472,duration=2939065,event=setup_filter
+[0Ktravis_time:start:0063e322
+[0Ktravis_time:end:0063e322:start=1606006352364175816,finish=1606006352371917608,duration=7741792,event=agent
+[0Ktravis_time:start:2c310ed0
+[0Ktravis_time:end:2c310ed0:start=1606006352374579675,finish=1606006352376541309,duration=1961634,event=check_unsupported
+[0Ktravis_time:start:15d166b2
+[0Ktravis_fold:start:system_info
+[0K[33;1mBuild system information[0m
+Build language: ruby
+Build dist: xenial
+Build id: 745148570
+Job id: 745148571
+Runtime kernel version: 4.15.0-1077-gcp
+travis-build version: cd707aa7
+[34m[1mBuild image provisioning date and time[0m
+Wed Jun 24 13:36:52 UTC 2020
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 16.04.6 LTS
+Release:	16.04
+Codename:	xenial
+[34m[1mSystemd Version[0m
+systemd 229
+[34m[1mCookbooks Version[0m
+3f92a99 https://github.com/travis-ci/travis-cookbooks/tree/3f92a99
+[34m[1mgit version[0m
+git version 2.27.0
+[34m[1mbash version[0m
+GNU bash, version 4.3.48(1)-release (x86_64-pc-linux-gnu)
+[34m[1mgcc version[0m
+gcc (Ubuntu 5.4.0-6ubuntu1~16.04.12) 5.4.0 20160609
+[34m[1mdocker version[0m
+Client:
+ Version:           18.06.0-ce
+ API version:       1.38
+ Go version:        go1.10.3
+ Git commit:        0ffa825
+ Built:             Wed Jul 18 19:11:02 2018
+ OS/Arch:           linux/amd64
+ Experimental:      false
+
+Server:
+ Engine:
+  Version:          18.06.0-ce
+  API version:      1.38 (minimum version 1.12)
+  Go version:       go1.10.3
+  Git commit:       0ffa825
+  Built:            Wed Jul 18 19:09:05 2018
+  OS/Arch:          linux/amd64
+  Experimental:     false
+[34m[1mclang version[0m
+clang version 7.0.0 (tags/RELEASE_700/final)
+[34m[1mjq version[0m
+jq-1.5
+[34m[1mbats version[0m
+Bats 0.4.0
+[34m[1mshellcheck version[0m
+0.7.0
+[34m[1mshfmt version[0m
+v2.6.3
+[34m[1mccache version[0m
+3.2.4
+[34m[1mcmake version[0m
+cmake version 3.12.4
+[34m[1mheroku version[0m
+heroku/7.42.1 linux-x64 node-v12.16.2
+[34m[1mimagemagick version[0m
+Version: ImageMagick 6.8.9-9 Q16 x86_64 2019-11-12 http://www.imagemagick.org
+[34m[1mmd5deep version[0m
+4.4
+[34m[1mmercurial version[0m
+version 4.8
+[34m[1mmysql version[0m
+mysql  Ver 14.14 Distrib 5.7.30, for Linux (x86_64) using  EditLine wrapper
+[34m[1mopenssl version[0m
+OpenSSL 1.0.2g  1 Mar 2016
+[34m[1mpacker version[0m
+1.3.3
+[34m[1mpostgresql client version[0m
+psql (PostgreSQL) 10.13 (Ubuntu 10.13-1.pgdg16.04+1)
+[34m[1mragel version[0m
+Ragel State Machine Compiler version 6.8 Feb 2013
+[34m[1msudo version[0m
+1.8.16
+[34m[1mgzip version[0m
+gzip 1.6
+[34m[1mzip version[0m
+Zip 3.0
+[34m[1mvim version[0m
+VIM - Vi IMproved 7.4 (2013 Aug 10, compiled Mar 18 2020 14:06:17)
+[34m[1miptables version[0m
+iptables v1.6.0
+[34m[1mcurl version[0m
+curl 7.47.0 (x86_64-pc-linux-gnu) libcurl/7.47.0 GnuTLS/3.4.10 zlib/1.2.8 libidn/1.32 librtmp/2.3
+[34m[1mwget version[0m
+GNU Wget 1.17.1 built on linux-gnu.
+[34m[1mrsync version[0m
+rsync  version 3.1.1  protocol version 31
+[34m[1mgimme version[0m
+v1.5.4
+[34m[1mnvm version[0m
+0.35.3
+[34m[1mperlbrew version[0m
+/home/travis/perl5/perlbrew/bin/perlbrew  - App::perlbrew/0.88
+[34m[1mphpenv version[0m
+rbenv 1.1.2-30-gc879cb0
+[34m[1mrvm version[0m
+rvm 1.29.10 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+[34m[1mdefault ruby version[0m
+ruby 2.5.3p105 (2018-10-18 revision 65156) [x86_64-linux]
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mElasticSearch version[0m
+5.5.0
+[34m[1mInstalled Firefox version[0m
+firefox 63.0.1
+[34m[1mMongoDB version[0m
+MongoDB 4.0.19
+[34m[1mPhantomJS version[0m
+2.1.1
+[34m[1mPre-installed PostgreSQL versions[0m
+9.4.26
+9.5.22
+9.6.18
+[34m[1mRedis version[0m
+redis-server 6.0.5
+[34m[1mPre-installed Go versions[0m
+1.11.1
+[34m[1mant version[0m
+Apache Ant(TM) version 1.9.6 compiled on July 20 2018
+[34m[1mmvn version[0m
+Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
+[34m[1mgradle version[0m
+Gradle 5.1.1!
+[34m[1mlein version[0m
+Leiningen 2.9.3 on Java 11.0.2 OpenJDK 64-Bit Server VM
+[34m[1mPre-installed Node.js versions[0m
+v10.21.0
+v11.0.0
+v12.18.1
+v4.9.1
+v6.17.1
+v8.12.0
+v8.17.0
+v8.9
+[34m[1mphpenv versions[0m
+  system
+  5.6
+  5.6.40
+  7.1
+  7.1.27
+  7.2
+* 7.2.15 (set by /home/travis/.phpenv/version)
+  hhvm
+  hhvm-stable
+[34m[1mcomposer --version[0m
+Composer version 1.8.4 2019-02-11 10:52:10
+[34m[1mPre-installed Ruby versions[0m
+ruby-2.3.8
+ruby-2.4.5
+ruby-2.5.3
+travis_fold:end:system_info
+[0K
+travis_time:end:15d166b2:start=1606006352379135518,finish=1606006352383873820,duration=4738302,event=show_system_info
+[0Ktravis_time:start:34eb1bb8
+[0Ktravis_time:end:34eb1bb8:start=1606006352386424900,finish=1606006352397850194,duration=11425294,event=rm_riak_source
+[0Ktravis_time:start:025da552
+[0Ktravis_time:end:025da552:start=1606006352400821985,finish=1606006352408618726,duration=7796741,event=fix_rwky_redis
+[0Ktravis_time:start:05e00f62
+[0Ktravis_time:end:05e00f62:start=1606006352412965461,finish=1606006353127411622,duration=714446161,event=wait_for_network
+[0Ktravis_time:start:145a5d52
+[0Ktravis_time:end:145a5d52:start=1606006353131997336,finish=1606006353358658281,duration=226660945,event=update_apt_keys
+[0Ktravis_time:start:2b378a4c
+[0Ktravis_time:end:2b378a4c:start=1606006353362921928,finish=1606006353415561793,duration=52639865,event=fix_hhvm_source
+[0Ktravis_time:start:02dbbfda
+[0Ktravis_time:end:02dbbfda:start=1606006353419773102,finish=1606006353422902751,duration=3129649,event=update_mongo_arch
+[0Ktravis_time:start:00000add
+[0Ktravis_time:end:00000add:start=1606006353427706294,finish=1606006353469484542,duration=41778248,event=fix_sudo_enabled_trusty
+[0Ktravis_time:start:0456aa91
+[0Ktravis_time:end:0456aa91:start=1606006353474014109,finish=1606006353476215499,duration=2201390,event=update_glibc
+[0Ktravis_time:start:0c4d8296
+[0Ktravis_time:end:0c4d8296:start=1606006353480410988,finish=1606006353488570612,duration=8159624,event=clean_up_path
+[0Ktravis_time:start:043c940a
+[0Ktravis_time:end:043c940a:start=1606006353492605644,finish=1606006353501041001,duration=8435357,event=fix_resolv_conf
+[0Ktravis_time:start:07c6a0d0
+[0Ktravis_time:end:07c6a0d0:start=1606006353504778068,finish=1606006353514270837,duration=9492769,event=fix_etc_hosts
+[0Ktravis_time:start:2ce5fe52
+[0Ktravis_time:end:2ce5fe52:start=1606006353518532589,finish=1606006353528110549,duration=9577960,event=fix_mvn_settings_xml
+[0Ktravis_time:start:0103623f
+[0Ktravis_time:end:0103623f:start=1606006353531640653,finish=1606006353542249750,duration=10609097,event=no_ipv6_localhost
+[0Ktravis_time:start:1fefe89a
+[0Ktravis_time:end:1fefe89a:start=1606006353547265800,finish=1606006353550281201,duration=3015401,event=fix_etc_mavenrc
+[0Ktravis_time:start:33f9a674
+[0Ktravis_time:end:33f9a674:start=1606006353554240658,finish=1606006353557294110,duration=3053452,event=fix_wwdr_certificate
+[0Ktravis_time:start:037f18c0
+[0Ktravis_time:end:037f18c0:start=1606006353561201862,finish=1606006353583904752,duration=22702890,event=put_localhost_first
+[0Ktravis_time:start:1a60acb0
+[0Ktravis_time:end:1a60acb0:start=1606006353588016957,finish=1606006353591017992,duration=3001035,event=home_paths
+[0Ktravis_time:start:19832480
+[0Ktravis_time:end:19832480:start=1606006353595015497,finish=1606006353606918537,duration=11903040,event=disable_initramfs
+[0Ktravis_time:start:1371138c
+[0Ktravis_time:end:1371138c:start=1606006353610761641,finish=1606006353948996476,duration=338234835,event=disable_ssh_roaming
+[0Ktravis_time:start:012d4844
+[0Ktravis_time:end:012d4844:start=1606006353952737338,finish=1606006353954952531,duration=2215193,event=debug_tools
+[0Ktravis_time:start:1b6b6240
+[0Ktravis_time:end:1b6b6240:start=1606006353959391405,finish=1606006353962286184,duration=2894779,event=uninstall_oclint
+[0Ktravis_time:start:1ccda0d0
+[0Ktravis_time:end:1ccda0d0:start=1606006353965948946,finish=1606006353968699702,duration=2750756,event=rvm_use
+[0Ktravis_time:start:11740b9c
+[0Ktravis_time:end:11740b9c:start=1606006353972204821,finish=1606006353980129158,duration=7924337,event=rm_etc_boto_cfg
+[0Ktravis_time:start:04077348
+[0Ktravis_time:end:04077348:start=1606006353984811456,finish=1606006353987963682,duration=3152226,event=rm_oraclejdk8_symlink
+[0Ktravis_time:start:133ad399
+[0Ktravis_time:end:133ad399:start=1606006353991257486,finish=1606006354087021022,duration=95763536,event=enable_i386
+[0Ktravis_time:start:1462737a
+[0Ktravis_time:end:1462737a:start=1606006354091463364,finish=1606006354097072804,duration=5609440,event=update_rubygems
+[0Ktravis_time:start:0f21d2c0
+[0Ktravis_time:end:0f21d2c0:start=1606006354101861768,finish=1606006354920037901,duration=818176133,event=ensure_path_components
+[0Ktravis_time:start:12b65b98
+[0Ktravis_time:end:12b65b98:start=1606006354925103188,finish=1606006354927429170,duration=2325982,event=redefine_curl
+[0Ktravis_time:start:0dded408
+[0Ktravis_time:end:0dded408:start=1606006354931284780,finish=1606006355029841736,duration=98556956,event=nonblock_pipe
+[0Ktravis_time:start:01e2e89c
+[0Ktravis_time:end:01e2e89c:start=1606006355034281434,finish=1606006361067260937,duration=6032979503,event=apt_get_update
+[0Ktravis_time:start:0bd3ad85
+[0Ktravis_time:end:0bd3ad85:start=1606006361072122312,finish=1606006361074500583,duration=2378271,event=deprecate_xcode_64
+[0Ktravis_time:start:001fe7fa
+[0Ktravis_time:end:001fe7fa:start=1606006361078746853,finish=1606006363866905709,duration=2788158856,event=update_heroku
+[0Ktravis_time:start:04415142
+[0Ktravis_time:end:04415142:start=1606006363871270211,finish=1606006363874111894,duration=2841683,event=shell_session_update
+[0Ktravis_time:start:06c1c89f
+[0Ktravis_fold:start:docker_mtu_and_registry_mirrors
+[0Ktravis_fold:end:docker_mtu_and_registry_mirrors
+[0Ktravis_time:end:06c1c89f:start=1606006363877891149,finish=1606006366428064590,duration=2550173441,event=set_docker_mtu_and_registry_mirrors
+[0Ktravis_time:start:25d45584
+[0Ktravis_fold:start:resolvconf
+[0Ktravis_fold:end:resolvconf
+[0Ktravis_time:end:25d45584:start=1606006366436736047,finish=1606006366499496815,duration=62760768,event=resolvconf
+[0Ktravis_time:start:153f2624
+[0Ktravis_time:end:153f2624:start=1606006366515571580,finish=1606006366660745068,duration=145173488,event=maven_central_mirror
+[0Ktravis_time:start:2bc9602c
+[0Ktravis_time:end:2bc9602c:start=1606006366667374638,finish=1606006366758736264,duration=91361626,event=maven_https
+[0Ktravis_time:start:1d71b676
+[0Ktravis_fold:start:services
+[0Ktravis_time:start:0e5ee448
+[0K$ sudo systemctl start docker
+travis_time:end:0e5ee448:start=1606006366768577333,finish=1606006366779429857,duration=10852524,event=prepare
+[0Ktravis_fold:end:services
+[0Ktravis_time:end:0e5ee448:start=1606006366768577333,finish=1606006369784700739,duration=3016123406,event=services
+[0Ktravis_time:start:0aa1c591
+[0Ktravis_time:end:0aa1c591:start=1606006369789962215,finish=1606006369793365004,duration=3402789,event=fix_ps4
+[0Ktravis_time:start:2e6bdb0c
+[0K
+travis_fold:start:git.checkout
+[0Ktravis_time:start:028cd925
+[0K$ git clone --depth=50 --branch=main https://github.com/rylandtikes/multi-k8s.git rylandtikes/multi-k8s
+Cloning into 'rylandtikes/multi-k8s'...
+travis_time:end:028cd925:start=1606006369804471450,finish=1606006370311816481,duration=507345031,event=checkout
+[0K$ cd rylandtikes/multi-k8s
+$ git checkout -qf 3e2dc4d15cbb07e3954573284e6488edffa74ee1
+travis_fold:end:git.checkout
+[0K
+travis_time:end:028cd925:start=1606006369804471450,finish=1606006370325948657,duration=521477207,event=checkout
+[0Ktravis_time:start:3184d8b5
+[0K
+[33;1mSetting environment variables from repository settings[0m
+$ export encrypted_9f3b5599b056_key=[secure]
+$ export encrypted_9f3b5599b056_iv=[secure]
+$ export DOCKER_USERNAME=[secure]
+$ export DOCKER_PASSWORD=[secure]
+
+[33;1mSetting environment variables from .travis.yml[0m
+$ export SHA=$(git rev-parse HEAD)
+$ export CLOUDSDK_CORE_DISABLE_PROMPTS=1
+
+travis_time:end:3184d8b5:start=1606006370332988412,finish=1606006370346936910,duration=13948498,event=env
+[0Ktravis_fold:start:rvm
+[0Ktravis_time:start:2df3588c
+[0K$ rvm use default
+Using /home/travis/.rvm/gems/ruby-2.5.3
+travis_time:end:2df3588c:start=1606006370356804676,finish=1606006371023690853,duration=666886177,event=setup
+[0Ktravis_fold:end:rvm
+[0K
+travis_fold:start:ruby.versions
+[0K$ ruby --version
+ruby 2.5.3p105 (2018-10-18 revision 65156) [x86_64-linux]
+$ rvm --version
+rvm 1.29.10 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+$ bundle --version
+Bundler version 2.1.4
+$ gem --version
+3.0.8
+travis_fold:end:ruby.versions
+[0K
+travis_fold:start:before_install.1
+[0Ktravis_time:start:20770932
+[0K$ openssl aes-256-cbc -K $encrypted_9f3b5599b056_key -iv $encrypted_9f3b5599b056_iv -in service-account.json.enc -out service-account.json -d
+travis_time:end:20770932:start=1606006371504425913,finish=1606006371518524969,duration=14099056,event=before_install
+[0Ktravis_fold:end:before_install.1
+[0Ktravis_fold:start:before_install.2
+[0Ktravis_time:start:0b2ef762
+[0K$ curl https://sdk.cloud.google.com | bash > /dev/null;
+
+######################################################################## 100.0%
+which curl
+curl -# -f https://dl.google.com/dl/cloudsdk/channels/rapid/google-cloud-sdk.tar.gz
+
+###############################################                           66.1%
+######################################################################## 100.0%
+mkdir -p /home/travis
+tar -C /home/travis -zxvf /tmp/tmp.Mwxq7vYx3f/google-cloud-sdk.tar.gz
+/home/travis/google-cloud-sdk/install.sh
+
+
+Your current Cloud SDK version is: 319.0.0
+Installing components from version: 319.0.0
+
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚                     These components will be installed.                     â”‚
+â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+â”‚                         Name                        â”‚  Version   â”‚   Size   â”‚
+â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+â”‚ BigQuery Command Line Tool                          â”‚     2.0.62 â”‚  < 1 MiB â”‚
+â”‚ BigQuery Command Line Tool (Platform Specific)      â”‚     2.0.58 â”‚  < 1 MiB â”‚
+â”‚ Cloud SDK Core Libraries (Platform Specific)        â”‚ 2020.07.10 â”‚  < 1 MiB â”‚
+â”‚ Cloud Storage Command Line Tool                     â”‚       4.55 â”‚  3.5 MiB â”‚
+â”‚ Cloud Storage Command Line Tool (Platform Specific) â”‚       4.51 â”‚  < 1 MiB â”‚
+â”‚ Default set of gcloud commands                      â”‚            â”‚          â”‚
+â”‚ anthoscli                                           â”‚      0.2.7 â”‚ 51.7 MiB â”‚
+â”‚ anthoscli                                           â”‚      0.2.7 â”‚          â”‚
+â”‚ gcloud cli dependencies                             â”‚ 2020.06.12 â”‚  < 1 MiB â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+
+For the latest full release notes, please visit:
+  https://cloud.google.com/sdk/release_notes
+
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â• â• Creating update staging area                             â•â•£
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â• â• Installing: BigQuery Command Line Tool                   â•â•£
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â• â• Installing: BigQuery Command Line Tool (Platform Spec... â•â•£
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â• â• Installing: Cloud SDK Core Libraries (Platform Specific) â•â•£
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â• â• Installing: Cloud Storage Command Line Tool              â•â•£
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â• â• Installing: Cloud Storage Command Line Tool (Platform... â•â•£
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â• â• Installing: Default set of gcloud commands               â•â•£
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â• â• Installing: anthoscli                                    â•â•£
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â• â• Installing: anthoscli                                    â•â•£
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â• â• Installing: gcloud cli dependencies                      â•â•£
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â• â• Creating backup and activating new installation          â•â•£
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+
+Performing post processing steps...
+...............................................done.
+
+Update done!
+
+WARNING:   There are other instances of Google Cloud Platform tools on your system PATH.
+  Please remove the following to avoid confusion or accidental invocation:
+
+  /usr/lib/google-cloud-sdk/bin/bq
+/usr/lib/google-cloud-sdk/bin/gcloud
+/usr/lib/google-cloud-sdk/bin/gsutil
+/usr/lib/google-cloud-sdk/bin/git-credential-gcloud.sh
+
+  
+travis_time:end:0b2ef762:start=1606006371525344582,finish=1606006390581821538,duration=19056476956,event=before_install
+[0Ktravis_fold:end:before_install.2
+[0Ktravis_fold:start:before_install.3
+[0Ktravis_time:start:1a0390a4
+[0K$ source $HOME/google-cloud-sdk/path.bash.inc
+travis_time:end:1a0390a4:start=1606006390587104174,finish=1606006390592488032,duration=5383858,event=before_install
+[0Ktravis_fold:end:before_install.3
+[0Ktravis_fold:start:before_install.4
+[0Ktravis_time:start:0ba31f18
+[0K$ gcloud components update kubectl
+
+
+Your current Cloud SDK version is: 319.0.0
+Installing components from version: 319.0.0
+
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚               These components will be installed.                â”‚
+â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+â”‚         Name        â”‚       Version       â”‚         Size         â”‚
+â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+â”‚ kubectl             â”‚             1.15.11 â”‚             84.1 MiB â”‚
+â”‚ kubectl             â”‚             1.15.11 â”‚              < 1 MiB â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+
+For the latest full release notes, please visit:
+  https://cloud.google.com/sdk/release_notes
+
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â• â• Creating update staging area                             â•â•£
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â• â• Installing: kubectl                                      â•â•£
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â• â• Installing: kubectl                                      â•â•£
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â• â• Creating backup and activating new installation          â•â•£
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+
+Performing post processing steps...
+..........................................done.
+
+Update done!
+
+WARNING:   There are other instances of Google Cloud Platform tools on your system PATH.
+  Please remove the following to avoid confusion or accidental invocation:
+
+  /usr/lib/google-cloud-sdk/bin/gcloud
+/usr/lib/google-cloud-sdk/bin/bq
+/usr/lib/google-cloud-sdk/bin/git-credential-gcloud.sh
+/usr/lib/google-cloud-sdk/bin/gsutil
+
+  
+travis_time:end:0ba31f18:start=1606006390597137017,finish=1606006409968301332,duration=19371164315,event=before_install
+[0Ktravis_fold:end:before_install.4
+[0Ktravis_fold:start:before_install.5
+[0Ktravis_time:start:05db50ce
+[0K$ gcloud auth activate-service-account --key-file service-account.json
+Activated service account credentials for: [travis-deployer@multi-k8s-296302.iam.gserviceaccount.com]
+travis_time:end:05db50ce:start=1606006409974814266,finish=1606006410630128429,duration=655314163,event=before_install
+[0Ktravis_fold:end:before_install.5
+[0Ktravis_fold:start:before_install.6
+[0Ktravis_time:start:09ffc3bc
+[0K$ gcloud config set project multi-k8s-296302
+Updated property [core/project].
+WARNING: You do not appear to have access to project [multi-k8s-296302] or it does not exist.
+travis_time:end:09ffc3bc:start=1606006410635472521,finish=1606006411198562078,duration=563089557,event=before_install
+[0Ktravis_fold:end:before_install.6
+[0Ktravis_fold:start:before_install.7
+[0Ktravis_time:start:11c33f28
+[0K$ gcloud config set compute/zone us-east1-b
+Updated property [compute/zone].
+travis_time:end:11c33f28:start=1606006411203529108,finish=1606006411714899808,duration=511370700,event=before_install
+[0Ktravis_fold:end:before_install.7
+[0Ktravis_fold:start:before_install.8
+[0Ktravis_time:start:059567f4
+[0K$ gcloud container clusters get-credentials multi-cluster
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for multi-cluster.
+travis_time:end:059567f4:start=1606006411723077381,finish=1606006412371918476,duration=648841095,event=before_install
+[0Ktravis_fold:end:before_install.8
+[0Ktravis_fold:start:before_install.9
+[0Ktravis_time:start:23723418
+[0K$ echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+WARNING! Your password will be stored unencrypted in /home/travis/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+travis_time:end:23723418:start=1606006412377056350,finish=1606006413115974561,duration=738918211,event=before_install
+[0Ktravis_fold:end:before_install.9
+[0Ktravis_fold:start:before_install.10
+[0Ktravis_time:start:0ed4750e
+[0K$ docker build -t [secure]/react-test -f ./client/Dockerfile.dev ./client
+Sending build context to Docker daemon  56.83kB
+
+
+Step 1/6 : FROM node:alpine
+alpine: Pulling from library/node
+cbdbe7a5bc2a: Pulling fs layer
+5180ee6d8590: Pulling fs layer
+77de9c287c84: Pulling fs layer
+507c8dbcc09a: Pulling fs layer
+507c8dbcc09a: Waiting
+77de9c287c84: Verifying Checksum
+77de9c287c84: Download complete
+cbdbe7a5bc2a: Verifying Checksum
+cbdbe7a5bc2a: Download complete
+507c8dbcc09a: Verifying Checksum
+507c8dbcc09a: Download complete
+5180ee6d8590: Verifying Checksum
+5180ee6d8590: Download complete
+cbdbe7a5bc2a: Pull complete
+5180ee6d8590: Pull complete
+77de9c287c84: Pull complete
+507c8dbcc09a: Pull complete
+Digest: sha256:7614f96f47ede63333a7ddbd31c71207956eb39b641e724f81c198c067bacf41
+Status: Downloaded newer image for node:alpine
+ ---> 7ddc154413f5
+Step 2/6 : WORKDIR "/app"
+ ---> Running in c5b2333c0496
+Removing intermediate container c5b2333c0496
+ ---> 1226007e63ab
+Step 3/6 : COPY ./package.json ./
+ ---> 8ecd66ff9f8e
+Step 4/6 : RUN npm install
+ ---> Running in 54e2a18c4634
+[91mnpm WARN[0m[91m deprecated @hapi/topo@3.1.6: This version has been deprecated and is no longer supported or maintained
+[0m[91mnpm WARN deprecated @hapi/bourne@1.3.2: This version has been deprecated and is no longer supported or maintained
+[0m[91mnpm WARN deprecated @hapi/hoek@8.5.1: This version has been deprecated and is no longer supported or maintained
+[0m[91mnpm WARN deprecated @hapi/address@2.1.4: Moved to 'npm install @sideway/address'
+[0m[91mnpm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+[0m[91mnpm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+[0m[91mnpm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+[0m[91mnpm WARN deprecated @hapi/joi@15.1.1: Switch to 'npm install joi'
+[0m[91mnpm WARN deprecated har-validator@5.1.5: this library is no longer supported
+[0m[91mnpm WARN deprecated request-promise-native@1.0.9: request-promise-native has been deprecated because it extends the now deprecated request package, see https://github.com/request/request/issues/3142
+[0m[91mnpm WARN deprecated[0m[91m left-pad@1.3.0: use String.prototype.padStart()
+[0m[91mnpm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+[0m[91mnpm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+[0m[91mnpm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+[0m[91mnpm WARN deprecated[0m[91m fsevents@2.1.2: Please update to latest version
+[0m[91mnpm WARN deprecated[0m[91m chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+[0m[91mnpm WARN deprecated[0m[91m eslint-loader@3.0.3: This loader has been deprecated. Please use eslint-webpack-plugin
+[0m[91mnpm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+[0m[91mnpm WARN deprecated @types/testing-library__dom@7.5.0: This is a stub types definition. testing-library__dom provides its own type definitions, so you do not need this installed.
+[0m[91mnpm WARN deprecated core-js@2.6.11: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
+[0m
+added 1964 packages, and audited 1964 packages in 57s
+
+76 packages are looking for funding
+  run `npm fund` for details
+
+5 vulnerabilities (1 moderate, 4 high)
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+[91mnpm notice 
+npm notice New patch version of npm available! 7.0.8 -> 7.0.13
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v7.0.13>
+npm notice Run `npm install -g npm@7.0.13` to update!
+npm notice 
+[0mRemoving intermediate container 54e2a18c4634
+ ---> f65edfb93227
+Step 5/6 : COPY . .
+ ---> 356dbd8d4e03
+Step 6/6 : CMD ["npm", "run", "start"]
+ ---> Running in 94f20e5b09ee
+Removing intermediate container 94f20e5b09ee
+ ---> 9e37eb103e4e
+Successfully built 9e37eb103e4e
+Successfully tagged [secure]/react-test:latest
+travis_time:end:0ed4750e:start=1606006413126211155,finish=1606006490428613118,duration=77302401963,event=before_install
+[0Ktravis_fold:end:before_install.10
+[0KNo Gemfile found, skipping bundle install
+
+travis_time:start:15437268
+[0K$ docker run -e CI=true [secure]/react-test npm test -- --coverage
+
+> client@0.1.0 test
+> react-scripts test "--coverage"
+
+PASS src/App.test.js
+  âœ“ renders learn react link (2ms)
+
+------------------|----------|----------|----------|----------|-------------------|
+File              |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+------------------|----------|----------|----------|----------|-------------------|
+All files         |        0 |        0 |        0 |        0 |                   |
+ App.js           |        0 |      100 |        0 |        0 |                 9 |
+ Fib.js           |        0 |      100 |        0 |        0 |... 44,45,52,56,62 |
+ OtherPage.js     |        0 |      100 |        0 |        0 |                 5 |
+ index.js         |        0 |      100 |      100 |        0 |              7,17 |
+ serviceWorker.js |        0 |        0 |        0 |        0 |... 32,133,135,138 |
+------------------|----------|----------|----------|----------|-------------------|
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        2.571s
+Ran all test suites.
+travis_time:end:15437268:start=1606006490438487651,finish=1606006494516008917,duration=4077521266,event=script
+[0K[32;1mThe command "docker run -e CI=true [secure]/react-test npm test -- --coverage" exited with 0.[0m
+
+travis_fold:start:dpl_0
+[0Ktravis_time:start:0a1df962
+[0K$ rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install dpl
+Successfully installed dpl-1.10.16
+1 gem installed
+travis_time:end:0a1df962:start=1606006495592971306,finish=1606006496849322878,duration=1256351572,event=after_success
+[0Ktravis_fold:end:dpl_0
+[0Ktravis_time:start:04400f7a
+[0Ktravis_fold:start:dpl.1
+[33mInstalling deploy dependencies[0m
+Successfully installed dpl-script-1.10.16
+1 gem installed
+
+travis_fold:end:dpl.1
+travis_fold:start:dpl.2
+[33mPreparing deploy[0m
+Cleaning up git repository with `git stash --all`. If you need build artifacts for deployment, set `deploy.skip_cleanup: true`. See https://docs.travis-ci.com/user/deployment#Uploading-Files-and-skip_cleanup.
+Saved working directory and index state WIP on (no branch): 3e2dc4d trigger build
+
+travis_fold:end:dpl.2
+travis_fold:start:dpl.3
+[33mDeploying application[0m
+Sending build context to Docker daemon  56.83kB
+
+
+Step 1/10 : FROM node:alpine as builder
+ ---> 7ddc154413f5
+Step 2/10 : WORKDIR '/app'
+ ---> Using cache
+ ---> 1226007e63ab
+Step 3/10 : COPY ./package.json ./
+ ---> Using cache
+ ---> 8ecd66ff9f8e
+Step 4/10 : RUN npm install
+ ---> Using cache
+ ---> f65edfb93227
+Step 5/10 : COPY . .
+ ---> Using cache
+ ---> 356dbd8d4e03
+Step 6/10 : RUN npm run build
+ ---> Running in a2ebb3043723
+
+> client@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  52.33 KB  build/static/js/2.04c3c698.chunk.js
+  1.43 KB   build/static/js/main.ab440445.chunk.js
+  773 B     build/static/js/runtime-main.09b85ec0.js
+  531 B     build/static/css/main.435d5fe5.chunk.css
+
+The project was built assuming it is hosted at /.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  npm install -g serve
+  serve -s build
+
+Find out more about deployment here:
+
+  bit.ly/CRA-deploy
+
+Removing intermediate container a2ebb3043723
+ ---> e185a0894ab1
+Step 7/10 : FROM nginx
+latest: Pulling from library/nginx
+852e50cd189d: Pulling fs layer
+a29b129f4109: Pulling fs layer
+b3ddf1fa5595: Pulling fs layer
+c5df295936d3: Pulling fs layer
+232bf38931fc: Pulling fs layer
+c5df295936d3: Waiting
+232bf38931fc: Waiting
+b3ddf1fa5595: Verifying Checksum
+b3ddf1fa5595: Download complete
+c5df295936d3: Verifying Checksum
+c5df295936d3: Download complete
+a29b129f4109: Verifying Checksum
+a29b129f4109: Download complete
+232bf38931fc: Verifying Checksum
+232bf38931fc: Download complete
+852e50cd189d: Verifying Checksum
+852e50cd189d: Download complete
+852e50cd189d: Pull complete
+a29b129f4109: Pull complete
+b3ddf1fa5595: Pull complete
+c5df295936d3: Pull complete
+232bf38931fc: Pull complete
+Digest: sha256:c3a1592d2b6d275bef4087573355827b200b00ffc2d9849890a4f3aa2128c4ae
+Status: Downloaded newer image for nginx:latest
+ ---> daee903b4e43
+Step 8/10 : EXPOSE 3000
+ ---> Running in 67002a403dcf
+Removing intermediate container 67002a403dcf
+ ---> 602a163853c1
+Step 9/10 : COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+ ---> 738962d3dd0e
+Step 10/10 : COPY --from=builder /app/build /usr/share/nginx/html
+ ---> f2d69b46fcae
+Successfully built f2d69b46fcae
+Successfully tagged [secure]/multi-client:latest
+Successfully tagged [secure]/multi-client:3e2dc4d15cbb07e3954573284e6488edffa74ee1
+Sending build context to Docker daemon   7.68kB
+
+
+Step 1/6 : FROM node:14.14.0-alpine
+14.14.0-alpine: Pulling from library/node
+cbdbe7a5bc2a: Already exists
+378c9540b231: Pulling fs layer
+fd5173d17220: Pulling fs layer
+72f138d46980: Pulling fs layer
+72f138d46980: Verifying Checksum
+72f138d46980: Download complete
+fd5173d17220: Verifying Checksum
+fd5173d17220: Download complete
+378c9540b231: Download complete
+378c9540b231: Pull complete
+fd5173d17220: Pull complete
+72f138d46980: Pull complete
+Digest: sha256:97c4cddbbf97299f5eda09946ba31d424c84848d4f4c1b7adef40e2e0d478345
+Status: Downloaded newer image for node:14.14.0-alpine
+ ---> fa2fa5d4e6f4
+Step 2/6 : WORKDIR "/app"
+ ---> Running in 5db133412507
+Removing intermediate container 5db133412507
+ ---> abe869d7d1f3
+Step 3/6 : COPY ./package.json ./
+ ---> 6b1e5a7fc65e
+Step 4/6 : RUN npm install
+ ---> Running in a1e5dc6d8cb8
+[91mnpm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+[0m[91mnpm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+[0m[91mnpm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+[0m[91mnpm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+[0m
+> nodemon@1.18.3 postinstall /app/node_modules/nodemon
+> node bin/postinstall || exit 0
+
+[32mLove nodemon? You can now support the project via the open collective:[22m[39m
+ > [96m[1mhttps://opencollective.com/nodemon/donate[0m
+
+[91mnpm[0m[91m [0m[91mnotice[0m[91m created a lockfile as package-lock.json. You should commit this file.
+[0m[91mnpm[0m[91m [0m[91mWARN[0m[91m [0m[91moptional[0m[91m SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules/chokidar/node_modules/fsevents):
+[0m[91mnpm[0m[91m [0m[91mWARN[0m[91m [0m[91mnotsup[0m[91m SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+[0m[91mnpm WARN app No description
+[0m[91mnpm WARN app No repository field.
+[0m[91mnpm WARN app No license field.
+[0m[91m
+[0madded 305 packages from 192 contributors and audited 306 packages in 6.074s
+found 0 vulnerabilities
+
+Removing intermediate container a1e5dc6d8cb8
+ ---> 6ce679e1d801
+Step 5/6 : COPY . .
+ ---> bf38daa775b2
+Step 6/6 : CMD ["npm", "run", "start"]
+ ---> Running in ac1e9c4f5673
+Removing intermediate container ac1e9c4f5673
+ ---> 2f2306067db0
+Successfully built 2f2306067db0
+Successfully tagged [secure]/multi-server:latest
+Successfully tagged [secure]/multi-server:3e2dc4d15cbb07e3954573284e6488edffa74ee1
+Sending build context to Docker daemon  6.144kB
+
+
+Step 1/6 : FROM node:alpine
+ ---> 7ddc154413f5
+Step 2/6 : WORKDIR "/app"
+ ---> Using cache
+ ---> 1226007e63ab
+Step 3/6 : COPY ./package.json ./
+ ---> 229e5689c046
+Step 4/6 : RUN npm install
+ ---> Running in 6620b4c7a6c1
+[91mnpm WARN deprecated[0m[91m urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+[0m[91mnpm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+[0m[91mnpm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+[0m[91mnpm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+[0m
+added 240 packages, and audited 240 packages in 7s
+
+found 0 vulnerabilities
+[91mnpm notice 
+npm notice New patch version of npm available! 7.0.8 -> 7.0.13
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v7.0.13>
+npm notice Run `npm install -g npm@7.0.13` to update!
+npm notice 
+[0mRemoving intermediate container 6620b4c7a6c1
+ ---> ccb3e89b6097
+Step 5/6 : COPY . .
+ ---> af84970ed3a6
+Step 6/6 : CMD ["npm", "run", "start"]
+ ---> Running in 3a4a1d2c1701
+Removing intermediate container 3a4a1d2c1701
+ ---> 86ba084eee0f
+Successfully built 86ba084eee0f
+Successfully tagged [secure]/multi-worker:latest
+Successfully tagged [secure]/multi-worker:3e2dc4d15cbb07e3954573284e6488edffa74ee1
+The push refers to repository [docker.io/[secure]/multi-client]
+e011c1880f14: Preparing
+71eeceaf4da9: Preparing
+b9e73ac5343e: Preparing
+5887d03dfc3d: Preparing
+e3a971c30b12: Preparing
+32048dd980c7: Preparing
+f5600c6330da: Preparing
+32048dd980c7: Waiting
+f5600c6330da: Waiting
+b9e73ac5343e: Layer already exists
+5887d03dfc3d: Layer already exists
+e3a971c30b12: Layer already exists
+32048dd980c7: Layer already exists
+f5600c6330da: Layer already exists
+71eeceaf4da9: Pushed
+e011c1880f14: Pushed
+latest: digest: sha256:092c6dc08b94c6726a51f0405022fc7b24abf52d7f78e97e655e37981d9f65f9 size: 1779
+The push refers to repository [docker.io/[secure]/multi-server]
+8701cc26abe8: Preparing
+4392d9e74db0: Preparing
+f87e0520b12c: Preparing
+a990dd4b62c9: Preparing
+61f945ebd234: Preparing
+0c56cb2aff7a: Preparing
+44a4ced26d67: Preparing
+3e207b409db3: Preparing
+0c56cb2aff7a: Waiting
+44a4ced26d67: Waiting
+3e207b409db3: Waiting
+61f945ebd234: Layer already exists
+0c56cb2aff7a: Layer already exists
+44a4ced26d67: Layer already exists
+3e207b409db3: Layer already exists
+8701cc26abe8: Pushed
+a990dd4b62c9: Pushed
+f87e0520b12c: Pushed
+4392d9e74db0: Pushed
+latest: digest: sha256:a1062fb14b6228b86512500dcbb0d178e67e95d6f68b1e61697ab0b3de9714d7 size: 1991
+The push refers to repository [docker.io/[secure]/muli-worker]
+An image does not exist locally with the tag: [secure]/muli-worker
+The push refers to repository [docker.io/[secure]/multi-client]
+e011c1880f14: Preparing
+71eeceaf4da9: Preparing
+b9e73ac5343e: Preparing
+5887d03dfc3d: Preparing
+e3a971c30b12: Preparing
+32048dd980c7: Preparing
+f5600c6330da: Preparing
+32048dd980c7: Waiting
+f5600c6330da: Waiting
+71eeceaf4da9: Layer already exists
+5887d03dfc3d: Layer already exists
+b9e73ac5343e: Layer already exists
+e3a971c30b12: Layer already exists
+e011c1880f14: Layer already exists
+32048dd980c7: Layer already exists
+f5600c6330da: Layer already exists
+3e2dc4d15cbb07e3954573284e6488edffa74ee1: digest: sha256:092c6dc08b94c6726a51f0405022fc7b24abf52d7f78e97e655e37981d9f65f9 size: 1779
+The push refers to repository [docker.io/[secure]/multi-server]
+8701cc26abe8: Preparing
+4392d9e74db0: Preparing
+f87e0520b12c: Preparing
+a990dd4b62c9: Preparing
+61f945ebd234: Preparing
+0c56cb2aff7a: Preparing
+44a4ced26d67: Preparing
+3e207b409db3: Preparing
+0c56cb2aff7a: Waiting
+44a4ced26d67: Waiting
+3e207b409db3: Waiting
+f87e0520b12c: Layer already exists
+61f945ebd234: Layer already exists
+8701cc26abe8: Layer already exists
+a990dd4b62c9: Layer already exists
+4392d9e74db0: Layer already exists
+44a4ced26d67: Layer already exists
+0c56cb2aff7a: Layer already exists
+3e207b409db3: Layer already exists
+3e2dc4d15cbb07e3954573284e6488edffa74ee1: digest: sha256:a1062fb14b6228b86512500dcbb0d178e67e95d6f68b1e61697ab0b3de9714d7 size: 1991
+The push refers to repository [docker.io/[secure]/muli-worker]
+An image does not exist locally with the tag: [secure]/muli-worker
+certificate.cert-manager.io/charlesstolz-com-tls configured
+service/client-cluster-ip-service unchanged
+deployment.apps/client-deployment configured
+persistentvolumeclaim/database-persistent-volume-claim unchanged
+ingress.networking.k8s.io/ingress-service unchanged
+clusterissuer.cert-manager.io/letsencrypt-prod unchanged
+service/postgres-cluster-ip-service unchanged
+deployment.apps/postgres-deployment unchanged
+service/redis-cluster-ip-service unchanged
+deployment.apps/redis-deployment unchanged
+service/server-cluster-ip-service unchanged
+deployment.apps/server-deployment configured
+deployment.apps/worker-deployment configured
+deployment.apps/server-deployment image updated
+deployment.apps/client-deployment image updated
+deployment.apps/worker-deployment image updated
+
+travis_fold:end:dpl.3
+Already up to date!
+HEAD detached at 3e2dc4d
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	service-account.json
+
+nothing added to commit but untracked files present (use "git add" to track)
+Dropped refs/stash@{0} (8ee0a71755e691d8771e48c07c2c3ebc4e8670e9)
+travis_time:end:04400f7a:start=1606006496855514133,finish=1606006556122544286,duration=59267030153,event=after_success
+[0K
+Done. Your build exited with 0.
